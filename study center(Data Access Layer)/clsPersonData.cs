@@ -7,7 +7,7 @@ namespace Study_center__DataAccess_
 {
     public class clsPersonData
     {
-        public static bool GetPersonInfoByID(int? personID, ref string firstName, ref string lastName, ref byte gender, ref DateTime dateOfBirth, ref string phoneNumber, ref string email, ref string address)
+        public static bool GetPersonInfoByID(int? personID, ref string firstName, ref string lastName, ref byte gender, ref DateTime dateOfBirth, ref string Phone, ref string email, ref string address)
         {
             bool isFound = false;
 
@@ -34,7 +34,7 @@ namespace Study_center__DataAccess_
                                 lastName = (string)reader["LastName"];
                                 gender = (byte)reader["Gender"];
                                 dateOfBirth = (DateTime)reader["DateOfBirth"];
-                                phoneNumber = (string)reader["PhoneNumber"];
+                                Phone = (string)reader["Phone"];
                                 email = (reader["Email"] != DBNull.Value) ? (string)reader["Email"] : null;
                                 address = (reader["Address"] != DBNull.Value) ? (string)reader["Address"] : null;
                             }
@@ -56,7 +56,7 @@ namespace Study_center__DataAccess_
             return isFound;
         }
 
-        public static int? AddNewPerson(string firstName, string lastName, byte gender, DateTime dateOfBirth, string phoneNumber, string email, string address)
+        public static int? AddNewPerson(string firstName, string lastName, byte gender, DateTime dateOfBirth, string Phone, string email, string address)
         {
             // This function will return the new person id if succeeded and null if not
             int? personID = null;
@@ -68,18 +68,18 @@ namespace Study_center__DataAccess_
                     connection.Open();
 
                     using (SqlCommand command = new SqlCommand("SP_AddNewPerson", connection))
-                    {
+                    { 
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@Gender", gender);
                         command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
-                        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                        command.Parameters.AddWithValue("@Phone", Phone);
                         command.Parameters.AddWithValue("@Email", (object)email ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Address", (object)address ?? DBNull.Value);
 
-                        SqlParameter outputIdParam = new SqlParameter("@NewPersonID", SqlDbType.Int)
+                        SqlParameter outputIdParam = new SqlParameter("@PersonID", SqlDbType.Int)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -99,7 +99,7 @@ namespace Study_center__DataAccess_
             return personID;
         }
 
-        public static bool Update(int? personID, string firstName, string lastName, byte gender, DateTime dateOfBirth, string phoneNumber, string email, string address)
+        public static bool Update(int? personID, string firstName, string lastName, byte gender, DateTime dateOfBirth, string Phone, string email, string address)
         {
             int rowAffected = 0;
 
@@ -118,7 +118,7 @@ namespace Study_center__DataAccess_
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@Gender", gender);
                         command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
-                        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                        command.Parameters.AddWithValue("@Phone", Phone);
                         command.Parameters.AddWithValue("@Email", (object)email ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Address", (object)address ?? DBNull.Value);
 

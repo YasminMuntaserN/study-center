@@ -9,6 +9,6 @@ namespace Study_center__DataAccess_.Global
 {
     static class clsDataAccessSettings
     {
-        public static string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+         public static string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
     }
 }
