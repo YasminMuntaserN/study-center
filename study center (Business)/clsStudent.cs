@@ -68,7 +68,7 @@ namespace study_center__Business_
                 if (person == null)
                     return null;
                 return new clsStudent(studentID, personID, gradeLevelID,
-                                    createdByUserID, enrollmentDate, person.FirstName, person.LastName, person.Gender,
+                                    createdByUserID, EmergencyContactPhone, enrollmentDate, person.FirstName, person.LastName, person.Gender,
                                     person.BirthDate, person.Phone, person.Email, person.Address);
             }
             return null;
@@ -92,7 +92,7 @@ namespace study_center__Business_
                 if (person == null)
                     return null;
                 return new clsStudent(studentID, personID, gradeLevelID,
-                                    createdByUserID, enrollmentDate, person.FirstName, person.LastName, person.Gender,
+                                    createdByUserID, EmergencyContactPhone, enrollmentDate, person.FirstName, person.LastName, person.Gender,
                                     person.BirthDate, person.Phone, person.Email, person.Address);
             }
             return null;

@@ -36,7 +36,7 @@ namespace Study_center__DataAccess_.Global
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return dt;
@@ -64,7 +64,7 @@ namespace Study_center__DataAccess_.Global
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return (rowAffected > 0);
@@ -102,7 +102,7 @@ namespace Study_center__DataAccess_.Global
             catch (Exception ex)
             {
                 isFound = false;
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return isFound;
@@ -133,7 +133,7 @@ namespace Study_center__DataAccess_.Global
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return Count;
@@ -167,7 +167,7 @@ namespace Study_center__DataAccess_.Global
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return dt;
@@ -202,11 +202,10 @@ namespace Study_center__DataAccess_.Global
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                clsErrorLogger.LogError(ex);
             }
 
             return dt;
         }
     }
-}
 }
