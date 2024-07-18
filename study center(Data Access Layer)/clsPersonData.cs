@@ -99,7 +99,7 @@ namespace Study_center__DataAccess_
             return personID;
         }
 
-        public static bool Update(int personID, string firstName, string lastName, byte gender, DateTime dateOfBirth, string phoneNumber, string email, string address)
+        public static bool Update(int? personID, string firstName, string lastName, byte gender, DateTime dateOfBirth, string phoneNumber, string email, string address)
         {
             int rowAffected = 0;
 
@@ -113,7 +113,7 @@ namespace Study_center__DataAccess_
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@PersonID", personID);
+                        command.Parameters.AddWithValue("@PersonID", (object)personID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@Gender", gender);
