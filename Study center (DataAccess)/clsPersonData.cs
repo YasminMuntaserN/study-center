@@ -5,7 +5,7 @@ using Study_center__DataAccess_.Global;
 
 namespace Study_center__DataAccess_
 {
-    public class PersonData
+    public class clsPersonData
     {
         public static bool GetPersonInfoByID(int? personID, ref string firstName, ref string lastName, ref byte gender, ref DateTime dateOfBirth, ref string phoneNumber, ref string email, ref string address)
         {
