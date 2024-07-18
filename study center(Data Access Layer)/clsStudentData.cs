@@ -12,7 +12,7 @@ namespace study_center_Data_Access_Layer_
     public class clsStudentData
     {
         public static bool GetInfoByStudentID(int? studentID, ref int? personID, ref byte? gradeLevelID,
-        ref int? createdByUserID,string EmergencyContactPhone, ref DateTime EnrollmentDate)
+        ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
         {
             bool isFound = false;
 
@@ -60,7 +60,7 @@ namespace study_center_Data_Access_Layer_
         }
 
         public static bool GetInfoByPersonID(int? personID, ref int? studentID, ref byte? gradeLevelID,
-            ref int? createdByUserID, string EmergencyContactPhone, ref DateTime EnrollmentDate)
+            ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
         {
             bool isFound = false;
 

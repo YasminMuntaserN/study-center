@@ -14,7 +14,7 @@ namespace study_center__Business_
         public EnMode Mode;
         public enum EnGender : byte { Male = 0, Female = 1 };
 
-        public int? PersonID { get; private set; }
+        public int? PersonID { get;  set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName => string.Join(" ", FirstName, LastName);
