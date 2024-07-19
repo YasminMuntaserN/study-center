@@ -168,5 +168,42 @@ namespace StudyCenter_DataAccessLayer
 
             return gradeName;
         }
+
+        public static int? GetGradeLevelID(string GradeName)
+        {
+            // This function will return the new person id if succeeded and null if not
+            int? gradeLevelID = null;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetGradeLevelName", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@GradeName", GradeName);
+
+                        SqlParameter outputIdParam = new SqlParameter("@GradeName", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        command.Parameters.Add(outputIdParam);
+
+                        command.ExecuteNonQuery();
+
+                        gradeLevelID = (byte?)(int)outputIdParam.Value;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorLogger.LogError(ex);
+            }
+
+            return gradeLevelID;
+        }
     }
 }

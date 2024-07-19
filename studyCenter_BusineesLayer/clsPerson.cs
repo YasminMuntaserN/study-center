@@ -38,7 +38,7 @@ namespace studyCenter_BusineesLayer
             Email = null;
         }
 
-        private clsPerson(int? personID, string firstName, string lastName, EnGender gender,
+        public clsPerson(int? personID, string firstName, string lastName, EnGender gender,
             DateTime dateOfBirth, string phoneNumber, string email, string address)
         {
             Mode = EnMode.Update;

@@ -112,7 +112,7 @@ namespace Study_center
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(887, 76);
+            lblTitle.Size = new Size(848, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Person";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;

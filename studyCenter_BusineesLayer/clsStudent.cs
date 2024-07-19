@@ -10,7 +10,7 @@ namespace studyCenter_BusineesLayer
         public enum EnFindStudentBy { PersonID = 0, StudentID = 1 }
         public int? StudentID { get; set; }
         public int? personID { get; set; }
-        public byte? GradeLevelID { get; set; }
+        public int? GradeLevelID { get; set; }
         string EmergencyContactPhone { get; set; }
         public int? CreatedByUserID { get; set; }
         public DateTime EnrollmentDate { get; set; }
@@ -27,7 +27,7 @@ namespace studyCenter_BusineesLayer
             _Mode = enMode.AddNew;
         }
 
-        private clsStudent(int? studentID, int? personID, byte? gradeLevelID,
+        public clsStudent(int? studentID, int? personID, byte? gradeLevelID,
                           int? createdByUserID, string emergencyContactPhone, DateTime enrollmentDate, string firstName, string lastName, EnGender gender,
                           DateTime dateOfBirth, string phoneNumber, string email, string address)
             :

@@ -72,7 +72,7 @@
             btnSearch.BackColor = Color.Transparent;
             btnSearch.CheckedState.ImageSize = new Size(64, 64);
             btnSearch.HoverState.ImageSize = new Size(64, 64);
-            btnSearch.Image = Properties.Resources.user_avatar__4_1;
+            btnSearch.Image = Properties.Resources.user_avatar__4_;
             btnSearch.ImageOffset = new Point(0, 0);
             btnSearch.ImageRotate = 0F;
             btnSearch.ImageSize = new Size(44, 44);
@@ -89,7 +89,7 @@
             btnAdd.BackColor = Color.Transparent;
             btnAdd.CheckedState.ImageSize = new Size(64, 64);
             btnAdd.HoverState.ImageSize = new Size(64, 64);
-            btnAdd.Image = Properties.Resources.contact1;
+            btnAdd.Image = Properties.Resources.contact;
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(44, 44);

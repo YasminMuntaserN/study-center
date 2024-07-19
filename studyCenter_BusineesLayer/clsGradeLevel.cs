@@ -75,10 +75,10 @@ namespace studyCenter_BusineesLayer
             return (isFound) ? (new clsGradeLevel(gradeLevelID, gradeName)) : null;
         }
 
-        public static bool Delete(byte? gradeLevelID)
+        public static bool Delete(int? gradeLevelID)
             => clsGradeLevelData.Delete(gradeLevelID);
 
-        public static bool Exists(byte? gradeLevelID)
+        public static bool Exists(int? gradeLevelID)
             => clsGradeLevelData.Exists(gradeLevelID);
 
         public static bool Exists(string gradeName)
@@ -86,7 +86,10 @@ namespace studyCenter_BusineesLayer
 
         public static DataTable All() => clsGradeLevelData.All();
 
-        public static string GetGradeLevelName(byte? gradeLevelID)
+        public static string GetGradeLevelName(int? gradeLevelID)
             => clsGradeLevelData.GetGradeLevelName(gradeLevelID);
+
+        public static int? GetGradeLevelName(string gradeName)
+           => clsGradeLevelData.GetGradeLevelID(gradeName);
     }
 }
