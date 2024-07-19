@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Study_center__DataAccess_.Global
+namespace StudyCenter_DataAccessLayer.Global_classes
 {
     public class clsErrorLogger
     {
-         /// <summary>
+        /// <summary>
         ///   This Method For Logging Try Catch Exception From Data Access For This Project
         public static void LogError(Exception ex)
         {

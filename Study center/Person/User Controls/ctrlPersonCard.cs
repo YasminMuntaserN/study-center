@@ -1,7 +1,6 @@
 ﻿using Guna.UI2.WinForms;
-using Study_center.Global;
-using Study_center.Properties;
-using study_center__Business_;
+using Study_center.Global_Classes;
+using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,10 +62,11 @@ namespace Study_center.Person.User_Controls
             _FillPersonData();
             return true;
         }
-
+     
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmAddPerson frmAddPerson = new frmAddPerson(PersonID);
+            frmAddPerson.ShowDialog();  
         }
     }
 }

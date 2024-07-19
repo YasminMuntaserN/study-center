@@ -1,24 +1,17 @@
-﻿using study_center_Data_Access_Layer_;
-using System;
-using System.Collections.Generic;
+﻿using StudyCenter_DataAccessLayer;
 using System.Data;
-using System.Linq;
-using System.Net;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace study_center__Business_
+namespace studyCenter_BusineesLayer
 {
-    public class clsStudent :clsPerson
+    public class clsStudent : clsPerson
     {
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode = enMode.AddNew;
-        public enum EnFindStudentBy { PersonID = 0, StudentID = 1}
+        public enum EnFindStudentBy { PersonID = 0, StudentID = 1 }
         public int? StudentID { get; set; }
         public int? personID { get; set; }
         public byte? GradeLevelID { get; set; }
-        string EmergencyContactPhone {  get; set; }
+        string EmergencyContactPhone { get; set; }
         public int? CreatedByUserID { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
@@ -28,7 +21,7 @@ namespace study_center__Business_
             PersonID = null;
             GradeLevelID = null;
             CreatedByUserID = null;
-            EmergencyContactPhone=string.Empty;
+            EmergencyContactPhone = string.Empty;
             EnrollmentDate = DateTime.Now;
 
             _Mode = enMode.AddNew;
@@ -38,7 +31,7 @@ namespace study_center__Business_
                           int? createdByUserID, string emergencyContactPhone, DateTime enrollmentDate, string firstName, string lastName, EnGender gender,
                           DateTime dateOfBirth, string phoneNumber, string email, string address)
             :
-            base(personID, firstName, lastName,  gender, dateOfBirth, address, phoneNumber, email )
+            base(personID, firstName, lastName, gender, dateOfBirth, address, phoneNumber, email)
         {
             StudentID = studentID;
             PersonID = personID;
@@ -55,7 +48,7 @@ namespace study_center__Business_
             int? personID = null;
             byte? gradeLevelID = null;
             int? createdByUserID = null;
-            string EmergencyContactPhone=string.Empty;
+            string EmergencyContactPhone = string.Empty;
             DateTime enrollmentDate = DateTime.Now;
 
             bool isFound = clsStudentData.GetInfoByStudentID(studentID, ref personID,
@@ -115,7 +108,7 @@ namespace study_center__Business_
 
         private bool _Add()
         {
-           this.StudentID = clsStudentData.AddNewStudent(personID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value);
+            this.StudentID = clsStudentData.AddNewStudent(personID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value);
 
             return (StudentID.HasValue);
         }

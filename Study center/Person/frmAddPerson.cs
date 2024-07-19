@@ -1,17 +1,11 @@
-﻿using Guna.UI2.WinForms;
-using Study_center.Global;
-using study_center__Business_;
-using System;
-using System.Collections.Generic;
+using Guna.UI2.WinForms;
+using studyCenter_BusineesLayer;
+using static studyCenter_BusineesLayer.clsPerson;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Study_center.Global_Classes;
 
-namespace Study_center.Person
+namespace Study_center
 {
     public partial class frmAddPerson : Form
     {
@@ -150,9 +144,12 @@ namespace Study_center.Person
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void frmAddPerson_Load(object sender, EventArgs e)
         {
-            this.Close();
+            _ResetTitles();
+
+            if (_Mode == enMode.Update)
+                _LoadData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -168,18 +165,12 @@ namespace Study_center.Person
             _Save();
         }
 
-        private void frmAddPerson_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
-            _ResetTitles();
-
-            if (_Mode == enMode.Update)
-                _LoadData();
+            this.Close();
         }
 
-        private void frmAddPerson_Activated(object sender, EventArgs e)
-        {
-            txtFirstName.Focus();
-        }
+        private void frmAddPerson_Activated(object sender, EventArgs e) => txtFirstName.Focus();
+
     }
 }

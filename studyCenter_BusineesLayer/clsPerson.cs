@@ -1,12 +1,11 @@
-﻿using System;
+﻿using StudyCenter_DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Study_center__DataAccess_;
 
-
-namespace study_center__Business_
+namespace studyCenter_BusineesLayer
 {
     public class clsPerson
     {
@@ -14,7 +13,7 @@ namespace study_center__Business_
         public EnMode Mode;
         public enum EnGender : byte { Male = 0, Female = 1 };
 
-        public int? PersonID { get;  set; }
+        public int? PersonID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName => string.Join(" ", FirstName, LastName);
@@ -30,17 +29,17 @@ namespace study_center__Business_
             Mode = EnMode.AddNew;
 
             PersonID = null;
-            FirstName = string.Empty; 
+            FirstName = string.Empty;
             LastName = string.Empty;
             BirthDate = DateTime.Now;
             Gender = EnGender.Male;
             Address = null;
-            Phone = string.Empty; 
+            Phone = string.Empty;
             Email = null;
         }
 
         protected clsPerson(int? personID, string firstName, string lastName, EnGender gender,
-            DateTime dateOfBirth, string phoneNumber,string email, string address)
+            DateTime dateOfBirth, string phoneNumber, string email, string address)
         {
             Mode = EnMode.Update;
 
@@ -64,7 +63,7 @@ namespace study_center__Business_
             string email = null;
             string address = null;
 
-            bool isFound = clsPersonData.GetPersonInfoByID(personID, ref firstName, 
+            bool isFound = clsPersonData.GetPersonInfoByID(personID, ref firstName,
                  ref lastName, ref gender, ref dateOfBirth, ref phoneNumber,
                 ref email, ref address);
 
@@ -83,7 +82,7 @@ namespace study_center__Business_
         }
 
         private bool UpdatePerson() =>
-             clsPersonData.Update(PersonID, FirstName,  LastName, (byte)Gender, BirthDate, Phone, Email, Address);
+             clsPersonData.Update(PersonID, FirstName, LastName, (byte)Gender, BirthDate, Phone, Email, Address);
 
         public bool Save()
         {
@@ -105,6 +104,5 @@ namespace study_center__Business_
         }
 
         public static bool DeletePerson(int? personID) => clsPersonData.Delete(personID);
-
     }
 }

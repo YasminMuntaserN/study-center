@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study center", "Study center.csproj", "{0ABF808F-B88C-4EE7-887F-64188F6D8F52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study center", "Study center.csproj", "{F28A59E5-88E4-4A3C-9A76-39EA99FE9406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "study center (Business)", "..\study center (Business)\study center (Business).csproj", "{90413C91-6080-459F-A644-FB94F5563F5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studyCenter_BusineesLayer", "..\studyCenter_BusineesLayer\studyCenter_BusineesLayer.csproj", "{90A0FEAB-A7BC-4920-8744-28F065D5A546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "study center(Data Access Layer)", "..\study center(Data Access Layer)\study center(Data Access Layer).csproj", "{FBD0DB1E-043B-47A2-BF71-AB3146BF97F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCenter_DataAccessLayer", "..\StudyCenter_DataAccessLayer\StudyCenter_DataAccessLayer.csproj", "{E4FD0217-D6AE-4C0F-B03F-20AD83FCE1F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ABF808F-B88C-4EE7-887F-64188F6D8F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ABF808F-B88C-4EE7-887F-64188F6D8F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ABF808F-B88C-4EE7-887F-64188F6D8F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ABF808F-B88C-4EE7-887F-64188F6D8F52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90413C91-6080-459F-A644-FB94F5563F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90413C91-6080-459F-A644-FB94F5563F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90413C91-6080-459F-A644-FB94F5563F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90413C91-6080-459F-A644-FB94F5563F5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBD0DB1E-043B-47A2-BF71-AB3146BF97F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBD0DB1E-043B-47A2-BF71-AB3146BF97F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBD0DB1E-043B-47A2-BF71-AB3146BF97F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBD0DB1E-043B-47A2-BF71-AB3146BF97F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28A59E5-88E4-4A3C-9A76-39EA99FE9406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28A59E5-88E4-4A3C-9A76-39EA99FE9406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28A59E5-88E4-4A3C-9A76-39EA99FE9406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28A59E5-88E4-4A3C-9A76-39EA99FE9406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A0FEAB-A7BC-4920-8744-28F065D5A546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A0FEAB-A7BC-4920-8744-28F065D5A546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A0FEAB-A7BC-4920-8744-28F065D5A546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A0FEAB-A7BC-4920-8744-28F065D5A546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4FD0217-D6AE-4C0F-B03F-20AD83FCE1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4FD0217-D6AE-4C0F-B03F-20AD83FCE1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4FD0217-D6AE-4C0F-B03F-20AD83FCE1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4FD0217-D6AE-4C0F-B03F-20AD83FCE1F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {10C06F2C-2E19-46A0-8844-3C05F70F308C}
+		SolutionGuid = {11DBBDAD-60C5-4B70-A39A-C590B4D41F57}
 	EndGlobalSection
 EndGlobal

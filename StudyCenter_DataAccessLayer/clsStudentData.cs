@@ -1,13 +1,13 @@
-﻿using Study_center__DataAccess_.Global;
+﻿using Microsoft.Data.SqlClient;
+using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace study_center_Data_Access_Layer_
+namespace StudyCenter_DataAccessLayer
 {
     public class clsStudentData
     {
@@ -107,9 +107,9 @@ namespace study_center_Data_Access_Layer_
             return isFound;
         }
 
-        public static int? AddNewStudent(int personID, byte gradeLevelID, string EmergencyContactPhone,  int createdByUserID)
+        public static int? AddNewStudent(int personID, byte gradeLevelID, string EmergencyContactPhone, int createdByUserID)
         {
-           int? studentID = null;
+            int? studentID = null;
 
             try
             {
@@ -180,8 +180,8 @@ namespace study_center_Data_Access_Layer_
         }
 
         public static bool Delete(int? studentID)
-            =>clsDataAccessHelper.Delete("SP_DeleteStudent", "StudentID", studentID);
- 
+            => clsDataAccessHelper.Delete("SP_DeleteStudent", "StudentID", studentID);
+
         public static bool Exists(int? studentID)
             => clsDataAccessHelper.Exists("SP_DoesStudentExist", "StudentID", studentID);
 

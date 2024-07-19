@@ -28,447 +28,423 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.lblPersonID = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pbGender = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
-            this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            llEditPersonInfo = new LinkLabel();
+            lblPhone = new Label();
+            lblAge = new Label();
+            lblDateOfBirth = new Label();
+            pictureBox8 = new PictureBox();
+            label9 = new Label();
+            pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            label11 = new Label();
+            label10 = new Label();
+            lblAddress = new Label();
+            lblEmail = new Label();
+            lblGender = new Label();
+            lblFullName = new Label();
+            lblPersonID = new Label();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            label12 = new Label();
+            pictureBox1 = new PictureBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2GroupBox1.Controls.Add(this.llEditPersonInfo);
-            this.guna2GroupBox1.Controls.Add(this.label22);
-            this.guna2GroupBox1.Controls.Add(this.label5);
-            this.guna2GroupBox1.Controls.Add(this.label12);
-            this.guna2GroupBox1.Controls.Add(this.label6);
-            this.guna2GroupBox1.Controls.Add(this.label1);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox1);
-            this.guna2GroupBox1.Controls.Add(this.lblPhone);
-            this.guna2GroupBox1.Controls.Add(this.lblDateOfBirth);
-            this.guna2GroupBox1.Controls.Add(this.lblGender);
-            this.guna2GroupBox1.Controls.Add(this.lblAddress);
-            this.guna2GroupBox1.Controls.Add(this.lblEmail);
-            this.guna2GroupBox1.Controls.Add(this.lblAge);
-            this.guna2GroupBox1.Controls.Add(this.lblFullName);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox4);
-            this.guna2GroupBox1.Controls.Add(this.lblPersonID);
-            this.guna2GroupBox1.Controls.Add(this.pbGender);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox8);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox7);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox5);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox3);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox2);
-            this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.Controls.Add(this.label2);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(838, 331);
-            this.guna2GroupBox1.TabIndex = 0;
-            this.guna2GroupBox1.Text = "Person Info";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblPhone.Location = new System.Drawing.Point(594, 253);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(62, 28);
-            this.lblPhone.TabIndex = 186;
-            this.lblPhone.Text = "[????]";
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.BackColor = System.Drawing.Color.Transparent;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Black;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(594, 162);
-            this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(62, 28);
-            this.lblDateOfBirth.TabIndex = 185;
-            this.lblDateOfBirth.Text = "[????]";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.BackColor = System.Drawing.Color.Transparent;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.ForeColor = System.Drawing.Color.Black;
-            this.lblGender.Location = new System.Drawing.Point(166, 158);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(62, 28);
-            this.lblGender.TabIndex = 184;
-            this.lblGender.Text = "[????]";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblAddress.Location = new System.Drawing.Point(171, 250);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(240, 54);
-            this.lblAddress.TabIndex = 183;
-            this.lblAddress.Text = "[????]";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(166, 203);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(62, 28);
-            this.lblEmail.TabIndex = 182;
-            this.lblEmail.Text = "[????]";
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.Color.Transparent;
-            this.lblAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.Black;
-            this.lblAge.Location = new System.Drawing.Point(594, 207);
-            this.lblAge.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(62, 28);
-            this.lblAge.TabIndex = 181;
-            this.lblAge.Text = "[????]";
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.BackColor = System.Drawing.Color.Transparent;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFullName.Location = new System.Drawing.Point(166, 112);
-            this.lblFullName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(62, 28);
-            this.lblFullName.TabIndex = 180;
-            this.lblFullName.Text = "[????]";
-            // 
-            // lblPersonID
-            // 
-            this.lblPersonID.AutoSize = true;
-            this.lblPersonID.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.ForeColor = System.Drawing.Color.Black;
-            this.lblPersonID.Location = new System.Drawing.Point(166, 66);
-            this.lblPersonID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(62, 28);
-            this.lblPersonID.TabIndex = 177;
-            this.lblPersonID.Text = "[????]";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(474, 253);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 29);
-            this.label4.TabIndex = 171;
-            this.label4.Text = "Phone:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(417, 162);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 29);
-            this.label3.TabIndex = 170;
-            this.label3.Text = "Date Of Birth:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(493, 207);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 29);
-            this.label2.TabIndex = 169;
-            this.label2.Text = "Age:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(7, 67);
-            this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(119, 29);
-            this.label22.TabIndex = 188;
-            this.label22.Text = "Person ID:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(22, 159);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 29);
-            this.label5.TabIndex = 192;
-            this.label5.Text = "Gender:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(17, 250);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 29);
-            this.label12.TabIndex = 191;
-            this.label12.Text = "Address:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(43, 204);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 29);
-            this.label6.TabIndex = 190;
-            this.label6.Text = "Email:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(37, 113);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 29);
-            this.label1.TabIndex = 189;
-            this.label1.Text = "Name:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Study_center.Properties.Resources.id_card;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 63);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 187;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::Study_center.Properties.Resources.calendar;
-            this.pictureBox4.Location = new System.Drawing.Point(550, 158);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 174;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pbGender
-            // 
-            this.pbGender.BackColor = System.Drawing.Color.Transparent;
-            this.pbGender.Image = global::Study_center.Properties.Resources.genders;
-            this.pbGender.Location = new System.Drawing.Point(121, 154);
-            this.pbGender.Margin = new System.Windows.Forms.Padding(4);
-            this.pbGender.Name = "pbGender";
-            this.pbGender.Size = new System.Drawing.Size(36, 32);
-            this.pbGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGender.TabIndex = 179;
-            this.pbGender.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::Study_center.Properties.Resources.user;
-            this.pictureBox8.Location = new System.Drawing.Point(121, 108);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 178;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::Study_center.Properties.Resources.location;
-            this.pictureBox7.Location = new System.Drawing.Point(121, 245);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 176;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Study_center.Properties.Resources.email;
-            this.pictureBox5.Location = new System.Drawing.Point(121, 199);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 175;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Study_center.Properties.Resources.phone_call;
-            this.pictureBox3.Location = new System.Drawing.Point(550, 250);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 173;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Study_center.Properties.Resources.age;
-            this.pictureBox2.Location = new System.Drawing.Point(550, 207);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 172;
-            this.pictureBox2.TabStop = false;
+            guna2GroupBox1.Controls.Add(llEditPersonInfo);
+            guna2GroupBox1.Controls.Add(lblPhone);
+            guna2GroupBox1.Controls.Add(lblAge);
+            guna2GroupBox1.Controls.Add(lblDateOfBirth);
+            guna2GroupBox1.Controls.Add(pictureBox8);
+            guna2GroupBox1.Controls.Add(label9);
+            guna2GroupBox1.Controls.Add(pictureBox6);
+            guna2GroupBox1.Controls.Add(pictureBox7);
+            guna2GroupBox1.Controls.Add(label11);
+            guna2GroupBox1.Controls.Add(label10);
+            guna2GroupBox1.Controls.Add(lblAddress);
+            guna2GroupBox1.Controls.Add(lblEmail);
+            guna2GroupBox1.Controls.Add(lblGender);
+            guna2GroupBox1.Controls.Add(lblFullName);
+            guna2GroupBox1.Controls.Add(lblPersonID);
+            guna2GroupBox1.Controls.Add(pictureBox5);
+            guna2GroupBox1.Controls.Add(pictureBox4);
+            guna2GroupBox1.Controls.Add(pictureBox3);
+            guna2GroupBox1.Controls.Add(pictureBox2);
+            guna2GroupBox1.Controls.Add(label12);
+            guna2GroupBox1.Controls.Add(pictureBox1);
+            guna2GroupBox1.Controls.Add(label5);
+            guna2GroupBox1.Controls.Add(label4);
+            guna2GroupBox1.Controls.Add(label3);
+            guna2GroupBox1.Controls.Add(label2);
+            guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
+            guna2GroupBox1.CustomizableEdges = customizableEdges1;
+            guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
+            guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
+            guna2GroupBox1.Location = new Point(0, 0);
+            guna2GroupBox1.Name = "guna2GroupBox1";
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GroupBox1.Size = new Size(838, 331);
+            guna2GroupBox1.TabIndex = 0;
+            guna2GroupBox1.Text = "Person Info";
             // 
             // llEditPersonInfo
             // 
-            this.llEditPersonInfo.AutoSize = true;
-            this.llEditPersonInfo.BackColor = System.Drawing.Color.Transparent;
-            this.llEditPersonInfo.Enabled = false;
-            this.llEditPersonInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llEditPersonInfo.Location = new System.Drawing.Point(544, 64);
-            this.llEditPersonInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.llEditPersonInfo.Name = "llEditPersonInfo";
-            this.llEditPersonInfo.Size = new System.Drawing.Size(185, 32);
-            this.llEditPersonInfo.TabIndex = 193;
-            this.llEditPersonInfo.TabStop = true;
-            this.llEditPersonInfo.Text = "Edit Person Info";
-            this.llEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPersonInfo_LinkClicked);
+            llEditPersonInfo.AutoSize = true;
+            llEditPersonInfo.BackColor = Color.White;
+            llEditPersonInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llEditPersonInfo.Location = new Point(518, 55);
+            llEditPersonInfo.Name = "llEditPersonInfo";
+            llEditPersonInfo.Size = new Size(185, 32);
+            llEditPersonInfo.TabIndex = 59;
+            llEditPersonInfo.TabStop = true;
+            llEditPersonInfo.Text = "Edit Person Info";
+            llEditPersonInfo.LinkClicked += llEditPersonInfo_LinkClicked;
+            // 
+            // lblPhone
+            // 
+            lblPhone.AutoSize = true;
+            lblPhone.BackColor = Color.White;
+            lblPhone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblPhone.ForeColor = Color.Black;
+            lblPhone.Location = new Point(641, 277);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(62, 28);
+            lblPhone.TabIndex = 58;
+            lblPhone.Text = "[????]";
+            // 
+            // lblAge
+            // 
+            lblAge.AutoSize = true;
+            lblAge.BackColor = Color.White;
+            lblAge.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblAge.ForeColor = Color.Black;
+            lblAge.Location = new Point(641, 224);
+            lblAge.Name = "lblAge";
+            lblAge.Size = new Size(62, 28);
+            lblAge.TabIndex = 57;
+            lblAge.Text = "[????]";
+            // 
+            // lblDateOfBirth
+            // 
+            lblDateOfBirth.AutoSize = true;
+            lblDateOfBirth.BackColor = Color.White;
+            lblDateOfBirth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDateOfBirth.ForeColor = Color.Black;
+            lblDateOfBirth.Location = new Point(641, 168);
+            lblDateOfBirth.Name = "lblDateOfBirth";
+            lblDateOfBirth.Size = new Size(62, 28);
+            lblDateOfBirth.TabIndex = 56;
+            lblDateOfBirth.Text = "[????]";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.Image = Properties.Resources.age;
+            pictureBox8.Location = new Point(595, 223);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(36, 32);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 55;
+            pictureBox8.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(524, 223);
+            label9.Name = "label9";
+            label9.Size = new Size(64, 31);
+            label9.TabIndex = 54;
+            label9.Text = "Age:";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Image = Properties.Resources.phone_call;
+            pictureBox6.Location = new Point(595, 275);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 32);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 53;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Image = Properties.Resources.calendar;
+            pictureBox7.Location = new Point(599, 169);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(36, 32);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 52;
+            pictureBox7.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(503, 275);
+            label11.Name = "label11";
+            label11.Size = new Size(85, 31);
+            label11.TabIndex = 51;
+            label11.Text = "Phone:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(425, 169);
+            label10.Name = "label10";
+            label10.Size = new Size(177, 31);
+            label10.TabIndex = 50;
+            label10.Text = "Date Of Birth:";
+            // 
+            // lblAddress
+            // 
+            lblAddress.AutoSize = true;
+            lblAddress.BackColor = Color.White;
+            lblAddress.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblAddress.ForeColor = Color.Black;
+            lblAddress.Location = new Point(153, 277);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(62, 28);
+            lblAddress.TabIndex = 49;
+            lblAddress.Text = "[????]";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.BackColor = Color.White;
+            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblEmail.ForeColor = Color.Black;
+            lblEmail.Location = new Point(153, 223);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(62, 28);
+            lblEmail.TabIndex = 48;
+            lblEmail.Text = "[????]";
+            // 
+            // lblGender
+            // 
+            lblGender.AutoSize = true;
+            lblGender.BackColor = Color.White;
+            lblGender.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblGender.ForeColor = Color.Black;
+            lblGender.Location = new Point(153, 168);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(62, 28);
+            lblGender.TabIndex = 47;
+            lblGender.Text = "[????]";
+            // 
+            // lblFullName
+            // 
+            lblFullName.AutoSize = true;
+            lblFullName.BackColor = Color.White;
+            lblFullName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblFullName.ForeColor = Color.Maroon;
+            lblFullName.Location = new Point(153, 109);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(62, 28);
+            lblFullName.TabIndex = 46;
+            lblFullName.Text = "[????]";
+            // 
+            // lblPersonID
+            // 
+            lblPersonID.AutoSize = true;
+            lblPersonID.BackColor = Color.Transparent;
+            lblPersonID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblPersonID.ForeColor = Color.Black;
+            lblPersonID.Location = new Point(190, 57);
+            lblPersonID.Name = "lblPersonID";
+            lblPersonID.Size = new Size(60, 32);
+            lblPersonID.TabIndex = 45;
+            lblPersonID.Text = "N\\A";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Image = Properties.Resources.id;
+            pictureBox5.Location = new Point(148, 56);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(36, 32);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 44;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = Properties.Resources.location;
+            pictureBox4.Location = new Point(111, 275);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(36, 32);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 43;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = Properties.Resources.email;
+            pictureBox3.Location = new Point(111, 221);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(36, 32);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 42;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources.genders;
+            pictureBox2.Location = new Point(111, 168);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(36, 32);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 41;
+            pictureBox2.TabStop = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(6, 57);
+            label12.Name = "label12";
+            label12.Size = new Size(132, 31);
+            label12.TabIndex = 40;
+            label12.Text = "Person ID:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Location = new Point(111, 109);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(36, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 38;
+            pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(6, 275);
+            label5.Name = "label5";
+            label5.Size = new Size(111, 31);
+            label5.TabIndex = 37;
+            label5.Text = "Address:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(14, 221);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 31);
+            label4.TabIndex = 36;
+            label4.Text = "Email:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(6, 161);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 31);
+            label3.TabIndex = 35;
+            label3.Text = "Gender:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(10, 110);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 31);
+            label2.TabIndex = 34;
+            label2.Text = "Name:";
             // 
             // ctrlPersonCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.guna2GroupBox1);
-            this.Name = "ctrlPersonCard";
-            this.Size = new System.Drawing.Size(834, 330);
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(guna2GroupBox1);
+            Name = "ctrlPersonCard";
+            Size = new Size(838, 329);
+            guna2GroupBox1.ResumeLayout(false);
+            guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label lblPersonID;
-        private System.Windows.Forms.PictureBox pbGender;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel llEditPersonInfo;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private Label label12;
+        private PictureBox pictureBox1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label lblAddress;
+        private Label lblEmail;
+        private Label lblGender;
+        private Label lblFullName;
+        private Label lblPersonID;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox7;
+        private Label label11;
+        private Label label10;
+        private LinkLabel llEditPersonInfo;
+        private Label lblPhone;
+        private Label lblAge;
+        private Label lblDateOfBirth;
+        private PictureBox pictureBox8;
+        private Label label9;
     }
 }
