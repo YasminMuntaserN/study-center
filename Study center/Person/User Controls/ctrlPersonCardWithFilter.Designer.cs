@@ -63,7 +63,7 @@
             gbFilter.Location = new Point(0, 0);
             gbFilter.Name = "gbFilter";
             gbFilter.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            gbFilter.Size = new Size(839, 148);
+            gbFilter.Size = new Size(887, 148);
             gbFilter.TabIndex = 1;
             gbFilter.Text = "Filter";
             // 
@@ -76,7 +76,7 @@
             btnSearch.ImageOffset = new Point(0, 0);
             btnSearch.ImageRotate = 0F;
             btnSearch.ImageSize = new Size(44, 44);
-            btnSearch.Location = new Point(532, 58);
+            btnSearch.Location = new Point(685, 58);
             btnSearch.Name = "btnSearch";
             btnSearch.PressedState.ImageSize = new Size(64, 64);
             btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -93,7 +93,7 @@
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(44, 44);
-            btnAdd.Location = new Point(602, 58);
+            btnAdd.Location = new Point(755, 58);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -115,7 +115,7 @@
             cbFilter.ForeColor = Color.Black;
             cbFilter.ItemHeight = 30;
             cbFilter.Items.AddRange(new object[] { "Person ID" });
-            cbFilter.Location = new Point(91, 61);
+            cbFilter.Location = new Point(135, 70);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbFilter.Size = new Size(175, 36);
@@ -136,7 +136,7 @@
             txtFilterValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtFilterValue.ForeColor = Color.Black;
             txtFilterValue.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtFilterValue.Location = new Point(289, 58);
+            txtFilterValue.Location = new Point(333, 67);
             txtFilterValue.Margin = new Padding(4, 6, 4, 6);
             txtFilterValue.Name = "txtFilterValue";
             txtFilterValue.PasswordChar = '\0';
@@ -154,7 +154,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(3, 58);
+            label12.Location = new Point(47, 67);
             label12.Name = "label12";
             label12.Size = new Size(82, 31);
             label12.TabIndex = 41;
@@ -162,9 +162,9 @@
             // 
             // ctrlPersonCard1
             // 
-            ctrlPersonCard1.Location = new Point(0, 131);
+            ctrlPersonCard1.Location = new Point(0, 164);
             ctrlPersonCard1.Name = "ctrlPersonCard1";
-            ctrlPersonCard1.Size = new Size(839, 336);
+            ctrlPersonCard1.Size = new Size(887, 336);
             ctrlPersonCard1.TabIndex = 2;
             // 
             // errorProvider1
@@ -178,7 +178,7 @@
             Controls.Add(ctrlPersonCard1);
             Controls.Add(gbFilter);
             Name = "ctrlPersonCardWithFilter";
-            Size = new Size(839, 467);
+            Size = new Size(888, 500);
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

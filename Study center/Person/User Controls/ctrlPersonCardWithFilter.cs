@@ -9,31 +9,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Study_center.Person.User_Controls.ctrlPersonCardWithFilter;
 
 namespace Study_center.Person.User_Controls
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {
-        public class SelectPersonEventArgs : EventArgs
-        {
-            public int? PersonID { get; }
+        public enum EnSearchCriteria { PersonID, StudentID, TeacherID }
 
-            public SelectPersonEventArgs(int? PersonID)
-            {
-                this.PersonID = PersonID;
-            }
-        }
+        private int? _selectedID;
 
+        #region Declare Event
         public event EventHandler<SelectPersonEventArgs> OnPersonSelectedEvent;
 
-        public void OnPersonSelected(int? PersonID)
+        public int? PersonID;
+        // Event args class
+        public class SelectPersonEventArgs : EventArgs
         {
-            if (OnPersonSelectedEvent != null)
-            {
-                OnPersonSelectedEvent(this, new SelectPersonEventArgs(PersonID));
-            }
+            public int? PersonID { get; set; }
+            public ctrlPersonCardWithFilter.EnSearchCriteria SearchCriteria { get; set; }
         }
+        #endregion
 
+        #region Filter Enabled
         private bool _FilterEnabled = true;
 
         public bool FilterEnabled
@@ -46,56 +44,100 @@ namespace Study_center.Person.User_Controls
                 gbFilter.Enabled = _FilterEnabled;
             }
         }
+        #endregion
 
-        private clsPerson _Person;
-        private int? _PersonID;
-        public clsPerson PersonInfo => _Person;
-        public int? PersonID => _PersonID;
+        #region Data Back Event
+        private void DataBackEvent(int? personID)
+        {
+            cbFilter.SelectedIndex = 1;
+            txtFilterValue.Text = personID.ToString();
+            ctrlPersonCard1.LoadPersonData(personID);
+            PersonID = personID;
+        }
 
+        #endregion
         public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
         }
 
-        public void LoadPersonInfo(int? PersonID)
+        public int? GetSelectedID => _selectedID;
+
+        public void LoadPersonInfo(EnSearchCriteria searchCriteria, int? searchValue)
         {
-            txtFilterValue.Text = PersonID.ToString();
-            ctrlPersonCard1.LoadPersonData(PersonID);
+            _selectedID = searchValue;
+            // Load common person data based on search criteria
+            clsPerson person = null;
 
-            if (OnPersonSelectedEvent != null)
-                OnPersonSelected(ctrlPersonCard1?.PersonID);
-            _Person = ctrlPersonCard1.Person;
-            _PersonID = PersonID;
+            switch (searchCriteria)
+            {
+                case EnSearchCriteria.PersonID:
+                    person = clsPerson.Find(searchValue);
+                    break;
+                case EnSearchCriteria.StudentID:
+                    clsStudent student = clsStudent.Find(searchValue, clsStudent.EnFindStudentBy.StudentID);
+                    person = student?.ToPerson();
+                    break;
+                case EnSearchCriteria.TeacherID:
+                    clsTeacher teacher = clsTeacher.Find(searchValue, clsTeacher.EnFindTeacherBy.TeacherID);
+                    person = teacher?.ToPerson();
+                    break;
+            }
 
+            if (person == null)
+            {
+                MessageBox.Show("Person not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            PersonID = person.PersonID;
+            ctrlPersonCard1.LoadPersonData(PersonID);    
+
+
+            OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = person.PersonID, SearchCriteria = searchCriteria });
         }
 
-        private void DataBackEvent(int? PersonID)
+        public void SetSearchCriteria(EnSearchCriteria searchCriteria)
         {
-            cbFilter.SelectedIndex = 1;
-            txtFilterValue.Text = PersonID.ToString();
-            ctrlPersonCard1.LoadPersonData(PersonID);
-            _Person = ctrlPersonCard1.Person;
-            _PersonID = _Person.PersonID;
+            cbFilter.Items.Clear();
+
+            switch (searchCriteria)
+            {
+                case EnSearchCriteria.PersonID:
+                    cbFilter.Items.Add("PersonID");
+                    break;
+                case EnSearchCriteria.StudentID:
+                    cbFilter.Items.Add("PersonID");
+                    cbFilter.Items.Add("StudentID");
+                    break;
+                case EnSearchCriteria.TeacherID:
+                    cbFilter.Items.Add("PersonID");
+                    cbFilter.Items.Add("TeacherID");
+                    break;
+            }
+
+            if (cbFilter.Items.Count > 0)
+                cbFilter.SelectedIndex = 0;
         }
 
         private void FindNow()
         {
-            if (!(cbFilter.SelectedIndex > -1))
-            {
-                errorProvider1.SetError(cbFilter, "You must choose how you want to search");
-                return;
-            }
-            var personId = int.Parse(txtFilterValue.Text.Trim());
 
-            if (cbFilter.Text.Trim() == "Person ID" && !clsPerson.DoesPersonExist(personId))
+            if (cbFilter.SelectedItem == null || string.IsNullOrEmpty(txtFilterValue.Text))
             {
-                clsMessages.AddToSystem("Person");
+                clsMessages.GeneralErrorMessage("Please select a search criteria and enter a search value.");
                 return;
             }
 
-            LoadPersonInfo(personId);
+            EnSearchCriteria searchCriteria = (EnSearchCriteria)Enum.Parse(typeof(EnSearchCriteria), cbFilter.SelectedItem.ToString());
+            int searchValue;
 
-            _PersonID = personId;
+            if (!int.TryParse(txtFilterValue.Text, out searchValue))
+            {
+                clsMessages.GeneralErrorMessage("Please enter a valid numeric search value.");
+                return;
+            }
+
+            LoadPersonInfo(searchCriteria, searchValue);
 
         }
 
@@ -119,8 +161,8 @@ namespace Study_center.Person.User_Controls
                 btnSearch.PerformClick();
             }
             //this will allow only digits if person id is selected
-            if (cbFilter.Text == "Person ID")
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+          e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
     }
 }

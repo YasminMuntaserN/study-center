@@ -46,6 +46,11 @@ namespace studyCenter_BusineesLayer
             _Mode = enMode.Update;
         }
 
+        public clsPerson ToPerson()
+        {
+            return new clsPerson(PersonID, FirstName, LastName, Gender, BirthDate, Address, Phone, Email);
+        }
+
         private static clsTeacher _FindByTeacherID(int? teacherID)
         {
             int? personID = null;

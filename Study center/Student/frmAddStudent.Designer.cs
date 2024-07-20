@@ -73,7 +73,7 @@
             ctrlPersonCardWithFilter1.FilterEnabled = true;
             ctrlPersonCardWithFilter1.Location = new Point(22, 109);
             ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            ctrlPersonCardWithFilter1.Size = new Size(831, 465);
+            ctrlPersonCardWithFilter1.Size = new Size(891, 490);
             ctrlPersonCardWithFilter1.TabIndex = 0;
             ctrlPersonCardWithFilter1.OnPersonSelectedEvent += ctrlPersonCardWithFilter1_OnPersonSelectedEvent;
             // 
@@ -94,10 +94,10 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges5;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(22, 571);
+            guna2GroupBox1.Location = new Point(31, 620);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2GroupBox1.Size = new Size(831, 226);
+            guna2GroupBox1.Size = new Size(882, 226);
             guna2GroupBox1.TabIndex = 1;
             guna2GroupBox1.Text = "Student Info";
             // 
@@ -260,7 +260,7 @@
             guna2Panel1.Location = new Point(-4, -4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(896, 82);
+            guna2Panel1.Size = new Size(954, 82);
             guna2Panel1.TabIndex = 2;
             // 
             // lblTitle
@@ -269,7 +269,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(3, 6);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(854, 76);
+            lblTitle.Size = new Size(951, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Student";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -279,7 +279,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(22, 84);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(849, 19);
+            guna2Separator1.Size = new Size(891, 19);
             guna2Separator1.TabIndex = 28;
             // 
             // btnClose
@@ -297,7 +297,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(618, 825);
+            btnClose.Location = new Point(627, 865);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnClose.Size = new Size(215, 50);
@@ -320,7 +320,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(391, 825);
+            btnSave.Location = new Point(400, 865);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSave.Size = new Size(215, 50);
@@ -336,7 +336,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 886);
+            ClientSize = new Size(947, 927);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2Separator1);

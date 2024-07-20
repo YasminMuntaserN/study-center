@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System;
@@ -67,7 +68,7 @@ namespace Study_center.Student
 
         private void _FillFieldsWithStudentInfo()
         {
-            ctrlPersonCardWithFilter1.LoadPersonInfo(_student.PersonID);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID,_student.PersonID);
 
             lblStudentID.Text = _student.StudentID.ToString();
             //  lblCreatedBy.Text = _student.CreatedByUserInfo?.Username;
@@ -160,6 +161,7 @@ namespace Study_center.Student
         private void frmAddStudent_Load(object sender, EventArgs e)
         {
             _ResetTitles();
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID);
 
             if (_Mode == enMode.Update)
                 _LoadData();

@@ -101,7 +101,7 @@
             guna2GroupBox1.Location = new Point(0, 0);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GroupBox1.Size = new Size(838, 331);
+            guna2GroupBox1.Size = new Size(887, 331);
             guna2GroupBox1.TabIndex = 0;
             guna2GroupBox1.Text = "Person Info";
             // 
@@ -110,7 +110,7 @@
             llEditPersonInfo.AutoSize = true;
             llEditPersonInfo.BackColor = Color.White;
             llEditPersonInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llEditPersonInfo.Location = new Point(518, 55);
+            llEditPersonInfo.Location = new Point(565, 57);
             llEditPersonInfo.Name = "llEditPersonInfo";
             llEditPersonInfo.Size = new Size(185, 32);
             llEditPersonInfo.TabIndex = 59;
@@ -124,7 +124,7 @@
             lblPhone.BackColor = Color.White;
             lblPhone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblPhone.ForeColor = Color.Black;
-            lblPhone.Location = new Point(641, 277);
+            lblPhone.Location = new Point(688, 279);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(62, 28);
             lblPhone.TabIndex = 58;
@@ -136,7 +136,7 @@
             lblAge.BackColor = Color.White;
             lblAge.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblAge.ForeColor = Color.Black;
-            lblAge.Location = new Point(641, 224);
+            lblAge.Location = new Point(688, 226);
             lblAge.Name = "lblAge";
             lblAge.Size = new Size(62, 28);
             lblAge.TabIndex = 57;
@@ -148,7 +148,7 @@
             lblDateOfBirth.BackColor = Color.White;
             lblDateOfBirth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblDateOfBirth.ForeColor = Color.Black;
-            lblDateOfBirth.Location = new Point(641, 168);
+            lblDateOfBirth.Location = new Point(688, 170);
             lblDateOfBirth.Name = "lblDateOfBirth";
             lblDateOfBirth.Size = new Size(62, 28);
             lblDateOfBirth.TabIndex = 56;
@@ -158,7 +158,7 @@
             // 
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.Image = Properties.Resources.age;
-            pictureBox8.Location = new Point(595, 223);
+            pictureBox8.Location = new Point(642, 225);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(36, 32);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -171,7 +171,7 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(524, 223);
+            label9.Location = new Point(571, 225);
             label9.Name = "label9";
             label9.Size = new Size(64, 31);
             label9.TabIndex = 54;
@@ -181,7 +181,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.phone_call;
-            pictureBox6.Location = new Point(595, 275);
+            pictureBox6.Location = new Point(642, 277);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(36, 32);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -192,7 +192,7 @@
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = Properties.Resources.calendar;
-            pictureBox7.Location = new Point(599, 169);
+            pictureBox7.Location = new Point(646, 171);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(36, 32);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -205,7 +205,7 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(503, 275);
+            label11.Location = new Point(550, 277);
             label11.Name = "label11";
             label11.Size = new Size(85, 31);
             label11.TabIndex = 51;
@@ -217,7 +217,7 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(425, 169);
+            label10.Location = new Point(472, 171);
             label10.Name = "label10";
             label10.Size = new Size(177, 31);
             label10.TabIndex = 50;
@@ -404,7 +404,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2GroupBox1);
             Name = "ctrlPersonCard";
-            Size = new Size(838, 329);
+            Size = new Size(887, 329);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

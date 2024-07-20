@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace Study_center.Teacher
 
         private void _FillFieldsWithTeacherInfo()
         {
-            ctrlPersonCardWithFilter1.LoadPersonInfo(_teacher.PersonID);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _teacher.PersonID);
 
             lblTeacherID.Text = _teacher.TeacherID.ToString();
             lblCreatedBy.Text = "Admin";
@@ -143,7 +144,7 @@ namespace Study_center.Teacher
         private void frmAddTeacher_Load(object sender, EventArgs e)
         {
             _ResetTitles();
-
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID);
             if (_Mode == enMode.Update)
                 _LoadData();
         }
