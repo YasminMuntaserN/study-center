@@ -95,7 +95,7 @@ namespace Study_center.Person.User_Controls
 
             LoadPersonInfo(personId);
 
-            _PersonID = _Person.PersonID;
+            _PersonID = personId;
 
         }
 
@@ -110,5 +110,17 @@ namespace Study_center.Person.User_Controls
 
         private void btnSearch_Click(object sender, EventArgs e) => FindNow();
 
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter (character code 13)
+            if (e.KeyChar == (char)13)
+            {
+
+                btnSearch.PerformClick();
+            }
+            //this will allow only digits if person id is selected
+            if (cbFilter.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

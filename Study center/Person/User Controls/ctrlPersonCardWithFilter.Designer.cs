@@ -114,6 +114,7 @@
             cbFilter.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             cbFilter.ForeColor = Color.Black;
             cbFilter.ItemHeight = 30;
+            cbFilter.Items.AddRange(new object[] { "Person ID" });
             cbFilter.Location = new Point(91, 61);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -145,6 +146,7 @@
             txtFilterValue.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtFilterValue.Size = new Size(215, 39);
             txtFilterValue.TabIndex = 42;
+            txtFilterValue.KeyPress += txtFilterValue_KeyPress;
             // 
             // label12
             // 

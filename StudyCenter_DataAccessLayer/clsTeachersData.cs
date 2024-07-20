@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace StudyCenter_DataAccessLayer
 {
-    public class clsStudentData
+    public class clsTeachersData
     {
-        public static bool GetInfoByStudentID(int? studentID, ref int? personID, ref byte? gradeLevelID,
-        ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
+        public static bool GetInfoByTeacherID(int? TeacherID, ref int? personID, ref decimal Salary,
+        ref int? UserID, ref string Qualification, ref DateTime HireDate)
         {
             bool isFound = false;
 
@@ -22,11 +22,11 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_GetStudentInfoByStudentID", connection))
+                    using (SqlCommand command = new SqlCommand("SP_GetTeacherInfoByTeacherID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@StudentID", (object)studentID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@TeacherID", (object)TeacherID ?? DBNull.Value);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -36,10 +36,11 @@ namespace StudyCenter_DataAccessLayer
                                 isFound = true;
 
                                 personID = (reader["PersonID"] != DBNull.Value) ? (int?)reader["PersonID"] : null;
-                                gradeLevelID = (reader["GradeLevelID"] != DBNull.Value) ? (byte?)Convert.ToByte(reader["GradeLevelID"]) : null;
-                                createdByUserID = (reader["CreatedByUserID"] != DBNull.Value) ? (int?)reader["CreatedByUserID"] : null;
-                                EnrollmentDate = (DateTime)reader["EnrollmentDate"];
-                                EmergencyContactPhone = (string)reader["EmergencyContactPhone"];
+                                UserID = (reader["GradeLevelID"] != DBNull.Value) ? (int?)reader["GradeLevelID"]: null;
+                                HireDate = (DateTime)reader["HireDate"];
+                                Qualification = (string)reader["Qualification"];
+                                Salary = (decimal)reader["Salary"];
+
                             }
                             else
                             {
@@ -59,8 +60,8 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static bool GetInfoByPersonID(int? personID, ref int? studentID, ref byte? gradeLevelID,
-            ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
+        public static bool GetInfoByPersonID(  int? personID, ref int? TeacherID, ref decimal Salary,
+        ref int? UserID, ref string Qualification, ref DateTime HireDate)
         {
             bool isFound = false;
 
@@ -70,7 +71,7 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_GetStudentInfoByPersonID", connection))
+                    using (SqlCommand command = new SqlCommand("SP_GetTeacherInfoByTeacherID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -83,11 +84,11 @@ namespace StudyCenter_DataAccessLayer
                                 // The record was found
                                 isFound = true;
 
-                                studentID = (reader["studentID"] != DBNull.Value) ? (int?)reader["studentID"] : null;
-                                gradeLevelID = (reader["GradeLevelID"] != DBNull.Value) ? (byte?)Convert.ToByte(reader["GradeLevelID"]) : null;
-                                createdByUserID = (reader["CreatedByUserID"] != DBNull.Value) ? (int?)reader["CreatedByUserID"] : null;
-                                EnrollmentDate = (DateTime)reader["EnrollmentDate"];
-                                EmergencyContactPhone = (string)reader["EmergencyContactPhone"];
+                                TeacherID = (reader["TeacherID"] != DBNull.Value) ? (int?)reader["TeacherID"] : null;
+                                UserID = (reader["GradeLevelID"] != DBNull.Value) ? (int?)reader["GradeLevelID"] : null;
+                                HireDate = (DateTime)reader["HireDate"];
+                                Qualification = (string)reader["Qualification"];
+                                Salary = (decimal)reader["Salary"];
                             }
                             else
                             {
@@ -107,9 +108,9 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static int? AddNewStudent(int personID, int gradeLevelID, string EmergencyContactPhone, int userID)
+        public static int? AddNewStudent(int personID, decimal Salary, string Qualification, int UserID)
         {
-            int? studentID = null;
+            int? TeacherID = null;
 
             try
             {
@@ -117,17 +118,17 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_AddNewStudent", connection))
+                    using (SqlCommand command = new SqlCommand("SP_AddNewTeacher", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PersonID", personID);
-                        command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
-                        command.Parameters.AddWithValue("@UserID", userID);
-                        command.Parameters.AddWithValue("@EmergencyContactPhone", EmergencyContactPhone);
-                        command.Parameters.AddWithValue("@EnrollmentDate", DateTime.Now);
+                        command.Parameters.AddWithValue("@Salary", Salary);
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                        command.Parameters.AddWithValue("@Qualification", Qualification);
+                        command.Parameters.AddWithValue("@HireDate", DateTime.Now);
 
-                        SqlParameter outputIdStudentParam = new SqlParameter("@StudentID", SqlDbType.Int)
+                        SqlParameter outputIdStudentParam = new SqlParameter("@TeacherID", SqlDbType.Int)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -135,7 +136,7 @@ namespace StudyCenter_DataAccessLayer
 
                         command.ExecuteNonQuery();
 
-                        studentID = (int?)outputIdStudentParam.Value;
+                        TeacherID = (int?)outputIdStudentParam.Value;
                     }
                 }
             }
@@ -144,10 +145,10 @@ namespace StudyCenter_DataAccessLayer
                 clsErrorLogger.LogError(ex);
             }
 
-            return studentID;
+            return TeacherID;
         }
 
-        public static bool Update(int studentID, int personID, int gradeLevelID, string EmergencyContactPhone, int createdByUserID)
+        public static bool Update(int TeacherID, int personID, decimal Salary, string Qualification, DateTime HireDate, int UserID)
         {
             int rowAffected = 0;
 
@@ -157,15 +158,16 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_UpdateStudent", connection))
+                    using (SqlCommand command = new SqlCommand("SP_UpdateTeacher", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@StudentID", studentID);
+                        command.Parameters.AddWithValue("@TeacherID", TeacherID);
                         command.Parameters.AddWithValue("@PersonID", personID);
-                        command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
-                        command.Parameters.AddWithValue("@EmergencyContactPhone", EmergencyContactPhone);
-                        command.Parameters.AddWithValue("@CreatedByUserID", createdByUserID);
+                        command.Parameters.AddWithValue("@Salary", Salary);
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                        command.Parameters.AddWithValue("@Qualification", Qualification);
+                        command.Parameters.AddWithValue("@HireDate", DateTime.Now);
 
                         rowAffected = command.ExecuteNonQuery();
                     }
@@ -179,16 +181,16 @@ namespace StudyCenter_DataAccessLayer
             return (rowAffected > 0);
         }
 
-        public static bool Delete(int? studentID)
-            => clsDataAccessHelper.Delete("SP_DeleteStudent", "StudentID", studentID);
+        public static bool Delete(int? TeacherID)
+           => clsDataAccessHelper.Delete("SP_DeleteTeacher", "TeacherID", TeacherID);
 
-        public static bool Exists(int? studentID)
-            => clsDataAccessHelper.Exists("SP_DoesStudentExist", "StudentID", studentID);
+        public static bool Exists(int? TeacherID)
+            => clsDataAccessHelper.Exists("SP_DoesTeacherExist", "TeacherID", TeacherID);
 
         public static DataTable All()
-            => clsDataAccessHelper.All("SP_GetAllStudents");
+            => clsDataAccessHelper.All("SP_GetAllTeachers");
 
-        public static bool IsPersonStudent(int? personId)
+        public static bool IsPersonStudent(int? TeacherID)
         {
             try
             {
@@ -196,16 +198,16 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_IsPersonStudent", connection))
+                    using (SqlCommand command = new SqlCommand("SP_IsPersonTeacher", connection))
                     {
                         // Set the command type to StoredProcedure
                         command.CommandType = CommandType.StoredProcedure;
 
                         // Add the input parameter for PersonID
-                        command.Parameters.AddWithValue("@PersonID", personId);
+                        command.Parameters.AddWithValue("@TeacherID", TeacherID);
 
                         // Add the output parameter for IsStudent
-                        SqlParameter outputParam = new SqlParameter("@IsStudent", SqlDbType.Bit)
+                        SqlParameter outputParam = new SqlParameter("@IsTeacher", SqlDbType.Bit)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -214,9 +216,9 @@ namespace StudyCenter_DataAccessLayer
                         command.ExecuteNonQuery();
 
                         // Retrieve the output parameter value
-                        bool isStudent = (bool)outputParam.Value;
+                        bool isTeacher = (bool)outputParam.Value;
 
-                        return isStudent;
+                        return isTeacher;
                     }
                 }
             }
@@ -226,5 +228,6 @@ namespace StudyCenter_DataAccessLayer
                 return false;
             }
         }
+
     }
 }

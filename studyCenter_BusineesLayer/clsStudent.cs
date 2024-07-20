@@ -11,7 +11,7 @@ namespace studyCenter_BusineesLayer
         public int? StudentID { get; set; }
         public int? personID { get; set; }
         public int? GradeLevelID { get; set; }
-        string EmergencyContactPhone { get; set; }
+        public string EmergencyContactPhone { get; set; }
         public int? CreatedByUserID { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
@@ -27,7 +27,7 @@ namespace studyCenter_BusineesLayer
             _Mode = enMode.AddNew;
         }
 
-        public clsStudent(int? studentID, int? personID, byte? gradeLevelID,
+        public clsStudent(int? studentID, int? personID, int? gradeLevelID,
                           int? createdByUserID, string emergencyContactPhone, DateTime enrollmentDate, string firstName, string lastName, EnGender gender,
                           DateTime dateOfBirth, string phoneNumber, string email, string address)
             :
@@ -108,7 +108,7 @@ namespace studyCenter_BusineesLayer
 
         private bool _Add()
         {
-            this.StudentID = clsStudentData.AddNewStudent(personID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value);
+             this.StudentID = clsStudentData.AddNewStudent(personID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value);
 
             return (StudentID.HasValue);
         }
@@ -120,11 +120,7 @@ namespace studyCenter_BusineesLayer
 
         public new bool Save()
         {
-            if (!base.Save())
-                return false;
-
-            PersonID = base.PersonID;
-
+            personID = base.PersonID;
             switch (_Mode)
             {
                 case enMode.AddNew:
@@ -155,5 +151,7 @@ namespace studyCenter_BusineesLayer
         public static bool Exists(int? studentID) => clsStudentData.Exists(studentID);
 
         public static DataTable All() => clsStudentData.All();
+
+        public static bool IsPersonStudent(int? PersonID) => clsStudentData.IsPersonStudent(PersonID);
     }
 }

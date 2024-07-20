@@ -89,7 +89,7 @@ namespace studyCenter_BusineesLayer
         public static string GetGradeLevelName(int? gradeLevelID)
             => clsGradeLevelData.GetGradeLevelName(gradeLevelID);
 
-        public static int? GetGradeLevelName(string gradeName)
+        public static int? GetGradeLevelID(string gradeName)
            => clsGradeLevelData.GetGradeLevelID(gradeName);
     }
 }

@@ -1,12 +1,13 @@
 ﻿using Microsoft.Data.SqlClient;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System.Data;
+using System.Numerics;
 
 namespace StudyCenter_DataAccessLayer
 {
     public class clsPersonData
     {
-        public static bool GetPersonInfoByID(int? personID, ref string firstName, ref string lastName, ref byte gender, ref DateTime dateOfBirth, ref string Phone, ref string email, ref string address)
+        public static bool GetPersonInfoByID(int? personID, ref string firstName, ref string lastName, ref byte? gender, ref DateTime dateOfBirth, ref string Phone, ref string email, ref string address)
         {
             bool isFound = false;
 
@@ -29,13 +30,13 @@ namespace StudyCenter_DataAccessLayer
                                 // The record was found
                                 isFound = true;
 
-                                firstName = (string)reader["FirstName"];
-                                lastName = (string)reader["LastName"];
-                                gender = (byte)reader["Gender"];
-                                dateOfBirth = (DateTime)reader["DateOfBirth"];
-                                Phone = (string)reader["Phone"];
-                                email = (reader["Email"] != DBNull.Value) ? (string)reader["Email"] : null;
-                                address = (reader["Address"] != DBNull.Value) ? (string)reader["Address"] : null;
+                                firstName = reader["FirstName"] as string ?? string.Empty;
+                                lastName = reader["LastName"] as string ?? string.Empty;
+                                gender = reader["Gender"] as byte?;
+                                dateOfBirth = reader["DateOfBirth"] as DateTime? ?? DateTime.MinValue;
+                                Phone = reader["Phone"] as string ?? string.Empty;
+                                email = reader["Email"] as string ?? string.Empty;
+                                address = reader["Address"] as string ?? string.Empty;
                             }
                             else
                             {

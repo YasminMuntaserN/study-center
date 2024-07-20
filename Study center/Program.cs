@@ -1,3 +1,4 @@
+using Study_center.Student;
 using studyCenter_BusineesLayer;
 namespace Study_center
 {
@@ -12,7 +13,7 @@ namespace Study_center
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmAddPerson());
+            Application.Run(new frmAddStudent());
         }
     }
 }

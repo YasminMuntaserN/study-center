@@ -58,7 +58,7 @@ namespace Study_center.Person.User_Controls
                 clsMessages.NotFound("person", personID);
                 return false;
             }
-
+            PersonID = personID;    
             _FillPersonData();
             return true;
         }

@@ -169,9 +169,8 @@ namespace StudyCenter_DataAccessLayer
             return gradeName;
         }
 
-        public static int? GetGradeLevelID(string GradeName)
+        public static int? GetGradeLevelID(string GradeLevelName)
         {
-            // This function will return the new person id if succeeded and null if not
             int? gradeLevelID = null;
 
             try
@@ -180,13 +179,13 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_GetGradeLevelName", connection))
+                    using (SqlCommand command = new SqlCommand("SP_GetGradeLevelID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@GradeName", GradeName);
+                        command.Parameters.AddWithValue("@GradeLevelName", GradeLevelName);
 
-                        SqlParameter outputIdParam = new SqlParameter("@GradeName", SqlDbType.Int)
+                        SqlParameter outputIdParam = new SqlParameter("@GradeLevelID", SqlDbType.Int)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -194,7 +193,7 @@ namespace StudyCenter_DataAccessLayer
 
                         command.ExecuteNonQuery();
 
-                        gradeLevelID = (byte?)(int)outputIdParam.Value;
+                        gradeLevelID = (int?)outputIdParam.Value;
                     }
                 }
             }

@@ -84,18 +84,17 @@ namespace StudyCenter_DataAccessLayer.Global_classes
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue($"@{parameterName}", (object)value ?? DBNull.Value);
+                        command.Parameters.AddWithValue($"@{parameterName}", value);
 
-                        // @ReturnVal could be any name, and we don't need to add it to the SP, just use it here in the code.
-                        SqlParameter returnParameter = new SqlParameter("@ReturnVal", SqlDbType.Int)
+                        SqlParameter existsParam = new SqlParameter("@Exists", SqlDbType.Bit)
                         {
-                            Direction = ParameterDirection.ReturnValue
+                            Direction = ParameterDirection.Output
                         };
-                        command.Parameters.Add(returnParameter);
+                        command.Parameters.Add(existsParam);
 
                         command.ExecuteNonQuery();
 
-                        isFound = (int)returnParameter.Value == 1;
+                        isFound = (bool)existsParam.Value;
                     }
                 }
             }
@@ -106,6 +105,7 @@ namespace StudyCenter_DataAccessLayer.Global_classes
             }
 
             return isFound;
+
         }
 
         public static int Count(string storedProcedureName)

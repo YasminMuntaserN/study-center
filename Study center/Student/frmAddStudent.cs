@@ -52,6 +52,7 @@ namespace Study_center.Student
             {
                 lblTitle.Text = "Add New Student";
                 _student = new clsStudent();
+                lblCreatedBy.Text = "Admin";
             }
             else
             {
@@ -71,8 +72,9 @@ namespace Study_center.Student
             lblStudentID.Text = _student.StudentID.ToString();
             //  lblCreatedBy.Text = _student.CreatedByUserInfo?.Username;
             lblCreatedBy.Text = "Admin";
-
+            txtEmergencyContactPhone.Text = _student.EmergencyContactPhone.ToString();
             cbGradeLevels.SelectedIndex = cbGradeLevels.FindString(clsGradeLevel.GetGradeLevelName(_student.GradeLevelID));
+       
         }
 
         private void _LoadData()
@@ -96,6 +98,7 @@ namespace Study_center.Student
             _student.PersonID = _selectedPersonID;
             _student.GradeLevelID = clsGradeLevel.GetGradeLevelID(cbGradeLevels.Text);
             _student.CreatedByUserID = 1;
+            _student.EmergencyContactPhone =txtEmergencyContactPhone.Text;
         }
 
         private void _Save()
@@ -142,7 +145,7 @@ namespace Study_center.Student
                 return;
             }
 
-            if (_Mode == enMode.Add && ctrlPersonCardWithFilter1.PersonInfo.IsStudent)
+            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsPerson.EnType.student))
             {
                 MessageBox.Show("This person is already registered as a student. Please select another person.",
                                 "Already Registered", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -164,5 +167,9 @@ namespace Study_center.Student
 
         private void frmAddStudent_Activated(object sender, EventArgs e) => ctrlPersonCardWithFilter1.FilterFocus();
 
+        private void txtEmergencyContactPhone_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
