@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudyCenter_DataAccessLayer
 {
-    public class clsTeachersData
+    public class clsTeacherData
     {
         public static bool GetInfoByTeacherID(int? TeacherID, ref int? personID, ref decimal Salary,
         ref int? UserID, ref string Qualification, ref DateTime HireDate)
@@ -71,7 +71,7 @@ namespace StudyCenter_DataAccessLayer
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_GetTeacherInfoByTeacherID", connection))
+                    using (SqlCommand command = new SqlCommand("SP_GetTeacherInfoByPersonID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -108,7 +108,7 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static int? AddNewStudent(int personID, decimal Salary, string Qualification, int UserID)
+        public static int? AddNewTeacher(int personID, decimal Salary, string Qualification, int UserID)
         {
             int? TeacherID = null;
 
@@ -190,7 +190,7 @@ namespace StudyCenter_DataAccessLayer
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllTeachers");
 
-        public static bool IsPersonStudent(int? TeacherID)
+        public static bool IsPersonTeacher(int? TeacherID)
         {
             try
             {
