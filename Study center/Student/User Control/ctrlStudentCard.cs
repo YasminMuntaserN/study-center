@@ -62,10 +62,12 @@ namespace Study_center.Student.User_Control
             {
                 LoadStudentInfoByPerson(ctrlPersonCardWithFilter1.GetSelectedID);
             }
-            else if(e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.StudentID)
+            else if (e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.StudentID)
             {
                 LoadStudentInfo(ctrlPersonCardWithFilter1.GetSelectedID);
             }
         }
+
+
     }
 }
