@@ -40,7 +40,7 @@
             lblQualification = new Label();
             label4 = new Label();
             lblCreatedBy = new Label();
-            lblStudentID = new Label();
+            lblTeacherID = new Label();
             pictureBox5 = new PictureBox();
             pictureBox2 = new PictureBox();
             label12 = new Label();
@@ -74,7 +74,7 @@
             guna2GroupBox1.Controls.Add(lblQualification);
             guna2GroupBox1.Controls.Add(label4);
             guna2GroupBox1.Controls.Add(lblCreatedBy);
-            guna2GroupBox1.Controls.Add(lblStudentID);
+            guna2GroupBox1.Controls.Add(lblTeacherID);
             guna2GroupBox1.Controls.Add(pictureBox5);
             guna2GroupBox1.Controls.Add(pictureBox2);
             guna2GroupBox1.Controls.Add(label12);
@@ -90,7 +90,7 @@
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2GroupBox1.Size = new Size(890, 243);
             guna2GroupBox1.TabIndex = 3;
-            guna2GroupBox1.Text = "Student Info";
+            guna2GroupBox1.Text = "Teacher Info";
             // 
             // pictureBox4
             // 
@@ -185,17 +185,17 @@
             lblCreatedBy.TabIndex = 57;
             lblCreatedBy.Text = "[????]";
             // 
-            // lblStudentID
+            // lblTeacherID
             // 
-            lblStudentID.AutoSize = true;
-            lblStudentID.BackColor = Color.Transparent;
-            lblStudentID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblStudentID.ForeColor = Color.Black;
-            lblStudentID.Location = new Point(212, 57);
-            lblStudentID.Name = "lblStudentID";
-            lblStudentID.Size = new Size(60, 32);
-            lblStudentID.TabIndex = 45;
-            lblStudentID.Text = "N\\A";
+            lblTeacherID.AutoSize = true;
+            lblTeacherID.BackColor = Color.Transparent;
+            lblTeacherID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTeacherID.ForeColor = Color.Black;
+            lblTeacherID.Location = new Point(212, 57);
+            lblTeacherID.Name = "lblTeacherID";
+            lblTeacherID.Size = new Size(60, 32);
+            lblTeacherID.TabIndex = 45;
+            lblTeacherID.Text = "N\\A";
             // 
             // pictureBox5
             // 
@@ -227,9 +227,9 @@
             label12.ForeColor = Color.Black;
             label12.Location = new Point(10, 57);
             label12.Name = "label12";
-            label12.Size = new Size(145, 31);
+            label12.Size = new Size(148, 31);
             label12.TabIndex = 40;
-            label12.Text = "Student ID:";
+            label12.Text = "Teacher ID:";
             // 
             // pictureBox1
             // 
@@ -296,7 +296,7 @@
         private Label lblQualification;
         private Label label4;
         private Label lblCreatedBy;
-        private Label lblStudentID;
+        private Label lblTeacherID;
         private PictureBox pictureBox5;
         private PictureBox pictureBox2;
         private Label label12;

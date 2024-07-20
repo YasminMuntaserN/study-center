@@ -36,7 +36,7 @@ namespace StudyCenter_DataAccessLayer
                                 isFound = true;
 
                                 personID = (reader["PersonID"] != DBNull.Value) ? (int?)reader["PersonID"] : null;
-                                UserID = (reader["GradeLevelID"] != DBNull.Value) ? (int?)reader["GradeLevelID"]: null;
+                                UserID = (reader["UserID"] != DBNull.Value) ? (int?)reader["UserID"] : null;
                                 HireDate = (DateTime)reader["HireDate"];
                                 Qualification = (string)reader["Qualification"];
                                 Salary = (decimal)reader["Salary"];

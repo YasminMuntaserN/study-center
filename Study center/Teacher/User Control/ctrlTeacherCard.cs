@@ -22,14 +22,17 @@ namespace Study_center.Teacher
         public ctrlTeacherCard()
         {
             InitializeComponent();
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
         }
 
         private void FillTeacherInfoInFields()
         {
             // Fill teacher-specific fields
+            lblTeacherID.Text = _Teacher.TeacherID.ToString();
             lblHireDate.Text = _Teacher.HireDate.ToString("yyyy-MM-dd");
             lblQualification.Text = _Teacher.Qualification;
             lblSalary.Text = _Teacher.Salary.ToString("C");
+            lblCreatedBy.Text = _Teacher.UserID.ToString(); 
         }
 
         public void LoadTeacherInfo(int? teacherID)
