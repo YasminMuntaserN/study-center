@@ -169,7 +169,16 @@ namespace Study_center.Student
 
         private void txtEmergencyContactPhone_Validating(object sender, CancelEventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(txtEmergencyContactPhone.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtEmergencyContactPhone, "This field is required!");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmergencyContactPhone, null);
+            }
         }
     }
 }

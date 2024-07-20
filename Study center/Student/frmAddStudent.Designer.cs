@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -58,11 +59,13 @@
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
+            errorProvider1 = new ErrorProvider(components);
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // ctrlPersonCardWithFilter1
@@ -264,11 +267,11 @@
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(0, 0);
+            lblTitle.Location = new Point(3, 6);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(848, 76);
+            lblTitle.Size = new Size(854, 76);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Add Person";
+            lblTitle.Text = "Add Student";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2Separator1
@@ -325,6 +328,10 @@
             btnSave.Text = "Save";
             btnSave.Click += btnSave_Click;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // frmAddStudent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -347,6 +354,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -370,5 +378,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtEmergencyContactPhone;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -114,9 +114,8 @@ namespace studyCenter_BusineesLayer
             return clsTeacherData.Update(TeacherID.Value, PersonID.Value, Salary, Qualification, HireDate, UserID.Value);
         }
 
-        public new bool Save()
+        public bool Save()
         {
-            PersonID = base.PersonID;
             switch (_Mode)
             {
                 case enMode.AddNew:

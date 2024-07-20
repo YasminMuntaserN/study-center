@@ -58,7 +58,7 @@ namespace studyCenter_BusineesLayer
             return personType switch
             {
                 EnType.student => clsStudent.IsPersonStudent(personID),
-             //   EnType.Teacher => clsStudent.IsPersonTeacher(personID),
+                EnType.Teacher => clsTeacher.IsPersonTeacher(personID),
             //    EnType.User => clsStudent.IsPersonUser(personID),
 
                 _ => false
