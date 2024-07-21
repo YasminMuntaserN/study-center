@@ -31,6 +31,7 @@ namespace Study_center.Grade_Level_Subject
         {
             InitializeComponent();
             _gradeLevelSubjectID = gradeLevelSubjectID;
+            _Mode= enMode.Update;  
         }
 
         private void _ResetTitles()
@@ -54,11 +55,10 @@ namespace Study_center.Grade_Level_Subject
 
         private void _FillFieldsWithGradeLevelSubjectInfo()
         {
-            cbGradeLevels.SelectedValue = _gradeLevelSubject.GradeLevelID;
-            cbSubjects.SelectedValue = _gradeLevelSubject.SubjectID;
+            cbGradeLevels.SelectedIndex = cbGradeLevels.FindString(clsGradeLevel.GetGradeLevelName(_gradeLevelSubject.GradeLevelID));
+            cbSubjects.SelectedIndex = cbSubjects.FindString(clsSubject.GetSubjectName(_gradeLevelSubject.SubjectID));
             txtFees.Text = _gradeLevelSubject.Fees.ToString();
-           lblGradeLevelSubjectTitle.Text = _gradeLevelSubject.Title;
-  
+            lblGradeLevelSubjectTitle.Text = _gradeLevelSubject.Title;
         }
 
         private void _LoadData()
@@ -83,7 +83,7 @@ namespace Study_center.Grade_Level_Subject
                 return false;
             }
 
-            if (clsGradeLevelSubject.CheckIfTitleExists(lblGradeLevelSubjectTitle.Text.Trim()))
+            if (clsGradeLevelSubject.CheckIfTitleExists(lblGradeLevelSubjectTitle.Text.Trim())&& _Mode != enMode.Update)
             {
                 clsMessages.GeneralErrorMessage("Failed to save Grade Level Subject.");
                 return false;

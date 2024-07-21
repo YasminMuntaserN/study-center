@@ -204,6 +204,36 @@ namespace StudyCenter_DataAccessLayer
             return exists;
         }
 
+        public static DataTable GetAllGradeLevelSubjectsWithNames()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetAllGradeLevelSubjectsWithNames", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorLogger.LogError(ex);
+            }
+
+            return dt;
+        }
+
+
     }
 }
 

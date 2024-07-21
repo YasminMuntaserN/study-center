@@ -385,7 +385,7 @@
             guna2Panel1.Location = new Point(-1, -6);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel1.Size = new Size(930, 85);
+            guna2Panel1.Size = new Size(887, 85);
             guna2Panel1.TabIndex = 36;
             // 
             // lblTitle
