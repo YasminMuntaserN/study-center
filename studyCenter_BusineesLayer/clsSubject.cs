@@ -82,6 +82,9 @@ namespace studyCenter_BusineesLayer
         public static DataTable All()
             => clsSubjectData.All();
 
+        public static DataTable AllSubjectNames()
+            => clsSubjectData.AllSubjectNames();    
+
         public static string GetSubjectName(int? subjectID)
             => clsSubjectData.GetSubjectName(subjectID);
 

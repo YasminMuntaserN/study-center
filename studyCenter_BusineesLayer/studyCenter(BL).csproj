@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudyCenter_DataAccessLayer\StudyCenter_DataAccessLayer.csproj" />
+    <ProjectReference Include="..\StudyCenter_DataAccessLayer\StudyCenter(DAL).csproj" />
   </ItemGroup>
 
 </Project>

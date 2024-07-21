@@ -1,3 +1,4 @@
+using Study_center.Grade_Level_Subject;
 using Study_center.Student;
 using Study_center.Teacher;
 using studyCenter_BusineesLayer;
@@ -14,7 +15,7 @@ namespace Study_center
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmFindTeacher());
+            Application.Run(new frmAddGradeLevelSubject());
         }
     }
 }

@@ -131,6 +131,9 @@ namespace StudyCenter_DataAccessLayer
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllSubjects");
 
+        public static DataTable AllSubjectNames()
+           => clsDataAccessHelper.All("SP_GetAllSubjectNames");
+
         public static string GetSubjectName(int? subjectID)
         {
             string subjectName = null;

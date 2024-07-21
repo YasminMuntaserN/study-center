@@ -14,8 +14,8 @@ namespace studyCenter_Bl_
         public enMode Mode = enMode.AddNew;
 
         public int? GradeLevelSubjectID { get; set; }
-        public int GradeLevelID { get; set; }
-        public int SubjectID { get; set; }
+        public int? GradeLevelID { get; set; }
+        public int? SubjectID { get; set; }
         public string Title { get; set; }
         public decimal Fees { get; set; }
 
@@ -43,14 +43,14 @@ namespace studyCenter_Bl_
 
         private bool _Add()
         {
-            GradeLevelSubjectID = clsGradeLevelSubjectData.Add(GradeLevelID, SubjectID, Title, Fees);
+            GradeLevelSubjectID = clsGradeLevelSubjectData.Add(GradeLevelID.Value, SubjectID.Value, Title, Fees);
 
             return (GradeLevelSubjectID.HasValue);
         }
 
         private bool _Update()
         {
-            return clsGradeLevelSubjectData.Update(GradeLevelSubjectID.Value, GradeLevelID, SubjectID, Title, Fees);
+            return clsGradeLevelSubjectData.Update(GradeLevelSubjectID.Value, GradeLevelID.Value, SubjectID.Value, Title, Fees);
         }
 
         public bool Save()
@@ -75,7 +75,7 @@ namespace studyCenter_Bl_
             return false;
         }
 
-        public static clsGradeLevelSubject Find(int gradeLevelSubjectID)
+        public static clsGradeLevelSubject Find(int? gradeLevelSubjectID)
         {
             int gradeLevelID = 0;
             int subjectID = 0;
@@ -94,6 +94,17 @@ namespace studyCenter_Bl_
             => clsGradeLevelSubjectData.Exists(gradeLevelSubjectID);
 
         public static DataTable All() => clsGradeLevelSubjectData.All();
+
+        public bool GenerateTitle()
+        {
+            return clsGradeLevelSubjectData.GenerateTitle(GradeLevelID, SubjectID, out string title) && !string.IsNullOrEmpty(title)
+                ? (Title = title) != null
+                : false;
+        }
+
+        public static bool CheckIfTitleExists(string title)=>clsGradeLevelSubjectData.CheckIfTitleExists(title);
+
+
     }
 
 }

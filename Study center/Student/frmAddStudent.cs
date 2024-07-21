@@ -38,22 +38,11 @@ namespace Study_center.Student
             _studentID = studentID;
         }
 
-        private void _FillGradeLevelsInComboBox()
-        {
-
-            DataTable dtGradeLevels = clsGradeLevel.All();
-
-            foreach (DataRow row in dtGradeLevels.Rows)
-            {
-                cbGradeLevels.Items.Add(row["GradeLevelName"]);
-            }
-            if (cbGradeLevels.Items.Count > 0)
-                cbGradeLevels.SelectedIndex = 0;
-        }
-
+       
         private void _ResetTitles()
         {
-            _FillGradeLevelsInComboBox();
+            //Fill Grade Levels In ComboBox
+            HelperClass.FillComboBox(cbGradeLevels, clsGradeLevel.AllGradeLevelNames(), "GradeLevelName");
 
             if (_Mode == enMode.Add)
             {
@@ -116,6 +105,7 @@ namespace Study_center.Student
             {
                 lblTitle.Text = "Update Student";
                 lblStudentID.Text = _student.StudentID.ToString();
+                
 
                 // change form mode to update
                 _Mode = enMode.Update;

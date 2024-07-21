@@ -130,6 +130,80 @@ namespace StudyCenter_DataAccessLayer
 
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllGradeLevelSubjects");
-    }
 
+
+        public static bool GenerateTitle(int? gradeLevelID, int? subjectID, out string title)
+        {
+            title = string.Empty;
+            bool isSuccessful = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GenerateGradeLevelSubjectTitle", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
+                        command.Parameters.AddWithValue("@SubjectID", subjectID);
+
+                        SqlParameter titleParam = new SqlParameter("@Title", SqlDbType.NVarChar, 255)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        command.Parameters.Add(titleParam);
+
+                        command.ExecuteNonQuery();
+
+                        title = titleParam.Value?.ToString();
+                        isSuccessful = !string.IsNullOrEmpty(title);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorLogger.LogError(ex);
+            }
+
+            return isSuccessful;
+        }
+
+        public static bool CheckIfTitleExists(string title)
+        {
+            bool exists = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SP_CheckIfTitleExists", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Input parameter
+                    command.Parameters.AddWithValue("@Title", title);
+
+                    // Output parameter
+                    SqlParameter existsParam = new SqlParameter("@Exists", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(existsParam);
+
+                    // Execute the stored procedure
+                    command.ExecuteNonQuery();
+
+                    // Retrieve the output parameter value
+                    exists = (bool)existsParam.Value;
+                }
+            }
+
+            return exists;
+        }
+
+    }
 }
+

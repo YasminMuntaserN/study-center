@@ -103,7 +103,7 @@ namespace Study_center
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(890, 76);
+            guna2Panel1.Size = new Size(893, 76);
             guna2Panel1.TabIndex = 0;
             // 
             // lblTitle

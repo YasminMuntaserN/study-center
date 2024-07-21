@@ -85,6 +85,8 @@ namespace studyCenter_BusineesLayer
             => clsGradeLevelData.Exists(gradeName);
 
         public static DataTable All() => clsGradeLevelData.All();
+        public static DataTable AllGradeLevelNames()
+            => clsGradeLevelData.AllGradeLevelNames();
 
         public static string GetGradeLevelName(int? gradeLevelID)
             => clsGradeLevelData.GetGradeLevelName(gradeLevelID);

@@ -132,6 +132,10 @@ namespace StudyCenter_DataAccessLayer
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllGradeLevels");
 
+
+        public static DataTable AllGradeLevelNames()
+            => clsDataAccessHelper.All("SP_GetAllGradeLevelNames");
+
         public static string GetGradeLevelName(int? gradeLevelID)
         {
             // This function will return the new person id if succeeded and null if not

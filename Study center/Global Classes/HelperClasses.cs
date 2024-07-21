@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,7 +26,12 @@ namespace Study_center.Global_Classes
         public static string DateToShort(DateTime Dt1) => Dt1.ToString("dd/MMM/yyyy");
     }
    
-    internal class HelperClasses
+    public class HelperClass
     {
+        public static void FillComboBox(Guna2ComboBox comboBox, DataTable dataTable, string displayMember)
+        {
+            comboBox.DataSource = dataTable;
+            comboBox.DisplayMember = displayMember;
+        }
     }
 }
