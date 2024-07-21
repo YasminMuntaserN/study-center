@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             pictureBox4 = new PictureBox();
@@ -47,6 +47,7 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
+            llEditTeacherInfo = new LinkLabel();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -66,6 +67,7 @@
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.Controls.Add(llEditTeacherInfo);
             guna2GroupBox1.Controls.Add(pictureBox4);
             guna2GroupBox1.Controls.Add(pictureBox3);
             guna2GroupBox1.Controls.Add(lblSalary);
@@ -82,12 +84,12 @@
             guna2GroupBox1.Controls.Add(label3);
             guna2GroupBox1.Controls.Add(label2);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges3;
+            guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(3, 507);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GroupBox1.Size = new Size(890, 243);
             guna2GroupBox1.TabIndex = 3;
             guna2GroupBox1.Text = "Teacher Info";
@@ -266,6 +268,19 @@
             label2.TabIndex = 34;
             label2.Text = "Created by :";
             // 
+            // llEditTeacherInfo
+            // 
+            llEditTeacherInfo.AutoSize = true;
+            llEditTeacherInfo.BackColor = Color.White;
+            llEditTeacherInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llEditTeacherInfo.Location = new Point(573, 55);
+            llEditTeacherInfo.Name = "llEditTeacherInfo";
+            llEditTeacherInfo.Size = new Size(196, 32);
+            llEditTeacherInfo.TabIndex = 67;
+            llEditTeacherInfo.TabStop = true;
+            llEditTeacherInfo.Text = "Edit Teacher Info";
+            llEditTeacherInfo.LinkClicked += llEditTeacherInfo_LinkClicked;
+            // 
             // ctrlTeacherCard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,5 +318,6 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label2;
+        private LinkLabel llEditTeacherInfo;
     }
 }

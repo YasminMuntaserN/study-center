@@ -47,6 +47,7 @@
             label3 = new Label();
             label2 = new Label();
             ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
+            llEditStudentInfo = new LinkLabel();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.Controls.Add(llEditStudentInfo);
             guna2GroupBox1.Controls.Add(pictureBox4);
             guna2GroupBox1.Controls.Add(pictureBox3);
             guna2GroupBox1.Controls.Add(lblGradeLevel);
@@ -267,6 +269,19 @@
             ctrlPersonCardWithFilter1.TabIndex = 3;
             ctrlPersonCardWithFilter1.OnPersonSelectedEvent += ctrlPersonCardWithFilter1_OnPersonSelectedEvent;
             // 
+            // llEditStudentInfo
+            // 
+            llEditStudentInfo.AutoSize = true;
+            llEditStudentInfo.BackColor = Color.White;
+            llEditStudentInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llEditStudentInfo.Location = new Point(572, 56);
+            llEditStudentInfo.Name = "llEditStudentInfo";
+            llEditStudentInfo.Size = new Size(197, 32);
+            llEditStudentInfo.TabIndex = 67;
+            llEditStudentInfo.TabStop = true;
+            llEditStudentInfo.Text = "Edit Student Info";
+            llEditStudentInfo.LinkClicked += llEditStudentInfo_LinkClicked;
+            // 
             // ctrlStudentCard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,5 +318,6 @@
         private Label lblGradeLevel;
         private Label lbl;
         private Person.User_Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
+        private LinkLabel llEditStudentInfo;
     }
 }

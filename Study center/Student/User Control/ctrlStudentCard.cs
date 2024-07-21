@@ -68,6 +68,11 @@ namespace Study_center.Student.User_Control
             }
         }
 
-
+        private void llEditStudentInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddStudent frmAddStudent = new frmAddStudent(_Student.StudentID);
+            frmAddStudent.ShowDialog();
+            LoadStudentInfo(_Student.StudentID);
+        }
     }
 }

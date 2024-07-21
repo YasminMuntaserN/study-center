@@ -32,12 +32,12 @@ namespace Study_center.Teacher
             lblHireDate.Text = _Teacher.HireDate.ToString("yyyy-MM-dd");
             lblQualification.Text = _Teacher.Qualification;
             lblSalary.Text = _Teacher.Salary.ToString("C");
-            lblCreatedBy.Text = _Teacher.UserID.ToString(); 
+            lblCreatedBy.Text = _Teacher.UserID.ToString();
         }
 
         public void LoadTeacherInfo(int? teacherID)
         {
-            _Teacher = clsTeacher.Find(teacherID ,clsTeacher.EnFindTeacherBy.TeacherID);
+            _Teacher = clsTeacher.Find(teacherID, clsTeacher.EnFindTeacherBy.TeacherID);
 
             if (_Teacher == null)
             {
@@ -72,5 +72,11 @@ namespace Study_center.Teacher
             }
         }
 
+        private void llEditTeacherInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID);
+            frmAddTeacher.ShowDialog();
+            LoadTeacherInfo(_Teacher.TeacherID);
         }
+    }
 }

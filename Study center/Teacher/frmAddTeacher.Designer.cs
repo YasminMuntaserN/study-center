@@ -91,7 +91,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(617, 818);
+            btnClose.Location = new Point(631, 842);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnClose.Size = new Size(215, 50);
@@ -114,7 +114,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(390, 818);
+            btnSave.Location = new Point(404, 842);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSave.Size = new Size(215, 50);
@@ -151,7 +151,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges11;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(21, 564);
+            guna2GroupBox1.Location = new Point(21, 610);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GroupBox1.Size = new Size(831, 226);
@@ -222,7 +222,7 @@
             dtpHireData.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpHireData.Name = "dtpHireData";
             dtpHireData.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            dtpHireData.Size = new Size(215, 39);
+            dtpHireData.Size = new Size(192, 39);
             dtpHireData.TabIndex = 63;
             dtpHireData.Value = new DateTime(2024, 7, 19, 11, 59, 1, 562);
             // 
@@ -259,7 +259,7 @@
             txtSalary.PlaceholderText = "";
             txtSalary.SelectedText = "";
             txtSalary.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtSalary.Size = new Size(215, 32);
+            txtSalary.Size = new Size(189, 32);
             txtSalary.TabIndex = 61;
             txtSalary.Validating += txtSalary_Validating;
             // 
@@ -373,7 +373,7 @@
             ctrlPersonCardWithFilter1.FilterEnabled = true;
             ctrlPersonCardWithFilter1.Location = new Point(21, 102);
             ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            ctrlPersonCardWithFilter1.Size = new Size(831, 465);
+            ctrlPersonCardWithFilter1.Size = new Size(831, 487);
             ctrlPersonCardWithFilter1.TabIndex = 31;
             ctrlPersonCardWithFilter1.OnPersonSelectedEvent += ctrlPersonCardWithFilter1_OnPersonSelectedEvent;
             // 
@@ -407,7 +407,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 880);
+            ClientSize = new Size(885, 933);
             Controls.Add(guna2Panel1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);

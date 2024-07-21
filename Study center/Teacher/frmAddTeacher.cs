@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,13 @@ namespace Study_center.Teacher
         public frmAddTeacher()
         {
             InitializeComponent();
+        }
+
+        public frmAddTeacher(int? TeacherId)
+        {
+            _teacherID= TeacherId;
+            InitializeComponent();
+            _Mode = enMode.Update;
         }
 
         private void _ResetTitles()
@@ -57,7 +65,7 @@ namespace Study_center.Teacher
             lblCreatedBy.Text = "Admin";
             dtpHireData.Value = _teacher.HireDate;
             txtQualification.Text = _teacher.Qualification;
-            txtSalary.Text = _teacher.Salary.ToString();
+            txtSalary.Text = _teacher.Salary.ToString("c");
         }
 
         private void _LoadData()
@@ -81,7 +89,7 @@ namespace Study_center.Teacher
             _teacher.PersonID = _selectedPersonID;
             _teacher.HireDate = dtpHireData.Value;
             _teacher.Qualification = txtQualification.Text;
-            _teacher.Salary = decimal.Parse(txtSalary.Text);
+            _teacher.Salary = decimal.Parse(txtSalary.Text, NumberStyles.Currency);
             _teacher.UserID = 1; // Assuming the logged-in user ID is 1
         }
 

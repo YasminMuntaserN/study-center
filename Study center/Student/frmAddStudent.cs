@@ -32,6 +32,12 @@ namespace Study_center.Student
             InitializeComponent();
         }
 
+        public frmAddStudent(int? studentID)
+        {
+            InitializeComponent();
+            _studentID = studentID;
+        }
+
         private void _FillGradeLevelsInComboBox()
         {
 
