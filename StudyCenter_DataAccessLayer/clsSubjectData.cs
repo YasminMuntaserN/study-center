@@ -118,7 +118,7 @@ namespace StudyCenter_DataAccessLayer
 
             return (rowAffected > 0);
         }
-
+        
         public static bool Delete(int? subjectID)
             => clsDataAccessHelper.Delete("SP_DeleteSubject", "SubjectID", subjectID);
 
