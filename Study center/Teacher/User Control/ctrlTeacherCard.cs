@@ -78,5 +78,6 @@ namespace Study_center.Teacher
             frmAddTeacher.ShowDialog();
             LoadTeacherInfo(_Teacher.TeacherID);
         }
+
     }
 }

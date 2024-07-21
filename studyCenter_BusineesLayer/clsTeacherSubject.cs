@@ -14,8 +14,8 @@ namespace studyCenter_BL_
         public enMode Mode = enMode.AddNew;
 
         public int? TeacherSubjectID { get; set; }
-        public int TeacherID { get; set; }
-        public int GradeLevelSubjectID { get; set; }
+        public int? TeacherID { get; set; }
+        public int? GradeLevelSubjectID { get; set; }
 
         public clsTeacherSubject()
         {
@@ -47,14 +47,14 @@ namespace studyCenter_BL_
 
         private bool _Add()
         {
-            TeacherSubjectID = clsTeacherSubjectData.Add(TeacherID, GradeLevelSubjectID);
+            TeacherSubjectID = clsTeacherSubjectData.Add(TeacherID.Value, GradeLevelSubjectID.Value);
 
             return (TeacherSubjectID.HasValue);
         }
 
         private bool _Update()
         {
-            return clsTeacherSubjectData.Update(TeacherSubjectID.Value, TeacherID, GradeLevelSubjectID);
+            return clsTeacherSubjectData.Update(TeacherSubjectID.Value, TeacherID.Value, GradeLevelSubjectID.Value);
         }
 
         public bool Save()
@@ -83,6 +83,9 @@ namespace studyCenter_BL_
             => clsTeacherSubjectData.Delete(teacherSubjectID ?? 0);
 
         public static DataTable All() => clsTeacherSubjectData.GetAll();
+
+        public static bool IsTeachingSubject(int? teacherID, int? gradeLevelSubjectID)
+            => clsTeacherSubjectData.IsTeachingSubject(teacherID.Value, gradeLevelSubjectID.Value);
     }
 
 }

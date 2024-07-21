@@ -32,6 +32,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            llEditTeacherInfo = new LinkLabel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             lblSalary = new Label();
@@ -47,7 +48,6 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
-            llEditTeacherInfo = new LinkLabel();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -93,6 +93,19 @@
             guna2GroupBox1.Size = new Size(890, 243);
             guna2GroupBox1.TabIndex = 3;
             guna2GroupBox1.Text = "Teacher Info";
+            // 
+            // llEditTeacherInfo
+            // 
+            llEditTeacherInfo.AutoSize = true;
+            llEditTeacherInfo.BackColor = Color.White;
+            llEditTeacherInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llEditTeacherInfo.Location = new Point(573, 55);
+            llEditTeacherInfo.Name = "llEditTeacherInfo";
+            llEditTeacherInfo.Size = new Size(196, 32);
+            llEditTeacherInfo.TabIndex = 67;
+            llEditTeacherInfo.TabStop = true;
+            llEditTeacherInfo.Text = "Edit Teacher Info";
+            llEditTeacherInfo.LinkClicked += llEditTeacherInfo_LinkClicked;
             // 
             // pictureBox4
             // 
@@ -267,19 +280,6 @@
             label2.Size = new Size(153, 31);
             label2.TabIndex = 34;
             label2.Text = "Created by :";
-            // 
-            // llEditTeacherInfo
-            // 
-            llEditTeacherInfo.AutoSize = true;
-            llEditTeacherInfo.BackColor = Color.White;
-            llEditTeacherInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llEditTeacherInfo.Location = new Point(573, 55);
-            llEditTeacherInfo.Name = "llEditTeacherInfo";
-            llEditTeacherInfo.Size = new Size(196, 32);
-            llEditTeacherInfo.TabIndex = 67;
-            llEditTeacherInfo.TabStop = true;
-            llEditTeacherInfo.Text = "Edit Teacher Info";
-            llEditTeacherInfo.LinkClicked += llEditTeacherInfo_LinkClicked;
             // 
             // ctrlTeacherCard
             // 
