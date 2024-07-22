@@ -21,7 +21,7 @@ namespace StudyCenter_DAL_
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_GetTeacherSubjectInfo", connection))
+                    using (SqlCommand command = new SqlCommand("SP_GetTeacherSubjectInfoByID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -200,10 +200,10 @@ namespace StudyCenter_DAL_
         }
 
         public static DataTable GetSubjectsByTeacherID(int teacherID)
-        {
-            return clsDataAccessHelper.All("SP_GetSubjectsByTeacherID", "TeacherID", teacherID);
-        }
+             => clsDataAccessHelper.All("SP_GetSubjectsByTeacherID", "TeacherID", teacherID);
+
+        public static DataTable GetTeachersBySubject(int subjectID)
+             => clsDataAccessHelper.All("SP_GetTeachersBySubject", "subjectID", subjectID);
 
     }
-
 }

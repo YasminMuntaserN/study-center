@@ -31,16 +31,7 @@ namespace Study_center.Teacher
                 return;
             }
             ctrlTeacherCard1.LoadTeacherInfo(_TeacherID);
-
-            clsTeacher teacherInfo = clsTeacher.Find(_TeacherID, clsTeacher.EnFindTeacherBy.TeacherID);
-
-            if (teacherInfo != null)
-            {
-                string prefix = teacherInfo.Gender == clsPerson.EnGender.Male ? "Mr." : "Ms.";
-                lblTeacherName.Text = string.Concat(prefix, ' ', teacherInfo.FullName);
-            }
-
-            dgvGradeLevelSubjects.DataSource = clsTeacherSubject.GetSubjectsByTeacherID(_TeacherID);
+            ctrlListInfo1.FillSubjectsTaughtByTeacher(_TeacherID);
         }
 
         private void frmSubjectsTaughtByTeacher_Load(object sender, EventArgs e)

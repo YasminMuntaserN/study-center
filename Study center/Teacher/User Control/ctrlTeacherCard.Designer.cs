@@ -288,7 +288,7 @@
             Controls.Add(guna2GroupBox1);
             Controls.Add(ctrlPersonCardWithFilter1);
             Name = "ctrlTeacherCard";
-            Size = new Size(892, 750);
+            Size = new Size(885, 750);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

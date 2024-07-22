@@ -1,4 +1,7 @@
-﻿using StudyCenter_DAL_;
+﻿using studyCenter_Bl_;
+using studyCenter_BusineesLayer;
+using StudyCenter_DAL_;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +19,8 @@ namespace studyCenter_BL_
         public int? TeacherSubjectID { get; set; }
         public int? TeacherID { get; set; }
         public int? GradeLevelSubjectID { get; set; }
+        public clsTeacher TeacherInfo => clsTeacher.Find(TeacherID ,clsTeacher.EnFindTeacherBy.TeacherID);
+        public clsGradeLevelSubject GradeLevelSubjectInfo => clsGradeLevelSubject.Find(GradeLevelSubjectID);
 
         public clsTeacherSubject()
         {
@@ -35,7 +40,7 @@ namespace studyCenter_BL_
             Mode = enMode.Update;
         }
 
-        public static clsTeacherSubject Find(int teacherSubjectID)
+        public static clsTeacherSubject Find(int? teacherSubjectID)
         {
             int teacherID = 0;
             int gradeLevelSubjectID = 0;
@@ -89,6 +94,9 @@ namespace studyCenter_BL_
 
         public static DataTable GetSubjectsByTeacherID(int? teacherID)
             => clsTeacherSubjectData.GetSubjectsByTeacherID(teacherID.Value);
+
+        public static DataTable GetTeachersBySubject(int? SubjectID)
+            => clsTeacherSubjectData.GetTeachersBySubject(SubjectID.Value);
     }
 
 }

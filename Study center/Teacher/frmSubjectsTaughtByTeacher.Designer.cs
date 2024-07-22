@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
@@ -44,27 +39,23 @@
             ctrlTeacherCard1 = new ctrlTeacherCard();
             tpSubjectInfo = new TabPage();
             pictureBox1 = new PictureBox();
-            guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            lblTeacherName = new Label();
-            dgvGradeLevelSubjects = new Guna.UI2.WinForms.Guna2DataGridView();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
+            ctrlListInfo1 = new Global_User_Controls.ctrlListInfo();
             guna2Panel1.SuspendLayout();
             guna2TabControl1.SuspendLayout();
             tpTeacherInfo.SuspendLayout();
             tpSubjectInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).BeginInit();
             SuspendLayout();
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.CustomizableEdges = customizableEdges5;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Panel1.Size = new Size(933, 85);
             guna2Panel1.TabIndex = 38;
             // 
@@ -128,8 +119,8 @@
             // 
             // tpSubjectInfo
             // 
+            tpSubjectInfo.Controls.Add(ctrlListInfo1);
             tpSubjectInfo.Controls.Add(pictureBox1);
-            tpSubjectInfo.Controls.Add(guna2GroupBox1);
             tpSubjectInfo.Location = new Point(4, 44);
             tpSubjectInfo.Name = "tpSubjectInfo";
             tpSubjectInfo.Padding = new Padding(3);
@@ -148,83 +139,10 @@
             pictureBox1.TabIndex = 53;
             pictureBox1.TabStop = false;
             // 
-            // guna2GroupBox1
-            // 
-            guna2GroupBox1.Controls.Add(lblTeacherName);
-            guna2GroupBox1.Controls.Add(dgvGradeLevelSubjects);
-            guna2GroupBox1.CustomizableEdges = customizableEdges3;
-            guna2GroupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2GroupBox1.ForeColor = Color.Black;
-            guna2GroupBox1.Location = new Point(9, 252);
-            guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GroupBox1.Size = new Size(916, 377);
-            guna2GroupBox1.TabIndex = 52;
-            guna2GroupBox1.Text = "Subjects Taught By Teacher";
-            // 
-            // lblTeacherName
-            // 
-            lblTeacherName.Location = new Point(267, 6);
-            lblTeacherName.Name = "lblTeacherName";
-            lblTeacherName.Size = new Size(227, 34);
-            lblTeacherName.TabIndex = 52;
-            lblTeacherName.Text = "(Teacher Name)";
-            // 
-            // dgvGradeLevelSubjects
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvGradeLevelSubjects.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvGradeLevelSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvGradeLevelSubjects.ColumnHeadersHeight = 4;
-            dgvGradeLevelSubjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvGradeLevelSubjects.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvGradeLevelSubjects.GridColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.Location = new Point(3, 43);
-            dgvGradeLevelSubjects.Name = "dgvGradeLevelSubjects";
-            dgvGradeLevelSubjects.RowHeadersVisible = false;
-            dgvGradeLevelSubjects.RowHeadersWidth = 51;
-            dgvGradeLevelSubjects.Size = new Size(916, 334);
-            dgvGradeLevelSubjects.TabIndex = 51;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.BackColor = Color.DarkCyan;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.Height = 4;
-            dgvGradeLevelSubjects.ThemeStyle.ReadOnly = false;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.Height = 29;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
             // btnClose
             // 
             btnClose.BorderRadius = 15;
-            btnClose.CustomizableEdges = customizableEdges5;
+            btnClose.CustomizableEdges = customizableEdges7;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -238,11 +156,18 @@
             btnClose.ImageAlign = HorizontalAlignment.Left;
             btnClose.Location = new Point(665, 879);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnClose.Size = new Size(215, 50);
             btnClose.TabIndex = 54;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click;
+            // 
+            // ctrlListInfo1
+            // 
+            ctrlListInfo1.Location = new Point(6, 237);
+            ctrlListInfo1.Name = "ctrlListInfo1";
+            ctrlListInfo1.Size = new Size(913, 425);
+            ctrlListInfo1.TabIndex = 54;
             // 
             // frmSubjectsTaughtByTeacher
             // 
@@ -262,8 +187,6 @@
             tpTeacherInfo.ResumeLayout(false);
             tpSubjectInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).EndInit();
             ResumeLayout(false);
         }
 
@@ -275,10 +198,8 @@
         private TabPage tpTeacherInfo;
         private ctrlTeacherCard ctrlTeacherCard1;
         private TabPage tpSubjectInfo;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvGradeLevelSubjects;
         private PictureBox pictureBox1;
-        private Label lblTeacherName;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
+        private Global_User_Controls.ctrlListInfo ctrlListInfo1;
     }
 }
