@@ -1,4 +1,5 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using studyCenter_BusineesLayer;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +19,9 @@ namespace studyCenter_Bl_
         public int? SubjectID { get; set; }
         public string Title { get; set; }
         public decimal Fees { get; set; }
-
+        public clsGradeLevel GradeLevelInfo => clsGradeLevel.Find(GradeLevelID.Value);
+        public clsSubject SubjectInfo => clsSubject.Find(SubjectID.Value);
+       
         public clsGradeLevelSubject()
         {
             GradeLevelSubjectID = null;

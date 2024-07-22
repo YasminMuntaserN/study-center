@@ -248,12 +248,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(940, 941);
+            ClientSize = new Size(933, 941);
             Controls.Add(btnClose);
             Controls.Add(guna2TabControl1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmSubjectsTaughtByTeacher";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmSubjectsTaughtByTeacher";
             Load += frmSubjectsTaughtByTeacher_Load;
             guna2Panel1.ResumeLayout(false);

@@ -22,6 +22,7 @@ namespace Study_center.Teacher
             _TeacherID = TeacherID;
             InitializeComponent();
         }
+      
         private void _FillData()
         {
             if (_TeacherID == null)
@@ -41,7 +42,6 @@ namespace Study_center.Teacher
 
             dgvGradeLevelSubjects.DataSource = clsTeacherSubject.GetSubjectsByTeacherID(_TeacherID);
         }
-
 
         private void frmSubjectsTaughtByTeacher_Load(object sender, EventArgs e)
         {
