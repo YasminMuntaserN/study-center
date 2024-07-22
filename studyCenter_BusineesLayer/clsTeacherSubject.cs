@@ -86,6 +86,9 @@ namespace studyCenter_BL_
 
         public static bool IsTeachingSubject(int? teacherID, int? gradeLevelSubjectID)
             => clsTeacherSubjectData.IsTeachingSubject(teacherID.Value, gradeLevelSubjectID.Value);
+
+        public static DataTable GetSubjectsByTeacherID(int? teacherID)
+            => clsTeacherSubjectData.GetSubjectsByTeacherID(teacherID.Value);
     }
 
 }

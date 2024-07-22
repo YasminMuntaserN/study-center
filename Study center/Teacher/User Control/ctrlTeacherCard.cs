@@ -27,7 +27,7 @@ namespace Study_center.Teacher
 
         private void FillTeacherInfoInFields()
         {
-            // Fill teacher-specific fields
+            ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Teacher.PersonID);
             lblTeacherID.Text = _Teacher.TeacherID.ToString();
             lblHireDate.Text = _Teacher.HireDate.ToString("yyyy-MM-dd");
             lblQualification.Text = _Teacher.Qualification;

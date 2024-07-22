@@ -164,5 +164,12 @@ namespace Study_center.Person.User_Controls
           e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
+        public void setFilterEnabledAndLoadData(int? personID)
+        {
+            txtFilterValue.Text = personID.ToString();
+            FilterEnabled = false;
+            ctrlPersonCard1.LoadPersonData(personID);
+        }
+
     }
 }

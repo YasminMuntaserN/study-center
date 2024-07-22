@@ -13,7 +13,7 @@ namespace StudyCenter_DataAccessLayer.Global_classes
         ///   This Method For Logging Try Catch Exception From Data Access For This Project
         public static void LogError(Exception ex)
         {
-            string sourceName = "DVDLProject";
+            string sourceName = "StudyCenterProject";
 
             if (!EventLog.SourceExists(sourceName))
             {

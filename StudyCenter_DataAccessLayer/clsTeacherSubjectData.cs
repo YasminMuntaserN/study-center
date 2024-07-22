@@ -199,6 +199,11 @@ namespace StudyCenter_DAL_
             return isTeaching;
         }
 
+        public static DataTable GetSubjectsByTeacherID(int teacherID)
+        {
+            return clsDataAccessHelper.All("SP_GetSubjectsByTeacherID", "TeacherID", teacherID);
+        }
+
     }
 
 }
