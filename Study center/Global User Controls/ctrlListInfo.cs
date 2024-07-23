@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using studyCenter_Bl_;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
 using System;
@@ -36,17 +37,25 @@ namespace Study_center.Global_User_Controls
             lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
-        public void FillTeachersWhoTeachSubject(int? TeacherSubject)
+        public void FillTeachersWhoTeachSubject(int? GradeLevelSubjectID)
         {
-            clsTeacherSubject TeacherSubjectInfo = clsTeacherSubject.Find(TeacherSubject);
-
-            if (TeacherSubjectInfo == null)
+            if (!GradeLevelSubjectID.HasValue)
             {
-                clsMessages.GeneralErrorMessage($"There is no Teacher Subject with id {TeacherSubject} ");
+                clsMessages.GeneralErrorMessage("Grade Level Subject ID is required.");
                 return;
             }
-            lblListName.Text = $"Teachers Who Teach Subject {TeacherSubjectInfo.GradeLevelSubjectInfo.Title}";
-            _List = clsTeacherSubject.GetTeachersBySubject(TeacherSubjectInfo.GradeLevelSubjectInfo.SubjectID);
+
+            clsGradeLevelSubject gradeLevelSubjectInfo = clsGradeLevelSubject.Find(GradeLevelSubjectID);
+
+            if (gradeLevelSubjectInfo == null)
+            {
+                clsMessages.GeneralErrorMessage($"There is no Grade Level Subject with id {GradeLevelSubjectID} ");
+                return;
+            }
+
+            lblListName.Text = $"Teachers Who Teach Subject {gradeLevelSubjectInfo.Title}";
+
+            _List = clsTeacherSubject.GetTeachersBySubject(gradeLevelSubjectInfo.SubjectID);
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
         }

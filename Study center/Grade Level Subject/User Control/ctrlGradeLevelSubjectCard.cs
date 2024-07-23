@@ -1,5 +1,6 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Teacher;
+using Study_center.Teacher_and_Subject;
 using studyCenter_Bl_;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace Study_center.Grade_Level_Subject.User_Control
 {
@@ -19,10 +21,9 @@ namespace Study_center.Grade_Level_Subject.User_Control
 
         private int? _GradeLevelSubjectID;
 
-        public ctrlGradeLevelSubjectCard(int? gradeLevelSubjectID)
+        public ctrlGradeLevelSubjectCard()
         {
             InitializeComponent();
-            _GradeLevelSubjectID = gradeLevelSubjectID;  
         }
     
         private void _FillObjectInFailed()
@@ -36,8 +37,14 @@ namespace Study_center.Grade_Level_Subject.User_Control
             lblSubject.Text = _GradeLevelSubject.SubjectInfo.SubjectName;
         }
      
-        public void LoadData()
+        public void LoadData(int? gradeLevelSubjectID)
         {
+            if(!gradeLevelSubjectID.HasValue)
+            {
+                clsMessages.GeneralErrorMessage($"Cannot Find Grade Level Subject with ID {_GradeLevelSubjectID}");
+            }
+            _GradeLevelSubjectID = gradeLevelSubjectID;
+
             _GradeLevelSubject = clsGradeLevelSubject.Find(_GradeLevelSubjectID);
             if( _GradeLevelSubject == null )
             {
@@ -49,7 +56,8 @@ namespace Study_center.Grade_Level_Subject.User_Control
 
         private void llWhoTeachesIt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmAllTeachersWhoTeachSubject Teachers = new frmAllTeachersWhoTeachSubject(_GradeLevelSubjectID);
+            Teachers.ShowDialog();
         }
     }
 }

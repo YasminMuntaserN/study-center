@@ -11,7 +11,7 @@ namespace StudyCenter_DataAccessLayer
 {
     public class clsGradeLevelData
     {
-        public static bool GetInfoByID(int? gradeLevelID, ref string gradeName)
+        public static bool GetInfoByID(int? gradeLevelID, ref string GradeLevelName)
         {
             bool isFound = false;
 
@@ -34,7 +34,7 @@ namespace StudyCenter_DataAccessLayer
                                 // The record was found
                                 isFound = true;
 
-                                gradeName = (string)reader["GradeName"];
+                                GradeLevelName = (string)reader["GradeLevelName"];
                             }
                             else
                             {
@@ -54,7 +54,7 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static byte? Add(string gradeName)
+        public static byte? Add(string GradeLevelName)
         {
             // This function will return the new person id if succeeded and null if not
             byte? gradeLevelID = null;
@@ -69,7 +69,7 @@ namespace StudyCenter_DataAccessLayer
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@GradeName", gradeName);
+                        command.Parameters.AddWithValue("@GradeLevelName", GradeLevelName);
 
                         SqlParameter outputIdParam = new SqlParameter("@NewGradeLevelID", SqlDbType.Int)
                         {
@@ -91,7 +91,7 @@ namespace StudyCenter_DataAccessLayer
             return gradeLevelID;
         }
 
-        public static bool Update(int gradeLevelID, string gradeName)
+        public static bool Update(int gradeLevelID, string GradeLevelName)
         {
             int rowAffected = 0;
 
@@ -106,7 +106,7 @@ namespace StudyCenter_DataAccessLayer
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
-                        command.Parameters.AddWithValue("@GradeName", gradeName);
+                        command.Parameters.AddWithValue("@GradeLevelName", GradeLevelName);
 
                         rowAffected = command.ExecuteNonQuery();
                     }
@@ -126,8 +126,8 @@ namespace StudyCenter_DataAccessLayer
         public static bool Exists(int? gradeLevelID)
             => clsDataAccessHelper.Exists("SP_DoesGradeLevelExistByGradeLevelID", "GradeLevelID", gradeLevelID);
 
-        public static bool Exists(string gradeName)
-            => clsDataAccessHelper.Exists("SP_DoesGradeLevelExistByGradeLevelName", "GradeLevelName", gradeName);
+        public static bool Exists(string GradeLevelName)
+            => clsDataAccessHelper.Exists("SP_DoesGradeLevelExistByGradeLevelName", "GradeLevelName", GradeLevelName);
 
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllGradeLevels");
@@ -139,7 +139,7 @@ namespace StudyCenter_DataAccessLayer
         public static string GetGradeLevelName(int? gradeLevelID)
         {
             // This function will return the new person id if succeeded and null if not
-            string gradeName = null;
+            string GradeLevelName = null;
 
             try
             {
@@ -153,7 +153,7 @@ namespace StudyCenter_DataAccessLayer
 
                         command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
 
-                        SqlParameter outputIdParam = new SqlParameter("@GradeName", SqlDbType.NVarChar, 50)
+                        SqlParameter outputIdParam = new SqlParameter("@GradeLevelName", SqlDbType.NVarChar, 50)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -161,7 +161,7 @@ namespace StudyCenter_DataAccessLayer
 
                         command.ExecuteNonQuery();
 
-                        gradeName = outputIdParam.Value.ToString();
+                        GradeLevelName = outputIdParam.Value.ToString();
                     }
                 }
             }
@@ -170,7 +170,7 @@ namespace StudyCenter_DataAccessLayer
                 clsErrorLogger.LogError(ex);
             }
 
-            return gradeName;
+            return GradeLevelName;
         }
 
         public static int? GetGradeLevelID(string GradeLevelName)
