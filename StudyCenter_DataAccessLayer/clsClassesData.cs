@@ -114,18 +114,15 @@ namespace StudyCenter_DAL_
         }
 
         public static bool Delete(int? classID)
-        {
-            return clsDataAccessHelper.Delete("SP_DeleteClass", "ClassID", classID);
-        }
+            => clsDataAccessHelper.Delete("SP_DeleteClass", "ClassID", classID);
 
         public static bool Exists(int? classID)
-        {
-            return clsDataAccessHelper.Exists("SP_DoesClassExistByID", "ClassID", classID);
-        }
+            => clsDataAccessHelper.Exists("SP_DoesClassExistByID", "ClassID", classID);
 
+        public static bool Exists(string className)
+            => clsDataAccessHelper.Exists("SP_DoesClassExistByClassName", "className", className);
+    
         public static DataTable All()
-        {
-            return clsDataAccessHelper.All("SP_GetAllClasses");
-        }
+            => clsDataAccessHelper.All("SP_GetAllClasses");
     }
 }

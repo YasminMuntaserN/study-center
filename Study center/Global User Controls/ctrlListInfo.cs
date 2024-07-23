@@ -51,9 +51,5 @@ namespace Study_center.Global_User_Controls
             lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
-        private void ctrlListInfo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

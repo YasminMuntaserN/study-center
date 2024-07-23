@@ -39,9 +39,7 @@ namespace studyCenter_BL_
         }
 
         private bool _Update()
-        {
-            return clsClassesDAL.Update(ClassID.Value, ClassName, Capacity);
-        }
+             => clsClassesDAL.Update(ClassID.Value, ClassName, Capacity);
 
         public bool Save()
         {
@@ -65,7 +63,7 @@ namespace studyCenter_BL_
             return false;
         }
 
-        public static clsClass Find(int classID)
+        public static clsClass Find(int? classID)
         {
             string className = string.Empty;
             byte? capacity = null;
@@ -74,14 +72,13 @@ namespace studyCenter_BL_
         }
 
         public static bool Delete(int? classID)
-        {
-            return clsClassesDAL.Delete(classID);
-        }
+            => clsClassesDAL.Delete(classID);
 
         public static bool Exists(int? classID)
-        {
-            return clsClassesDAL.Exists(classID);
-        }
+            => clsClassesDAL.Exists(classID);
+
+        public static bool Exists(string? ClassName)
+          => clsClassesDAL.Exists(ClassName);
     }
 
 }

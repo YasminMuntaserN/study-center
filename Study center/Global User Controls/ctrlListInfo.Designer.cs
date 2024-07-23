@@ -147,7 +147,6 @@
             Controls.Add(guna2GroupBox1);
             Name = "ctrlListInfo";
             Size = new Size(924, 433);
-            Load += ctrlListInfo_Load;
             guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).EndInit();
             ResumeLayout(false);

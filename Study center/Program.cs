@@ -1,8 +1,10 @@
+using Study_center.Class;
 using Study_center.Grade_Level_Subject;
 using Study_center.Student;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
 using studyCenter_BusineesLayer;
+using System.Security.Cryptography;
 namespace Study_center
 {
     internal static class Program
@@ -16,7 +18,7 @@ namespace Study_center
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmAllTeachersWhoTeachSubject(4));
+            Application.Run(new frmAddClass());
         }
     }
 }
