@@ -161,6 +161,47 @@ namespace StudyCenter_DAL_
 
             return dt;
         }
+
+
+        public static bool GetPatternDetailsByID(int patternID, ref string patternDescription, ref string encodedDays)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetPatternDetailsByID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@PatternID", patternID);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                patternDescription = reader["PatternDescription"] as string;
+                                encodedDays = reader["EncodedDays"] as string;
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                clsErrorLogger.LogError(ex);
+            }
+
+            return isFound;
+        }
     }
 
 }
