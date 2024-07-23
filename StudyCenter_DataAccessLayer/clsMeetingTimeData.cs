@@ -162,7 +162,6 @@ namespace StudyCenter_DAL_
             return dt;
         }
 
-
         public static bool GetPatternDetailsByID(int patternID, ref string patternDescription, ref string encodedDays)
         {
             bool isFound = false;

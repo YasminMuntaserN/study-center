@@ -1,5 +1,6 @@
 ﻿using Study_center.Global_Classes;
 using studyCenter_Bl_;
+using studyCenter_BL_;
 using studyCenter_BusineesLayer;
 using StudyCenter_DataAccessLayer;
 using System;
@@ -31,7 +32,7 @@ namespace Study_center.Grade_Level_Subject
         {
             InitializeComponent();
             _gradeLevelSubjectID = gradeLevelSubjectID;
-            _Mode= enMode.Update;  
+            _Mode = enMode.Update;
         }
 
         private void _ResetTitles()
@@ -83,7 +84,7 @@ namespace Study_center.Grade_Level_Subject
                 return false;
             }
 
-            if (clsGradeLevelSubject.CheckIfTitleExists(lblGradeLevelSubjectTitle.Text.Trim())&& _Mode != enMode.Update)
+            if (clsGradeLevelSubject.CheckIfTitleExists(lblGradeLevelSubjectTitle.Text.Trim()) && _Mode != enMode.Update)
             {
                 clsMessages.GeneralErrorMessage("Failed to save Grade Level Subject.");
                 return false;
@@ -120,7 +121,7 @@ namespace Study_center.Grade_Level_Subject
             {
                 clsMessages.GeneralErrorMessage("Failed to save Grade Level Subject.");
             }
-           
+
         }
 
         private void frmAddGradeLevelSubject_Load(object sender, EventArgs e)
@@ -163,7 +164,7 @@ namespace Study_center.Grade_Level_Subject
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
     }
 }

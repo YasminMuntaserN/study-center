@@ -1,5 +1,6 @@
 using Study_center.Class;
 using Study_center.Grade_Level_Subject;
+using Study_center.Meeting_Times;
 using Study_center.Student;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
@@ -18,7 +19,7 @@ namespace Study_center
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmSubjectGradeLevelInfo(1));
+            Application.Run(new frmAddMeetingTime());
         }
     }
 }

@@ -223,6 +223,16 @@ namespace Study_center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap meeting {
+            get {
+                object obj = ResourceManager.GetObject("meeting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phone_call {
             get {
                 object obj = ResourceManager.GetObject("phone-call", resourceCulture);

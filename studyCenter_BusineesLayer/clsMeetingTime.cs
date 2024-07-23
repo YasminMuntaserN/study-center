@@ -67,7 +67,7 @@ namespace studyCenter_BL_
             return false;
         }
 
-        public static clsMeetingTimes Find(int meetingTimeID)
+        public static clsMeetingTimes Find(int? meetingTimeID)
         {
             int? patternID = null;
             TimeSpan? startTime = null;

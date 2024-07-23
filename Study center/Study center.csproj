@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
