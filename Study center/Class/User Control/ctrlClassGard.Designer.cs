@@ -76,7 +76,7 @@
             lblCapacity.BackColor = Color.White;
             lblCapacity.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblCapacity.ForeColor = Color.Black;
-            lblCapacity.Location = new Point(169, 129);
+            lblCapacity.Location = new Point(218, 129);
             lblCapacity.Name = "lblCapacity";
             lblCapacity.Size = new Size(62, 28);
             lblCapacity.TabIndex = 69;
@@ -86,11 +86,11 @@
             // 
             lblClassName.AutoSize = true;
             lblClassName.BackColor = Color.White;
-            lblClassName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblClassName.ForeColor = Color.Black;
+            lblClassName.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblClassName.ForeColor = Color.Maroon;
             lblClassName.Location = new Point(646, 60);
             lblClassName.Name = "lblClassName";
-            lblClassName.Size = new Size(62, 28);
+            lblClassName.Size = new Size(76, 32);
             lblClassName.TabIndex = 68;
             lblClassName.Text = "[????]";
             // 
@@ -110,8 +110,8 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = Properties.Resources.fundraiser;
-            pictureBox4.Location = new Point(127, 125);
+            pictureBox4.Image = Properties.Resources.capacity;
+            pictureBox4.Location = new Point(176, 125);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(36, 32);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             lbl.BackColor = Color.Transparent;
             lbl.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             lbl.ForeColor = Color.Black;
-            lbl.Location = new Point(25, 125);
+            lbl.Location = new Point(74, 125);
             lbl.Name = "lbl";
             lbl.Size = new Size(101, 31);
             lbl.TabIndex = 63;
@@ -136,7 +136,7 @@
             lblClassID.BackColor = Color.Transparent;
             lblClassID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblClassID.ForeColor = Color.Black;
-            lblClassID.Location = new Point(169, 57);
+            lblClassID.Location = new Point(218, 57);
             lblClassID.Name = "lblClassID";
             lblClassID.Size = new Size(60, 32);
             lblClassID.TabIndex = 45;
@@ -145,8 +145,8 @@
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = Properties.Resources.id_card;
-            pictureBox5.Location = new Point(127, 57);
+            pictureBox5.Image = Properties.Resources.id;
+            pictureBox5.Location = new Point(176, 57);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(36, 32);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -159,7 +159,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(10, 57);
+            label1.Location = new Point(59, 57);
             label1.Name = "label1";
             label1.Size = new Size(116, 31);
             label1.TabIndex = 40;
@@ -168,7 +168,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Image = Properties.Resources.class__1_;
             pictureBox1.Location = new Point(604, 57);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 32);

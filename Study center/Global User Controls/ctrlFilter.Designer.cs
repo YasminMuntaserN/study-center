@@ -75,7 +75,7 @@
             btnSearch.ImageOffset = new Point(0, 0);
             btnSearch.ImageRotate = 0F;
             btnSearch.ImageSize = new Size(44, 44);
-            btnSearch.Location = new Point(604, 43);
+            btnSearch.Location = new Point(644, 46);
             btnSearch.Name = "btnSearch";
             btnSearch.PressedState.ImageSize = new Size(64, 64);
             btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -92,7 +92,7 @@
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(44, 44);
-            btnAdd.Location = new Point(677, 43);
+            btnAdd.Location = new Point(717, 46);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -117,7 +117,7 @@
             cbFilter.Location = new Point(135, 70);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cbFilter.Size = new Size(175, 36);
+            cbFilter.Size = new Size(215, 36);
             cbFilter.TabIndex = 43;
             // 
             // txtFilterValue
@@ -135,7 +135,7 @@
             txtFilterValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtFilterValue.ForeColor = Color.Black;
             txtFilterValue.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtFilterValue.Location = new Point(333, 67);
+            txtFilterValue.Location = new Point(373, 67);
             txtFilterValue.Margin = new Padding(4, 6, 4, 6);
             txtFilterValue.Name = "txtFilterValue";
             txtFilterValue.PasswordChar = '\0';
@@ -145,8 +145,8 @@
             txtFilterValue.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtFilterValue.Size = new Size(215, 39);
             txtFilterValue.TabIndex = 42;
-            txtFilterValue.TextChanged += txtFilterValue_TextChanged;
             txtFilterValue.KeyPress += txtFilterValue_KeyPress;
+            txtFilterValue.Validating += txtFilterValue_Validating;
             // 
             // label12
             // 

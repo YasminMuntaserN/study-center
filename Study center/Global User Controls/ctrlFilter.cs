@@ -13,6 +13,20 @@ namespace Study_center.Global_User_Controls
 {
     public partial class ctrlFilter : UserControl
     {
+        #region Filter Enabled
+        private bool _FilterEnabled = true;
+
+        public bool FilterEnabled
+        {
+            get => _FilterEnabled;
+
+            set
+            {
+                _FilterEnabled = value;
+                gbFilter.Enabled = _FilterEnabled;
+            }
+        }
+        #endregion
         public event EventHandler SearchClicked;
         public event EventHandler AddClicked;
 
@@ -38,12 +52,17 @@ namespace Study_center.Global_User_Controls
         private bool IsNumericFilter()
         {
             // Define which filters require numeric input
-            var numericFilters = new List<string> { "TeacherID", "StudentID", "SubjectID" };
+            var numericFilters = new List<string> { "TeacherID", "StudentID", "SubjectID", "ClassID" };
             return numericFilters.Contains(SelectedFilter);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtFilterValue.Text))
+            {
+                errorProvider1.SetError(txtFilterValue, "Filter value cannot be empty.");
+                return;
+            }
             SearchClicked?.Invoke(this, EventArgs.Empty);
         }
 
@@ -62,7 +81,7 @@ namespace Study_center.Global_User_Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFilterValue.Text))
             {
@@ -73,6 +92,6 @@ namespace Study_center.Global_User_Controls
             {
                 errorProvider1.SetError(txtFilterValue, null);
             }
-            }
+        }
     }
 }

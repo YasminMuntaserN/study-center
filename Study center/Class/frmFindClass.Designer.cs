@@ -1,6 +1,6 @@
-﻿namespace Study_center.Teacher
+﻿namespace Study_center.Class
 {
-    partial class frmFindTeacher
+    partial class frmFindClass
     {
         /// <summary>
         /// Required designer variable.
@@ -34,9 +34,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            ctrlTeacherCard1 = new ctrlTeacherCard();
+            ctrlClassCardWithFilter1 = new User_Control.ctrlClassCardWithFilter();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
+            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(930, 85);
-            guna2Panel1.TabIndex = 37;
+            guna2Panel1.TabIndex = 38;
             // 
             // lblTitle
             // 
@@ -59,23 +59,15 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(910, 76);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Find Teacher";
+            lblTitle.Text = "Find Class";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // guna2Separator1
+            // ctrlClassCardWithFilter1
             // 
-            guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(0, 91);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(930, 14);
-            guna2Separator1.TabIndex = 38;
-            // 
-            // ctrlTeacherCard1
-            // 
-            ctrlTeacherCard1.Location = new Point(12, 111);
-            ctrlTeacherCard1.Name = "ctrlTeacherCard1";
-            ctrlTeacherCard1.Size = new Size(896, 754);
-            ctrlTeacherCard1.TabIndex = 39;
+            ctrlClassCardWithFilter1.Location = new Point(12, 111);
+            ctrlClassCardWithFilter1.Name = "ctrlClassCardWithFilter1";
+            ctrlClassCardWithFilter1.Size = new Size(884, 354);
+            ctrlClassCardWithFilter1.TabIndex = 39;
             // 
             // btnClose
             // 
@@ -92,28 +84,36 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(365, 871);
+            btnClose.Location = new Point(647, 471);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(215, 50);
-            btnClose.TabIndex = 40;
+            btnClose.TabIndex = 41;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click;
             // 
-            // frmFindTeacher
+            // guna2Separator1
+            // 
+            guna2Separator1.FillThickness = 5;
+            guna2Separator1.Location = new Point(0, 91);
+            guna2Separator1.Name = "guna2Separator1";
+            guna2Separator1.Size = new Size(930, 14);
+            guna2Separator1.TabIndex = 42;
+            // 
+            // frmFindClass
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 931);
-            Controls.Add(btnClose);
-            Controls.Add(ctrlTeacherCard1);
+            ClientSize = new Size(914, 529);
             Controls.Add(guna2Separator1);
+            Controls.Add(btnClose);
+            Controls.Add(ctrlClassCardWithFilter1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmFindTeacher";
+            Name = "frmFindClass";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmFindTeacher";
-            Load += frmFindTeacher_Load;
+            Text = "frmFindClass";
+            Load += frmFindClass_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -122,8 +122,8 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private ctrlTeacherCard ctrlTeacherCard1;
+        private User_Control.ctrlClassCardWithFilter ctrlClassCardWithFilter1;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }

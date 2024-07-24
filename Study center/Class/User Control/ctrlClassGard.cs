@@ -1,4 +1,5 @@
-﻿using Study_center.Global_Classes;
+﻿using Microsoft.IdentityModel.Tokens;
+using Study_center.Global_Classes;
 using studyCenter_BL_;
 using System;
 using System.Collections.Generic;
@@ -49,9 +50,31 @@ namespace Study_center.Class.User_Control
             _FillClassDetails();
         }
 
+        public void LoadClassData(string? className)
+        {
+            if (className.IsNullOrEmpty())
+            {
+                clsMessages.GeneralErrorMessage($"Cannot find class with Name {className}");
+                return;
+            }
+
+           
+            _Class = clsClass.Find(className);
+            _ClassID = _Class.ClassID;
+
+            if (_Class == null)
+            {
+                clsMessages.GeneralErrorMessage($"Cannot find class with ID {_ClassID}");
+                return;
+            }
+
+            _FillClassDetails();
+        }
+
         private void llEditClassInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddClass frmAddClass = new frmAddClass(_ClassID);
+            LoadClassData(_ClassID);
             frmAddClass.ShowDialog();   
         }
     }

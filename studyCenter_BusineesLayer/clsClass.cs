@@ -85,7 +85,7 @@ namespace studyCenter_BL_
         public static bool Exists(int? classID)
             => clsClassesDAL.Exists(classID);
 
-        public static bool Exists(string? ClassName)
+        public static bool Exists(string ClassName)
           => clsClassesDAL.Exists(ClassName);
     }
 

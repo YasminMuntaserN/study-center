@@ -15,6 +15,7 @@ namespace Study_center.Class
 {
     public partial class frmAddClass : Form
     {
+        public Action<int?> ClassIDBack;
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
@@ -74,7 +75,7 @@ namespace Study_center.Class
                 return false;
             }
 
-            if (!clsClass.Exists(txtClassName.Text.Trim()) && _Mode != enMode.Update)
+            if (clsClass.Exists(txtClassName.Text.Trim()) && _Mode != enMode.Update)
             {
                 clsMessages.GeneralErrorMessage("Failed to save Class., This class Name Exists ");
                 return false;
@@ -110,6 +111,8 @@ namespace Study_center.Class
             if (!_checkCorrectData()) return;
 
             _Save();
+
+            ClassIDBack?.Invoke(_class?.ClassID);
         }
 
         private void frmAddClass_Load_1(object sender, EventArgs e)
