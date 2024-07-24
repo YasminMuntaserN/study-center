@@ -11,7 +11,7 @@ namespace StudyCenter_DataAccessLayer
 {
     public class clsGroupData
     {
-        public static bool GetInfoByID(int? groupID, ref string groupName, ref int gradeLevelSubjectID, ref decimal groupStudentCount, ref int teacherSubjectID, ref int classID, ref int meetingTimeID)
+        public static bool GetInfoByID(int? groupID, ref string groupName, ref int gradeLevelSubjectID, ref decimal groupStudentCount, ref int teacherSubjectID, ref int classID, ref int meetingTimeID, ref bool isActive,ref DateTime CreationDate)
         {
             bool isFound = false;
 
@@ -40,6 +40,8 @@ namespace StudyCenter_DataAccessLayer
                                 teacherSubjectID = (int)reader["TeacherSubjectID"];
                                 classID = (int)reader["ClassID"];
                                 meetingTimeID = (int)reader["MeetingTimeID"];
+                                isActive = (bool)reader["IsActive"];
+                                CreationDate = (DateTime)reader["CreationDate"];
                             }
                             else
                             {
@@ -59,7 +61,7 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static int? Add( int gradeLevelSubjectID, decimal groupStudentCount, int teacherSubjectID, int classID, int meetingTimeID)
+        public static int? Add(string groupName, int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
         {
             int? groupID = null;
 
@@ -73,12 +75,14 @@ namespace StudyCenter_DataAccessLayer
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@GroupName",string.Empty);
+                        command.Parameters.AddWithValue("@GroupName", groupName ?? string.Empty);
                         command.Parameters.AddWithValue("@GradeLevelSubjectID", gradeLevelSubjectID);
                         command.Parameters.AddWithValue("@GroupStudentCount", groupStudentCount);
                         command.Parameters.AddWithValue("@TeacherSubjectID", teacherSubjectID);
                         command.Parameters.AddWithValue("@ClassID", classID);
                         command.Parameters.AddWithValue("@MeetingTimeID", meetingTimeID);
+                        command.Parameters.AddWithValue("@IsActive", isActive);
+                        command.Parameters.AddWithValue("@CreationDate", DateTime.Now);
 
                         SqlParameter outputIdParam = new SqlParameter("@NewGroupID", SqlDbType.Int)
                         {
@@ -100,7 +104,7 @@ namespace StudyCenter_DataAccessLayer
             return groupID;
         }
 
-        public static bool Update(int groupID, string groupName, int gradeLevelSubjectID, decimal groupStudentCount, int teacherSubjectID, int classID, int meetingTimeID)
+        public static bool Update(int? groupID, string groupName, int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
         {
             int rowsAffected = 0;
 
@@ -121,6 +125,8 @@ namespace StudyCenter_DataAccessLayer
                         command.Parameters.AddWithValue("@TeacherSubjectID", teacherSubjectID);
                         command.Parameters.AddWithValue("@ClassID", classID);
                         command.Parameters.AddWithValue("@MeetingTimeID", meetingTimeID);
+                        command.Parameters.AddWithValue("@IsActive", isActive);
+                        command.Parameters.AddWithValue("@CreationDate", DateTime.Now);
 
                         rowsAffected = command.ExecuteNonQuery();
                     }
@@ -179,6 +185,36 @@ namespace StudyCenter_DataAccessLayer
             return groupName;
         }
 
-    }
+        public static DataTable GetAvailableMeetingTimes(int? classID, int? teacherID)
+        {
+            DataTable dtMeetingTimes = new DataTable();
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetAvailableMeetingTimes", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ClassID", classID);
+                        command.Parameters.AddWithValue("@TeacherID", teacherID);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dtMeetingTimes);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorLogger.LogError(ex);
+            }
+
+            return dtMeetingTimes;
+        }
+    }
 }
+

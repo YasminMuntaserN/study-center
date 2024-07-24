@@ -115,6 +115,7 @@
             dgvGradeLevelSubjects.ThemeStyle.RowsStyle.Height = 29;
             dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvGradeLevelSubjects.CellContentClick += dgvGradeLevelSubjects_CellContentClick;
             // 
             // label2
             // 

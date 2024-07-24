@@ -14,6 +14,7 @@ namespace Study_center.Teacher
 {
     public partial class ctrlTeacherCard : UserControl
     {
+        public event EventHandler TeacherSelected;
 
         private clsTeacher _Teacher;
 
@@ -45,6 +46,7 @@ namespace Study_center.Teacher
                 return;
             }
             FillTeacherInfoInFields();
+            OnTeacherSelected(EventArgs.Empty);
         }
 
         public void LoadTeacherInfoByPerson(int? personID)
@@ -58,6 +60,7 @@ namespace Study_center.Teacher
             }
 
             FillTeacherInfoInFields();
+            OnTeacherSelected(EventArgs.Empty);
         }
 
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, ctrlPersonCardWithFilter.SelectPersonEventArgs e)
@@ -79,5 +82,9 @@ namespace Study_center.Teacher
             LoadTeacherInfo(_Teacher.TeacherID);
         }
 
+        protected virtual void OnTeacherSelected(EventArgs e)
+        {
+            TeacherSelected?.Invoke(this, e);
+        }
     }
 }

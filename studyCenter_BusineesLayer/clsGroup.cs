@@ -11,15 +11,18 @@ namespace studyCenter_BusineesLayer
     public class clsGroup
     {
         public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+
+        public enMode Mode { get; set; } = enMode.AddNew;
 
         public int? GroupID { get; set; }
         public string GroupName { get; set; }
-        public int GradeLevelSubjectID { get; set; }
+        public int? GradeLevelSubjectID { get; set; }
         public decimal GroupStudentCount { get; set; }
-        public int TeacherSubjectID { get; set; }
-        public int ClassID { get; set; }
-        public int MeetingTimeID { get; set; }
+        public int? TeacherSubjectID { get; set; }
+        public int? ClassID { get; set; }
+        public int? MeetingTimeID { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime CreationDate { get; set; }
 
         public clsGroup()
         {
@@ -30,11 +33,13 @@ namespace studyCenter_BusineesLayer
             TeacherSubjectID = 0;
             ClassID = 0;
             MeetingTimeID = 0;
+            IsActive = true;
+            CreationDate = DateTime.Now;
 
             Mode = enMode.AddNew;
         }
 
-        private clsGroup(int groupID, string groupName, int gradeLevelSubjectID, decimal groupStudentCount, int teacherSubjectID, int classID, int meetingTimeID)
+        private clsGroup(int groupID, string groupName, int gradeLevelSubjectID, decimal groupStudentCount, int teacherSubjectID, int classID, int meetingTimeID, bool isActive, DateTime creationDate)
         {
             GroupID = groupID;
             GroupName = groupName;
@@ -43,20 +48,21 @@ namespace studyCenter_BusineesLayer
             TeacherSubjectID = teacherSubjectID;
             ClassID = classID;
             MeetingTimeID = meetingTimeID;
+            IsActive = isActive;
+            CreationDate = creationDate;
 
             Mode = enMode.Update;
         }
 
         private bool _Add()
         {
-            GroupID = clsGroupData.Add(GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID);
-
+            GroupID = clsGroupData.Add(GroupName, GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID, IsActive);
             return GroupID.HasValue;
         }
 
         private bool _Update()
         {
-            return clsGroupData.Update(GroupID.Value, GroupName, GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID);
+            return clsGroupData.Update(GroupID, GroupName, GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID, IsActive);
         }
 
         public bool Save()
@@ -89,10 +95,12 @@ namespace studyCenter_BusineesLayer
             int teacherSubjectID = 0;
             int classID = 0;
             int meetingTimeID = 0;
+            bool isActive = false;
+            DateTime creationDate = DateTime.MinValue;
 
-            bool isFound = clsGroupData.GetInfoByID(groupID, ref groupName, ref gradeLevelSubjectID, ref groupStudentCount, ref teacherSubjectID, ref classID, ref meetingTimeID);
+            bool isFound = clsGroupData.GetInfoByID(groupID, ref groupName, ref gradeLevelSubjectID, ref groupStudentCount, ref teacherSubjectID, ref classID, ref meetingTimeID, ref isActive, ref creationDate);
 
-            return (isFound) ? new clsGroup(groupID, groupName, gradeLevelSubjectID, groupStudentCount, teacherSubjectID, classID, meetingTimeID) : null;
+            return (isFound) ? new clsGroup(groupID, groupName, gradeLevelSubjectID, groupStudentCount, teacherSubjectID, classID, meetingTimeID, isActive, creationDate) : null;
         }
 
         public static bool Delete(int? groupID)
@@ -105,6 +113,11 @@ namespace studyCenter_BusineesLayer
 
         public static string GetGroupName(int groupID)
             => clsGroupData.GetGroupName(groupID);
-    }
 
+        public static DataTable GetAvailableMeetingTimes(int? classId , int? TeacherId)
+           => clsGroupData.GetAvailableMeetingTimes(classId, TeacherId);
+     
+    }
 }
+
+

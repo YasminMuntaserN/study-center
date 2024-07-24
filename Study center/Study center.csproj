@@ -43,8 +43,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Group\" />
-  </ItemGroup>
-
 </Project>

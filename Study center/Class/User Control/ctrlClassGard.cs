@@ -18,6 +18,7 @@ namespace Study_center.Class.User_Control
         private clsClass _Class;
         private int? _ClassID;
 
+        public int? ClassID => _ClassID;    
         public ctrlClassGard()
         {
             InitializeComponent();

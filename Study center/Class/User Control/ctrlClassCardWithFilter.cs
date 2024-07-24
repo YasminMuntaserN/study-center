@@ -1,6 +1,7 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Person.User_Controls;
 using studyCenter_BL_;
+using studyCenter_BusineesLayer;
 using StudyCenter_DAL_;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,17 @@ namespace Study_center.Class.User_Control
 {
     public partial class ctrlClassCardWithFilter : UserControl
     {
+        public event EventHandler ClassSelected;
+
         public ctrlClassCardWithFilter()
         {
             InitializeComponent();
             ctrlFilter1.SetFilterOptions(new List<string> { "ClassID", "ClassName" });
         }
+
+        private clsClass _Class;
+
+        public clsClass ClassInfo => _Class;
 
         private void ctrlFilter1_AddClicked(object sender, EventArgs e)
         {
@@ -46,6 +53,15 @@ namespace Study_center.Class.User_Control
             }
             else if (selectedFilter == "ClassName")
                 ctrlClassGard1.LoadClassData(filterValue);
+
+            _Class = clsClass.Find(ctrlClassGard1.ClassID);
+
+            OnClassSelected(EventArgs.Empty);
+        }
+
+        protected virtual void OnClassSelected(EventArgs e)
+        {
+            ClassSelected?.Invoke(this, e);
         }
 
     }
