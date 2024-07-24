@@ -48,6 +48,42 @@ namespace StudyCenter_DAL_
             return isFound;
         }
 
+        public static bool GetInfoByName(string className, ref int? classID,  ref byte? capacity)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetClassInfoByName", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ClassName", className);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                classID = reader["classID"] as int?; 
+                                capacity = reader["Capacity"] as byte?;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                clsErrorLogger.LogError(ex);
+            }
+
+            return isFound;
+        }
+
         public static int? Add(string className, byte? capacity)
         {
             int? classID = null;

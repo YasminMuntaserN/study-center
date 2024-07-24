@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            lblCapacity = new Label();
+            lblClassName = new Label();
             llEditClassInfo = new LinkLabel();
             pictureBox4 = new PictureBox();
             lbl = new Label();
@@ -39,8 +41,6 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            lblClassName = new Label();
-            lblCapacity = new Label();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -60,22 +60,46 @@
             guna2GroupBox1.Controls.Add(pictureBox1);
             guna2GroupBox1.Controls.Add(label2);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges3;
+            guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(0, 0);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GroupBox1.Size = new Size(890, 185);
             guna2GroupBox1.TabIndex = 4;
-            guna2GroupBox1.Text = "Teacher Info";
+            guna2GroupBox1.Text = "Class Info";
+            // 
+            // lblCapacity
+            // 
+            lblCapacity.AutoSize = true;
+            lblCapacity.BackColor = Color.White;
+            lblCapacity.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblCapacity.ForeColor = Color.Black;
+            lblCapacity.Location = new Point(169, 129);
+            lblCapacity.Name = "lblCapacity";
+            lblCapacity.Size = new Size(62, 28);
+            lblCapacity.TabIndex = 69;
+            lblCapacity.Text = "[????]";
+            // 
+            // lblClassName
+            // 
+            lblClassName.AutoSize = true;
+            lblClassName.BackColor = Color.White;
+            lblClassName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblClassName.ForeColor = Color.Black;
+            lblClassName.Location = new Point(646, 60);
+            lblClassName.Name = "lblClassName";
+            lblClassName.Size = new Size(62, 28);
+            lblClassName.TabIndex = 68;
+            lblClassName.Text = "[????]";
             // 
             // llEditClassInfo
             // 
             llEditClassInfo.AutoSize = true;
             llEditClassInfo.BackColor = Color.White;
             llEditClassInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llEditClassInfo.Location = new Point(666, 123);
+            llEditClassInfo.Location = new Point(504, 123);
             llEditClassInfo.Name = "llEditClassInfo";
             llEditClassInfo.Size = new Size(166, 32);
             llEditClassInfo.TabIndex = 67;
@@ -87,7 +111,7 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = Properties.Resources.fundraiser;
-            pictureBox4.Location = new Point(758, 57);
+            pictureBox4.Location = new Point(127, 125);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(36, 32);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -100,7 +124,7 @@
             lbl.BackColor = Color.Transparent;
             lbl.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             lbl.ForeColor = Color.Black;
-            lbl.Location = new Point(663, 57);
+            lbl.Location = new Point(25, 125);
             lbl.Name = "lbl";
             lbl.Size = new Size(101, 31);
             lbl.TabIndex = 63;
@@ -145,7 +169,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.user;
-            pictureBox1.Location = new Point(465, 57);
+            pictureBox1.Location = new Point(604, 57);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -158,35 +182,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(314, 57);
+            label2.Location = new Point(453, 57);
             label2.Name = "label2";
             label2.Size = new Size(157, 31);
             label2.TabIndex = 34;
             label2.Text = "Class Name :";
-            // 
-            // lblClassName
-            // 
-            lblClassName.AutoSize = true;
-            lblClassName.BackColor = Color.White;
-            lblClassName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblClassName.ForeColor = Color.Black;
-            lblClassName.Location = new Point(507, 60);
-            lblClassName.Name = "lblClassName";
-            lblClassName.Size = new Size(62, 28);
-            lblClassName.TabIndex = 68;
-            lblClassName.Text = "[????]";
-            // 
-            // lblCapacity
-            // 
-            lblCapacity.AutoSize = true;
-            lblCapacity.BackColor = Color.White;
-            lblCapacity.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblCapacity.ForeColor = Color.Black;
-            lblCapacity.Location = new Point(800, 61);
-            lblCapacity.Name = "lblCapacity";
-            lblCapacity.Size = new Size(62, 28);
-            lblCapacity.TabIndex = 69;
-            lblCapacity.Text = "[????]";
             // 
             // ctrlClassGard
             // 

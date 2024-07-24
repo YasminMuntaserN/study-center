@@ -70,6 +70,14 @@ namespace studyCenter_BL_
             bool isFound = clsClassesDAL.GetInfoByID(classID, ref className, ref capacity);
             return isFound ? new clsClass(classID, className, capacity) : null;
         }
+     
+        public static clsClass Find(string? className)
+        {
+            int? classID = null;
+            byte? capacity = null;
+            bool isFound = clsClassesDAL.GetInfoByName(className, ref classID, ref capacity);
+            return isFound ? new clsClass(classID, className, capacity) : null;
+        }
 
         public static bool Delete(int? classID)
             => clsClassesDAL.Delete(classID);

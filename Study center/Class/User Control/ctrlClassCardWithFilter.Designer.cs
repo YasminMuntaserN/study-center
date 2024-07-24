@@ -42,6 +42,7 @@
             cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             label12 = new Label();
+            ctrlClassGard1 = new ctrlClassGard();
             gbFilter.SuspendLayout();
             SuspendLayout();
             // 
@@ -153,13 +154,21 @@
             label12.TabIndex = 41;
             label12.Text = "Filter:";
             // 
+            // ctrlClassGard1
+            // 
+            ctrlClassGard1.Location = new Point(0, 168);
+            ctrlClassGard1.Name = "ctrlClassGard1";
+            ctrlClassGard1.Size = new Size(891, 187);
+            ctrlClassGard1.TabIndex = 5;
+            // 
             // ctrlClassCardWithFilter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ctrlClassGard1);
             Controls.Add(gbFilter);
             Name = "ctrlClassCardWithFilter";
-            Size = new Size(891, 361);
+            Size = new Size(891, 355);
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
             ResumeLayout(false);
@@ -173,5 +182,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private Label label12;
+        private ctrlClassGard ctrlClassGard1;
     }
 }
