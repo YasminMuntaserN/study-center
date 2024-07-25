@@ -210,12 +210,13 @@
             llEditPersonInfo.AutoSize = true;
             llEditPersonInfo.BackColor = Color.White;
             llEditPersonInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llEditPersonInfo.Location = new Point(648, 54);
+            llEditPersonInfo.Location = new Point(638, 56);
             llEditPersonInfo.Name = "llEditPersonInfo";
             llEditPersonInfo.Size = new Size(160, 32);
             llEditPersonInfo.TabIndex = 59;
             llEditPersonInfo.TabStop = true;
             llEditPersonInfo.Text = "New Subject?";
+            llEditPersonInfo.LinkClicked += llEditPersonInfo_LinkClicked;
             // 
             // lblGradeLevelSubjectTitle
             // 
@@ -428,6 +429,7 @@
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAddGradeLevelSubject";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddGradeLevelSubject";
             Load += frmAddGradeLevelSubject_Load;
             guna2Panel1.ResumeLayout(false);

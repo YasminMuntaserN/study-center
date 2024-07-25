@@ -1,6 +1,7 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Grade_Level_Subject;
 using Study_center.Meeting_Times;
+using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
 using studyCenter_Bl_;
 using studyCenter_BL_;
@@ -133,50 +134,30 @@ namespace Study_center.Global_User_Controls
 
         private void btnaAdd_Click(object sender, EventArgs e)
         {
-            bool itemAdded = false;
-
             switch (_Type)
             {
                 case enItemTypes.Subjects:
-                    frmAddGradeLevelSubject frmAddGradeLevelSubject = new frmAddGradeLevelSubject();
-                    frmAddGradeLevelSubject.ShowDialog();
-                    itemAdded = true;
+                    frmAppointingTeacherForTheSubject frmAdd = new frmAppointingTeacherForTheSubject();
+                    frmAdd.ShowDialog();
+                    _List = clsTeacherSubject.GetSubjectsByTeacherID(_storedTeacherID);
                     break;
 
                 case enItemTypes.Teachers:
-                    frmAppointingTeacherForTheSubject tec = new frmAppointingTeacherForTheSubject();
+                    frmAddTeacher tec = new frmAddTeacher();
                     tec.ShowDialog();
-                    itemAdded = true;
+                    _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
                     break;
 
                 case enItemTypes.MeetingTimes:
                     frmAddMeetingTime time = new frmAddMeetingTime();
                     time.ShowDialog();
-                    itemAdded = true;
+                    _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
 
                     break;
             }
 
-            if (itemAdded)
-            {
-                // Reload the data into the _List variable.
-                switch (_Type)
-                {
-                    case enItemTypes.Subjects:
-                        _List = clsTeacherSubject.GetSubjectsByTeacherID(_storedTeacherID);
-                        break;
-                    case enItemTypes.Teachers:
-                        _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
-                        break;
-                    case enItemTypes.MeetingTimes:
-                        _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
-                        break;
-                }
-
-                // Refresh the DataGridView
-                RefreshDataGridView();
-            }
+            // Refresh the DataGridView
+            RefreshDataGridView();
         }
     }
-
 }

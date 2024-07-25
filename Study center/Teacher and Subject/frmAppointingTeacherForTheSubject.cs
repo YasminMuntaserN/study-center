@@ -58,13 +58,15 @@ namespace Study_center.Teacher_and_Subject
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
+
+
             if (!selectedTeacherID.HasValue)
             {
                 clsMessages.GeneralErrorMessage("Please select a teacher.");
                 return;
             }
 
-            selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
 
             _CheckCorrectData();
 

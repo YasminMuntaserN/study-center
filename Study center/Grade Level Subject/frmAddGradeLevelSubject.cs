@@ -86,7 +86,8 @@ namespace Study_center.Grade_Level_Subject
 
             if (clsGradeLevelSubject.CheckIfTitleExists(lblGradeLevelSubjectTitle.Text.Trim()) && _Mode != enMode.Update)
             {
-                clsMessages.GeneralErrorMessage("Failed to save Grade Level Subject.");
+                clsMessages.GeneralErrorMessage("Failed to save Grade Level Subject. ," +
+                    " This Grade Level Subject has been exsist before");
                 return false;
             }
             return true;
@@ -165,6 +166,11 @@ namespace Study_center.Grade_Level_Subject
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

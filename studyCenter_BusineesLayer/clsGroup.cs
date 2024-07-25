@@ -94,7 +94,7 @@ namespace studyCenter_BusineesLayer
             return false;
         }
 
-        public static clsGroup Find(int groupID)
+        public static clsGroup Find(int? groupID)
         {
             string groupName = string.Empty;
             int gradeLevelSubjectID = 0;
@@ -107,7 +107,7 @@ namespace studyCenter_BusineesLayer
 
             bool isFound = clsGroupData.GetInfoByID(groupID, ref groupName, ref gradeLevelSubjectID, ref groupStudentCount, ref teacherSubjectID, ref classID, ref meetingTimeID, ref isActive, ref creationDate);
 
-            return (isFound) ? new clsGroup(groupID, groupName, gradeLevelSubjectID, groupStudentCount, teacherSubjectID, classID, meetingTimeID, isActive, creationDate) : null;
+            return (isFound) ? new clsGroup(groupID.Value, groupName, gradeLevelSubjectID, groupStudentCount, teacherSubjectID, classID, meetingTimeID, isActive, creationDate) : null;
         }
 
         public static bool Delete(int? groupID)
