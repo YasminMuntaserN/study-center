@@ -54,6 +54,32 @@ namespace StudyCenter_DAL_
             return isFound;
         }
 
+        public static int? GetTeacherSubjectID(int teacherID, int gradeLevelSubjectID)
+        {
+            int? teacherSubjectID = null;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("GetTeacherSubjectID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@TeacherID", teacherID);
+                    command.Parameters.AddWithValue("@GradeLevelSubjectID", gradeLevelSubjectID);
+
+                    connection.Open();
+                    var result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        teacherSubjectID = Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return teacherSubjectID;
+        }
+
         public static int? Add(int teacherID, int gradeLevelSubjectID)
         {
             try

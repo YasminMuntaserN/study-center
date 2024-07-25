@@ -33,11 +33,13 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             lblListName = new Label();
             dgvGradeLevelSubjects = new Guna.UI2.WinForms.Guna2DataGridView();
             label2 = new Label();
             lblRecordsNum = new Label();
+            btnaAdd = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).BeginInit();
             SuspendLayout();
@@ -49,10 +51,10 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GroupBox1.ForeColor = Color.Black;
-            guna2GroupBox1.Location = new Point(0, 0);
+            guna2GroupBox1.Location = new Point(0, 71);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GroupBox1.Size = new Size(924, 380);
+            guna2GroupBox1.Size = new Size(924, 337);
             guna2GroupBox1.TabIndex = 54;
             // 
             // lblListName
@@ -92,7 +94,7 @@
             dgvGradeLevelSubjects.Name = "dgvGradeLevelSubjects";
             dgvGradeLevelSubjects.RowHeadersVisible = false;
             dgvGradeLevelSubjects.RowHeadersWidth = 51;
-            dgvGradeLevelSubjects.Size = new Size(916, 334);
+            dgvGradeLevelSubjects.Size = new Size(916, 291);
             dgvGradeLevelSubjects.TabIndex = 51;
             dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -122,7 +124,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(6, 383);
+            label2.Location = new Point(3, 411);
             label2.Name = "label2";
             label2.Size = new Size(157, 31);
             label2.TabIndex = 61;
@@ -133,21 +135,37 @@
             lblRecordsNum.AutoSize = true;
             lblRecordsNum.Font = new Font("Comic Sans MS", 15F, FontStyle.Bold);
             lblRecordsNum.ForeColor = Color.DarkCyan;
-            lblRecordsNum.Location = new Point(169, 383);
+            lblRecordsNum.Location = new Point(166, 411);
             lblRecordsNum.Name = "lblRecordsNum";
             lblRecordsNum.Size = new Size(89, 35);
             lblRecordsNum.TabIndex = 60;
             lblRecordsNum.Text = "[????]";
             // 
+            // btnaAdd
+            // 
+            btnaAdd.CheckedState.ImageSize = new Size(64, 64);
+            btnaAdd.HoverState.ImageSize = new Size(64, 64);
+            btnaAdd.Image = Properties.Resources.add;
+            btnaAdd.ImageOffset = new Point(0, 0);
+            btnaAdd.ImageRotate = 0F;
+            btnaAdd.Location = new Point(812, 0);
+            btnaAdd.Name = "btnaAdd";
+            btnaAdd.PressedState.ImageSize = new Size(64, 64);
+            btnaAdd.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnaAdd.Size = new Size(80, 68);
+            btnaAdd.TabIndex = 62;
+            btnaAdd.Click += btnaAdd_Click;
+            // 
             // ctrlListInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnaAdd);
             Controls.Add(label2);
             Controls.Add(lblRecordsNum);
             Controls.Add(guna2GroupBox1);
             Name = "ctrlListInfo";
-            Size = new Size(924, 433);
+            Size = new Size(924, 469);
             guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).EndInit();
             ResumeLayout(false);
@@ -161,5 +179,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvGradeLevelSubjects;
         private Label label2;
         private Label lblRecordsNum;
+        private Guna.UI2.WinForms.Guna2ImageButton btnaAdd;
     }
 }

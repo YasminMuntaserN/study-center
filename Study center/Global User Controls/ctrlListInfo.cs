@@ -1,4 +1,7 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Grade_Level_Subject;
+using Study_center.Meeting_Times;
+using Study_center.Teacher_and_Subject;
 using studyCenter_Bl_;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -17,12 +20,15 @@ namespace Study_center.Global_User_Controls
 {
     public partial class ctrlListInfo : UserControl
     {
+        public event EventHandler SelectedItem;
+        private int? _ID;
+        public int? ID => _ID;
 
         private DataTable _List;
-        private int? _ID;
 
-        public int? ID => _ID;
-        public event EventHandler SelectedItem;
+        private int? _storedTeacherID;
+        private int? _storedGradeLevelSubjectID;
+        private int? _storedClassID;
 
         private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 }
         private enItemTypes _Type;
@@ -32,10 +38,11 @@ namespace Study_center.Global_User_Controls
             InitializeComponent();
         }
 
-        public void SelectItem(int? ID)
+        public void RefreshDataGridView()
         {
-            _ID = ID;
-            SelectedItem?.Invoke(this, EventArgs.Empty);
+            dgvGradeLevelSubjects.DataSource = null;
+            dgvGradeLevelSubjects.DataSource = _List;
+            lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
         public void FillSubjectsTaughtByTeacher(int? TeacherID)
@@ -52,6 +59,7 @@ namespace Study_center.Global_User_Controls
             _List = clsTeacherSubject.GetSubjectsByTeacherID(TeacherID);
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
+            _storedTeacherID = TeacherID;
         }
 
         public void FillTeachersWhoTeachSubject(int? GradeLevelSubjectID)
@@ -77,6 +85,7 @@ namespace Study_center.Global_User_Controls
             _List = clsTeacherSubject.GetTeachersBySubject(gradeLevelSubjectInfo.SubjectID);
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
+            _storedGradeLevelSubjectID = GradeLevelSubjectID;
         }
 
         public DataTable FillMeetingTimes(int? classID, int? TeacherID)
@@ -98,6 +107,7 @@ namespace Study_center.Global_User_Controls
             _List = clsGroup.GetAvailableMeetingTimes(classID, TeacherID);
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
+            _storedTeacherID = TeacherID; _storedClassID = classID;
             return _List;
         }
 
@@ -118,6 +128,53 @@ namespace Study_center.Global_User_Controls
                         break;
                 }
                 SelectedItem?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnaAdd_Click(object sender, EventArgs e)
+        {
+            bool itemAdded = false;
+
+            switch (_Type)
+            {
+                case enItemTypes.Subjects:
+                    frmAddGradeLevelSubject frmAddGradeLevelSubject = new frmAddGradeLevelSubject();
+                    frmAddGradeLevelSubject.ShowDialog();
+                    itemAdded = true;
+                    break;
+
+                case enItemTypes.Teachers:
+                    frmAppointingTeacherForTheSubject tec = new frmAppointingTeacherForTheSubject();
+                    tec.ShowDialog();
+                    itemAdded = true;
+                    break;
+
+                case enItemTypes.MeetingTimes:
+                    frmAddMeetingTime time = new frmAddMeetingTime();
+                    time.ShowDialog();
+                    itemAdded = true;
+
+                    break;
+            }
+
+            if (itemAdded)
+            {
+                // Reload the data into the _List variable.
+                switch (_Type)
+                {
+                    case enItemTypes.Subjects:
+                        _List = clsTeacherSubject.GetSubjectsByTeacherID(_storedTeacherID);
+                        break;
+                    case enItemTypes.Teachers:
+                        _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
+                        break;
+                    case enItemTypes.MeetingTimes:
+                        _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
+                        break;
+                }
+
+                // Refresh the DataGridView
+                RefreshDataGridView();
             }
         }
     }

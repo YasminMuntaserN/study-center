@@ -59,10 +59,19 @@ namespace Study_center.Class.User_Control
             OnClassSelected(EventArgs.Empty);
         }
 
+        public void LoadData(int? classId)
+        {
+            if (!classId.HasValue) return;
+            ctrlFilter1.FilterEnabled  =false;
+            ctrlFilter1.FilterValue = classId.ToString();
+            ctrlClassGard1.LoadClassData(classId);
+        }   
+   
         protected virtual void OnClassSelected(EventArgs e)
         {
             ClassSelected?.Invoke(this, e);
         }
+
 
     }
 }

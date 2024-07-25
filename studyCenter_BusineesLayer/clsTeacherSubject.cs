@@ -97,6 +97,10 @@ namespace studyCenter_BL_
 
         public static DataTable GetTeachersBySubject(int? SubjectID)
             => clsTeacherSubjectData.GetTeachersBySubject(SubjectID.Value);
+
+        public static int? GetTeacherSubjectID(int? teacherID, int? gradeLevelSubjectID)
+            => clsTeacherSubjectData.GetTeacherSubjectID(teacherID.Value, gradeLevelSubjectID.Value);
+    
     }
 
 }

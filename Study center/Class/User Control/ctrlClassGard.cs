@@ -75,8 +75,9 @@ namespace Study_center.Class.User_Control
         private void llEditClassInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddClass frmAddClass = new frmAddClass(_ClassID);
+            frmAddClass.ShowDialog(); 
             LoadClassData(_ClassID);
-            frmAddClass.ShowDialog();   
+
         }
     }
 }

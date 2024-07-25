@@ -234,6 +234,7 @@
             dtpEndDate.BorderRadius = 15;
             dtpEndDate.Checked = true;
             dtpEndDate.CustomizableEdges = customizableEdges7;
+            dtpEndDate.Enabled = false;
             dtpEndDate.FillColor = Color.FromArgb(7, 43, 71);
             dtpEndDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dtpEndDate.ForeColor = SystemColors.Control;

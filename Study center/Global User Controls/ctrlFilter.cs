@@ -47,7 +47,11 @@ namespace Study_center.Global_User_Controls
 
         public string SelectedFilter => cbFilter.SelectedItem?.ToString();
 
-        public string FilterValue => txtFilterValue.Text;
+        public string FilterValue
+        {
+            get => txtFilterValue.Text;
+            set => txtFilterValue.Text = value;
+        }
 
         private bool IsNumericFilter()
         {

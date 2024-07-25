@@ -88,7 +88,7 @@
             lblClassName.BackColor = Color.White;
             lblClassName.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblClassName.ForeColor = Color.Maroon;
-            lblClassName.Location = new Point(646, 60);
+            lblClassName.Location = new Point(646, 56);
             lblClassName.Name = "lblClassName";
             lblClassName.Size = new Size(76, 32);
             lblClassName.TabIndex = 68;

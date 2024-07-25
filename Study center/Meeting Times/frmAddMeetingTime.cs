@@ -110,6 +110,7 @@ namespace Study_center.Meeting_Times
                 _meetingTime.PatternID = selectedPattern.PatternID;
             }
             _UpdateEndTime();
+            _meetingTime.EndTime = dtpEndDate.Value.TimeOfDay;
         }
 
         private void _Save()

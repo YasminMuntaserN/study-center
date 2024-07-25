@@ -61,7 +61,7 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static int? Add(string groupName, int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
+        public static int? Add( int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
         {
             int? groupID = null;
 
@@ -75,7 +75,6 @@ namespace StudyCenter_DataAccessLayer
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@GroupName", groupName ?? string.Empty);
                         command.Parameters.AddWithValue("@GradeLevelSubjectID", gradeLevelSubjectID);
                         command.Parameters.AddWithValue("@GroupStudentCount", groupStudentCount);
                         command.Parameters.AddWithValue("@TeacherSubjectID", teacherSubjectID);

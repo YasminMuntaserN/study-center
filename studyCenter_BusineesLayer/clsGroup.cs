@@ -1,4 +1,5 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using studyCenter_BL_;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +24,8 @@ namespace studyCenter_BusineesLayer
         public int? MeetingTimeID { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreationDate { get; set; }
-
+        public clsTeacherSubject TeacherSubjectInfo => clsTeacherSubject.Find(TeacherSubjectID);   
+      
         public clsGroup()
         {
             GroupID = null;
@@ -56,8 +58,13 @@ namespace studyCenter_BusineesLayer
 
         private bool _Add()
         {
-            GroupID = clsGroupData.Add(GroupName, GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID, IsActive);
-            return GroupID.HasValue;
+            GroupID = clsGroupData.Add(GradeLevelSubjectID, GroupStudentCount, TeacherSubjectID, ClassID, MeetingTimeID, IsActive);
+            if (GroupID.HasValue)
+            {
+                GroupName = GetGroupName(GroupID);
+                return true;
+            }
+            return false;
         }
 
         private bool _Update()
@@ -111,8 +118,8 @@ namespace studyCenter_BusineesLayer
 
         public static DataTable All() => clsGroupData.All();
 
-        public static string GetGroupName(int groupID)
-            => clsGroupData.GetGroupName(groupID);
+        public static string GetGroupName(int? groupID)
+            => clsGroupData.GetGroupName(groupID.Value);
 
         public static DataTable GetAvailableMeetingTimes(int? classId , int? TeacherId)
            => clsGroupData.GetAvailableMeetingTimes(classId, TeacherId);
