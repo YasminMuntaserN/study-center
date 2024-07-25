@@ -31,6 +31,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            linkLabel2 = new LinkLabel();
+            linkLabel1 = new LinkLabel();
+            llWhoTeachesIt = new LinkLabel();
             lblIsActive = new Label();
             pictureBox8 = new PictureBox();
             label2 = new Label();
@@ -58,9 +61,6 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label6 = new Label();
-            llWhoTeachesIt = new LinkLabel();
-            linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -115,6 +115,44 @@
             guna2GroupBox1.Size = new Size(901, 434);
             guna2GroupBox1.TabIndex = 2;
             guna2GroupBox1.Text = "Group Info";
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.AutoSize = true;
+            linkLabel2.BackColor = Color.White;
+            linkLabel2.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            linkLabel2.Location = new Point(517, 385);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(346, 32);
+            linkLabel2.TabIndex = 76;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "Show Subject Grade Level Info";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.White;
+            linkLabel1.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            linkLabel1.Location = new Point(304, 385);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(191, 32);
+            linkLabel1.TabIndex = 75;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = " Show Class Info";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // llWhoTeachesIt
+            // 
+            llWhoTeachesIt.AutoSize = true;
+            llWhoTeachesIt.BackColor = Color.White;
+            llWhoTeachesIt.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llWhoTeachesIt.Location = new Point(62, 385);
+            llWhoTeachesIt.Name = "llWhoTeachesIt";
+            llWhoTeachesIt.Size = new Size(221, 32);
+            llWhoTeachesIt.TabIndex = 74;
+            llWhoTeachesIt.TabStop = true;
+            llWhoTeachesIt.Text = " Show Teacher Info";
+            llWhoTeachesIt.LinkClicked += llWhoTeachesIt_LinkClicked;
             // 
             // lblIsActive
             // 
@@ -430,42 +468,6 @@
             label6.Size = new Size(154, 31);
             label6.TabIndex = 34;
             label6.Text = "Group Name:";
-            // 
-            // llWhoTeachesIt
-            // 
-            llWhoTeachesIt.AutoSize = true;
-            llWhoTeachesIt.BackColor = Color.White;
-            llWhoTeachesIt.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llWhoTeachesIt.Location = new Point(62, 385);
-            llWhoTeachesIt.Name = "llWhoTeachesIt";
-            llWhoTeachesIt.Size = new Size(221, 32);
-            llWhoTeachesIt.TabIndex = 74;
-            llWhoTeachesIt.TabStop = true;
-            llWhoTeachesIt.Text = " Show Teacher Info";
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.White;
-            linkLabel1.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            linkLabel1.Location = new Point(304, 385);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(191, 32);
-            linkLabel1.TabIndex = 75;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = " Show Class Info";
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.White;
-            linkLabel2.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            linkLabel2.Location = new Point(517, 385);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(346, 32);
-            linkLabel2.TabIndex = 76;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Show Subject Grade Level Info";
             // 
             // ctrlGroupCard
             // 

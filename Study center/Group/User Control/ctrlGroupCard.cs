@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,17 @@ namespace Study_center.Group.User_Control
             }
 
             _FillObjectInFailed();
+        }
+
+        private void llWhoTeachesIt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmTeacherInfo frm = new frmTeacherInfo(_Group.TeacherSubjectInfo.TeacherID);
+            frm.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
