@@ -126,7 +126,7 @@ namespace StudyCenter_DataAccessLayer
             => clsDataAccessHelper.Exists("SP_DoesSubjectExistByID", "SubjectID", subjectID);
 
         public static bool Exists(string subjectName)
-            => clsDataAccessHelper.Exists("SP_DoesSubjectExistByName", "SubjectName", subjectName);
+            => clsDataAccessHelper.Exists("SP_CheckSubjectExistsByName", "SubjectName", subjectName);
 
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllSubjects");

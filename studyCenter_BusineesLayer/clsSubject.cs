@@ -63,7 +63,7 @@ namespace studyCenter_BusineesLayer
             return false;
         }
 
-        public static clsSubject Find(int subjectID)
+        public static clsSubject Find(int? subjectID)
         {
             string subjectName = string.Empty;
             bool isFound = clsSubjectData.GetInfoByID(subjectID, ref subjectName);
