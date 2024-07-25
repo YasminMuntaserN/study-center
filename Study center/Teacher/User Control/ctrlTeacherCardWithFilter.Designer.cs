@@ -1,6 +1,6 @@
 ﻿namespace Study_center.Teacher
 {
-    partial class ctrlTeacherCard
+    partial class ctrlTeacherCardWithFilter
     {
         /// <summary> 
         /// Required designer variable.
@@ -87,11 +87,11 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(3, 507);
+            guna2GroupBox1.Location = new Point(0, 507);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GroupBox1.Size = new Size(890, 243);
-            guna2GroupBox1.TabIndex = 3;
+            guna2GroupBox1.TabIndex = 5;
             guna2GroupBox1.Text = "Teacher Info";
             // 
             // llEditTeacherInfo
@@ -105,7 +105,7 @@
             llEditTeacherInfo.TabIndex = 67;
             llEditTeacherInfo.TabStop = true;
             llEditTeacherInfo.Text = "Edit Teacher Info";
-            llEditTeacherInfo.LinkClicked += llEditTeacherInfo_LinkClicked;
+            llEditTeacherInfo.LinkClicked += llEditTeacherInfo_LinkClicked_1;
             // 
             // pictureBox4
             // 
@@ -281,13 +281,13 @@
             label2.TabIndex = 34;
             label2.Text = "Created by :";
             // 
-            // ctrlTeacherCard
+            // ctrlTeacherCardWithFilter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2GroupBox1);
             Controls.Add(ctrlPersonCardWithFilter1);
-            Name = "ctrlTeacherCard";
+            Name = "ctrlTeacherCardWithFilter";
             Size = new Size(885, 750);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
@@ -303,6 +303,7 @@
 
         private Person.User_Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private LinkLabel llEditTeacherInfo;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Label lblSalary;
@@ -318,6 +319,5 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label2;
-        private LinkLabel llEditTeacherInfo;
     }
 }

@@ -66,7 +66,8 @@ namespace Study_center.Person.User_Controls
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddPerson frmAddPerson = new frmAddPerson(PersonID);
-            frmAddPerson.ShowDialog();  
+            frmAddPerson.ShowDialog();
+            LoadPersonData(PersonID);
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Study_center.Teacher
 {
-    public partial class ctrlTeacherCard : UserControl
+    public partial class ctrlTeacherCardWithFilter : UserControl
     {
         public event EventHandler TeacherSelected;
 
@@ -20,7 +20,7 @@ namespace Study_center.Teacher
 
         public clsTeacher TeacherInfo => _Teacher;
 
-        public ctrlTeacherCard()
+        public ctrlTeacherCardWithFilter()
         {
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
@@ -63,8 +63,21 @@ namespace Study_center.Teacher
             OnTeacherSelected(EventArgs.Empty);
         }
 
+        protected virtual void OnTeacherSelected(EventArgs e)
+        {
+            TeacherSelected?.Invoke(this, e);
+        }
+
+        private void llEditTeacherInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID);
+            frmAddTeacher.ShowDialog();
+            LoadTeacherInfo(_Teacher.TeacherID);
+        }
+
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, ctrlPersonCardWithFilter.SelectPersonEventArgs e)
         {
+            //  ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Teacher.PersonID);
             if (e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.PersonID)
             {
                 LoadTeacherInfoByPerson(ctrlPersonCardWithFilter1.GetSelectedID);
@@ -75,16 +88,5 @@ namespace Study_center.Teacher
             }
         }
 
-        private void llEditTeacherInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID);
-            frmAddTeacher.ShowDialog();
-            LoadTeacherInfo(_Teacher.TeacherID);
-        }
-
-        protected virtual void OnTeacherSelected(EventArgs e)
-        {
-            TeacherSelected?.Invoke(this, e);
-        }
     }
 }

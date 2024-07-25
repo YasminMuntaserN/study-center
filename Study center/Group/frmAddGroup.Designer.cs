@@ -47,7 +47,7 @@
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ctrlClassCardWithFilter1 = new Class.User_Control.ctrlClassCardWithFilter();
             tpTeacherInfo = new TabPage();
-            ctrlTeacherCard1 = new Teacher.ctrlTeacherCard();
+            ctrlTeacherCard1 = new Teacher.ctrlTeacherCardWithFilter();
             tpSubjectInfo = new TabPage();
             pictureBox8 = new PictureBox();
             ctrlListInfo1 = new Global_User_Controls.ctrlListInfo();
@@ -770,7 +770,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private Guna.UI2.WinForms.Guna2TabControl TabControl1;
         private TabPage tpTeacherInfo;
-        private Teacher.ctrlTeacherCard ctrlTeacherCard1;
+        private Teacher.ctrlTeacherCardWithFilter ctrlTeacherCard1;
         private TabPage tpSubjectInfo;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Label label1;

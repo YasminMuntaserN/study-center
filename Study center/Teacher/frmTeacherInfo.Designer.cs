@@ -1,6 +1,6 @@
 ﻿namespace Study_center.Teacher
 {
-    partial class frmFindTeacher
+    partial class frmTeacherInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -32,50 +32,50 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            ctrlTeacherCard1 = new ctrlTeacherCardWithFilter();
+            ctrlTeacherCardWithFilter1 = new ctrlTeacherCardWithFilter();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // guna2Separator1
+            // 
+            guna2Separator1.FillThickness = 5;
+            guna2Separator1.Location = new Point(23, 98);
+            guna2Separator1.Name = "guna2Separator1";
+            guna2Separator1.Size = new Size(882, 20);
+            guna2Separator1.TabIndex = 30;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
             guna2Panel1.Controls.Add(lblTitle);
             guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Location = new Point(-2, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(930, 85);
-            guna2Panel1.TabIndex = 37;
+            guna2Panel1.Size = new Size(954, 82);
+            guna2Panel1.TabIndex = 29;
             // 
             // lblTitle
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(3, 6);
+            lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(910, 76);
+            lblTitle.Size = new Size(942, 76);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Find Teacher";
+            lblTitle.Text = "Teacher Info";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // guna2Separator1
+            // ctrlTeacherCardWithFilter1
             // 
-            guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(0, 91);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(930, 14);
-            guna2Separator1.TabIndex = 38;
-            // 
-            // ctrlTeacherCard1
-            // 
-            ctrlTeacherCard1.Location = new Point(12, 111);
-            ctrlTeacherCard1.Name = "ctrlTeacherCard1";
-            ctrlTeacherCard1.Size = new Size(896, 754);
-            ctrlTeacherCard1.TabIndex = 39;
+            ctrlTeacherCardWithFilter1.Location = new Point(34, 133);
+            ctrlTeacherCardWithFilter1.Name = "ctrlTeacherCardWithFilter1";
+            ctrlTeacherCardWithFilter1.Size = new Size(893, 735);
+            ctrlTeacherCardWithFilter1.TabIndex = 31;
             // 
             // btnClose
             // 
@@ -92,38 +92,38 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(365, 871);
+            btnClose.Location = new Point(366, 874);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnClose.Size = new Size(215, 50);
-            btnClose.TabIndex = 40;
+            btnClose.Size = new Size(214, 50);
+            btnClose.TabIndex = 65;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click;
             // 
-            // frmFindTeacher
+            // frmTeacherInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 931);
+            ClientSize = new Size(939, 932);
             Controls.Add(btnClose);
-            Controls.Add(ctrlTeacherCard1);
+            Controls.Add(ctrlTeacherCardWithFilter1);
             Controls.Add(guna2Separator1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmFindTeacher";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmFindTeacher";
-            Load += frmFindTeacher_Load;
+            Name = "frmTeacherInfo";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "frmTeacherInfo";
+            Load += frmTeacherInfo_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private ctrlTeacherCardWithFilter ctrlTeacherCard1;
+        private ctrlTeacherCardWithFilter ctrlTeacherCardWithFilter1;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
     }
 }

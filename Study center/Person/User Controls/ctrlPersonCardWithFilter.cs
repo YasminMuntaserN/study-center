@@ -56,6 +56,7 @@ namespace Study_center.Person.User_Controls
         }
 
         #endregion
+
         public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
@@ -90,7 +91,7 @@ namespace Study_center.Person.User_Controls
                 return;
             }
             PersonID = person.PersonID;
-            ctrlPersonCard1.LoadPersonData(PersonID);    
+            ctrlPersonCard1.LoadPersonData(PersonID);
 
 
             OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = person.PersonID, SearchCriteria = searchCriteria });
@@ -161,7 +162,7 @@ namespace Study_center.Person.User_Controls
                 btnSearch.PerformClick();
             }
             //this will allow only digits if person id is selected
-          e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         public void setFilterEnabledAndLoadData(int? personID)

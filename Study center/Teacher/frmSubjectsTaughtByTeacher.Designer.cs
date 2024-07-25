@@ -36,7 +36,7 @@
             lblTitle = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tpTeacherInfo = new TabPage();
-            ctrlTeacherCard1 = new ctrlTeacherCard();
+            ctrlTeacherCard1 = new ctrlTeacherCardWithFilter();
             tpSubjectInfo = new TabPage();
             pictureBox1 = new PictureBox();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -196,7 +196,7 @@
         private Label lblTitle;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tpTeacherInfo;
-        private ctrlTeacherCard ctrlTeacherCard1;
+        private ctrlTeacherCardWithFilter ctrlTeacherCard1;
         private TabPage tpSubjectInfo;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;

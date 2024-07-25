@@ -47,7 +47,7 @@
             lblTitle = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tpTeacherInfo = new TabPage();
-            ctrlTeacherCard1 = new Teacher.ctrlTeacherCard();
+            ctrlTeacherCard1 = new Teacher.ctrlTeacherCardWithFilter();
             tpSubjectInfo = new TabPage();
             cbSubjects = new Guna.UI2.WinForms.Guna2ComboBox();
             cbGradeLevels = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -374,7 +374,7 @@
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tpTeacherInfo;
         private TabPage tpSubjectInfo;
-        private Teacher.ctrlTeacherCard ctrlTeacherCard1;
+        private Teacher.ctrlTeacherCardWithFilter ctrlTeacherCard1;
         private Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvGradeLevelSubjects;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
