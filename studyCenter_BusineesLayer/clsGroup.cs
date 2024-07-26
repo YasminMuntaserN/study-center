@@ -24,8 +24,12 @@ namespace studyCenter_BusineesLayer
         public int? MeetingTimeID { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreationDate { get; set; }
-        public clsTeacherSubject TeacherSubjectInfo => clsTeacherSubject.Find(TeacherSubjectID);   
-      
+        public clsTeacherSubject TeacherSubjectInfo => clsTeacherSubject.Find(TeacherSubjectID);
+        public clsClass ClassInfo => clsClass.Find(ClassID);
+        public clsMeetingTimes MeetingTimeInfo => clsMeetingTimes.Find(MeetingTimeID);
+
+
+
         public clsGroup()
         {
             GroupID = null;

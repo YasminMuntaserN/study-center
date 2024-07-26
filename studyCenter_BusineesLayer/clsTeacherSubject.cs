@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,7 +101,9 @@ namespace studyCenter_BL_
 
         public static int? GetTeacherSubjectID(int? teacherID, int? gradeLevelSubjectID)
             => clsTeacherSubjectData.GetTeacherSubjectID(teacherID.Value, gradeLevelSubjectID.Value);
-    
+
+        public static bool IsTeacherTeachingSameSubject(int? teacherID, int? gradeLevelSubjectID)
+            => clsTeacherSubjectData.IsTeacherTeachingSameSubject(teacherID.Value, gradeLevelSubjectID.Value);
     }
 
 }

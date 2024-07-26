@@ -132,6 +132,13 @@ namespace Study_center.Global_User_Controls
             }
         }
 
+        private void OnTeacherSelected(int teacherId)
+        {
+            //if (clsTeacherSubject.IsTeacherTeachingSameSubject())
+            //{
+
+            //}
+        }
         private void btnaAdd_Click(object sender, EventArgs e)
         {
             switch (_Type)
@@ -143,8 +150,9 @@ namespace Study_center.Global_User_Controls
                     break;
 
                 case enItemTypes.Teachers:
-                    frmAddTeacher tec = new frmAddTeacher();
+                    frmFindTeacher tec = new frmFindTeacher();
                     tec.ShowDialog();
+                   // tec.TeacherSelected += OnTeacherSelected;
                     _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
                     break;
 

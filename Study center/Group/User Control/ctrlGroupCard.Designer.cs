@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            linkLabel2 = new LinkLabel();
+            llShowSubjectGradeLevelInfo = new LinkLabel();
             llShowClassInfo = new LinkLabel();
             llWhoTeachesIt = new LinkLabel();
             lblIsActive = new Label();
@@ -40,7 +40,7 @@
             lblCreationDate = new Label();
             pictureBox6 = new PictureBox();
             label9 = new Label();
-            lblMeetingTimesID = new Label();
+            lblMeetingTimes = new Label();
             pictureBox9 = new PictureBox();
             label8 = new Label();
             lblGradeLevelSubjectID = new Label();
@@ -75,7 +75,7 @@
             // 
             // guna2GroupBox1
             // 
-            guna2GroupBox1.Controls.Add(linkLabel2);
+            guna2GroupBox1.Controls.Add(llShowSubjectGradeLevelInfo);
             guna2GroupBox1.Controls.Add(llShowClassInfo);
             guna2GroupBox1.Controls.Add(llWhoTeachesIt);
             guna2GroupBox1.Controls.Add(lblIsActive);
@@ -84,7 +84,7 @@
             guna2GroupBox1.Controls.Add(lblCreationDate);
             guna2GroupBox1.Controls.Add(pictureBox6);
             guna2GroupBox1.Controls.Add(label9);
-            guna2GroupBox1.Controls.Add(lblMeetingTimesID);
+            guna2GroupBox1.Controls.Add(lblMeetingTimes);
             guna2GroupBox1.Controls.Add(pictureBox9);
             guna2GroupBox1.Controls.Add(label8);
             guna2GroupBox1.Controls.Add(lblGradeLevelSubjectID);
@@ -106,34 +106,35 @@
             guna2GroupBox1.Controls.Add(label3);
             guna2GroupBox1.Controls.Add(label6);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges3;
+            guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(0, 0);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GroupBox1.Size = new Size(901, 434);
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GroupBox1.Size = new Size(901, 408);
             guna2GroupBox1.TabIndex = 2;
             guna2GroupBox1.Text = "Group Info";
             // 
-            // linkLabel2
+            // llShowSubjectGradeLevelInfo
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.White;
-            linkLabel2.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            linkLabel2.Location = new Point(517, 385);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(346, 32);
-            linkLabel2.TabIndex = 76;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Show Subject Grade Level Info";
+            llShowSubjectGradeLevelInfo.AutoSize = true;
+            llShowSubjectGradeLevelInfo.BackColor = Color.White;
+            llShowSubjectGradeLevelInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llShowSubjectGradeLevelInfo.Location = new Point(517, 358);
+            llShowSubjectGradeLevelInfo.Name = "llShowSubjectGradeLevelInfo";
+            llShowSubjectGradeLevelInfo.Size = new Size(346, 32);
+            llShowSubjectGradeLevelInfo.TabIndex = 76;
+            llShowSubjectGradeLevelInfo.TabStop = true;
+            llShowSubjectGradeLevelInfo.Text = "Show Subject Grade Level Info";
+            llShowSubjectGradeLevelInfo.LinkClicked += linkLabel2_LinkClicked;
             // 
             // llShowClassInfo
             // 
             llShowClassInfo.AutoSize = true;
             llShowClassInfo.BackColor = Color.White;
             llShowClassInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llShowClassInfo.Location = new Point(304, 385);
+            llShowClassInfo.Location = new Point(304, 358);
             llShowClassInfo.Name = "llShowClassInfo";
             llShowClassInfo.Size = new Size(191, 32);
             llShowClassInfo.TabIndex = 75;
@@ -146,7 +147,7 @@
             llWhoTeachesIt.AutoSize = true;
             llWhoTeachesIt.BackColor = Color.White;
             llWhoTeachesIt.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llWhoTeachesIt.Location = new Point(62, 385);
+            llWhoTeachesIt.Location = new Point(62, 358);
             llWhoTeachesIt.Name = "llWhoTeachesIt";
             llWhoTeachesIt.Size = new Size(221, 32);
             llWhoTeachesIt.TabIndex = 74;
@@ -160,7 +161,7 @@
             lblIsActive.BackColor = Color.White;
             lblIsActive.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblIsActive.ForeColor = Color.Black;
-            lblIsActive.Location = new Point(207, 226);
+            lblIsActive.Location = new Point(757, 90);
             lblIsActive.Name = "lblIsActive";
             lblIsActive.Size = new Size(62, 28);
             lblIsActive.TabIndex = 73;
@@ -169,8 +170,8 @@
             // pictureBox8
             // 
             pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.Image = Properties.Resources.calendar;
-            pictureBox8.Location = new Point(158, 229);
+            pictureBox8.Image = Properties.Resources.check;
+            pictureBox8.Location = new Point(715, 90);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(36, 32);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -183,7 +184,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(9, 224);
+            label2.Location = new Point(559, 89);
             label2.Name = "label2";
             label2.Size = new Size(143, 31);
             label2.TabIndex = 71;
@@ -195,7 +196,7 @@
             lblCreationDate.BackColor = Color.White;
             lblCreationDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblCreationDate.ForeColor = Color.Black;
-            lblCreationDate.Location = new Point(264, 333);
+            lblCreationDate.Location = new Point(757, 203);
             lblCreationDate.Name = "lblCreationDate";
             lblCreationDate.Size = new Size(62, 28);
             lblCreationDate.TabIndex = 70;
@@ -205,7 +206,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = Properties.Resources.calendar;
-            pictureBox6.Location = new Point(222, 331);
+            pictureBox6.Location = new Point(715, 201);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(36, 32);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -218,29 +219,29 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(12, 332);
+            label9.Location = new Point(526, 202);
             label9.Name = "label9";
             label9.Size = new Size(193, 31);
             label9.TabIndex = 68;
             label9.Text = "Creation Date : ";
             // 
-            // lblMeetingTimesID
+            // lblMeetingTimes
             // 
-            lblMeetingTimesID.AutoSize = true;
-            lblMeetingTimesID.BackColor = Color.Transparent;
-            lblMeetingTimesID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblMeetingTimesID.ForeColor = Color.Black;
-            lblMeetingTimesID.Location = new Point(788, 224);
-            lblMeetingTimesID.Name = "lblMeetingTimesID";
-            lblMeetingTimesID.Size = new Size(60, 32);
-            lblMeetingTimesID.TabIndex = 67;
-            lblMeetingTimesID.Text = "N\\A";
+            lblMeetingTimes.AutoSize = true;
+            lblMeetingTimes.BackColor = Color.Transparent;
+            lblMeetingTimes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblMeetingTimes.ForeColor = Color.Black;
+            lblMeetingTimes.Location = new Point(757, 142);
+            lblMeetingTimes.Name = "lblMeetingTimes";
+            lblMeetingTimes.Size = new Size(62, 28);
+            lblMeetingTimes.TabIndex = 67;
+            lblMeetingTimes.Text = "[????]";
             // 
             // pictureBox9
             // 
             pictureBox9.BackColor = Color.Transparent;
-            pictureBox9.Image = Properties.Resources.id;
-            pictureBox9.Location = new Point(746, 224);
+            pictureBox9.Image = Properties.Resources.calendar__1_;
+            pictureBox9.Location = new Point(715, 143);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(36, 32);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -253,21 +254,21 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(514, 225);
+            label8.Location = new Point(531, 143);
             label8.Name = "label8";
-            label8.Size = new Size(226, 31);
+            label8.Size = new Size(178, 31);
             label8.TabIndex = 65;
-            label8.Text = "Meeting Times ID :";
+            label8.Text = "Meeting Times:";
             // 
             // lblGradeLevelSubjectID
             // 
             lblGradeLevelSubjectID.AutoSize = true;
             lblGradeLevelSubjectID.BackColor = Color.Transparent;
-            lblGradeLevelSubjectID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblGradeLevelSubjectID.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblGradeLevelSubjectID.ForeColor = Color.Black;
-            lblGradeLevelSubjectID.Location = new Point(788, 173);
+            lblGradeLevelSubjectID.Location = new Point(322, 285);
             lblGradeLevelSubjectID.Name = "lblGradeLevelSubjectID";
-            lblGradeLevelSubjectID.Size = new Size(60, 32);
+            lblGradeLevelSubjectID.Size = new Size(51, 28);
             lblGradeLevelSubjectID.TabIndex = 64;
             lblGradeLevelSubjectID.Text = "N\\A";
             // 
@@ -275,7 +276,7 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = Properties.Resources.id;
-            pictureBox4.Location = new Point(746, 173);
+            pictureBox4.Location = new Point(280, 285);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(36, 32);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -288,7 +289,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(477, 170);
+            label7.Location = new Point(7, 282);
             label7.Name = "label7";
             label7.Size = new Size(279, 31);
             label7.TabIndex = 62;
@@ -298,11 +299,11 @@
             // 
             lblTeacherSubjectID.AutoSize = true;
             lblTeacherSubjectID.BackColor = Color.Transparent;
-            lblTeacherSubjectID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTeacherSubjectID.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblTeacherSubjectID.ForeColor = Color.Black;
-            lblTeacherSubjectID.Location = new Point(798, 287);
+            lblTeacherSubjectID.Location = new Point(303, 226);
             lblTeacherSubjectID.Name = "lblTeacherSubjectID";
-            lblTeacherSubjectID.Size = new Size(60, 32);
+            lblTeacherSubjectID.Size = new Size(51, 28);
             lblTeacherSubjectID.TabIndex = 61;
             lblTeacherSubjectID.Text = "N\\A";
             // 
@@ -310,7 +311,7 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = Properties.Resources.id;
-            pictureBox3.Location = new Point(746, 287);
+            pictureBox3.Location = new Point(251, 226);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(36, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -323,7 +324,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(498, 285);
+            label5.Location = new Point(3, 224);
             label5.Name = "label5";
             label5.Size = new Size(239, 31);
             label5.TabIndex = 59;
@@ -335,7 +336,7 @@
             lblStudentCount.BackColor = Color.White;
             lblStudentCount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblStudentCount.ForeColor = Color.Black;
-            lblStudentCount.Location = new Point(264, 271);
+            lblStudentCount.Location = new Point(757, 272);
             lblStudentCount.Name = "lblStudentCount";
             lblStudentCount.Size = new Size(62, 28);
             lblStudentCount.TabIndex = 56;
@@ -345,7 +346,7 @@
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = Properties.Resources.capacity;
-            pictureBox7.Location = new Point(222, 275);
+            pictureBox7.Location = new Point(715, 268);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(36, 32);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -358,7 +359,7 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(12, 276);
+            label10.Location = new Point(516, 269);
             label10.Name = "label10";
             label10.Size = new Size(186, 31);
             label10.TabIndex = 50;
@@ -392,11 +393,11 @@
             // 
             lblGroupID.AutoSize = true;
             lblGroupID.BackColor = Color.Transparent;
-            lblGroupID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblGroupID.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblGroupID.ForeColor = Color.Black;
             lblGroupID.Location = new Point(199, 58);
             lblGroupID.Name = "lblGroupID";
-            lblGroupID.Size = new Size(60, 32);
+            lblGroupID.Size = new Size(51, 28);
             lblGroupID.TabIndex = 45;
             lblGroupID.Text = "N\\A";
             // 
@@ -475,7 +476,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2GroupBox1);
             Name = "ctrlGroupCard";
-            Size = new Size(897, 434);
+            Size = new Size(897, 409);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -496,7 +497,7 @@
         private Label lblCreationDate;
         private PictureBox pictureBox6;
         private Label label9;
-        private Label lblMeetingTimesID;
+        private Label lblMeetingTimes;
         private PictureBox pictureBox9;
         private Label label8;
         private Label lblGradeLevelSubjectID;
@@ -522,6 +523,6 @@
         private Label label2;
         private LinkLabel llWhoTeachesIt;
         private LinkLabel llShowClassInfo;
-        private LinkLabel linkLabel2;
+        private LinkLabel llShowSubjectGradeLevelInfo;
     }
 }

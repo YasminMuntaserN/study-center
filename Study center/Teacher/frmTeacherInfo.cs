@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_center.Main_Menu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Study_center.Teacher
 {
     public partial class frmTeacherInfo : Form
     {
+        private frmMainMenu mainMenuForm;
         private int? _TeacherID; 
-        public frmTeacherInfo(int? teacherID)
+        public frmTeacherInfo(int? teacherID , frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
             _TeacherID = teacherID;
         }

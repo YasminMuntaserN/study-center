@@ -24,6 +24,20 @@ namespace Study_center.Global_Classes
     public class clsFormat
     {
         public static string DateToShort(DateTime Dt1) => Dt1.ToString("dd/MMM/yyyy");
+
+        public static string FormatTime(TimeSpan startTime, TimeSpan endTime)
+        {
+            if (endTime < startTime)
+            {
+                throw new ArgumentException("End time must be greater than or equal to start time");
+            }
+
+            // Format the times to "HH:mm"
+            string formattedStartTime = startTime.ToString(@"hh\:mm");
+            string formattedEndTime = endTime.ToString(@"hh\:mm");
+
+            return $"{formattedStartTime} - {formattedEndTime}";
+        }
     }
    
     public class HelperClass

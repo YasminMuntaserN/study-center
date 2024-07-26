@@ -231,5 +231,33 @@ namespace StudyCenter_DAL_
         public static DataTable GetTeachersBySubject(int subjectID)
              => clsDataAccessHelper.All("SP_GetTeachersBySubject", "subjectID", subjectID);
 
+        public static bool IsTeacherTeachingSameSubject(int teacherId, int gradeLevelSubjectId)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_CheckIfTeacherTeachesSameSubject", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Input parameters
+                    command.Parameters.AddWithValue("@TeacherID", teacherId);
+                    command.Parameters.AddWithValue("@GradeLevelSubjectID", gradeLevelSubjectId);
+
+                    // Output parameter
+                    SqlParameter isTeachingSameSubjectParam = new SqlParameter("@IsTeachingSameSubject", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(isTeachingSameSubjectParam);
+
+                    // Open the connection and execute the command
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    // Get the value of the output parameter
+                    return (bool)isTeachingSameSubjectParam.Value;
+                }
+            }
+        }
     }
 }

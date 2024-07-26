@@ -1,5 +1,6 @@
 ﻿using Study_center.Class;
 using Study_center.Global_Classes;
+using Study_center.Grade_Level_Subject;
 using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
@@ -28,13 +29,14 @@ namespace Study_center.Group.User_Control
         {
             lblGroupID.Text = _GroupID.ToString();
             lblGradeLevelSubjectID.Text = _Group.GradeLevelSubjectID.ToString();
-            lblStudentCount.Text = _Group.GroupStudentCount.ToString();
+            lblStudentCount.Text = _Group.GroupStudentCount.ToString() + " / " + _Group.ClassInfo.Capacity.ToString();
             lblGroupName.Text = _Group.GroupName;
             lblTeacherSubjectID.Text = _Group.TeacherSubjectID.ToString();
             lblClasssID.Text = _Group.ClassID.ToString();
-            lblMeetingTimesID.Text = _Group.MeetingTimeID.ToString();
+            lblMeetingTimes.Text = clsFormat.FormatTime
+                (_Group.MeetingTimeInfo.StartTime, _Group.MeetingTimeInfo.EndTime);
             lblIsActive.Text = _Group.IsActive ? "Active" : "Inactive";
-            lblCreationDate.Text = _Group.CreationDate.ToString("g");
+            lblCreationDate.Text = clsFormat.DateToShort(_Group.CreationDate);
         }
 
         public void LoadData(int? groupID)
@@ -65,8 +67,15 @@ namespace Study_center.Group.User_Control
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmClassInfo frm =new frmClassInfo(_Group.ClassID);
+            frmClassInfo frm = new frmClassInfo(_Group.ClassID);
             frm.ShowDialog();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmSubjectGradeLevelInfo levelInfo = new frmSubjectGradeLevelInfo(_Group.GradeLevelSubjectID);
+            levelInfo.ShowDialog();
+        }
+
     }
 }

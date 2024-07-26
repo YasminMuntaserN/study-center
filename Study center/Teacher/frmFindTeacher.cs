@@ -13,6 +13,8 @@ namespace Study_center.Teacher
 {
     public partial class frmFindTeacher : Form
     {
+        public Action<int?> TeacherSelected;
+      
         public frmFindTeacher()
         {
             InitializeComponent();
@@ -25,6 +27,8 @@ namespace Study_center.Teacher
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            // Raise the event
+            TeacherSelected?.Invoke(ctrlTeacherCard1.TeacherInfo.TeacherID);
             this.Close();
         }
     }

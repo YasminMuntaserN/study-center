@@ -29,5 +29,6 @@ namespace Study_center.Group
         {
             ctrlGroupCard1.LoadData(GroupID);
         }
+
     }
 }
