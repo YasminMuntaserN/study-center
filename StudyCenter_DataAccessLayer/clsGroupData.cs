@@ -36,7 +36,7 @@ namespace StudyCenter_DataAccessLayer
 
                                 groupName = (string)reader["GroupName"];
                                 gradeLevelSubjectID = (int)reader["GradeLevelSubjectID"];
-                                groupStudentCount = (decimal)reader["GroupStudentCount"];
+                                groupStudentCount = (int)reader["GroupStudentCount"];
                                 teacherSubjectID = (int)reader["TeacherSubjectID"];
                                 classID = (int)reader["ClassID"];
                                 meetingTimeID = (int)reader["MeetingTimeID"];

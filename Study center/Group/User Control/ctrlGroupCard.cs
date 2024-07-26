@@ -1,4 +1,5 @@
-﻿using Study_center.Global_Classes;
+﻿using Study_center.Class;
+using Study_center.Global_Classes;
 using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
@@ -64,7 +65,8 @@ namespace Study_center.Group.User_Control
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmClassInfo frm =new frmClassInfo(_Group.ClassID);
+            frm.ShowDialog();
         }
     }
 }

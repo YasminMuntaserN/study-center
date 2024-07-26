@@ -21,7 +21,7 @@ namespace Study_center
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmClassInfo(2));
+            Application.Run(new frmGroupInfo(24));
         }
     }
 }

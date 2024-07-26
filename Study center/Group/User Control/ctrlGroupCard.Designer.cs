@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             linkLabel2 = new LinkLabel();
-            linkLabel1 = new LinkLabel();
+            llShowClassInfo = new LinkLabel();
             llWhoTeachesIt = new LinkLabel();
             lblIsActive = new Label();
             pictureBox8 = new PictureBox();
@@ -76,7 +76,7 @@
             // guna2GroupBox1
             // 
             guna2GroupBox1.Controls.Add(linkLabel2);
-            guna2GroupBox1.Controls.Add(linkLabel1);
+            guna2GroupBox1.Controls.Add(llShowClassInfo);
             guna2GroupBox1.Controls.Add(llWhoTeachesIt);
             guna2GroupBox1.Controls.Add(lblIsActive);
             guna2GroupBox1.Controls.Add(pictureBox8);
@@ -106,12 +106,12 @@
             guna2GroupBox1.Controls.Add(label3);
             guna2GroupBox1.Controls.Add(label6);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges1;
+            guna2GroupBox1.CustomizableEdges = customizableEdges3;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(0, 0);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2GroupBox1.Size = new Size(901, 434);
             guna2GroupBox1.TabIndex = 2;
             guna2GroupBox1.Text = "Group Info";
@@ -128,18 +128,18 @@
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Show Subject Grade Level Info";
             // 
-            // linkLabel1
+            // llShowClassInfo
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.White;
-            linkLabel1.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            linkLabel1.Location = new Point(304, 385);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(191, 32);
-            linkLabel1.TabIndex = 75;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = " Show Class Info";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            llShowClassInfo.AutoSize = true;
+            llShowClassInfo.BackColor = Color.White;
+            llShowClassInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llShowClassInfo.Location = new Point(304, 385);
+            llShowClassInfo.Name = "llShowClassInfo";
+            llShowClassInfo.Size = new Size(191, 32);
+            llShowClassInfo.TabIndex = 75;
+            llShowClassInfo.TabStop = true;
+            llShowClassInfo.Text = " Show Class Info";
+            llShowClassInfo.LinkClicked += linkLabel1_LinkClicked;
             // 
             // llWhoTeachesIt
             // 
@@ -521,7 +521,7 @@
         private PictureBox pictureBox8;
         private Label label2;
         private LinkLabel llWhoTeachesIt;
-        private LinkLabel linkLabel1;
+        private LinkLabel llShowClassInfo;
         private LinkLabel linkLabel2;
     }
 }
