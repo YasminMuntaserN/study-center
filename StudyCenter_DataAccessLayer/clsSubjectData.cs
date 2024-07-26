@@ -205,6 +205,9 @@ namespace StudyCenter_DataAccessLayer
 
             return subjectID;
         }
+
+        public static int Count()
+             => clsDataAccessHelper.Count("SP_GetSubjectCount");
     }
 
 }

@@ -208,5 +208,8 @@ namespace StudyCenter_DataAccessLayer
 
             return gradeLevelID;
         }
+
+        public static int Count()
+          => clsDataAccessHelper.Count("SP_GetGradeLevelCount");
     }
 }

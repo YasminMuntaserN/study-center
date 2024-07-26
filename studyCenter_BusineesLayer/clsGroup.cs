@@ -127,7 +127,9 @@ namespace studyCenter_BusineesLayer
 
         public static DataTable GetAvailableMeetingTimes(int? classId , int? TeacherId)
            => clsGroupData.GetAvailableMeetingTimes(classId, TeacherId);
-     
+
+        public static int Count() => clsGroupData.Count();
+
     }
 }
 

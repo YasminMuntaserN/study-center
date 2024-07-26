@@ -90,6 +90,8 @@ namespace studyCenter_BusineesLayer
 
         public static int? GetSubjectID(string subjectName)
             => clsSubjectData.GetSubjectID(subjectName);
+
+        public static int Count() => clsSubjectData.Count();
     }
 
 }

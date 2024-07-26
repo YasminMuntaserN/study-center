@@ -73,9 +73,79 @@ namespace Study_center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_student {
+            get {
+                object obj = ResourceManager.GetObject("add-student", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_subject {
+            get {
+                object obj = ResourceManager.GetObject("add-subject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_subject1 {
+            get {
+                object obj = ResourceManager.GetObject("add-subject1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_teacher {
+            get {
+                object obj = ResourceManager.GetObject("add-teacher", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user {
+            get {
+                object obj = ResourceManager.GetObject("add-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap age {
             get {
                 object obj = ResourceManager.GetObject("age", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap battery_level {
+            get {
+                object obj = ResourceManager.GetObject("battery-level", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +193,16 @@ namespace Study_center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar1 {
+            get {
+                object obj = ResourceManager.GetObject("calendar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap capacity {
             get {
                 object obj = ResourceManager.GetObject("capacity", resourceCulture);
@@ -146,6 +226,16 @@ namespace Study_center.Properties {
         internal static System.Drawing.Bitmap class__1_ {
             get {
                 object obj = ResourceManager.GetObject("class (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap classes_blue_64 {
+            get {
+                object obj = ResourceManager.GetObject("classes-blue-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +306,26 @@ namespace Study_center.Properties {
         internal static System.Drawing.Bitmap genders {
             get {
                 object obj = ResourceManager.GetObject("genders", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grade_level {
+            get {
+                object obj = ResourceManager.GetObject("grade-level", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap groups_blue_64 {
+            get {
+                object obj = ResourceManager.GetObject("groups-blue-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +416,16 @@ namespace Study_center.Properties {
         internal static System.Drawing.Bitmap meeting__1_ {
             get {
                 object obj = ResourceManager.GetObject("meeting (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payments_blue_64 {
+            get {
+                object obj = ResourceManager.GetObject("payments-blue-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

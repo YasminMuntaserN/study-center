@@ -201,6 +201,10 @@ namespace StudyCenter_DAL_
 
             return isFound;
         }
+
+        public static int Count()
+             => clsDataAccessHelper.Count("SP_GetMeetingTimeCount");
+
     }
 
 }

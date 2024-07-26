@@ -1,4 +1,5 @@
 ﻿using StudyCenter_DAL_;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -90,6 +91,9 @@ namespace studyCenter_BL_
 
         public static bool GetPatternDetails(int patternID,  string patternDescription,  string encodedDays)
             => clsMeetingTimesData.GetPatternDetailsByID(patternID, ref patternDescription, ref encodedDays);
+
+        public static int Count() => clsMeetingTimesData.Count();
+
     }
 
 }

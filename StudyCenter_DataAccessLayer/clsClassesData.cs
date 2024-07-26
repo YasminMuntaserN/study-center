@@ -160,5 +160,8 @@ namespace StudyCenter_DAL_
     
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllClasses");
+
+        public static int Count()
+             => clsDataAccessHelper.Count("SP_GetClassCount");
     }
 }

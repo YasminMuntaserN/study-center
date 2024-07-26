@@ -214,6 +214,9 @@ namespace StudyCenter_DataAccessLayer
 
             return dtMeetingTimes;
         }
+
+        public static int Count()
+             => clsDataAccessHelper.Count("SP_GetGroupCount");
     }
 }
 

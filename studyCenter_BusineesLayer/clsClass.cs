@@ -87,6 +87,9 @@ namespace studyCenter_BL_
 
         public static bool Exists(string ClassName)
           => clsClassesDAL.Exists(ClassName);
+
+        public static int Count()
+           =>  clsClassesDAL.Count();   
     }
 
 }

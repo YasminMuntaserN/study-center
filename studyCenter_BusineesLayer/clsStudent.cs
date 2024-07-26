@@ -158,5 +158,7 @@ namespace studyCenter_BusineesLayer
         public static DataTable All() => clsStudentData.All();
 
         public static bool IsPersonStudent(int? PersonID) => clsStudentData.IsPersonStudent(PersonID);
+
+        public static int Count() => clsStudentData.Count();
     }
 }

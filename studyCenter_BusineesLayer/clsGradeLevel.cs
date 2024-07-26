@@ -1,4 +1,5 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using StudyCenter_DAL_;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -93,5 +94,7 @@ namespace studyCenter_BusineesLayer
 
         public static int? GetGradeLevelID(string gradeName)
            => clsGradeLevelData.GetGradeLevelID(gradeName);
+
+        public static int Count() => clsGradeLevelData.Count();
     }
 }

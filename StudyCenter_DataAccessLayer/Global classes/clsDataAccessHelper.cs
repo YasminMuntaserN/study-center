@@ -110,24 +110,16 @@ namespace StudyCenter_DataAccessLayer.Global_classes
 
         public static int Count(string storedProcedureName)
         {
-            int Count = 0;
-
+            int count = 0;  
             try
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    connection.Open();
-
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
-                        object result = command.ExecuteScalar();
-
-                        if (result != null && int.TryParse(result.ToString(), out int Value))
-                        {
-                            Count = Value;
-                        }
+                        connection.Open();
+                        count = (int)command.ExecuteScalar();
                     }
                 }
             }
@@ -135,8 +127,7 @@ namespace StudyCenter_DataAccessLayer.Global_classes
             {
                 clsErrorLogger.LogError(ex);
             }
-
-            return Count;
+            return count;
         }
 
         public static DataTable All<T>(string storedProcedureName, string parameterName, T value)

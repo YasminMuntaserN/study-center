@@ -42,5 +42,6 @@ namespace Study_center.Teacher_and_Subject
 
             ctrlListInfo1.FillTeachersWhoTeachSubject(_GradeLevelSubjectID);
         }
+
     }
 }

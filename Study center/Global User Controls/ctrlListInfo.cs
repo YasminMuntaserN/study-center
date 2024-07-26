@@ -132,13 +132,40 @@ namespace Study_center.Global_User_Controls
             }
         }
 
-        private void OnTeacherSelected(int teacherId)
+        #region 
+        private void _SaveSubjectTeacher()
         {
-            //if (clsTeacherSubject.IsTeacherTeachingSameSubject())
-            //{
+            clsTeacherSubject _subjectTeacher = new clsTeacherSubject();
+            _subjectTeacher.TeacherID = _storedTeacherID;
+            _subjectTeacher.GradeLevelSubjectID = _storedGradeLevelSubjectID;
 
-            //}
+            if (_subjectTeacher.Save())
+            {
+                clsMessages.GeneralSuccessMessage("Subject Teacher");
+            }
+            else
+            {
+                clsMessages.GeneralErrorMessage("Subject Teacher");
+            }
         }
+
+        private void _GetTeacherIDFromFindTeacherForm(int? teacherID)
+        {
+            _storedTeacherID = teacherID;   
+
+            if (clsTeacherSubject.IsTeachingSubject(teacherID, _storedGradeLevelSubjectID))
+            {
+                MessageBox.Show("This teacher is currently teaching the specified subject. Choose another one.",
+                    "Teacher Subject Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _SaveSubjectTeacher();
+                _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
+            }
+        }
+        #endregion
+
         private void btnaAdd_Click(object sender, EventArgs e)
         {
             switch (_Type)
@@ -151,9 +178,8 @@ namespace Study_center.Global_User_Controls
 
                 case enItemTypes.Teachers:
                     frmFindTeacher tec = new frmFindTeacher();
+                    tec.TeacherSelected += _GetTeacherIDFromFindTeacherForm;
                     tec.ShowDialog();
-                   // tec.TeacherSelected += OnTeacherSelected;
-                    _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
                     break;
 
                 case enItemTypes.MeetingTimes:

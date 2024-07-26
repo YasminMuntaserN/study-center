@@ -226,5 +226,8 @@ namespace StudyCenter_DataAccessLayer
                 return false;
             }
         }
+
+        public static int Count()
+             => clsDataAccessHelper.Count("SP_GetStudentCount");
     }
 }

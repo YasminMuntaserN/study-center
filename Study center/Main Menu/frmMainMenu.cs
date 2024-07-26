@@ -1,5 +1,8 @@
 ﻿using Guna.UI2.WinForms;
+using Study_center.Class;
 using Study_center.Teacher;
+using studyCenter_BL_;
+using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,22 +35,32 @@ namespace Study_center.Main_Menu
         }
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            _FillCounts();
+
             ShowFormInPanel(new frmTeacherInfo(2, this));
         }
 
-        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        private void _FillCounts()
+        {
+            lblClassesCount.Text = clsClass.Count().ToString();
+            lblGradeLevelsCount.Text = clsGradeLevel.Count().ToString();
+            lblSubjects.Text = clsSubject.Count().ToString();
+            lblStudentCount.Text = clsStudent.Count().ToString();
+            lblTeacherCount.Text = clsTeacher.Count().ToString();
+            //  lblPayments.Text = clsPa.Count().ToString();
+            lblMeetingCounts.Text = clsTeacher.Count().ToString();
+            lblGroupsCount.Text = clsGroup.Count().ToString();
+
+        }
+
+        private void lblPayments_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnAddClass_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2Button9_Click(object sender, EventArgs e)
-        {
-
+            ShowFormInPanel(new frmAddClass(this));
         }
     }
 }

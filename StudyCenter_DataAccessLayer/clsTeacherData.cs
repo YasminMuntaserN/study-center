@@ -229,5 +229,8 @@ namespace StudyCenter_DataAccessLayer
             }
         }
 
+        public static int Count()
+            => clsDataAccessHelper.Count("SP_GetTeacherCount");
+
     }
 }
