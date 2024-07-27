@@ -87,7 +87,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(3, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(908, 76);
+            lblTitle.Size = new Size(885, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Meeting Time";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;

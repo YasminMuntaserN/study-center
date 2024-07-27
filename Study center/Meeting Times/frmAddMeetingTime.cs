@@ -10,24 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.Configuration;
+using Study_center.Main_Menu;
 
 namespace Study_center.Meeting_Times
 {
     public partial class frmAddMeetingTime : Form
     {
+        private frmMainMenu mainMenuForm;
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
         private int? _meetingTimeID = null;
         private clsMeetingTimes _meetingTime = null;
 
-        public frmAddMeetingTime()
+        public frmAddMeetingTime(frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
         }
 
-        public frmAddMeetingTime(int? meetingTimeID)
+        public frmAddMeetingTime(int? meetingTimeID, frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
             _meetingTimeID = meetingTimeID;
             _Mode = enMode.Update;

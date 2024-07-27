@@ -1,6 +1,7 @@
 ﻿using Study_center.Class.User_Control;
 using Study_center.Global_Classes;
 using Study_center.Global_User_Controls;
+using Study_center.Main_Menu;
 using Study_center.Teacher;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -19,6 +20,8 @@ namespace Study_center.Group
 {
     public partial class frmAddGroup : Form
     {
+        private frmMainMenu mainMenuForm;
+
         public Action<int?> GroupIDBack;
 
         #region 
@@ -36,8 +39,9 @@ namespace Study_center.Group
 
         private clsGroup _Group;
 
-        public frmAddGroup()
+        public frmAddGroup(frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
         }
 

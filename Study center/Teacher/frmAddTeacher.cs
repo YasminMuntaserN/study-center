@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using System;
@@ -16,6 +17,7 @@ namespace Study_center.Teacher
 {
     public partial class frmAddTeacher : Form
     {
+        private frmMainMenu mainMenuForm;
         public Action<int?> TeacherIDBack;
 
         private enum enMode { Add, Update }
@@ -26,14 +28,16 @@ namespace Study_center.Teacher
 
         private int? _selectedPersonID => ctrlPersonCardWithFilter1.PersonID;
 
-        public frmAddTeacher()
+        public frmAddTeacher(frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
         }
 
-        public frmAddTeacher(int? TeacherId)
+        public frmAddTeacher(int? TeacherId, frmMainMenu mainMenu = null)
         {
-            _teacherID= TeacherId;
+            this.mainMenuForm = mainMenu;
+            _teacherID = TeacherId;
             InitializeComponent();
             _Mode = enMode.Update;
         }

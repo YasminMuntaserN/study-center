@@ -1,6 +1,12 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Class;
+using Study_center.Grade_Level_Subject;
+using Study_center.Group;
+using Study_center.Meeting_Times;
+using Study_center.Student;
+using Study_center.Subjects;
 using Study_center.Teacher;
+using Study_center.Teacher_and_Subject;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
 using System;
@@ -18,7 +24,9 @@ namespace Study_center.Main_Menu
     public partial class frmMainMenu : Form
     {
         private Guna2CustomGradientPanel mainPanel;
+
         private Button btnShowPeopleList;
+
         public frmMainMenu()
         {
             mainPanel = this.guna2CustomGradientPanel1;
@@ -53,14 +61,46 @@ namespace Study_center.Main_Menu
 
         }
 
-        private void lblPayments_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region added Buttons
         private void btnAddClass_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new frmAddClass(this));
+        }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddStudent(this));
+        }
+
+        private void btnAddSubject_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddSubject(this));
+        }
+
+        private void btnGradeLevel_Click(object sender, EventArgs e)
+        {
+            //  ShowFormInPanel(new frmAddGradeLevelSubject(this));
+        }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddGroup(this));
+        }
+
+        private void btnAddMeetingTime_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddMeetingTime(this));
+        }
+        private void btnAddTeacher_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddTeacher(this));
+        }
+        #endregion
+
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

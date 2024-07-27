@@ -52,11 +52,13 @@
             pictureBox5 = new PictureBox();
             label12 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            pictureBox6 = new PictureBox();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // btnClose
@@ -74,7 +76,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(266, 350);
+            btnClose.Location = new Point(437, 443);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnClose.Size = new Size(214, 50);
@@ -97,7 +99,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(33, 350);
+            btnSave.Location = new Point(204, 443);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSave.Size = new Size(214, 50);
@@ -110,11 +112,12 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(12, 135);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(495, 19);
+            guna2Separator1.Size = new Size(855, 19);
             guna2Separator1.TabIndex = 62;
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.Controls.Add(pictureBox6);
             guna2GroupBox1.Controls.Add(txtSubjectName);
             guna2GroupBox1.Controls.Add(pictureBox1);
             guna2GroupBox1.Controls.Add(label2);
@@ -125,7 +128,7 @@
             guna2GroupBox1.Location = new Point(12, 160);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2GroupBox1.Size = new Size(495, 173);
+            guna2GroupBox1.Size = new Size(855, 277);
             guna2GroupBox1.TabIndex = 61;
             guna2GroupBox1.Text = "Subject Info";
             // 
@@ -145,7 +148,7 @@
             txtSubjectName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtSubjectName.ForeColor = Color.Black;
             txtSubjectName.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtSubjectName.Location = new Point(254, 76);
+            txtSubjectName.Location = new Point(256, 126);
             txtSubjectName.Margin = new Padding(4, 6, 4, 6);
             txtSubjectName.Name = "txtSubjectName";
             txtSubjectName.PasswordChar = '\0';
@@ -160,7 +163,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.class__1_;
-            pictureBox1.Location = new Point(211, 75);
+            pictureBox1.Location = new Point(213, 125);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -173,7 +176,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(21, 76);
+            label2.Location = new Point(23, 126);
             label2.Name = "label2";
             label2.Size = new Size(184, 31);
             label2.TabIndex = 34;
@@ -187,7 +190,7 @@
             guna2Panel1.Location = new Point(-1, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(516, 81);
+            guna2Panel1.Size = new Size(899, 81);
             guna2Panel1.TabIndex = 60;
             // 
             // lblTitle
@@ -196,7 +199,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(3, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(518, 76);
+            lblTitle.Size = new Size(896, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Subject";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -240,11 +243,22 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Image = Properties.Resources.subject;
+            pictureBox6.Location = new Point(607, 43);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(218, 218);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 65;
+            pictureBox6.TabStop = false;
+            // 
             // frmAddSubject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(514, 417);
+            ClientSize = new Size(899, 516);
             Controls.Add(lblSubjectID);
             Controls.Add(pictureBox5);
             Controls.Add(label12);
@@ -263,6 +277,7 @@
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,5 +297,6 @@
         private PictureBox pictureBox5;
         private Label label12;
         private ErrorProvider errorProvider1;
+        private PictureBox pictureBox6;
     }
 }

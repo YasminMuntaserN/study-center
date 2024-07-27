@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using StudyCenter_DataAccessLayer.Global_classes;
@@ -17,6 +18,8 @@ namespace Study_center.Student
 {
     public partial class frmAddStudent : Form
     {
+        private frmMainMenu mainMenuForm;
+
         public Action<int?> StudentIDBack;
 
         private enum enMode { Add, Update }
@@ -27,12 +30,12 @@ namespace Study_center.Student
 
         private int? _selectedPersonID => ctrlPersonCardWithFilter1.PersonID;
 
-        public frmAddStudent()
+        public frmAddStudent(frmMainMenu mainMenu = null)
         {
             InitializeComponent();
         }
 
-        public frmAddStudent(int? studentID)
+        public frmAddStudent(int? studentID, frmMainMenu mainMenu = null)
         {
             InitializeComponent();
             _studentID = studentID;

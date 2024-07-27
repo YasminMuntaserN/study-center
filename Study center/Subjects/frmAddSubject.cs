@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Study_center.Subjects
 {
     public partial class frmAddSubject : Form
     {
+        private frmMainMenu mainMenuForm;
+
         public Action<int?> SubjectIDBack;
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
@@ -21,13 +24,15 @@ namespace Study_center.Subjects
         private int? _subjectID = null;
         private clsSubject _subject = null;
 
-        public frmAddSubject()
+        public frmAddSubject(frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
         }
 
-        public frmAddSubject(int? subjectID)
+        public frmAddSubject(int? subjectID, frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
             _subjectID = subjectID;
             _Mode = enMode.Update;

@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_Bl_;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -17,19 +18,22 @@ namespace Study_center.Grade_Level_Subject
 {
     public partial class frmAddGradeLevelSubject : Form
     {
+        private frmMainMenu mainMenuForm;
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
         private int? _gradeLevelSubjectID = null;
         private clsGradeLevelSubject _gradeLevelSubject = null;
 
-        public frmAddGradeLevelSubject()
+        public frmAddGradeLevelSubject(frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
         }
 
-        public frmAddGradeLevelSubject(int? gradeLevelSubjectID)
+        public frmAddGradeLevelSubject(int? gradeLevelSubjectID , frmMainMenu mainMenu = null)
         {
+            this.mainMenuForm = mainMenu;
             InitializeComponent();
             _gradeLevelSubjectID = gradeLevelSubjectID;
             _Mode = enMode.Update;
