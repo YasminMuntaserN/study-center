@@ -1,4 +1,6 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Student;
+using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace Study_center.Person.User_Controls
     public partial class ctrlPersonCardWithFilter : UserControl
     {
         public enum EnSearchCriteria { PersonID, StudentID, TeacherID }
+        private EnSearchCriteria _SearchCriteria;
 
         private int? _selectedID;
 
@@ -49,12 +52,29 @@ namespace Study_center.Person.User_Controls
         #region Data Back Event
         private void DataBackEvent(int? personID)
         {
-            cbFilter.SelectedIndex = 1;
+            cbFilter.SelectedIndex = 0; 
             txtFilterValue.Text = personID.ToString();
             ctrlPersonCard1.LoadPersonData(personID);
             PersonID = personID;
         }
 
+        private void DataBackEventTeacher(int? teacherID)
+        {
+            cbFilter.SelectedIndex = 2; 
+            txtFilterValue.Text = teacherID.ToString();
+            _selectedID = teacherID;
+            OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs {PersonID= teacherID, SearchCriteria = EnSearchCriteria.TeacherID });
+
+        }
+
+        private void DataBackEventStudent(int? studentID)
+        {
+            cbFilter.SelectedIndex = 1; 
+            txtFilterValue.Text = studentID.ToString();
+            _selectedID = studentID;
+            OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = studentID, SearchCriteria = EnSearchCriteria.StudentID });
+
+        }
         #endregion
 
         public ctrlPersonCardWithFilter()
@@ -93,12 +113,13 @@ namespace Study_center.Person.User_Controls
             PersonID = person.PersonID;
             ctrlPersonCard1.LoadPersonData(PersonID);
 
-
             OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = person.PersonID, SearchCriteria = searchCriteria });
         }
 
         public void SetSearchCriteria(EnSearchCriteria searchCriteria)
         {
+            _SearchCriteria = searchCriteria;
+           
             cbFilter.Items.Clear();
 
             switch (searchCriteria)
@@ -146,9 +167,24 @@ namespace Study_center.Person.User_Controls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddPerson frmAddPerson = new frmAddPerson();
-            frmAddPerson.PersonIDBack += DataBackEvent;
-            frmAddPerson.ShowDialog();
+            switch (_SearchCriteria)
+            {
+                case EnSearchCriteria.PersonID:
+                    frmAddPerson frmAddPerson = new frmAddPerson();
+                    frmAddPerson.PersonIDBack += DataBackEvent;
+                    frmAddPerson.ShowDialog();
+                    break;
+                case EnSearchCriteria.StudentID:
+                    frmAddStudent frmAddStudent = new frmAddStudent();
+                    frmAddStudent.StudentIDBack += DataBackEventStudent;
+                    frmAddStudent.ShowDialog();
+                    break;
+                case EnSearchCriteria.TeacherID:
+                    frmAddTeacher frmAddTeacher = new frmAddTeacher();
+                    frmAddTeacher.TeacherIDBack += DataBackEventTeacher;
+                    frmAddTeacher.ShowDialog();
+                    break;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e) => FindNow();

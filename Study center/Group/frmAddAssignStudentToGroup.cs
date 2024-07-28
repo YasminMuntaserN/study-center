@@ -112,6 +112,8 @@ namespace Study_center.Group
 
         private void _RefreshList()
         {
+            if (_AccordingTo != enLoddingAccordingTo.StudentID)
+                selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
 
             // Fill Groups In DataGridView
             _dtGroups = clsEnrollment.GetAvailableGroupsByStudentID(selectedStudentID);

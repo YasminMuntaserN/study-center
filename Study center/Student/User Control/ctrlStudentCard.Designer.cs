@@ -31,6 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            llEditStudentInfo = new LinkLabel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             lblGradeLevel = new Label();
@@ -47,7 +48,6 @@
             label3 = new Label();
             label2 = new Label();
             ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
-            llEditStudentInfo = new LinkLabel();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -84,6 +84,19 @@
             guna2GroupBox1.Size = new Size(890, 243);
             guna2GroupBox1.TabIndex = 2;
             guna2GroupBox1.Text = "Student Info";
+            // 
+            // llEditStudentInfo
+            // 
+            llEditStudentInfo.AutoSize = true;
+            llEditStudentInfo.BackColor = Color.White;
+            llEditStudentInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
+            llEditStudentInfo.Location = new Point(572, 56);
+            llEditStudentInfo.Name = "llEditStudentInfo";
+            llEditStudentInfo.Size = new Size(197, 32);
+            llEditStudentInfo.TabIndex = 67;
+            llEditStudentInfo.TabStop = true;
+            llEditStudentInfo.Text = "Edit Student Info";
+            llEditStudentInfo.LinkClicked += llEditStudentInfo_LinkClicked;
             // 
             // pictureBox4
             // 
@@ -268,19 +281,6 @@
             ctrlPersonCardWithFilter1.Size = new Size(890, 500);
             ctrlPersonCardWithFilter1.TabIndex = 3;
             ctrlPersonCardWithFilter1.OnPersonSelectedEvent += ctrlPersonCardWithFilter1_OnPersonSelectedEvent;
-            // 
-            // llEditStudentInfo
-            // 
-            llEditStudentInfo.AutoSize = true;
-            llEditStudentInfo.BackColor = Color.White;
-            llEditStudentInfo.Font = new Font("Segoe UI Semibold", 14.2F, FontStyle.Bold);
-            llEditStudentInfo.Location = new Point(572, 56);
-            llEditStudentInfo.Name = "llEditStudentInfo";
-            llEditStudentInfo.Size = new Size(197, 32);
-            llEditStudentInfo.TabIndex = 67;
-            llEditStudentInfo.TabStop = true;
-            llEditStudentInfo.Text = "Edit Student Info";
-            llEditStudentInfo.LinkClicked += llEditStudentInfo_LinkClicked;
             // 
             // ctrlStudentCard
             // 

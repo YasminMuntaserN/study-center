@@ -14,6 +14,7 @@ namespace Study_center.Teacher
 {
     public partial class ctrlTeacherCardWithFilter : UserControl
     {
+
         public event EventHandler TeacherSelected;
 
         private clsTeacher _Teacher;
