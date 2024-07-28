@@ -108,9 +108,48 @@ namespace StudyCenter_DataAccessLayer.Global_classes
 
         }
 
+        public static bool Exists<T1, T2>(string storedProcedureName, string parameterName1, T1 value1, string parameterName2, T2 value2)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue($"@{parameterName1}", (object)value1 ?? DBNull.Value);
+                        command.Parameters.AddWithValue($"@{parameterName2}", (object)value2 ?? DBNull.Value);
+
+                        SqlParameter existsParam = new SqlParameter("@Exists", SqlDbType.Bit)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        command.Parameters.Add(existsParam);
+
+                        command.ExecuteNonQuery();
+
+                        isFound = (bool)existsParam.Value;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                clsErrorLogger.LogError(ex);
+            }
+
+
+            return isFound;
+        }
+
         public static int Count(string storedProcedureName)
         {
-            int count = 0;  
+            int count = 0;
             try
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))

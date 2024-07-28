@@ -1,4 +1,5 @@
-﻿using Study_center.Person.User_Controls;
+﻿using Study_center.Global_Classes;
+using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Study_center.Student.User_Control
 {
     public partial class ctrlStudentCard : UserControl
     {
+        public event EventHandler StudentSelected;
+
         private clsStudent _Student;
 
         public clsStudent StudentInfo => _Student;
@@ -21,14 +24,23 @@ namespace Study_center.Student.User_Control
         public ctrlStudentCard()
         {
             InitializeComponent();
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.StudentID);
+
         }
 
         private void FillStudentInfoInFelids()
         {
-            // Fill student-specific fields
+            ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Student.PersonID);
+            lblStudentID.Text = _Student.StudentID.ToString();
             lblGradeLevel.Text = clsGradeLevel.GetGradeLevelName(_Student.GradeLevelID);
             lblEmergencyContactPhone.Text = _Student.EmergencyContactPhone;
-            lblEnrollmentDate.Text = _Student.EnrollmentDate.ToString("yyyy-MM-dd");
+            lblEnrollmentDate.Text = clsFormat.DateToShort(_Student.EnrollmentDate);
+            lblCreatedBy.Text = _Student.CreatedByUserID.ToString();
+        }
+
+        protected virtual void OnStudentSelected(EventArgs e)
+        {
+            StudentSelected?.Invoke(this, e);
         }
 
         public void LoadStudentInfo(int? studentID)
@@ -41,6 +53,7 @@ namespace Study_center.Student.User_Control
                 return;
             }
             FillStudentInfoInFelids();
+            OnStudentSelected(EventArgs.Empty);
         }
 
         public void LoadStudentInfoByPerson(int? PersonID)
@@ -54,6 +67,7 @@ namespace Study_center.Student.User_Control
             }
 
             FillStudentInfoInFelids();
+            OnStudentSelected(EventArgs.Empty);
         }
 
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, Study_center.Person.User_Controls.ctrlPersonCardWithFilter.SelectPersonEventArgs e)
@@ -74,5 +88,6 @@ namespace Study_center.Student.User_Control
             frmAddStudent.ShowDialog();
             LoadStudentInfo(_Student.StudentID);
         }
+
     }
 }

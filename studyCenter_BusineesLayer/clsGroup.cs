@@ -28,8 +28,6 @@ namespace studyCenter_BusineesLayer
         public clsClass ClassInfo => clsClass.Find(ClassID);
         public clsMeetingTimes MeetingTimeInfo => clsMeetingTimes.Find(MeetingTimeID);
 
-
-
         public clsGroup()
         {
             GroupID = null;
@@ -129,6 +127,7 @@ namespace studyCenter_BusineesLayer
            => clsGroupData.GetAvailableMeetingTimes(classId, TeacherId);
 
         public static int Count() => clsGroupData.Count();
+
 
     }
 }

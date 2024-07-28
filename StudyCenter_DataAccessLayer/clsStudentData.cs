@@ -12,7 +12,7 @@ namespace StudyCenter_DataAccessLayer
     public class clsStudentData
     {
         public static bool GetInfoByStudentID(int? studentID, ref int? personID, ref byte? gradeLevelID,
-        ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
+        ref int? UserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
         {
             bool isFound = false;
 
@@ -37,7 +37,7 @@ namespace StudyCenter_DataAccessLayer
 
                                 personID = (reader["PersonID"] != DBNull.Value) ? (int?)reader["PersonID"] : null;
                                 gradeLevelID = (reader["GradeLevelID"] != DBNull.Value) ? (byte?)Convert.ToByte(reader["GradeLevelID"]) : null;
-                                createdByUserID = (reader["CreatedByUserID"] != DBNull.Value) ? (int?)reader["CreatedByUserID"] : null;
+                                UserID = (reader["UserID"] != DBNull.Value) ? (int?)reader["UserID"] : null;
                                 EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                                 EmergencyContactPhone = (string)reader["EmergencyContactPhone"];
                             }
@@ -60,7 +60,7 @@ namespace StudyCenter_DataAccessLayer
         }
 
         public static bool GetInfoByPersonID(int? personID, ref int? studentID, ref byte? gradeLevelID,
-            ref int? createdByUserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
+            ref int? UserID, ref string EmergencyContactPhone, ref DateTime EnrollmentDate)
         {
             bool isFound = false;
 
@@ -85,7 +85,7 @@ namespace StudyCenter_DataAccessLayer
 
                                 studentID = (reader["studentID"] != DBNull.Value) ? (int?)reader["studentID"] : null;
                                 gradeLevelID = (reader["GradeLevelID"] != DBNull.Value) ? (byte?)Convert.ToByte(reader["GradeLevelID"]) : null;
-                                createdByUserID = (reader["CreatedByUserID"] != DBNull.Value) ? (int?)reader["CreatedByUserID"] : null;
+                                UserID = (reader["UserID"] != DBNull.Value) ? (int?)reader["UserID"] : null;
                                 EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                                 EmergencyContactPhone = (string)reader["EmergencyContactPhone"];
                             }
@@ -147,7 +147,7 @@ namespace StudyCenter_DataAccessLayer
             return studentID;
         }
 
-        public static bool Update(int studentID, int personID, int gradeLevelID, string EmergencyContactPhone, int createdByUserID)
+        public static bool Update(int studentID, int personID, int gradeLevelID, string EmergencyContactPhone, int UserID)
         {
             int rowAffected = 0;
 
@@ -165,7 +165,7 @@ namespace StudyCenter_DataAccessLayer
                         command.Parameters.AddWithValue("@PersonID", personID);
                         command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
                         command.Parameters.AddWithValue("@EmergencyContactPhone", EmergencyContactPhone);
-                        command.Parameters.AddWithValue("@CreatedByUserID", createdByUserID);
+                        command.Parameters.AddWithValue("@UserID", UserID);
 
                         rowAffected = command.ExecuteNonQuery();
                     }

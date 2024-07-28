@@ -1,4 +1,5 @@
 ﻿using StudyCenter_DAL_;
+using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -92,13 +93,15 @@ namespace studyCenter_BL_
         public static bool Exists(int? enrollmentID)
             => clsEnrollmentData.Exists(enrollmentID);
 
+        public static bool Exists(int? StudentID , int? GroupID)
+            => clsEnrollmentData.Exists(StudentID, GroupID);
+    
         public static DataTable All() => clsEnrollmentData.All();
 
-        public static DataTable GetEnrollmentsByStudentID(int? studentID)
-            => clsEnrollmentData.GetEnrollmentsByStudentID(studentID);
+        public static DataTable GetAvailableGroupsByStudentID(int? studentID)
+             => clsEnrollmentData.GetAvailableGroupsByStudentID(studentID.Value);
 
-        public static DataTable GetEnrollmentsByGroupID(int? groupID)
-            => clsEnrollmentData.GetEnrollmentsByGroupID(groupID);
+        public static bool CanAddStudentToGroup(int ?groupID) => clsEnrollmentData.CanAddStudentToGroup(groupID.Value);
 
     }
 }

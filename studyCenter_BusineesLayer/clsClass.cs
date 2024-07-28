@@ -1,6 +1,7 @@
 ﻿using StudyCenter_DAL_;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,6 +88,9 @@ namespace studyCenter_BL_
 
         public static bool Exists(string ClassName)
           => clsClassesDAL.Exists(ClassName);
+
+        public static DataTable All()
+          => clsClassesDAL.All();
 
         public static int Count()
            =>  clsClassesDAL.Count();   

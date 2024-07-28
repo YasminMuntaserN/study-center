@@ -164,6 +164,7 @@ namespace Study_center.Global_User_Controls
                 _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
             }
         }
+      
         #endregion
 
         private void btnaAdd_Click(object sender, EventArgs e)

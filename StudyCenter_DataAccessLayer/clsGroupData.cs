@@ -146,7 +146,7 @@ namespace StudyCenter_DataAccessLayer
             => clsDataAccessHelper.Exists("SP_DoesGroupExistByGroupID", "GroupID", groupID);
 
         public static DataTable All()
-            => clsDataAccessHelper.All("SP_GetAllGroups");
+            => clsDataAccessHelper.All("SP_GetGroupInfo");
 
         public static string GetGroupName(int groupID)
         {

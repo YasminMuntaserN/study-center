@@ -75,7 +75,7 @@ namespace StudyCenter_DAL_
                         command.Parameters.AddWithValue("@StudentID", (object)studentID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@GroupID", (object)groupID ?? DBNull.Value);
 
-                        SqlParameter outputIdParam = new SqlParameter("@NewEnrollmentID", SqlDbType.Int)
+                        SqlParameter outputIdParam = new SqlParameter("@EnrollmentID", SqlDbType.Int)
                         {
                             Direction = ParameterDirection.Output
                         };
@@ -133,6 +133,9 @@ namespace StudyCenter_DAL_
 
         public static bool Exists(int? enrollmentID)
             => clsDataAccessHelper.Exists("SP_DoesEnrollmentExistByEnrollmentID", "EnrollmentID", enrollmentID);
+
+        public static bool Exists(int? studentID, int? groupID)
+           => clsDataAccessHelper.Exists("SP_CheckEnrollmentExistsByGroupIDAndStudentID", "StudentID", studentID, "GroupID", groupID);
 
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllEnrollments");
@@ -196,5 +199,12 @@ namespace StudyCenter_DAL_
 
             return dtEnrollments;
         }
+
+        public static DataTable GetAvailableGroupsByStudentID(int studentID)
+            => clsDataAccessHelper.All("SP_GetAvailableGroupsByStudentID", "studentID", studentID);
+
+        public static bool CanAddStudentToGroup(int groupID)
+            => clsDataAccessHelper.Exists("SP_CheckGroupCapacity", "GroupID", groupID);
+
     }
 }

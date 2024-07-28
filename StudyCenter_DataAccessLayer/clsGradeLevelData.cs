@@ -153,7 +153,7 @@ namespace StudyCenter_DataAccessLayer
 
                         command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
 
-                        SqlParameter outputIdParam = new SqlParameter("@GradeLevelName", SqlDbType.NVarChar, 50)
+                        SqlParameter outputIdParam = new SqlParameter("@GradeName", SqlDbType.NVarChar, 50)
                         {
                             Direction = ParameterDirection.Output
                         };

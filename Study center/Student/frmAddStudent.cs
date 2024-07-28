@@ -160,7 +160,7 @@ namespace Study_center.Student
         private void frmAddStudent_Load(object sender, EventArgs e)
         {
             _ResetTitles();
-            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID);
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.StudentID);
 
             if (_Mode == enMode.Update)
                 _LoadData();

@@ -172,5 +172,7 @@ namespace Study_center.Person.User_Controls
             ctrlPersonCard1.LoadPersonData(personID);
         }
 
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e) =>txtFilterValue.Visible = true;
+ 
     }
 }

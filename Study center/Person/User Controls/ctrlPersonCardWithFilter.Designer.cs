@@ -114,12 +114,13 @@
             cbFilter.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             cbFilter.ForeColor = Color.Black;
             cbFilter.ItemHeight = 30;
-            cbFilter.Items.AddRange(new object[] { "Person ID" });
+            cbFilter.Items.AddRange(new object[] { "PersonID" });
             cbFilter.Location = new Point(135, 70);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbFilter.Size = new Size(175, 36);
             cbFilter.TabIndex = 43;
+            cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
             // 
             // txtFilterValue
             // 
@@ -146,6 +147,7 @@
             txtFilterValue.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtFilterValue.Size = new Size(215, 39);
             txtFilterValue.TabIndex = 42;
+            txtFilterValue.Visible = false;
             txtFilterValue.KeyPress += txtFilterValue_KeyPress;
             // 
             // label12
