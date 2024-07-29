@@ -587,6 +587,7 @@ namespace Study_center
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Activated += frmAddPerson_Activated;
+            FormClosed += frmAddPerson_FormClosed;
             Load += frmAddPerson_Load;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

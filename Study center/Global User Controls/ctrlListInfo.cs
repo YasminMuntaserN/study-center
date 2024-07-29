@@ -157,6 +157,7 @@ namespace Study_center.Global_User_Controls
             {
                 MessageBox.Show("This teacher is currently teaching the specified subject. Choose another one.",
                     "Teacher Subject Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {

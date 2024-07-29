@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_BL_;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,20 @@ namespace Study_center.Class.User_Control
         {
             InitializeComponent();
         }
+
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
 
         private void _FillClassDetails()
         {
@@ -74,8 +89,8 @@ namespace Study_center.Class.User_Control
 
         private void llEditClassInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddClass frmAddClass = new frmAddClass(_ClassID);
-            frmAddClass.ShowDialog(); 
+            frmAddClass frmAddClass = new frmAddClass(_ClassID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frmAddClass);
             LoadClassData(_ClassID);
 
         }

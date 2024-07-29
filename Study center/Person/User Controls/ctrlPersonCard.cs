@@ -1,5 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
+using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,19 @@ namespace Study_center.Person.User_Controls
 {
     public partial class ctrlPersonCard : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
         public int? PersonID { get; private set; } = null;
         public clsPerson Person { get; private set; } = null;
 
@@ -65,8 +80,8 @@ namespace Study_center.Person.User_Controls
      
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddPerson frmAddPerson = new frmAddPerson(PersonID);
-            frmAddPerson.ShowDialog();
+            frmAddPerson frmAddPerson = new frmAddPerson(PersonID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frmAddPerson);
             LoadPersonData(PersonID);
         }
     }

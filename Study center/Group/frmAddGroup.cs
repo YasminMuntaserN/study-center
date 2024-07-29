@@ -20,7 +20,7 @@ namespace Study_center.Group
 {
     public partial class frmAddGroup : Form
     {
-        private frmMainMenu _mainMenuForm;
+        private Form previousForm;
 
         public Action<int?> GroupIDBack;
 
@@ -39,17 +39,17 @@ namespace Study_center.Group
 
         private clsGroup _Group;
 
-        public frmAddGroup(frmMainMenu mainMenu = null)
+        public frmAddGroup(Form previousForm = null)
         {
-            this._mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
             InitializeComponent();
             _Mode = enMode.Add;
         }
 
-        public frmAddGroup(int? GroupID, frmMainMenu mainMenu = null)
+        public frmAddGroup(int? GroupID, Form previousForm = null)
         {
             _GroupID = GroupID;
-            this._mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
             InitializeComponent();
             _Mode = enMode.Update;
         }
@@ -115,29 +115,29 @@ namespace Study_center.Group
         }
 
         #region  Event handler
-        // Event handler to restrict tab navigation
-        private void TabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+       private bool AllDataSelecting()
         {
-            if (e.TabPageIndex > 0 && !_selectedClassID.HasValue)
+            if (!_selectedClassID.HasValue)
             {
                 MessageBox.Show("Please select a class first.");
-                e.Cancel = true;
+                return false;
             }
-            else if (e.TabPageIndex > 1 && !_selectedTeacherID.HasValue)
+            else if (!_selectedTeacherID.HasValue)
             {
                 MessageBox.Show("Please select a teacher first.");
-                e.Cancel = true;
+                return false;
             }
-            else if (e.TabPageIndex > 2 && !_selectedGradeLevelSubjectID.HasValue)
+            else if (!_selectedGradeLevelSubjectID.HasValue)
             {
                 MessageBox.Show("Please select a subject first.");
-                e.Cancel = true;
+                return false;
             }
-            else if (e.TabPageIndex > 3 && !_selectedMeetingTimeID.HasValue)
+            else if (!_selectedMeetingTimeID.HasValue)
             {
                 MessageBox.Show("Please select a meeting time first.");
-                e.Cancel = true;
+                return false;
             }
+            return true;
         }
 
         // Event handler when a class is selected in the user control
@@ -196,8 +196,11 @@ namespace Study_center.Group
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!AllDataSelecting()) return;
+
             _FillGroupObjectInfo();
 
+            
             if (_Group.Save())
             {
                 lblTitle.Text = "Update Group";
@@ -221,7 +224,15 @@ namespace Study_center.Group
 
         private void frmAddGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
+            frmMainMenu mainMenuForm = this.previousForm as frmMainMenu;
+            if (mainMenuForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(this.previousForm);
+            }
+            else
+            {
+                this.previousForm.Show();
+            }
         }
     }
 

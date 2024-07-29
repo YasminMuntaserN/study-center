@@ -60,7 +60,7 @@ namespace Study_center.Person.User_Controls
 
         private void DataBackEventTeacher(int? teacherID)
         {
-            cbFilter.SelectedIndex = 2;
+            cbFilter.SelectedIndex = 1;
             txtFilterValue.Text = teacherID.ToString();
             _selectedID = teacherID;
             OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = teacherID, SearchCriteria = EnSearchCriteria.TeacherID });
@@ -204,7 +204,7 @@ namespace Study_center.Person.User_Controls
         public void setFilterEnabledAndLoadData(int? personID)
         {
             txtFilterValue.Text = personID.ToString();
-            FilterEnabled = false;
+         //   FilterEnabled = false;
             ctrlPersonCard1.LoadPersonData(personID);
         }
 

@@ -1,6 +1,7 @@
 ﻿using Study_center.Class;
 using Study_center.Global_Classes;
 using Study_center.Grade_Level_Subject;
+using Study_center.Main_Menu;
 using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
@@ -19,6 +20,20 @@ namespace Study_center.Group.User_Control
     {
         private clsGroup _Group;
         private int? _GroupID;
+
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
 
         public ctrlGroupCard()
         {
@@ -61,20 +76,20 @@ namespace Study_center.Group.User_Control
 
         private void llWhoTeachesIt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmTeacherInfo frm = new frmTeacherInfo(_Group.TeacherSubjectInfo.TeacherID);
-            frm.ShowDialog();
+            frmTeacherInfo frm = new frmTeacherInfo(_Group.TeacherSubjectInfo.TeacherID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frm);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmClassInfo frm = new frmClassInfo(_Group.ClassID);
-            frm.ShowDialog();
+            frmClassInfo frm = new frmClassInfo(_Group.ClassID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frm);
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmSubjectGradeLevelInfo levelInfo = new frmSubjectGradeLevelInfo(_Group.GradeLevelSubjectID);
-            levelInfo.ShowDialog();
+            frmSubjectGradeLevelInfo frm = new frmSubjectGradeLevelInfo(_Group.GradeLevelSubjectID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frm);
         }
 
     }

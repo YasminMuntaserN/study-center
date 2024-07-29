@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_BL_;
 using System;
 using System.Collections;
@@ -18,10 +19,15 @@ namespace Study_center.Teacher_and_Subject
 {
     public partial class frmAllTeachersWhoTeachSubject : Form
     {
+        private Form previousForm;
+        private frmMainMenu mainMenuForm;
+
         private int? _GradeLevelSubjectID;
 
-        public frmAllTeachersWhoTeachSubject(int? gradeLevelSubjectID)
+        public frmAllTeachersWhoTeachSubject(int? gradeLevelSubjectID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _GradeLevelSubjectID = gradeLevelSubjectID;
         }
@@ -43,5 +49,12 @@ namespace Study_center.Teacher_and_Subject
             ctrlListInfo1.FillTeachersWhoTeachSubject(_GradeLevelSubjectID);
         }
 
+        private void frmAllTeachersWhoTeachSubject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+        }
     }
 }

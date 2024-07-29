@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -58,17 +59,20 @@ namespace Study_center.Teacher_and_Subject
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
-
-
-            if (!selectedTeacherID.HasValue)
+            if (ctrlTeacherCard1.TeacherInfo == null)
             {
                 clsMessages.GeneralErrorMessage("Please select a teacher.");
                 return;
             }
+            else
+            {
+                selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
+
+            }
 
 
-            _CheckCorrectData();
+
+            if (!_CheckCorrectData()) return;
 
             _FillGradeLevelSubjectInfo();
 

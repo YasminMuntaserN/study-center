@@ -17,7 +17,9 @@ namespace Study_center.Teacher
 {
     public partial class frmAddTeacher : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
+
         public Action<int?> TeacherIDBack;
 
         private enum enMode { Add, Update }
@@ -28,15 +30,17 @@ namespace Study_center.Teacher
 
         private int? _selectedPersonID => ctrlPersonCardWithFilter1.PersonID;
 
-        public frmAddTeacher(frmMainMenu mainMenu = null)
+        public frmAddTeacher(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddTeacher(int? TeacherId, frmMainMenu mainMenu = null)
+        public frmAddTeacher(int? TeacherId, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             _teacherID = TeacherId;
             InitializeComponent();
             _Mode = enMode.Update;
@@ -174,6 +178,18 @@ namespace Study_center.Teacher
             else
             {
                 errorProvider1.SetError(txtSalary, null);
+            }
+        }
+
+        private void frmAddTeacher_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
     }

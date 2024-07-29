@@ -110,9 +110,11 @@
             Controls.Add(guna2Separator1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(67, 22);
             Name = "frmClassInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmClassInfo";
+            FormClosed += frmClassInfo_FormClosed;
             Load += frmClassInfo_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);

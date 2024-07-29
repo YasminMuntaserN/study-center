@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
 using studyCenter_Bl_;
@@ -25,7 +26,21 @@ namespace Study_center.Grade_Level_Subject.User_Control
         {
             InitializeComponent();
         }
-    
+
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
+
         private void _FillObjectInFailed()
         {
             lblSubjectGradeLevelID.Text = _GradeLevelSubjectID.ToString();
@@ -56,8 +71,8 @@ namespace Study_center.Grade_Level_Subject.User_Control
 
         private void llWhoTeachesIt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAllTeachersWhoTeachSubject Teachers = new frmAllTeachersWhoTeachSubject(_GradeLevelSubjectID);
-            Teachers.ShowDialog();
+            frmAllTeachersWhoTeachSubject Teachers = new frmAllTeachersWhoTeachSubject(_GradeLevelSubjectID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(Teachers);
         }
     }
 }

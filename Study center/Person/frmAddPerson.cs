@@ -4,11 +4,15 @@ using static studyCenter_BusineesLayer.clsPerson;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 
 namespace Study_center
 {
     public partial class frmAddPerson : Form
     {
+        private Form previousForm;
+        private frmMainMenu mainMenuForm;
+
         public Action<int?> PersonIDBack;
 
         private enum enMode { Add, Update };
@@ -17,14 +21,18 @@ namespace Study_center
         private int? _PersonID = null;
         private clsPerson _Person = null;
 
-        public frmAddPerson()
+        public frmAddPerson(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             _Mode = enMode.Add;
             InitializeComponent();
         }
 
-        public frmAddPerson(int? PersonID)
+        public frmAddPerson(int? PersonID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             _PersonID = PersonID;
             InitializeComponent();
             _Mode = enMode.Update;
@@ -172,5 +180,16 @@ namespace Study_center
 
         private void frmAddPerson_Activated(object sender, EventArgs e) => txtFirstName.Focus();
 
+        private void frmAddPerson_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
+        }
     }
 }

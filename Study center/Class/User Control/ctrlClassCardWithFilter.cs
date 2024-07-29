@@ -62,7 +62,6 @@ namespace Study_center.Class.User_Control
         public void LoadData(int? classId)
         {
             if (!classId.HasValue) return;
-            ctrlFilter1.FilterEnabled = false;
             ctrlFilter1.FilterValue = classId.ToString();
             ctrlClassGard1.LoadClassData(classId);
             _Class = clsClass.Find(classId);
@@ -73,6 +72,5 @@ namespace Study_center.Class.User_Control
         {
             ClassSelected?.Invoke(this, e);
         }
-
     }
 }

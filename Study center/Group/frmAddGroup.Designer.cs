@@ -186,7 +186,6 @@
             TabControl1.TabIndex = 55;
             TabControl1.TabMenuBackColor = Color.FromArgb(54, 69, 79);
             TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
-            TabControl1.Selecting += TabControl1_Selecting;
             // 
             // tpClassInfo
             // 

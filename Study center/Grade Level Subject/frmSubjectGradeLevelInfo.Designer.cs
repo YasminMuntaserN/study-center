@@ -102,6 +102,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmSubjectGradeLevelInfo";
             Text = "frmSubjectGradeLevelInfo";
+            FormClosed += frmSubjectGradeLevelInfo_FormClosed;
             Load += frmSubjectGradeLevelInfo_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);

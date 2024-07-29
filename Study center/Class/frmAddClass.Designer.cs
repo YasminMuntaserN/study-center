@@ -322,6 +322,7 @@
             Name = "frmAddClass";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddClass";
+            FormClosed += frmAddClass_FormClosed;
             Load += frmAddClass_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             guna2GroupBox1.ResumeLayout(false);

@@ -1,4 +1,6 @@
-﻿using Study_center.Person.User_Controls;
+﻿using Study_center.Class;
+using Study_center.Main_Menu;
+using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,19 @@ namespace Study_center.Teacher
 {
     public partial class ctrlTeacherCardWithFilter : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
 
         public event EventHandler TeacherSelected;
 
@@ -71,8 +86,8 @@ namespace Study_center.Teacher
 
         private void llEditTeacherInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID);
-            frmAddTeacher.ShowDialog();
+            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID,previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frmAddTeacher);
             LoadTeacherInfo(_Teacher.TeacherID);
         }
 
@@ -88,6 +103,5 @@ namespace Study_center.Teacher
                 LoadTeacherInfo(ctrlPersonCardWithFilter1.GetSelectedID);
             }
         }
-
     }
 }

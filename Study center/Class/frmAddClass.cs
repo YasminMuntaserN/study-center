@@ -1,6 +1,8 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Global_Classes;
+using Study_center.Group.User_Control;
 using Study_center.Main_Menu;
+using Study_center.Teacher;
 using studyCenter_BL_;
 using System;
 using System.Collections.Generic;
@@ -16,8 +18,8 @@ namespace Study_center.Class
 {
     public partial class frmAddClass : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
-
 
         public Action<int?> ClassIDBack;
         private enum enMode { Add, Update }
@@ -26,15 +28,17 @@ namespace Study_center.Class
         private int? _classID = null;
         private clsClass _class = null;
 
-        public frmAddClass(frmMainMenu mainMenu=null)
+        public frmAddClass(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddClass(int? classID , frmMainMenu mainMenu=null)
+        public frmAddClass(int? classID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _classID = classID;
             _Mode = enMode.Update;
@@ -161,6 +165,14 @@ namespace Study_center.Class
             else
             {
                 errorProvider1.SetError(NuMCapacity, null);
+            }
+        }
+
+        private void frmAddClass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
             }
         }
     }

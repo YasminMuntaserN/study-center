@@ -172,7 +172,7 @@ namespace Study_center.Group
 
         private void miShowGroupsDetails_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmGroupInfo(selectedGroupID, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmGroupInfo(selectedGroupID, this,this._mainMenuForm));
             _RefreshList();
         }
 

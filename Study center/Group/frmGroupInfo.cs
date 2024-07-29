@@ -15,11 +15,13 @@ namespace Study_center.Group
     {
         private int? GroupID;
 
-        private frmMainMenu _mainMenuForm;
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
 
-        public frmGroupInfo(int? groupID, frmMainMenu mainMenuForm = null)
+        public frmGroupInfo(int? groupID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            _mainMenuForm = mainMenuForm;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             GroupID = groupID;
         }
@@ -31,12 +33,19 @@ namespace Study_center.Group
 
         private void frmGroupInfo_Load(object sender, EventArgs e)
         {
+            ctrlGroupCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlGroupCard1.SetPreviousForm(this); // Set the current form as the previous form
+
             ctrlGroupCard1.LoadData(GroupID);
         }
 
         private void frmGroupInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
         }
+
     }
 }

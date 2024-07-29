@@ -1,4 +1,5 @@
-﻿using Study_center.Main_Menu;
+﻿using Study_center.Class.User_Control;
+using Study_center.Main_Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,14 @@ namespace Study_center.Teacher
 {
     public partial class frmTeacherInfo : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
-        private int? _TeacherID; 
-        public frmTeacherInfo(int? teacherID , frmMainMenu mainMenu = null)
+
+        private int? _TeacherID;
+        public frmTeacherInfo(int? teacherID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _TeacherID = teacherID;
         }
@@ -29,7 +33,17 @@ namespace Study_center.Teacher
 
         private void frmTeacherInfo_Load(object sender, EventArgs e)
         {
+            ctrlTeacherCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlTeacherCardWithFilter1.SetPreviousForm(this);
             ctrlTeacherCardWithFilter1.LoadTeacherInfo(_TeacherID);
+        }
+
+        private void frmTeacherInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
         }
     }
 }

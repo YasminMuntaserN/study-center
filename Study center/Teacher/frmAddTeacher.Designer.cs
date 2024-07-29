@@ -407,7 +407,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 933);
+            ClientSize = new Size(885, 895);
             Controls.Add(guna2Panel1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
@@ -419,6 +419,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddTeacher";
             Activated += frmAddTeacher_Activated_1;
+            FormClosed += frmAddTeacher_FormClosed;
             Load += frmAddTeacher_Load;
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
