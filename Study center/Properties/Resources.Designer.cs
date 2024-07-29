@@ -153,6 +153,16 @@ namespace Study_center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bin {
+            get {
+                object obj = ResourceManager.GetObject("bin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_stack {
             get {
                 object obj = ResourceManager.GetObject("book-stack", resourceCulture);
@@ -446,6 +456,16 @@ namespace Study_center.Properties {
         internal static System.Drawing.Bitmap right_arrow {
             get {
                 object obj = ResourceManager.GetObject("right-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searching_magnifying_glass1 {
+            get {
+                object obj = ResourceManager.GetObject("searching-magnifying-glass1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

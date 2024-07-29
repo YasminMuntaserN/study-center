@@ -45,7 +45,7 @@ namespace Study_center.Main_Menu
         {
             _FillCounts();
 
-            ShowFormInPanel(new frmTeacherInfo(2, this));
+          
         }
 
         private void _FillCounts()
@@ -101,6 +101,11 @@ namespace Study_center.Main_Menu
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListGroups(this));
         }
     }
 }

@@ -11,7 +11,7 @@ namespace StudyCenter_DataAccessLayer
 {
     public class clsGroupData
     {
-        public static bool GetInfoByID(int? groupID, ref string groupName, ref int gradeLevelSubjectID, ref decimal groupStudentCount, ref int teacherSubjectID, ref int classID, ref int meetingTimeID, ref bool isActive,ref DateTime CreationDate)
+        public static bool GetInfoByID(int? groupID, ref string groupName, ref int gradeLevelSubjectID, ref decimal groupStudentCount, ref int teacherSubjectID, ref int classID, ref int meetingTimeID, ref bool isActive, ref DateTime CreationDate)
         {
             bool isFound = false;
 
@@ -61,7 +61,7 @@ namespace StudyCenter_DataAccessLayer
             return isFound;
         }
 
-        public static int? Add( int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
+        public static int? Add(int? gradeLevelSubjectID, decimal groupStudentCount, int? teacherSubjectID, int? classID, int? meetingTimeID, bool isActive)
         {
             int? groupID = null;
 
@@ -217,6 +217,11 @@ namespace StudyCenter_DataAccessLayer
 
         public static int Count()
              => clsDataAccessHelper.Count("SP_GetGroupCount");
+
+        public static DataTable GetGroupsByPage(int pageNumber, int pageSize)
+            => clsDataAccessHelper.All("SP_GetGroupsByPage", "PageNumber", pageNumber
+                , "PageSize", pageSize);
+
     }
 }
 

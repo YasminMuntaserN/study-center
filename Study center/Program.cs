@@ -23,7 +23,7 @@ namespace Study_center
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //  Application.Run(new frmAllTeachersWhoTeachSubject(3));
-            Application.Run(new frmAddAssignStudentToGroup(33,frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID));    
+            Application.Run(new frmMainMenu());    
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Study_center.Group
 {
     public partial class frmAddGroup : Form
     {
-        private frmMainMenu mainMenuForm;
+        private frmMainMenu _mainMenuForm;
 
         public Action<int?> GroupIDBack;
 
@@ -41,8 +41,17 @@ namespace Study_center.Group
 
         public frmAddGroup(frmMainMenu mainMenu = null)
         {
-            this.mainMenuForm = mainMenu;
+            this._mainMenuForm = mainMenu;
             InitializeComponent();
+            _Mode = enMode.Add;
+        }
+
+        public frmAddGroup(int? GroupID, frmMainMenu mainMenu = null)
+        {
+            _GroupID = GroupID;
+            this._mainMenuForm = mainMenu;
+            InitializeComponent();
+            _Mode = enMode.Update;
         }
 
         private void _ResetTitles()
@@ -72,9 +81,13 @@ namespace Study_center.Group
 
         private void _FillCompleteData()
         {
-            ctrlClassCardWithFilter1.LoadData(_Group.ClassID);
-            ctrlTeacherCard1.LoadTeacherInfo(_Group.TeacherSubjectInfo.TeacherID);
-            _LoadGroupInfoInFields();
+            _Group = clsGroup.Find(_GroupID);
+            if (_Group != null)
+            {
+                ctrlClassCardWithFilter1.LoadData(_Group.ClassID);
+                ctrlTeacherCard1.LoadTeacherInfo(_Group.TeacherSubjectInfo.TeacherID);
+                _LoadGroupInfoInFields();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -204,6 +217,11 @@ namespace Study_center.Group
             {
                 clsMessages.OperationFelid("group");
             }
+        }
+
+        private void frmAddGroup_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
         }
     }
 

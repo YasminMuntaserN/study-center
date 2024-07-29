@@ -42,6 +42,7 @@
             // ctrlFilter1
             // 
             ctrlFilter1.FilterEnabled = true;
+            ctrlFilter1.FilterValue = "";
             ctrlFilter1.Location = new Point(0, 0);
             ctrlFilter1.Name = "ctrlFilter1";
             ctrlFilter1.Size = new Size(891, 150);

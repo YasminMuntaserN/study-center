@@ -52,7 +52,7 @@ namespace Study_center.Person.User_Controls
         #region Data Back Event
         private void DataBackEvent(int? personID)
         {
-            cbFilter.SelectedIndex = 0; 
+            cbFilter.SelectedIndex = 0;
             txtFilterValue.Text = personID.ToString();
             ctrlPersonCard1.LoadPersonData(personID);
             PersonID = personID;
@@ -60,16 +60,16 @@ namespace Study_center.Person.User_Controls
 
         private void DataBackEventTeacher(int? teacherID)
         {
-            cbFilter.SelectedIndex = 2; 
+            cbFilter.SelectedIndex = 2;
             txtFilterValue.Text = teacherID.ToString();
             _selectedID = teacherID;
-            OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs {PersonID= teacherID, SearchCriteria = EnSearchCriteria.TeacherID });
+            OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = teacherID, SearchCriteria = EnSearchCriteria.TeacherID });
 
         }
 
         private void DataBackEventStudent(int? studentID)
         {
-            cbFilter.SelectedIndex = 1; 
+            cbFilter.SelectedIndex = 1;
             txtFilterValue.Text = studentID.ToString();
             _selectedID = studentID;
             OnPersonSelectedEvent?.Invoke(this, new SelectPersonEventArgs { PersonID = studentID, SearchCriteria = EnSearchCriteria.StudentID });
@@ -119,7 +119,7 @@ namespace Study_center.Person.User_Controls
         public void SetSearchCriteria(EnSearchCriteria searchCriteria)
         {
             _SearchCriteria = searchCriteria;
-           
+
             cbFilter.Items.Clear();
 
             switch (searchCriteria)
@@ -208,7 +208,7 @@ namespace Study_center.Person.User_Controls
             ctrlPersonCard1.LoadPersonData(personID);
         }
 
-        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e) =>txtFilterValue.Visible = true;
- 
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e) => txtFilterValue.Visible = true;
+
     }
 }

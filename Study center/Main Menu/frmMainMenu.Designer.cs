@@ -112,10 +112,10 @@
             guna2CustomGradientPanel2.FillColor2 = SystemColors.Control;
             guna2CustomGradientPanel2.FillColor3 = SystemColors.Control;
             guna2CustomGradientPanel2.FillColor4 = SystemColors.Control;
-            guna2CustomGradientPanel2.Location = new Point(310, 37);
+            guna2CustomGradientPanel2.Location = new Point(310, 12);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2CustomGradientPanel2.Size = new Size(1466, 979);
+            guna2CustomGradientPanel2.Size = new Size(1481, 1031);
             guna2CustomGradientPanel2.TabIndex = 1;
             // 
             // guna2CustomGradientPanel3
@@ -155,7 +155,7 @@
             guna2CustomGradientPanel3.Location = new Point(1031, 45);
             guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2CustomGradientPanel3.Size = new Size(407, 909);
+            guna2CustomGradientPanel3.Size = new Size(431, 909);
             guna2CustomGradientPanel3.TabIndex = 35;
             // 
             // btnAddClass
@@ -461,10 +461,10 @@
             guna2CustomGradientPanel1.BorderRadius = 50;
             guna2CustomGradientPanel1.CustomBorderColor = Color.Transparent;
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges11;
-            guna2CustomGradientPanel1.Location = new Point(67, 35);
+            guna2CustomGradientPanel1.Location = new Point(67, 22);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2CustomGradientPanel1.Size = new Size(929, 930);
+            guna2CustomGradientPanel1.Size = new Size(929, 983);
             guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // guna2Button1
@@ -586,6 +586,7 @@
             guna2Button4.Size = new Size(282, 60);
             guna2Button4.TabIndex = 7;
             guna2Button4.Text = "  Groups";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2Button5
             // 

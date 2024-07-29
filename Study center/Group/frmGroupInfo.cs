@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_center.Main_Menu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,11 @@ namespace Study_center.Group
     {
         private int? GroupID;
 
-        public frmGroupInfo(int? groupID)
+        private frmMainMenu _mainMenuForm;
+
+        public frmGroupInfo(int? groupID, frmMainMenu mainMenuForm = null)
         {
+            _mainMenuForm = mainMenuForm;
             InitializeComponent();
             GroupID = groupID;
         }
@@ -30,5 +34,9 @@ namespace Study_center.Group
             ctrlGroupCard1.LoadData(GroupID);
         }
 
+        private void frmGroupInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using studyCenter_BL_;
 using StudyCenter_DataAccessLayer;
+using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -128,6 +129,11 @@ namespace studyCenter_BusineesLayer
 
         public static int Count() => clsGroupData.Count();
 
+        public static DataTable GetGroupsByPage(int pageNumber, int pageSize)
+            => clsGroupData.GetGroupsByPage(pageNumber, pageSize);
+
+        public static void GetTotalPagesAndRows(int pageSize, out int totalRows, out int totalPages)
+          => clsDataAccessHelper.GetTotalPagesAndRows("Groups", pageSize, out totalRows, out totalPages);
 
     }
 }

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
@@ -77,7 +77,7 @@
             // btnClose
             // 
             btnClose.BorderRadius = 15;
-            btnClose.CustomizableEdges = customizableEdges1;
+            btnClose.CustomizableEdges = customizableEdges17;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -91,7 +91,7 @@
             btnClose.ImageAlign = HorizontalAlignment.Left;
             btnClose.Location = new Point(457, 909);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnClose.Size = new Size(215, 50);
             btnClose.TabIndex = 57;
             btnClose.Text = "Close";
@@ -100,7 +100,7 @@
             // btnSave
             // 
             btnSave.BorderRadius = 15;
-            btnSave.CustomizableEdges = customizableEdges3;
+            btnSave.CustomizableEdges = customizableEdges19;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -114,7 +114,7 @@
             btnSave.ImageAlign = HorizontalAlignment.Left;
             btnSave.Location = new Point(227, 909);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnSave.Size = new Size(215, 50);
             btnSave.TabIndex = 56;
             btnSave.Text = "Save";
@@ -191,9 +191,9 @@
             gbSelectGroup.Controls.Add(dgvGroups);
             gbSelectGroup.Controls.Add(guna2Separator1);
             gbSelectGroup.Controls.Add(label1);
-            gbSelectGroup.Location = new Point(-1, 6);
+            gbSelectGroup.Location = new Point(-1, 22);
             gbSelectGroup.Name = "gbSelectGroup";
-            gbSelectGroup.Size = new Size(923, 769);
+            gbSelectGroup.Size = new Size(923, 753);
             gbSelectGroup.TabIndex = 0;
             gbSelectGroup.TabStop = false;
             // 
@@ -203,7 +203,7 @@
             cbTeachers.BorderColor = Color.FromArgb(7, 43, 71);
             cbTeachers.BorderRadius = 17;
             cbTeachers.BorderThickness = 2;
-            cbTeachers.CustomizableEdges = customizableEdges5;
+            cbTeachers.CustomizableEdges = customizableEdges21;
             cbTeachers.DrawMode = DrawMode.OwnerDrawFixed;
             cbTeachers.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTeachers.FocusedColor = Color.DarkCyan;
@@ -213,7 +213,7 @@
             cbTeachers.ItemHeight = 30;
             cbTeachers.Location = new Point(381, 125);
             cbTeachers.Name = "cbTeachers";
-            cbTeachers.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbTeachers.ShadowDecoration.CustomizableEdges = customizableEdges22;
             cbTeachers.Size = new Size(223, 36);
             cbTeachers.TabIndex = 77;
             cbTeachers.Visible = false;
@@ -225,7 +225,7 @@
             cbClasses.BorderColor = Color.FromArgb(7, 43, 71);
             cbClasses.BorderRadius = 17;
             cbClasses.BorderThickness = 2;
-            cbClasses.CustomizableEdges = customizableEdges7;
+            cbClasses.CustomizableEdges = customizableEdges23;
             cbClasses.DrawMode = DrawMode.OwnerDrawFixed;
             cbClasses.DropDownStyle = ComboBoxStyle.DropDownList;
             cbClasses.FocusedColor = Color.DarkCyan;
@@ -235,7 +235,7 @@
             cbClasses.ItemHeight = 30;
             cbClasses.Location = new Point(381, 125);
             cbClasses.Name = "cbClasses";
-            cbClasses.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbClasses.ShadowDecoration.CustomizableEdges = customizableEdges24;
             cbClasses.Size = new Size(223, 36);
             cbClasses.TabIndex = 76;
             cbClasses.Visible = false;
@@ -247,7 +247,7 @@
             cbGroups.BorderColor = Color.FromArgb(7, 43, 71);
             cbGroups.BorderRadius = 17;
             cbGroups.BorderThickness = 2;
-            cbGroups.CustomizableEdges = customizableEdges9;
+            cbGroups.CustomizableEdges = customizableEdges25;
             cbGroups.DrawMode = DrawMode.OwnerDrawFixed;
             cbGroups.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGroups.FocusedColor = Color.DarkCyan;
@@ -257,7 +257,7 @@
             cbGroups.ItemHeight = 30;
             cbGroups.Location = new Point(381, 125);
             cbGroups.Name = "cbGroups";
-            cbGroups.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cbGroups.ShadowDecoration.CustomizableEdges = customizableEdges26;
             cbGroups.Size = new Size(223, 36);
             cbGroups.TabIndex = 75;
             cbGroups.Visible = false;
@@ -269,7 +269,7 @@
             cbSubjects.BorderColor = Color.FromArgb(7, 43, 71);
             cbSubjects.BorderRadius = 17;
             cbSubjects.BorderThickness = 2;
-            cbSubjects.CustomizableEdges = customizableEdges11;
+            cbSubjects.CustomizableEdges = customizableEdges27;
             cbSubjects.DrawMode = DrawMode.OwnerDrawFixed;
             cbSubjects.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSubjects.FocusedColor = Color.DarkCyan;
@@ -279,7 +279,7 @@
             cbSubjects.ItemHeight = 30;
             cbSubjects.Location = new Point(381, 127);
             cbSubjects.Name = "cbSubjects";
-            cbSubjects.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbSubjects.ShadowDecoration.CustomizableEdges = customizableEdges28;
             cbSubjects.Size = new Size(223, 36);
             cbSubjects.TabIndex = 74;
             cbSubjects.Visible = false;
@@ -290,7 +290,7 @@
             cbFilter.BackColor = Color.Transparent;
             cbFilter.BorderColor = Color.FromArgb(7, 43, 71);
             cbFilter.BorderRadius = 17;
-            cbFilter.CustomizableEdges = customizableEdges13;
+            cbFilter.CustomizableEdges = customizableEdges29;
             cbFilter.DrawMode = DrawMode.OwnerDrawFixed;
             cbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFilter.FocusedColor = Color.CadetBlue;
@@ -301,7 +301,7 @@
             cbFilter.Items.AddRange(new object[] { "None", "Group Name", "Class Name", "Teacher Name", "Subject Name" });
             cbFilter.Location = new Point(133, 127);
             cbFilter.Name = "cbFilter";
-            cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges30;
             cbFilter.Size = new Size(223, 36);
             cbFilter.TabIndex = 73;
             cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged_1;
@@ -320,26 +320,26 @@
             // 
             // dgvGroups
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvGroups.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvGroups.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvGroups.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.MediumAquamarine;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvGroups.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvGroups.ColumnHeadersHeight = 4;
             dgvGroups.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvGroups.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvGroups.DefaultCellStyle = dataGridViewCellStyle6;
             dgvGroups.GridColor = Color.FromArgb(231, 229, 255);
             dgvGroups.Location = new Point(19, 194);
             dgvGroups.Name = "dgvGroups";
@@ -392,10 +392,10 @@
             // 
             guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges15;
+            guna2Panel1.CustomizableEdges = customizableEdges31;
             guna2Panel1.Location = new Point(0, -1);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Panel1.Size = new Size(933, 85);
             guna2Panel1.TabIndex = 54;
             // 
@@ -407,15 +407,15 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(918, 76);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Appointing Teacher For The Subject";
+            lblTitle.Text = "Assign Student to Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ctrlGroupCard1
             // 
-            ctrlGroupCard1.Location = new Point(18, 82);
+            ctrlGroupCard1.Location = new Point(8, 70);
             ctrlGroupCard1.Name = "ctrlGroupCard1";
             ctrlGroupCard1.Size = new Size(895, 417);
-            ctrlGroupCard1.TabIndex = 79;
+            ctrlGroupCard1.TabIndex = 80;
             ctrlGroupCard1.Visible = false;
             // 
             // frmAddAssignStudentToGroup
@@ -431,6 +431,7 @@
             Name = "frmAddAssignStudentToGroup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddAssignStudentToGroup";
+            FormClosed += frmAddAssignStudentToGroup_FormClosed;
             Load += frmAddAssignStudentToGroup_Load;
             guna2TabControl1.ResumeLayout(false);
             tpTeacherInfo.ResumeLayout(false);

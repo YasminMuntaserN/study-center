@@ -736,6 +736,7 @@
             Name = "frmAddGroup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddGroup";
+            FormClosed += frmAddGroup_FormClosed;
             Load += frmAddGroup_Load_1;
             TabControl1.ResumeLayout(false);
             tpClassInfo.ResumeLayout(false);

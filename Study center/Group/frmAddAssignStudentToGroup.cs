@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Student.User_Control;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -17,6 +18,7 @@ namespace Study_center.Group
 {
     public partial class frmAddAssignStudentToGroup : Form
     {
+        private frmMainMenu _mainMenuForm;
         private int? selectedStudentID;
         private int? selectedGroupID;
 
@@ -26,15 +28,17 @@ namespace Study_center.Group
         public enum enLoddingAccordingTo { StudentID, GroupID }
         private enLoddingAccordingTo? _AccordingTo;
 
-        public frmAddAssignStudentToGroup()
+        public frmAddAssignStudentToGroup(frmMainMenu mainMenu = null)
         {
+            this._mainMenuForm = mainMenu;
             InitializeComponent();
             _Enrollment = new clsEnrollment();
             _FillComboBoxies();
         }
 
-        public frmAddAssignStudentToGroup(int? value, enLoddingAccordingTo accordingTo)
+        public frmAddAssignStudentToGroup(int? value, enLoddingAccordingTo accordingTo, frmMainMenu mainMenu = null)
         {
+            this._mainMenuForm = mainMenu;
             InitializeComponent();
             _Enrollment = new clsEnrollment();
 
@@ -86,13 +90,13 @@ namespace Study_center.Group
                 clsMessages.GeneralErrorMessage("Please select a group.");
                 return false;
             }
-         
+
             if (!selectedStudentID.HasValue)
             {
                 clsMessages.GeneralErrorMessage("Please select a student.");
                 return false;
             }
-         
+
             if (clsEnrollment.CanAddStudentToGroup(selectedGroupID))
             {
                 clsMessages.GeneralErrorMessage("Cannot add student. Class capacity exceeded.");
@@ -138,6 +142,7 @@ namespace Study_center.Group
         #region Fill comboBoxies
         private void cbFilter_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             cbGroups.Visible = (cbFilter.Text == "Group Name");
             cbTeachers.Visible = (cbFilter.Text == "Teacher Name");
             cbSubjects.Visible = (cbFilter.Text == "Subject Name");
@@ -176,11 +181,11 @@ namespace Study_center.Group
             _Search("SubjectName", cbSubjects);
         }
         #endregion
-       
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            if(_AccordingTo != enLoddingAccordingTo.GroupID)
-            selectedGroupID = (int)dgvGroups.CurrentRow.Cells[0].Value;
+            if (_AccordingTo != enLoddingAccordingTo.GroupID)
+                selectedGroupID = (int)dgvGroups.CurrentRow.Cells[0].Value;
 
             if (_AccordingTo != enLoddingAccordingTo.StudentID)
                 selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
@@ -231,9 +236,11 @@ namespace Study_center.Group
 
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e) => this.Close();
+
+        private void frmAddAssignStudentToGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Close();
+            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
         }
     }
 }

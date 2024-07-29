@@ -203,7 +203,7 @@ namespace StudyCenter_DataAccessLayer.Global_classes
             return dt;
         }
 
-        public static DataTable AllInPages(short pageNumber, int rowsPerPage, string storedProcedureName)
+        public static DataTable All<T1, T2>(string storedProcedureName, string parameterName1, T1 value1, string parameterName2, T2 value2)
         {
             DataTable dt = new DataTable();
 
@@ -217,8 +217,8 @@ namespace StudyCenter_DataAccessLayer.Global_classes
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@PageNumber", pageNumber);
-                        command.Parameters.AddWithValue("@RowsPerPage", rowsPerPage);
+                        command.Parameters.AddWithValue($"@{parameterName1}", (object)value1 ?? DBNull.Value);
+                        command.Parameters.AddWithValue($"@{parameterName2}", (object)value2 ?? DBNull.Value);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -237,5 +237,37 @@ namespace StudyCenter_DataAccessLayer.Global_classes
 
             return dt;
         }
+
+        public static void GetTotalPagesAndRows(string tableName, int pageSize, out int totalRows, out int totalPages)
+        {
+            using (SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetTotalPagesAndRows", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TableName", tableName);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalRowsParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalRowsParam);
+
+                    SqlParameter totalPagesParam = new SqlParameter("@TotalPages", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalPagesParam);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    totalRows = (int)totalRowsParam.Value;
+                    totalPages = (int)totalPagesParam.Value;
+                }
+            }
+        }
+
     }
 }

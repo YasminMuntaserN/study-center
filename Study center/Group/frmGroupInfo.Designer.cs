@@ -113,6 +113,7 @@
             Name = "frmGroupInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmGroupInfo";
+            FormClosed += frmGroupInfo_FormClosed;
             Load += frmGroupInfo_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
