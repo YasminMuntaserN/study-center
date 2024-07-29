@@ -147,7 +147,7 @@ namespace StudyCenter_DataAccessLayer
             return studentID;
         }
 
-        public static bool Update(int studentID, int personID, int gradeLevelID, string EmergencyContactPhone, int UserID)
+        public static bool Update(int studentID, int personID, int gradeLevelID, string EmergencyContactPhone, int UserID, DateTime EnrollmentDate)
         {
             int rowAffected = 0;
 
@@ -165,7 +165,9 @@ namespace StudyCenter_DataAccessLayer
                         command.Parameters.AddWithValue("@PersonID", personID);
                         command.Parameters.AddWithValue("@GradeLevelID", gradeLevelID);
                         command.Parameters.AddWithValue("@EmergencyContactPhone", EmergencyContactPhone);
+                        command.Parameters.AddWithValue("@EnrollmentDate", EnrollmentDate);
                         command.Parameters.AddWithValue("@UserID", UserID);
+
 
                         rowAffected = command.ExecuteNonQuery();
                     }

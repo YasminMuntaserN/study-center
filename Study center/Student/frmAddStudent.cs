@@ -44,6 +44,7 @@ namespace Study_center.Student
             _studentID = studentID;
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
+            _Mode = enMode.Update;
         }
 
         private void _ResetTitles()

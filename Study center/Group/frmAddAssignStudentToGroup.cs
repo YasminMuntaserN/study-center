@@ -71,10 +71,13 @@ namespace Study_center.Group
                     case enLoddingAccordingTo.GroupID:
                         gbSelectGroup.Visible = false;
                         ctrlGroupCard1.Visible = true;
+                        ctrlGroupCard1.Location = new System.Drawing.Point(25, 22);
+                        ctrlGroupCard1.Size = new System.Drawing.Size(862, 316);
                         ctrlGroupCard1.LoadData(selectedGroupID);
                         break;
                     case enLoddingAccordingTo.StudentID:
                         ctrlStudentCard1.LoadStudentInfo(selectedStudentID);
+                        ctrlGroupCard1.Visible = false;
                         _FillComboBoxies();
                         break;
                 }
@@ -127,7 +130,7 @@ namespace Study_center.Group
 
             // Fill Groups In DataGridView
             _dtGroups = clsEnrollment.GetAvailableGroupsByStudentID(selectedStudentID);
-            dgvGroups.DataSource = _dtGroups;
+            dgvList.DataSource = _dtGroups;
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -191,7 +194,7 @@ namespace Study_center.Group
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (_AccordingTo != enLoddingAccordingTo.GroupID)
-                selectedGroupID = (int)dgvGroups.CurrentRow.Cells[0].Value;
+                selectedGroupID = (int)dgvList.CurrentRow.Cells[0].Value;
 
             if (_AccordingTo != enLoddingAccordingTo.StudentID)
             {

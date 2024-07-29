@@ -120,7 +120,7 @@ namespace studyCenter_BusineesLayer
 
         private bool _Update()
         {
-            return clsStudentData.Update(StudentID.Value, PersonID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value);
+            return clsStudentData.Update(StudentID.Value, PersonID.Value, GradeLevelID.Value, EmergencyContactPhone, CreatedByUserID.Value,EnrollmentDate);
         }
 
         public new bool Save()
