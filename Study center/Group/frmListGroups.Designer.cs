@@ -139,8 +139,8 @@
             cbFilter.Font = new Font("Segoe UI", 10F);
             cbFilter.ForeColor = Color.FromArgb(68, 88, 112);
             cbFilter.ItemHeight = 30;
-            cbFilter.Items.AddRange(new object[] { "None", "Group ID", "Group Name", "Class Name", "Teacher Name", "Subject Name", "Grade Name", "Meeting Days" });
-            cbFilter.Location = new Point(105, 317);
+            cbFilter.Items.AddRange(new object[] { "None", "Student ID", "Name", "Gender", "Grade", "Age" });
+            cbFilter.Location = new Point(105, 319);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges3;
             cbFilter.Size = new Size(171, 36);
@@ -250,7 +250,7 @@
             cmsList.RenderStyle.SelectionForeColor = Color.White;
             cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
             cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(292, 204);
+            cmsList.Size = new Size(292, 176);
             // 
             // miShowGroupsDetails
             // 

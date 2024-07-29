@@ -16,22 +16,26 @@ namespace Study_center.Meeting_Times
 {
     public partial class frmAddMeetingTime : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
+
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
         private int? _meetingTimeID = null;
         private clsMeetingTimes _meetingTime = null;
 
-        public frmAddMeetingTime(frmMainMenu mainMenu = null)
+        public frmAddMeetingTime(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddMeetingTime(int? meetingTimeID, frmMainMenu mainMenu = null)
+        public frmAddMeetingTime(int? meetingTimeID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _meetingTimeID = meetingTimeID;
             _Mode = enMode.Update;
@@ -90,7 +94,7 @@ namespace Study_center.Meeting_Times
         {
             dtpStartDate.Value = DateTime.Today.Add(_meetingTime.StartTime);
             cbMeetingDays.SelectedValue = _meetingTime.PatternID;
-          
+
             // Update EndTime based on the pattern
             _UpdateEndTime();
         }
@@ -177,5 +181,16 @@ namespace Study_center.Meeting_Times
             };
         }
 
+        private void frmAddMeetingTime_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
+        }
     }
 }

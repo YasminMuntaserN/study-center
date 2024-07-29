@@ -1,4 +1,5 @@
 ﻿using Study_center.Class;
+using Study_center.Global_Classes;
 using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
 using studyCenter_BusineesLayer;
@@ -88,6 +89,11 @@ namespace Study_center.Teacher
 
         private void llEditTeacherInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (_Teacher == null)
+            {
+                clsMessages.GeneralErrorMessage("Select Teacher First !");
+                return;
+            }
             frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID, previousForm, mainMenuForm);
             mainMenuForm.ShowFormInPanel(frmAddTeacher);
             LoadTeacherInfo(_Teacher.TeacherID);

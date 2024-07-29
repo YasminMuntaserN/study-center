@@ -210,20 +210,20 @@ namespace Study_center.Global_User_Controls
             switch (_Type)
             {
                 case enItemTypes.Subjects:
-                    frmAppointingTeacherForTheSubject frmAdd = new frmAppointingTeacherForTheSubject();
-                    frmAdd.ShowDialog();
+                    frmAppointingTeacherForTheSubject frmAdd = new frmAppointingTeacherForTheSubject(previousForm, mainMenuForm);
+                    mainMenuForm.ShowFormInPanel(frmAdd);
                     _List = clsTeacherSubject.GetSubjectsByTeacherID(_storedTeacherID);
                     break;
 
                 case enItemTypes.Teachers:
-                    frmFindTeacher tec = new frmFindTeacher();
+                    frmFindTeacher tec = new frmFindTeacher(previousForm, mainMenuForm);
                     tec.TeacherSelected += _GetTeacherIDFromFindTeacherForm;
-                    tec.ShowDialog();
+                    mainMenuForm.ShowFormInPanel(tec);
                     break;
 
                 case enItemTypes.MeetingTimes:
-                    frmAddMeetingTime time = new frmAddMeetingTime();
-                    time.ShowDialog();
+                    frmAddMeetingTime time = new frmAddMeetingTime(previousForm, mainMenuForm);
+                    mainMenuForm.ShowFormInPanel(time);
                     _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;
                 case enItemTypes.students:

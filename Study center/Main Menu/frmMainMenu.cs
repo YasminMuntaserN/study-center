@@ -45,7 +45,7 @@ namespace Study_center.Main_Menu
         {
             _FillCounts();
 
-          
+
         }
 
         private void _FillCounts()
@@ -98,14 +98,15 @@ namespace Study_center.Main_Menu
         #endregion
 
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new frmListGroups(this));
+        }
+
+        private void btnStudents_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListStudents(this));
         }
     }
 }

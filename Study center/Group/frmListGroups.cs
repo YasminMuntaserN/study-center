@@ -33,7 +33,7 @@ namespace Study_center.Group
         {
             int totalRows;
             int totalPages;
-            clsGroup.GetTotalPagesAndRows(10, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("Groups", 10, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;

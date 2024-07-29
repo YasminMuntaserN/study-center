@@ -132,8 +132,6 @@ namespace studyCenter_BusineesLayer
         public static DataTable GetGroupsByPage(int pageNumber, int pageSize)
             => clsGroupData.GetGroupsByPage(pageNumber, pageSize);
 
-        public static void GetTotalPagesAndRows(int pageSize, out int totalRows, out int totalPages)
-          => clsDataAccessHelper.GetTotalPagesAndRows("Groups", pageSize, out totalRows, out totalPages);
 
         public static DataTable GetStudentsInGroup(int? groupId) => clsGroupData.GetStudentsInGroup(groupId.Value);
     }

@@ -357,6 +357,7 @@
             Name = "frmAppointingTeacherForTheSubject";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AppointingTeacherForTheSubject";
+            FormClosed += frmAppointingTeacherForTheSubject_FormClosed;
             Load += frmAppointingTeacherForTheSubject_Load;
             guna2Panel1.ResumeLayout(false);
             guna2TabControl1.ResumeLayout(false);

@@ -113,6 +113,7 @@
             Name = "frmFindTeacher";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmFindTeacher";
+            FormClosed += frmFindTeacher_FormClosed;
             Load += frmFindTeacher_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);

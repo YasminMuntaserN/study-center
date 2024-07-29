@@ -366,6 +366,7 @@
             Name = "frmAddMeetingTime";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddMeetingTime";
+            FormClosed += frmAddMeetingTime_FormClosed;
             Load += frmAddMeetingTime_Load;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();

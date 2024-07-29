@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -47,5 +48,8 @@ namespace Study_center.Global_Classes
             comboBox.DataSource = dataTable;
             comboBox.DisplayMember = displayMember;
         }
+        public static void GetTotalPagesAndRows(string TableName, int pageSize, out int totalRows, out int totalPages)
+          => clsDataAccessHelper.GetTotalPagesAndRows($"{TableName}", pageSize, out totalRows, out totalPages);
+
     }
 }

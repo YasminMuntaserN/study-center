@@ -229,5 +229,9 @@ namespace StudyCenter_DataAccessLayer
 
         public static int Count()
              => clsDataAccessHelper.Count("SP_GetStudentCount");
+
+        public static DataTable GetStudentsByPage(int pageNumber, int pageSize)
+           => clsDataAccessHelper.All("SP_StudentsByPage", "PageNumber", pageNumber
+               , "PageSize", pageSize);
     }
 }

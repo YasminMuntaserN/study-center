@@ -187,6 +187,13 @@ namespace Study_center.Group
 
         private void frmAddGroup_Load_1(object sender, EventArgs e)
         {
+            ctrlListInfo1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlListInfo1.SetPreviousForm(this);
+            ctrlListInfo2.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlListInfo2.SetPreviousForm(this);
+            ctrlTeacherCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlTeacherCard1.SetPreviousForm(this);
+
             // Fill the data after the form is loaded
             _FillListData();
 

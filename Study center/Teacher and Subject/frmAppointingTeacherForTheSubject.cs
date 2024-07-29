@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_Bl_;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -18,6 +19,9 @@ namespace Study_center.Teacher_and_Subject
 {
     public partial class frmAppointingTeacherForTheSubject : Form
     {
+        private Form previousForm;
+        private frmMainMenu mainMenuForm;
+
         private int? selectedTeacherID;
 
         private int? selectedGradeLevelSubjectID
@@ -27,8 +31,10 @@ namespace Study_center.Teacher_and_Subject
 
         private DataTable _dtTeacherSubjects;
 
-        public frmAppointingTeacherForTheSubject()
+        public frmAppointingTeacherForTheSubject(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _TeacherSubject = new clsTeacherSubject();
         }
@@ -96,6 +102,8 @@ namespace Study_center.Teacher_and_Subject
 
         private void frmAppointingTeacherForTheSubject_Load(object sender, EventArgs e)
         {
+            ctrlTeacherCard1.SetPreviousForm(this);
+            ctrlTeacherCard1.SetMainMenuForm(mainMenuForm);
             // Fill Grade Levels In ComboBox
             HelperClass.FillComboBox(cbGradeLevels, clsGradeLevel.AllGradeLevelNames(), "GradeLevelName");
 
@@ -143,6 +151,18 @@ namespace Study_center.Teacher_and_Subject
         private void cbGradeLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             _Search("GradeLevelName", cbGradeLevels);
+        }
+
+        private void frmAppointingTeacherForTheSubject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
         }
     }
 }
