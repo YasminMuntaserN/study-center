@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -221,6 +222,8 @@ namespace StudyCenter_DataAccessLayer
         public static DataTable GetGroupsByPage(int pageNumber, int pageSize)
             => clsDataAccessHelper.All("SP_GetGroupsByPage", "PageNumber", pageNumber
                 , "PageSize", pageSize);
+
+        public static DataTable GetStudentsInGroup(int groupId) => clsDataAccessHelper.All("GetStudentsInGroup", "GroupID", groupId);
 
     }
 }

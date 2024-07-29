@@ -112,8 +112,6 @@ namespace Study_center.Group
             _Search("MeetingDays", cbMeetingTimes);
         }
 
-        #endregion
-
         private void _FillComboBoxWithGroupNames()
         {
             cbGroups.Items.Clear();
@@ -133,6 +131,7 @@ namespace Study_center.Group
             HelperClass.FillComboBox(cbMeetingTimes, MeetingPattern.AllPatterns(), "EncodedDays");
         }
 
+        #endregion
         private void frmListGroups_Load(object sender, EventArgs e)
         {
             _FillComboBoxies();
@@ -141,7 +140,7 @@ namespace Study_center.Group
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(this,this._mainMenuForm));
             _RefreshList();
         }
 
@@ -172,13 +171,13 @@ namespace Study_center.Group
 
         private void miShowGroupsDetails_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmGroupInfo(selectedGroupID, this,this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmGroupInfo(selectedGroupID, this, this._mainMenuForm));
             _RefreshList();
         }
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(selectedGroupID, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(selectedGroupID, this, this._mainMenuForm));
             _RefreshList();
         }
 
@@ -190,7 +189,14 @@ namespace Study_center.Group
         private void miAddStudent_Click(object sender, EventArgs e)
         {
             this._mainMenuForm.ShowFormInPanel(new frmAddAssignStudentToGroup(selectedGroupID
-                ,frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID ,this._mainMenuForm));
+                , frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID, this, this._mainMenuForm));
+            _RefreshList();
+        }
+
+        private void miShowStudents_Click(object sender, EventArgs e)
+        {
+            this._mainMenuForm.ShowFormInPanel(new frmAllStudentsInGroup(selectedGroupID
+             ,this ,this._mainMenuForm));
             _RefreshList();
         }
     }

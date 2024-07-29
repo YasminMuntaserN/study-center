@@ -1,4 +1,6 @@
-﻿using Study_center.Global_Classes;
+﻿using Study_center.Class;
+using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Student;
 using Study_center.Teacher;
 using studyCenter_BusineesLayer;
@@ -8,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +20,19 @@ namespace Study_center.Person.User_Controls
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
         public enum EnSearchCriteria { PersonID, StudentID, TeacherID }
         private EnSearchCriteria _SearchCriteria;
 
@@ -170,14 +186,14 @@ namespace Study_center.Person.User_Controls
             switch (_SearchCriteria)
             {
                 case EnSearchCriteria.PersonID:
-                    frmAddPerson frmAddPerson = new frmAddPerson();
+                    frmAddPerson frmAddPerson = new frmAddPerson(previousForm, mainMenuForm);
                     frmAddPerson.PersonIDBack += DataBackEvent;
-                    frmAddPerson.ShowDialog();
+                    mainMenuForm.ShowFormInPanel(frmAddPerson);
                     break;
                 case EnSearchCriteria.StudentID:
-                    frmAddStudent frmAddStudent = new frmAddStudent();
-                    frmAddStudent.StudentIDBack += DataBackEventStudent;
-                    frmAddStudent.ShowDialog();
+                    //frmAddStudent frmAddStudent = new frmAddStudent(previousForm, mainMenuForm);
+                    //frmAddStudent.PersonIDBack += DataBackEvent;
+                    //mainMenuForm.ShowFormInPanel(frmAddStudent);
                     break;
                 case EnSearchCriteria.TeacherID:
                     frmAddTeacher frmAddTeacher = new frmAddTeacher();
@@ -204,7 +220,7 @@ namespace Study_center.Person.User_Controls
         public void setFilterEnabledAndLoadData(int? personID)
         {
             txtFilterValue.Text = personID.ToString();
-         //   FilterEnabled = false;
+            //   FilterEnabled = false;
             ctrlPersonCard1.LoadPersonData(personID);
         }
 

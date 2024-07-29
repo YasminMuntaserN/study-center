@@ -80,8 +80,9 @@ namespace Study_center.Person.User_Controls
      
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddPerson frmAddPerson = new frmAddPerson(PersonID, previousForm, mainMenuForm);
-            mainMenuForm.ShowFormInPanel(frmAddPerson);
+            frmAddPerson frmAddPerson = new frmAddPerson(PersonID);
+            //  mainMenuForm.ShowFormInPanel(frmAddPerson);
+            frmAddPerson.ShowDialog();
             LoadPersonData(PersonID);
         }
     }

@@ -1,5 +1,7 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Grade_Level_Subject;
+using Study_center.Group;
+using Study_center.Main_Menu;
 using Study_center.Meeting_Times;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
@@ -21,6 +23,20 @@ namespace Study_center.Global_User_Controls
 {
     public partial class ctrlListInfo : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
+
         public event EventHandler SelectedItem;
         private int? _ID;
         public int? ID => _ID;
@@ -30,8 +46,10 @@ namespace Study_center.Global_User_Controls
         private int? _storedTeacherID;
         private int? _storedGradeLevelSubjectID;
         private int? _storedClassID;
+        private int? _storedGroupID;
 
-        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 }
+
+        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 ,students = 3}
         private enItemTypes _Type;
 
         public ctrlListInfo()
@@ -61,6 +79,22 @@ namespace Study_center.Global_User_Controls
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedTeacherID = TeacherID;
+        }
+
+        public void FillStudentsInGroup(int? GroupID)
+        {
+            _Type = enItemTypes.students;
+
+            if (!GroupID.HasValue)
+            {
+                clsMessages.GeneralErrorMessage("Group ID is required.");
+                return;
+            }
+            lblListName.Text = string.Concat("All Students In Group => ", clsGroup.GetGroupName(GroupID));
+            _List = clsGroup.GetStudentsInGroup(GroupID);
+            dgvGradeLevelSubjects.DataSource = _List;
+            lblRecordsNum.Text = _List.Rows.Count.ToString();
+            _storedGroupID = GroupID;
         }
 
         public void FillTeachersWhoTeachSubject(int? GradeLevelSubjectID)
@@ -127,6 +161,9 @@ namespace Study_center.Global_User_Controls
                     case enItemTypes.MeetingTimes:
                         _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["MeetingTimeID"].Value;
                         break;
+                    case enItemTypes.students:
+                        _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["StudentID"].Value;
+                        break;
                 }
                 SelectedItem?.Invoke(this, EventArgs.Empty);
             }
@@ -188,7 +225,12 @@ namespace Study_center.Global_User_Controls
                     frmAddMeetingTime time = new frmAddMeetingTime();
                     time.ShowDialog();
                     _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
-
+                    break;
+                case enItemTypes.students:
+                    frmAddAssignStudentToGroup assign = new frmAddAssignStudentToGroup(_storedGroupID
+                        ,frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID,previousForm ,mainMenuForm);
+                    mainMenuForm.ShowFormInPanel(assign);
+                    _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;
             }
 

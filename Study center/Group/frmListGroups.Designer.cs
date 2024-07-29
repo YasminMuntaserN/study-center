@@ -250,7 +250,7 @@
             cmsList.RenderStyle.SelectionForeColor = Color.White;
             cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
             cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(292, 176);
+            cmsList.Size = new Size(292, 204);
             // 
             // miShowGroupsDetails
             // 
@@ -292,7 +292,8 @@
             miShowStudents.Image = Properties.Resources.grade_level;
             miShowStudents.Name = "miShowStudents";
             miShowStudents.Size = new Size(291, 32);
-            miShowStudents.Text = "     Show Student";
+            miShowStudents.Text = "     Show Students";
+            miShowStudents.Click += miShowStudents_Click;
             // 
             // miAddStudent
             // 

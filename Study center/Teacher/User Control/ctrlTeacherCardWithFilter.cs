@@ -40,6 +40,8 @@ namespace Study_center.Teacher
         {
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
+            ctrlPersonCardWithFilter1.SetPreviousForm(previousForm);
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm);
         }
 
         private void FillTeacherInfoInFields()
@@ -86,7 +88,7 @@ namespace Study_center.Teacher
 
         private void llEditTeacherInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID,previousForm, mainMenuForm);
+            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID, previousForm, mainMenuForm);
             mainMenuForm.ShowFormInPanel(frmAddTeacher);
             LoadTeacherInfo(_Teacher.TeacherID);
         }
@@ -103,5 +105,6 @@ namespace Study_center.Teacher
                 LoadTeacherInfo(ctrlPersonCardWithFilter1.GetSelectedID);
             }
         }
+
     }
 }

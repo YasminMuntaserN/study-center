@@ -21,6 +21,7 @@ namespace Study_center.Group
     public partial class frmAddGroup : Form
     {
         private Form previousForm;
+        private frmMainMenu mainMenuForm;
 
         public Action<int?> GroupIDBack;
 
@@ -39,17 +40,19 @@ namespace Study_center.Group
 
         private clsGroup _Group;
 
-        public frmAddGroup(Form previousForm = null)
+        public frmAddGroup(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _Mode = enMode.Add;
         }
 
-        public frmAddGroup(int? GroupID, Form previousForm = null)
+        public frmAddGroup(int? GroupID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             _GroupID = GroupID;
             this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _Mode = enMode.Update;
         }
@@ -224,14 +227,13 @@ namespace Study_center.Group
 
         private void frmAddGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmMainMenu mainMenuForm = this.previousForm as frmMainMenu;
-            if (mainMenuForm != null)
+            if (previousForm != null)
             {
-                mainMenuForm.ShowFormInPanel(this.previousForm);
+                mainMenuForm.ShowFormInPanel(previousForm);
             }
             else
             {
-                this.previousForm.Show();
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
     }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Study_center.Global_Classes;
 using Study_center.Main_Menu;
+using Study_center.Class.User_Control;
 
 namespace Study_center
 {

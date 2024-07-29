@@ -1,4 +1,5 @@
 ﻿using Study_center.Class.User_Control;
+using Study_center.Group.User_Control;
 using Study_center.Main_Menu;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace Study_center.Teacher
         private void frmTeacherInfo_Load(object sender, EventArgs e)
         {
             ctrlTeacherCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
-            ctrlTeacherCardWithFilter1.SetPreviousForm(this);
+            ctrlTeacherCardWithFilter1.SetPreviousForm(this); // Set the current form as the previous form
             ctrlTeacherCardWithFilter1.LoadTeacherInfo(_TeacherID);
         }
 

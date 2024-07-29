@@ -18,7 +18,9 @@ namespace Study_center.Group
 {
     public partial class frmAddAssignStudentToGroup : Form
     {
-        private frmMainMenu _mainMenuForm;
+        private Form previousForm;
+        private frmMainMenu mainMenuForm;
+
         private int? selectedStudentID;
         private int? selectedGroupID;
 
@@ -28,17 +30,21 @@ namespace Study_center.Group
         public enum enLoddingAccordingTo { StudentID, GroupID }
         private enLoddingAccordingTo? _AccordingTo;
 
-        public frmAddAssignStudentToGroup(frmMainMenu mainMenu = null)
+        public frmAddAssignStudentToGroup(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this._mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _Enrollment = new clsEnrollment();
             _FillComboBoxies();
         }
 
-        public frmAddAssignStudentToGroup(int? value, enLoddingAccordingTo accordingTo, frmMainMenu mainMenu = null)
+        public frmAddAssignStudentToGroup(int? value, enLoddingAccordingTo accordingTo,
+            Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this._mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
+
             InitializeComponent();
             _Enrollment = new clsEnrollment();
 
@@ -188,7 +194,11 @@ namespace Study_center.Group
                 selectedGroupID = (int)dgvGroups.CurrentRow.Cells[0].Value;
 
             if (_AccordingTo != enLoddingAccordingTo.StudentID)
+            {
+                if(ctrlStudentCard1.StudentInfo != null)
                 selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
+
+            }
 
 
             if (!_CheckCorrectData())
@@ -232,6 +242,9 @@ namespace Study_center.Group
 
         private void frmAddAssignStudentToGroup_Load(object sender, EventArgs e)
         {
+            ctrlGroupCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlGroupCard1.SetPreviousForm(this); // Set the current form as the previous form
+
             _LoadData();
 
         }
@@ -240,7 +253,10 @@ namespace Study_center.Group
 
         private void frmAddAssignStudentToGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmListGroups(this._mainMenuForm));
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
         }
     }
 }

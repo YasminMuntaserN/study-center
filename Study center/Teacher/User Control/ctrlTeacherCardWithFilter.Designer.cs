@@ -64,7 +64,7 @@
             ctrlPersonCardWithFilter1.Size = new Size(886, 500);
             ctrlPersonCardWithFilter1.TabIndex = 0;
             ctrlPersonCardWithFilter1.OnPersonSelectedEvent += ctrlPersonCardWithFilter1_OnPersonSelectedEvent;
-             // 
+            // 
             // guna2GroupBox1
             // 
             guna2GroupBox1.Controls.Add(llEditTeacherInfo);
