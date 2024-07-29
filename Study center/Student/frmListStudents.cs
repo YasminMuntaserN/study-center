@@ -147,12 +147,13 @@ namespace Study_center.Student
 
         private void miShowStudentDetails_Click(object sender, EventArgs e)
         {
-
+            this._mainMenuForm.ShowFormInPanel(new frmShowStudentInfo(selectedStudentID, this, this._mainMenuForm));
+            _RefreshList();
         }
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(selectedStudentID,this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddStudent(selectedStudentID,this, this._mainMenuForm));
             _RefreshList();
         }
 

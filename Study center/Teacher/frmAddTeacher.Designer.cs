@@ -125,7 +125,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(21, 77);
+            guna2Separator1.Location = new Point(2, 79);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(849, 19);
             guna2Separator1.TabIndex = 33;
@@ -151,7 +151,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges11;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(21, 610);
+            guna2GroupBox1.Location = new Point(8, 610);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GroupBox1.Size = new Size(831, 226);
@@ -371,7 +371,7 @@
             // ctrlPersonCardWithFilter1
             // 
             ctrlPersonCardWithFilter1.FilterEnabled = true;
-            ctrlPersonCardWithFilter1.Location = new Point(21, 102);
+            ctrlPersonCardWithFilter1.Location = new Point(8, 104);
             ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             ctrlPersonCardWithFilter1.Size = new Size(831, 487);
             ctrlPersonCardWithFilter1.TabIndex = 31;
@@ -385,7 +385,7 @@
             guna2Panel1.Location = new Point(-1, -6);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel1.Size = new Size(887, 85);
+            guna2Panel1.Size = new Size(852, 85);
             guna2Panel1.TabIndex = 36;
             // 
             // lblTitle
@@ -407,7 +407,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 895);
+            ClientSize = new Size(850, 895);
             Controls.Add(guna2Panel1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);

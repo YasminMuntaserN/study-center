@@ -18,6 +18,7 @@ namespace Study_center.Student
 {
     public partial class frmAddStudent : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
 
         public Action<int?> StudentIDBack;
@@ -30,18 +31,21 @@ namespace Study_center.Student
 
         private int? _selectedPersonID => ctrlPersonCardWithFilter1.PersonID;
 
-        public frmAddStudent(frmMainMenu mainMenu = null)
+        public frmAddStudent(frmMainMenu mainMenu = null, Form previousForm = null)
         {
             InitializeComponent();
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenu;
         }
 
-        public frmAddStudent(int? studentID, frmMainMenu mainMenu = null)
+        public frmAddStudent(int? studentID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             InitializeComponent();
             _studentID = studentID;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
         }
 
-       
         private void _ResetTitles()
         {
             //Fill Grade Levels In ComboBox
@@ -66,14 +70,14 @@ namespace Study_center.Student
 
         private void _FillFieldsWithStudentInfo()
         {
-            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID,_student.PersonID);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _student.PersonID);
 
             lblStudentID.Text = _student.StudentID.ToString();
             //  lblCreatedBy.Text = _student.CreatedByUserInfo?.Username;
             lblCreatedBy.Text = "Admin";
             txtEmergencyContactPhone.Text = _student.EmergencyContactPhone.ToString();
             cbGradeLevels.SelectedIndex = cbGradeLevels.FindString(clsGradeLevel.GetGradeLevelName(_student.GradeLevelID));
-       
+
         }
 
         private void _LoadData()
@@ -97,7 +101,7 @@ namespace Study_center.Student
             _student.PersonID = _selectedPersonID;
             _student.GradeLevelID = clsGradeLevel.GetGradeLevelID(cbGradeLevels.Text);
             _student.CreatedByUserID = 1;
-            _student.EmergencyContactPhone =txtEmergencyContactPhone.Text;
+            _student.EmergencyContactPhone = txtEmergencyContactPhone.Text;
         }
 
         private void _Save()
@@ -108,7 +112,7 @@ namespace Study_center.Student
             {
                 lblTitle.Text = "Update Student";
                 lblStudentID.Text = _student.StudentID.ToString();
-                
+
 
                 // change form mode to update
                 _Mode = enMode.Update;
@@ -179,6 +183,18 @@ namespace Study_center.Student
             else
             {
                 errorProvider1.SetError(txtEmergencyContactPhone, null);
+            }
+        }
+
+        private void frmAddStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
     }

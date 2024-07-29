@@ -41,8 +41,6 @@ namespace Study_center.Teacher
         {
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
-            ctrlPersonCardWithFilter1.SetPreviousForm(previousForm);
-            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm);
         }
 
         private void FillTeacherInfoInFields()

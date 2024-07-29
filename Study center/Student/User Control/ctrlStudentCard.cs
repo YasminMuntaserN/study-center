@@ -1,5 +1,7 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
+using Study_center.Teacher;
 using studyCenter_BusineesLayer;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,20 @@ namespace Study_center.Student.User_Control
 {
     public partial class ctrlStudentCard : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
+
         public event EventHandler StudentSelected;
 
         private clsStudent _Student;
@@ -84,8 +100,8 @@ namespace Study_center.Student.User_Control
 
         private void llEditStudentInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddStudent frmAddStudent = new frmAddStudent(_Student.StudentID);
-            frmAddStudent.ShowDialog();
+            frmAddStudent frmAddStudent = new frmAddStudent(_Student.StudentID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frmAddStudent);
             LoadStudentInfo(_Student.StudentID);
         }
 
