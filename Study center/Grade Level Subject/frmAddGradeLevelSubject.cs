@@ -191,7 +191,7 @@ namespace Study_center.Grade_Level_Subject
 
         private void llAddNewSubject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.mainMenuForm.ShowFormInPanel(new frmAddSubject(previousForm ,mainMenuForm));
+            this.mainMenuForm.ShowFormInPanel(new frmAddSubject(this ,mainMenuForm));
         }
     }
 }

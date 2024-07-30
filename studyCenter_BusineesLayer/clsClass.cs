@@ -93,7 +93,9 @@ namespace studyCenter_BL_
           => clsClassesDAL.All();
 
         public static int Count()
-           =>  clsClassesDAL.Count();   
+           =>  clsClassesDAL.Count();
+
+        public static DataTable GetClassesByPage(int pageNumber, int pageSize)=>clsClassesDAL.GetClassesByPage(pageNumber, pageSize);   
     }
 
 }

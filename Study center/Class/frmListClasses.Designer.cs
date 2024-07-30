@@ -1,6 +1,6 @@
-﻿namespace Study_center.Grade_Level_Subject
+﻿namespace Study_center.Class
 {
-    partial class frmListSubjectsGradeLevel
+    partial class frmListClasses
     {
         /// <summary>
         /// Required designer variable.
@@ -40,19 +40,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
-            cbGradeLevels = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbClasses = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
             NUMPageNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
-            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            miShowSubjectsDetails = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            miEdit = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            miWhoTeachesIt = new ToolStripMenuItem();
             label2 = new Label();
             lblRecordsNum = new Label();
             cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -61,11 +53,17 @@
             pictureBox1 = new PictureBox();
             lblTitle = new Label();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            cbSubjects = new Guna.UI2.WinForms.Guna2ComboBox();
+            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            miShowClassDetails = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            miEdit = new ToolStripMenuItem();
+            miAddGroup = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            miWhoTeachesIt = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
-            cmsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            cmsList.SuspendLayout();
             SuspendLayout();
             // 
             // txtFilterBy
@@ -83,7 +81,7 @@
             txtFilterBy.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtFilterBy.ForeColor = Color.Black;
             txtFilterBy.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtFilterBy.Location = new Point(348, 305);
+            txtFilterBy.Location = new Point(337, 304);
             txtFilterBy.Margin = new Padding(4, 6, 4, 6);
             txtFilterBy.Name = "txtFilterBy";
             txtFilterBy.PasswordChar = '\0';
@@ -91,33 +89,33 @@
             txtFilterBy.SelectedText = "";
             txtFilterBy.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtFilterBy.Size = new Size(235, 36);
-            txtFilterBy.TabIndex = 115;
+            txtFilterBy.TabIndex = 129;
             txtFilterBy.Visible = false;
             txtFilterBy.TextChanged += txtFilterBy_TextChanged;
             txtFilterBy.KeyPress += txtFilterBy_KeyPress;
             // 
-            // cbGradeLevels
+            // cbClasses
             // 
-            cbGradeLevels.BackColor = Color.Transparent;
-            cbGradeLevels.BorderColor = Color.FromArgb(7, 43, 71);
-            cbGradeLevels.BorderRadius = 17;
-            cbGradeLevels.BorderThickness = 2;
-            cbGradeLevels.CustomizableEdges = customizableEdges3;
-            cbGradeLevels.DrawMode = DrawMode.OwnerDrawFixed;
-            cbGradeLevels.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbGradeLevels.FocusedColor = Color.DarkCyan;
-            cbGradeLevels.FocusedState.BorderColor = Color.DarkCyan;
-            cbGradeLevels.Font = new Font("Segoe UI", 10F);
-            cbGradeLevels.ForeColor = Color.FromArgb(68, 88, 112);
-            cbGradeLevels.ItemHeight = 30;
-            cbGradeLevels.Items.AddRange(new object[] { "Male", "Female" });
-            cbGradeLevels.Location = new Point(348, 305);
-            cbGradeLevels.Name = "cbGradeLevels";
-            cbGradeLevels.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cbGradeLevels.Size = new Size(235, 36);
-            cbGradeLevels.TabIndex = 114;
-            cbGradeLevels.Visible = false;
-            cbGradeLevels.SelectedIndexChanged += cbGradeLevels_SelectedIndexChanged;
+            cbClasses.BackColor = Color.Transparent;
+            cbClasses.BorderColor = Color.FromArgb(7, 43, 71);
+            cbClasses.BorderRadius = 17;
+            cbClasses.BorderThickness = 2;
+            cbClasses.CustomizableEdges = customizableEdges3;
+            cbClasses.DrawMode = DrawMode.OwnerDrawFixed;
+            cbClasses.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbClasses.FocusedColor = Color.DarkCyan;
+            cbClasses.FocusedState.BorderColor = Color.DarkCyan;
+            cbClasses.Font = new Font("Segoe UI", 10F);
+            cbClasses.ForeColor = Color.FromArgb(68, 88, 112);
+            cbClasses.ItemHeight = 30;
+            cbClasses.Items.AddRange(new object[] { "Male", "Female" });
+            cbClasses.Location = new Point(336, 304);
+            cbClasses.Name = "cbClasses";
+            cbClasses.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cbClasses.Size = new Size(235, 36);
+            cbClasses.TabIndex = 128;
+            cbClasses.Visible = false;
+            cbClasses.SelectedIndexChanged += cbClasses_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -125,10 +123,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(636, 312);
+            label1.Location = new Point(630, 306);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
-            label1.TabIndex = 113;
+            label1.TabIndex = 127;
             label1.Text = "Page :";
             // 
             // NUMPageNumber
@@ -137,13 +135,13 @@
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges5;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(724, 312);
+            NUMPageNumber.Location = new Point(718, 306);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
             NUMPageNumber.ShadowDecoration.CustomizableEdges = customizableEdges6;
             NUMPageNumber.Size = new Size(101, 36);
-            NUMPageNumber.TabIndex = 112;
+            NUMPageNumber.TabIndex = 126;
             NUMPageNumber.UpDownButtonFillColor = Color.SteelBlue;
             NUMPageNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.ValueChanged += NUMPageNumber_ValueChanged;
@@ -174,12 +172,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvList.DefaultCellStyle = dataGridViewCellStyle3;
             dgvList.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.Location = new Point(26, 369);
+            dgvList.Location = new Point(14, 368);
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 51;
             dgvList.Size = new Size(892, 396);
-            dgvList.TabIndex = 111;
+            dgvList.TabIndex = 125;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -202,67 +200,15 @@
             dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // cmsList
-            // 
-            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmsList.ImageScalingSize = new Size(25, 25);
-            cmsList.Items.AddRange(new ToolStripItem[] { miShowSubjectsDetails, toolStripSeparator1, miEdit, toolStripSeparator2, miWhoTeachesIt });
-            cmsList.Name = "cmsList";
-            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
-            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
-            cmsList.RenderStyle.ColorTable = null;
-            cmsList.RenderStyle.RoundedEdges = true;
-            cmsList.RenderStyle.SelectionArrowColor = Color.White;
-            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
-            cmsList.RenderStyle.SelectionForeColor = Color.White;
-            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
-            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(301, 112);
-            // 
-            // miShowSubjectsDetails
-            // 
-            miShowSubjectsDetails.Image = Properties.Resources.id_card;
-            miShowSubjectsDetails.ImageAlign = ContentAlignment.MiddleLeft;
-            miShowSubjectsDetails.Name = "miShowSubjectsDetails";
-            miShowSubjectsDetails.Size = new Size(300, 32);
-            miShowSubjectsDetails.Text = "     Show Subjects Details";
-            miShowSubjectsDetails.Click += miShowSubjectsDetails_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(297, 6);
-            // 
-            // miEdit
-            // 
-            miEdit.Image = Properties.Resources.capacity;
-            miEdit.Name = "miEdit";
-            miEdit.Size = new Size(300, 32);
-            miEdit.Text = "     Edit";
-            miEdit.Click += miEdit_Click;
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(297, 6);
-            // 
-            // miWhoTeachesIt
-            // 
-            miWhoTeachesIt.Image = Properties.Resources.grade_level;
-            miWhoTeachesIt.Name = "miWhoTeachesIt";
-            miWhoTeachesIt.Size = new Size(300, 32);
-            miWhoTeachesIt.Text = "     Who Teaches it?";
-            miWhoTeachesIt.Click += miWhoTeachesIt_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(26, 787);
+            label2.Location = new Point(14, 786);
             label2.Name = "label2";
             label2.Size = new Size(157, 31);
-            label2.TabIndex = 110;
+            label2.TabIndex = 124;
             label2.Text = "# Records  :";
             // 
             // lblRecordsNum
@@ -270,10 +216,10 @@
             lblRecordsNum.AutoSize = true;
             lblRecordsNum.Font = new Font("Comic Sans MS", 15F, FontStyle.Bold);
             lblRecordsNum.ForeColor = Color.SteelBlue;
-            lblRecordsNum.Location = new Point(189, 787);
+            lblRecordsNum.Location = new Point(177, 786);
             lblRecordsNum.Name = "lblRecordsNum";
             lblRecordsNum.Size = new Size(89, 35);
-            lblRecordsNum.TabIndex = 109;
+            lblRecordsNum.TabIndex = 123;
             lblRecordsNum.Text = "[????]";
             // 
             // cbFilter
@@ -290,12 +236,12 @@
             cbFilter.Font = new Font("Segoe UI", 10F);
             cbFilter.ForeColor = Color.FromArgb(68, 88, 112);
             cbFilter.ItemHeight = 30;
-            cbFilter.Items.AddRange(new object[] { "None", "Subject Grade Level ID", "Subject Name", "Grade Level" });
-            cbFilter.Location = new Point(107, 307);
+            cbFilter.Items.AddRange(new object[] { "None", "Class ID", "Class Name" });
+            cbFilter.Location = new Point(95, 306);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbFilter.Size = new Size(235, 36);
-            cbFilter.TabIndex = 108;
+            cbFilter.TabIndex = 122;
             cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
             // 
             // label3
@@ -304,47 +250,47 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(19, 305);
+            label3.Location = new Point(7, 304);
             label3.Name = "label3";
             label3.Size = new Size(82, 31);
-            label3.TabIndex = 107;
+            label3.TabIndex = 121;
             label3.Text = "Filter:";
             // 
             // btnAdd
             // 
             btnAdd.CheckedState.ImageSize = new Size(64, 64);
             btnAdd.HoverState.ImageSize = new Size(64, 64);
-            btnAdd.Image = Properties.Resources.add_subject1;
+            btnAdd.Image = Properties.Resources.classes_blue_64;
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
-            btnAdd.ImageSize = new Size(44, 44);
-            btnAdd.Location = new Point(837, 295);
+            btnAdd.ImageSize = new Size(54, 54);
+            btnAdd.Location = new Point(825, 273);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            btnAdd.Size = new Size(77, 66);
-            btnAdd.TabIndex = 106;
+            btnAdd.Size = new Size(77, 87);
+            btnAdd.TabIndex = 120;
             btnAdd.Click += btnAdd_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.subjects;
-            pictureBox1.Location = new Point(307, 2);
+            pictureBox1.Image = Properties.Resources.teacher__1_;
+            pictureBox1.Location = new Point(295, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(322, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 105;
+            pictureBox1.TabIndex = 119;
             pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(54, 69, 79);
-            lblTitle.Location = new Point(26, 171);
+            lblTitle.Location = new Point(14, 170);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(884, 76);
-            lblTitle.TabIndex = 104;
-            lblTitle.Text = "Manage Subjects";
+            lblTitle.TabIndex = 118;
+            lblTitle.Text = "Manage Classes";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             lblTitle.Click += lblTitle_Click;
             // 
@@ -352,42 +298,78 @@
             // 
             guna2Separator1.FillColor = Color.SteelBlue;
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(26, 250);
+            guna2Separator1.Location = new Point(14, 249);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(892, 18);
-            guna2Separator1.TabIndex = 103;
+            guna2Separator1.TabIndex = 117;
             // 
-            // cbSubjects
+            // cmsList
             // 
-            cbSubjects.BackColor = Color.Transparent;
-            cbSubjects.BorderColor = Color.FromArgb(7, 43, 71);
-            cbSubjects.BorderRadius = 17;
-            cbSubjects.BorderThickness = 2;
-            cbSubjects.CustomizableEdges = customizableEdges10;
-            cbSubjects.DrawMode = DrawMode.OwnerDrawFixed;
-            cbSubjects.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbSubjects.FocusedColor = Color.DarkCyan;
-            cbSubjects.FocusedState.BorderColor = Color.DarkCyan;
-            cbSubjects.Font = new Font("Segoe UI", 10F);
-            cbSubjects.ForeColor = Color.FromArgb(68, 88, 112);
-            cbSubjects.ItemHeight = 30;
-            cbSubjects.Items.AddRange(new object[] { "Male", "Female" });
-            cbSubjects.Location = new Point(348, 305);
-            cbSubjects.Name = "cbSubjects";
-            cbSubjects.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            cbSubjects.Size = new Size(235, 36);
-            cbSubjects.TabIndex = 116;
-            cbSubjects.Visible = false;
-            cbSubjects.SelectedIndexChanged += cbSubjects_SelectedIndexChanged;
+            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmsList.ImageScalingSize = new Size(25, 25);
+            cmsList.Items.AddRange(new ToolStripItem[] { miShowClassDetails, toolStripSeparator1, miEdit, miAddGroup, toolStripSeparator2, miWhoTeachesIt });
+            cmsList.Name = "cmsList";
+            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
+            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
+            cmsList.RenderStyle.ColorTable = null;
+            cmsList.RenderStyle.RoundedEdges = true;
+            cmsList.RenderStyle.SelectionArrowColor = Color.White;
+            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            cmsList.RenderStyle.SelectionForeColor = Color.White;
+            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
+            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            cmsList.Size = new Size(399, 144);
             // 
-            // frmListSubjectsGradeLevel
+            // miShowClassDetails
+            // 
+            miShowClassDetails.Image = Properties.Resources.id_card;
+            miShowClassDetails.ImageAlign = ContentAlignment.MiddleLeft;
+            miShowClassDetails.Name = "miShowClassDetails";
+            miShowClassDetails.Size = new Size(398, 32);
+            miShowClassDetails.Text = "     Show Class Details";
+            miShowClassDetails.Click += miShowClassDetails_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(395, 6);
+            // 
+            // miEdit
+            // 
+            miEdit.Image = Properties.Resources.capacity;
+            miEdit.Name = "miEdit";
+            miEdit.Size = new Size(398, 32);
+            miEdit.Text = "     Edit";
+            miEdit.Click += miEdit_Click;
+            // 
+            // miAddGroup
+            // 
+            miAddGroup.Image = Properties.Resources.add_user;
+            miAddGroup.Name = "miAddGroup";
+            miAddGroup.Size = new Size(398, 32);
+            miAddGroup.Text = "     Add Group";
+            miAddGroup.Click += miAddGroup_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(395, 6);
+            // 
+            // miWhoTeachesIt
+            // 
+            miWhoTeachesIt.Image = Properties.Resources.classes_blue_64;
+            miWhoTeachesIt.Name = "miWhoTeachesIt";
+            miWhoTeachesIt.Size = new Size(398, 32);
+            miWhoTeachesIt.Text = "     show Groups and Who Teaches it?";
+            miWhoTeachesIt.Click += miWhoTeachesIt_Click;
+            // 
+            // frmListClasses
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(935, 837);
-            Controls.Add(cbSubjects);
+            ClientSize = new Size(920, 826);
             Controls.Add(txtFilterBy);
-            Controls.Add(cbGradeLevels);
+            Controls.Add(cbClasses);
             Controls.Add(label1);
             Controls.Add(NUMPageNumber);
             Controls.Add(dgvList);
@@ -400,21 +382,22 @@
             Controls.Add(lblTitle);
             Controls.Add(guna2Separator1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmListSubjectsGradeLevel";
-            Text = "frmListSubjectsGradeLevel";
-            Load += frmListSubjectsGradeLevel_Load;
+            Name = "frmListClasses";
+            Text = "frmListClasses";
+            Load += frmListClasses_Load;
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
-            cmsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            cmsList.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Guna.UI2.WinForms.Guna2ComboBox cbSubjects;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
-        private Guna.UI2.WinForms.Guna2ComboBox cbGradeLevels;
+        private Guna.UI2.WinForms.Guna2ComboBox cbClasses;
         private Label label1;
         private Guna.UI2.WinForms.Guna2NumericUpDown NUMPageNumber;
         private Guna.UI2.WinForms.Guna2DataGridView dgvList;
@@ -426,11 +409,11 @@
         private PictureBox pictureBox1;
         private Label lblTitle;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbSubjects;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip cmsList;
-        private ToolStripMenuItem miShowSubjectsDetails;
+        private ToolStripMenuItem miShowClassDetails;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem miEdit;
+        private ToolStripMenuItem miAddGroup;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem miWhoTeachesIt;
     }

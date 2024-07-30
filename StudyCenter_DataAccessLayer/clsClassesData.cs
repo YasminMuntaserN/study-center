@@ -163,5 +163,11 @@ namespace StudyCenter_DAL_
 
         public static int Count()
              => clsDataAccessHelper.Count("SP_GetClassCount");
+
+        public static DataTable GetClassesByPage(int pageNumber, int pageSize)
+            => clsDataAccessHelper.All("SP_ClassesByPage", "PageNumber", pageNumber
+                , "PageSize", pageSize);
+
+
     }
 }

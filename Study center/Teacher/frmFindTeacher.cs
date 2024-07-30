@@ -1,4 +1,5 @@
-﻿using Study_center.Main_Menu;
+﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,8 @@ namespace Study_center.Teacher
         private void btnClose_Click(object sender, EventArgs e)
         {
             // Raise the event
-            TeacherSelected?.Invoke(ctrlTeacherCard1.TeacherInfo.TeacherID);
+            if (ctrlTeacherCard1.TeacherInfo != null) TeacherSelected?.Invoke(ctrlTeacherCard1.TeacherInfo.TeacherID);
+            else { clsMessages.GeneralErrorMessage("select Teacher ID!"); return; }
             this.Close();
         }
 

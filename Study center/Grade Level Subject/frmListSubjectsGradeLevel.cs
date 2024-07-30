@@ -35,11 +35,11 @@ namespace Study_center.Grade_Level_Subject
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("GradeLevelSubjects", 10, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("GradeLevelSubjects", 8, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsGradeLevelSubject.GetGradeLevelSubjectByPage((int)NUMPageNumber.Value, totalRows);
+            _dtList = clsGradeLevelSubject.GetGradeLevelSubjectByPage((int)NUMPageNumber.Value, 8);
             dgvList.DataSource = _dtList;
 
             lblRecordsNum.Text = _dtList.Rows.Count.ToString();
@@ -146,6 +146,13 @@ namespace Study_center.Grade_Level_Subject
         {
             this._mainMenuForm.ShowFormInPanel(new frmAllTeachersWhoTeachSubject(selectedSubjectsGradeLevelID, this, this._mainMenuForm));
             _RefreshList();
+        }
+
+        private void NUMPageNumber_ValueChanged(object sender, EventArgs e) => _RefreshList();
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

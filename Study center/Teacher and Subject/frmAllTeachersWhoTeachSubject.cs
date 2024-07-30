@@ -47,7 +47,7 @@ namespace Study_center.Teacher_and_Subject
 
             ctrlListInfo1.FillTeachersWhoTeachSubject(_GradeLevelSubjectID);
             ctrlListInfo1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
-            ctrlListInfo1.SetPreviousForm(previousForm);
+            ctrlListInfo1.SetPreviousForm(this);
         }
 
         private void frmAllTeachersWhoTeachSubject_FormClosed(object sender, FormClosedEventArgs e)

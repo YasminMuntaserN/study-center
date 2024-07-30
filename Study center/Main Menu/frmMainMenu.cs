@@ -32,6 +32,7 @@ namespace Study_center.Main_Menu
             mainPanel = this.guna2CustomGradientPanel1;
             InitializeComponent();
         }
+
         public void ShowFormInPanel(Form form)
         {
             form.TopLevel = false;
@@ -41,11 +42,10 @@ namespace Study_center.Main_Menu
             this.guna2CustomGradientPanel1.Controls.Add(form);
             form.Show();
         }
+
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             _FillCounts();
-
-
         }
 
         private void _FillCounts()
@@ -114,9 +114,14 @@ namespace Study_center.Main_Menu
             ShowFormInPanel(new frmTeacherList(this));
         }
 
-        private void guna2Button6_Click(object sender, EventArgs e)
+        private void btnSubjects_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new frmListSubjectsGradeLevel(this));
+        }
+
+        private void btnClasses_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListClasses(this));
         }
     }
 }
