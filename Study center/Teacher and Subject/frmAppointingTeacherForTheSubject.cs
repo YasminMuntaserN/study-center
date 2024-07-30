@@ -24,6 +24,9 @@ namespace Study_center.Teacher_and_Subject
 
         private int? selectedTeacherID;
 
+        private enum _enMode { AddNew, Update };
+        private _enMode _mode = _enMode.AddNew;
+
         private int? selectedGradeLevelSubjectID
             => (int)dgvGradeLevelSubjects.CurrentRow.Cells[0].Value;
 
@@ -37,6 +40,16 @@ namespace Study_center.Teacher_and_Subject
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _TeacherSubject = new clsTeacherSubject();
+        }
+
+        public frmAppointingTeacherForTheSubject(int? TeacherID,Form previousForm = null, frmMainMenu mainMenuForm = null)
+        {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
+            selectedTeacherID = TeacherID;
+            InitializeComponent();
+            _TeacherSubject = new clsTeacherSubject();
+            _mode = _enMode.Update;
         }
 
         private void _FillGradeLevelSubjectInfo()
@@ -109,6 +122,9 @@ namespace Study_center.Teacher_and_Subject
 
             // Fill Subjects In ComboBox
             HelperClass.FillComboBox(cbSubjects, clsSubject.AllSubjectNames(), "SubjectName");
+          
+            if(_mode == _enMode.Update )
+                ctrlTeacherCard1.LoadTeacherInfo(selectedTeacherID);
 
             _dtTeacherSubjects = clsGradeLevelSubject.GetAllGradeLevelSubjectsWithNames();
             dgvGradeLevelSubjects.DataSource = _dtTeacherSubjects;

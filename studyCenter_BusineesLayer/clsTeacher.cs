@@ -1,4 +1,5 @@
 ﻿using StudyCenter_DataAccessLayer;
+using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -153,6 +154,12 @@ namespace studyCenter_BusineesLayer
         public static bool IsPersonTeacher(int? personID) => clsTeacherData.IsPersonTeacher(personID);
 
         public static int Count() => clsTeacherData.Count();
+
+        public static DataTable GetTeachersByPage(int pageNumber, int pageSize)
+           => clsTeacherData.GetTeachersByPage(pageNumber, pageSize);
+
+        public static DataTable GetAllTeachersClasses(int? TeacherID)
+          => clsTeacherData.GetAllTeachersClasses(TeacherID.Value);
     }
 
 }

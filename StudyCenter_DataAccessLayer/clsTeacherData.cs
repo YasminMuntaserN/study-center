@@ -232,5 +232,13 @@ namespace StudyCenter_DataAccessLayer
         public static int Count()
             => clsDataAccessHelper.Count("SP_GetTeacherCount");
 
+        public static DataTable GetTeachersByPage(int pageNumber, int pageSize)
+          => clsDataAccessHelper.All("SP_TeachersByPage", "PageNumber", pageNumber
+             , "PageSize", pageSize);
+
+        public static DataTable GetAllTeachersClasses(int TeacherID)
+          => clsDataAccessHelper.All("SP_GetTeachersInClasses", "TeacherID", TeacherID);
+
+
     }
 }

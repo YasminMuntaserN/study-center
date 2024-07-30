@@ -49,7 +49,7 @@ namespace Study_center.Global_User_Controls
         private int? _storedGroupID;
 
 
-        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 ,students = 3}
+        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 ,students = 3, Classes = 4 }
         private enItemTypes _Type;
 
         public ctrlListInfo()
@@ -95,6 +95,28 @@ namespace Study_center.Global_User_Controls
             dgvGradeLevelSubjects.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedGroupID = GroupID;
+        }
+
+        public void FillClassesAreTaughtByTeacher(int? TeacherID)
+        {
+            _Type = enItemTypes.Classes;
+            btnaAdd.Visible = false;
+
+            if (!TeacherID.HasValue)
+            {
+                clsMessages.GeneralErrorMessage("Teacher ID is required.");
+                return;
+            }
+            clsTeacher teacherInfo = clsTeacher.Find(TeacherID, clsTeacher.EnFindTeacherBy.TeacherID);
+
+            if (teacherInfo != null)
+            {
+                string prefix = teacherInfo.Gender == clsPerson.EnGender.Male ? "Mr." : "Ms.";
+                lblListName.Text = string.Concat("Classes Are Taught By Teacher", ' ', prefix, ' ', teacherInfo.FullName);
+            }
+            _List = clsTeacher.GetAllTeachersClasses(TeacherID);
+            dgvGradeLevelSubjects.DataSource = _List;
+            lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
         public void FillTeachersWhoTeachSubject(int? GradeLevelSubjectID)

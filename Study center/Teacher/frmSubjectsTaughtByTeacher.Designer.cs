@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tpTeacherInfo = new TabPage();
             ctrlTeacherCard1 = new ctrlTeacherCardWithFilter();
             tpSubjectInfo = new TabPage();
+            ctrlListInfo1 = new Global_User_Controls.ctrlListInfo();
             pictureBox1 = new PictureBox();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
-            ctrlListInfo1 = new Global_User_Controls.ctrlListInfo();
             guna2Panel1.SuspendLayout();
             guna2TabControl1.SuspendLayout();
             tpTeacherInfo.SuspendLayout();
@@ -52,10 +52,10 @@
             // 
             guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(933, 85);
             guna2Panel1.TabIndex = 38;
             // 
@@ -129,6 +129,13 @@
             tpSubjectInfo.Text = "Subjects List";
             tpSubjectInfo.UseVisualStyleBackColor = true;
             // 
+            // ctrlListInfo1
+            // 
+            ctrlListInfo1.Location = new Point(6, 237);
+            ctrlListInfo1.Name = "ctrlListInfo1";
+            ctrlListInfo1.Size = new Size(913, 479);
+            ctrlListInfo1.TabIndex = 54;
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.teacher;
@@ -142,7 +149,7 @@
             // btnClose
             // 
             btnClose.BorderRadius = 15;
-            btnClose.CustomizableEdges = customizableEdges7;
+            btnClose.CustomizableEdges = customizableEdges3;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -156,18 +163,11 @@
             btnClose.ImageAlign = HorizontalAlignment.Left;
             btnClose.Location = new Point(665, 879);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(215, 50);
             btnClose.TabIndex = 54;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click;
-            // 
-            // ctrlListInfo1
-            // 
-            ctrlListInfo1.Location = new Point(6, 237);
-            ctrlListInfo1.Name = "ctrlListInfo1";
-            ctrlListInfo1.Size = new Size(913, 425);
-            ctrlListInfo1.TabIndex = 54;
             // 
             // frmSubjectsTaughtByTeacher
             // 
@@ -181,6 +181,7 @@
             Name = "frmSubjectsTaughtByTeacher";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmSubjectsTaughtByTeacher";
+            FormClosed += frmSubjectsTaughtByTeacher_FormClosed;
             Load += frmSubjectsTaughtByTeacher_Load;
             guna2Panel1.ResumeLayout(false);
             guna2TabControl1.ResumeLayout(false);

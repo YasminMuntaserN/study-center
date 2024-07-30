@@ -97,7 +97,7 @@ namespace Study_center.Student
 
         private void btnGroups_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddStudent( this._mainMenuForm , this));
             _RefreshList();
         }
 

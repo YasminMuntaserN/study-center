@@ -1,8 +1,5 @@
-﻿using Study_center.Global_Classes;
+﻿using Study_center.Global_User_Controls;
 using Study_center.Main_Menu;
-using studyCenter_BL_;
-using studyCenter_BusineesLayer;
-using StudyCenter_DAL_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +12,14 @@ using System.Windows.Forms;
 
 namespace Study_center.Teacher
 {
-    public partial class frmSubjectsTaughtByTeacher : Form
+    public partial class frmClassesAreTaughtByTeacher : Form
     {
         private Form previousForm;
         private frmMainMenu mainMenuForm;
 
         private int? _TeacherID;
-        public frmSubjectsTaughtByTeacher(int? TeacherID, Form previousForm = null, frmMainMenu mainMenuForm = null)
+
+        public frmClassesAreTaughtByTeacher(int? TeacherID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -29,22 +27,11 @@ namespace Study_center.Teacher
             InitializeComponent();
         }
 
-        private void _FillData()
+        private void frmClassesAreTaughtByTeacher_Load(object sender, EventArgs e)
         {
-            if (_TeacherID == null)
-            {
-                clsMessages.GeneralErrorMessage($"No Teacher with ID : {_TeacherID}");
-                return;
-            }
-            ctrlTeacherCard1.LoadTeacherInfo(_TeacherID);
-            ctrlListInfo1.FillSubjectsTaughtByTeacher(_TeacherID);
-        }
-
-        private void frmSubjectsTaughtByTeacher_Load(object sender, EventArgs e)
-        {
-            _FillData();
-            ctrlTeacherCard1.SetMainMenuForm(mainMenuForm);
-            ctrlTeacherCard1.SetPreviousForm(previousForm);
+            ctrlListInfo1.SetMainMenuForm(mainMenuForm);
+            ctrlListInfo1.SetPreviousForm(previousForm);
+            ctrlListInfo1.FillClassesAreTaughtByTeacher(_TeacherID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -52,9 +39,8 @@ namespace Study_center.Teacher
             this.Close();
         }
 
-        private void frmSubjectsTaughtByTeacher_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmClassesAreTaughtByTeacher_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             if (previousForm != null)
             {
                 mainMenuForm.ShowFormInPanel(previousForm);

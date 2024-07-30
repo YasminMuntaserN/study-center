@@ -108,5 +108,10 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmListStudents(this));
         }
+
+        private void btnTeachers_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmTeacherList(this));
+        }
     }
 }
