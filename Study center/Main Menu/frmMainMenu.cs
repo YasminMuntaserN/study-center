@@ -113,5 +113,10 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmTeacherList(this));
         }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListSubjectsGradeLevel(this));
+        }
     }
 }

@@ -216,7 +216,7 @@
             llEditPersonInfo.TabIndex = 59;
             llEditPersonInfo.TabStop = true;
             llEditPersonInfo.Text = "New Subject?";
-            llEditPersonInfo.LinkClicked += llEditPersonInfo_LinkClicked;
+            llEditPersonInfo.LinkClicked += llAddNewSubject_LinkClicked;
             // 
             // lblGradeLevelSubjectTitle
             // 
@@ -431,6 +431,7 @@
             Name = "frmAddGradeLevelSubject";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddGradeLevelSubject";
+            FormClosed += frmAddGradeLevelSubject_FormClosed;
             Load += frmAddGradeLevelSubject_Load;
             guna2Panel1.ResumeLayout(false);
             guna2GroupBox1.ResumeLayout(false);

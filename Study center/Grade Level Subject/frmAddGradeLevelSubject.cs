@@ -1,5 +1,6 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Main_Menu;
+using Study_center.Subjects;
 using studyCenter_Bl_;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -18,22 +19,26 @@ namespace Study_center.Grade_Level_Subject
 {
     public partial class frmAddGradeLevelSubject : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
+
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
         private int? _gradeLevelSubjectID = null;
         private clsGradeLevelSubject _gradeLevelSubject = null;
 
-        public frmAddGradeLevelSubject(frmMainMenu mainMenu = null)
+        public frmAddGradeLevelSubject(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddGradeLevelSubject(int? gradeLevelSubjectID , frmMainMenu mainMenu = null)
+        public frmAddGradeLevelSubject(int? gradeLevelSubjectID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _gradeLevelSubjectID = gradeLevelSubjectID;
             _Mode = enMode.Update;
@@ -172,9 +177,21 @@ namespace Study_center.Grade_Level_Subject
             this.Close();
         }
 
-        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void frmAddGradeLevelSubject_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
+        }
 
+        private void llAddNewSubject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.mainMenuForm.ShowFormInPanel(new frmAddSubject(previousForm ,mainMenuForm));
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Study_center.Subjects
 {
     public partial class frmAddSubject : Form
     {
+        private Form previousForm;
         private frmMainMenu mainMenuForm;
 
         public Action<int?> SubjectIDBack;
@@ -24,15 +25,17 @@ namespace Study_center.Subjects
         private int? _subjectID = null;
         private clsSubject _subject = null;
 
-        public frmAddSubject(frmMainMenu mainMenu = null)
+        public frmAddSubject(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddSubject(int? subjectID, frmMainMenu mainMenu = null)
+        public frmAddSubject(int? subjectID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            this.mainMenuForm = mainMenu;
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _subjectID = subjectID;
             _Mode = enMode.Update;
@@ -140,7 +143,19 @@ namespace Study_center.Subjects
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
+        }
+   
+        private void frmAddSubject_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
         }
     }
 }

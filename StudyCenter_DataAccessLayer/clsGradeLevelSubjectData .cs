@@ -233,7 +233,9 @@ namespace StudyCenter_DataAccessLayer
             return dt;
         }
 
-
+        public static DataTable GetGradeLevelSubjectsByPage(int pageNumber, int pageSize)
+            => clsDataAccessHelper.All("SP_GradeLevelSubjectByPage", "PageNumber", pageNumber
+                , "PageSize", pageSize);
     }
 }
 

@@ -108,7 +108,10 @@ namespace studyCenter_Bl_
         public static bool CheckIfTitleExists(string title)=>clsGradeLevelSubjectData.CheckIfTitleExists(title);
 
         public static DataTable GetAllGradeLevelSubjectsWithNames()
-            =>clsGradeLevelSubjectData.GetAllGradeLevelSubjectsWithNames(); 
+            =>clsGradeLevelSubjectData.GetAllGradeLevelSubjectsWithNames();
+
+        public static DataTable GetGradeLevelSubjectByPage(int pageNumber, int pageSize)
+                 => clsGradeLevelSubjectData.GetGradeLevelSubjectsByPage(pageNumber, pageSize);
     }
 
 }
