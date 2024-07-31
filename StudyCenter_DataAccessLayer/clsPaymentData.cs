@@ -129,6 +129,9 @@ namespace StudyCenter_DAL_
         public static bool Exists(int? paymentID)
             => clsDataAccessHelper.Exists("SP_DoesPaymentExistByPaymentID", "PaymentID", paymentID);
 
+        public static int Count()
+            => clsDataAccessHelper.Count("SP_GetPaymentCount");
+
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllPayments");
 
@@ -191,6 +194,10 @@ namespace StudyCenter_DAL_
 
             return dtPayments;
         }
+
+        public static DataTable GetPaymentsByPage(int pageNumber, int pageSize)
+            => clsDataAccessHelper.All("SP_PaymentByPage", "PageNumber", pageNumber
+                , "PageSize", pageSize);
     }
 
 }

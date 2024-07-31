@@ -174,6 +174,10 @@ namespace Study_center.Class
             {
                 mainMenuForm.ShowFormInPanel(previousForm);
             }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
         }
     }
 

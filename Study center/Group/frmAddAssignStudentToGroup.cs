@@ -71,7 +71,7 @@ namespace Study_center.Group
                     case enLoddingAccordingTo.GroupID:
                         gbSelectGroup.Visible = false;
                         ctrlGroupCard1.Visible = true;
-                        ctrlGroupCard1.Location = new System.Drawing.Point(25, 22);
+                        ctrlGroupCard1.Location = new System.Drawing.Point(15, 22);
                         ctrlGroupCard1.Size = new System.Drawing.Size(901, 408);
                         ctrlGroupCard1.LoadData(selectedGroupID);
                         break;
@@ -279,6 +279,10 @@ namespace Study_center.Group
             if (previousForm != null)
             {
                 mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
     }

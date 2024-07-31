@@ -3,6 +3,7 @@ using Study_center.Class;
 using Study_center.Grade_Level_Subject;
 using Study_center.Group;
 using Study_center.Meeting_Times;
+using Study_center.Payments;
 using Study_center.Student;
 using Study_center.Subjects;
 using Study_center.Teacher;
@@ -55,7 +56,7 @@ namespace Study_center.Main_Menu
             lblSubjects.Text = clsSubject.Count().ToString();
             lblStudentCount.Text = clsStudent.Count().ToString();
             lblTeacherCount.Text = clsTeacher.Count().ToString();
-            //  lblPayments.Text = clsPa.Count().ToString();
+             lblPayments.Text = clsPayment.Count().ToString();
             lblMeetingCounts.Text = clsTeacher.Count().ToString();
             lblGroupsCount.Text = clsGroup.Count().ToString();
 
@@ -91,9 +92,15 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmAddMeetingTime(this));
         }
+    
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new frmAddTeacher(this));
+        }
+
+        private void btnAddPayment_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddAssignStudentToGroup(this));
         }
         #endregion
 
@@ -123,5 +130,12 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmListClasses(this));
         }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListPayments(this));
+        }
+
+
     }
 }

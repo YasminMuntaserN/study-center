@@ -98,6 +98,11 @@ namespace studyCenter_BL_
 
         public static DataTable GetPaymentsByGroupID(int? groupID)
             => clsPaymentData.GetPaymentsByGroupID(groupID);
+
+        public static DataTable GetPaymentsByPage(int pageNumber, int pageSize)
+            => clsPaymentData.GetPaymentsByPage(pageNumber, pageSize);
+
+        public static int Count() =>clsPaymentData.Count();
     }
 
 }

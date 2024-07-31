@@ -139,7 +139,7 @@
             cbFilter.Font = new Font("Segoe UI", 10F);
             cbFilter.ForeColor = Color.FromArgb(68, 88, 112);
             cbFilter.ItemHeight = 30;
-            cbFilter.Items.AddRange(new object[] { "None", "Student ID", "Name", "Gender", "Grade", "Age" });
+            cbFilter.Items.AddRange(new object[] { "None", "Group ID", "Group Name", "Class Name", "Teacher Name", "Subject Name", "Meeting Days" });
             cbFilter.Location = new Point(105, 319);
             cbFilter.Name = "cbFilter";
             cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges3;
@@ -456,7 +456,7 @@
             txtFilterBy.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtFilterBy.ForeColor = Color.Black;
             txtFilterBy.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtFilterBy.Location = new Point(282, 319);
+            txtFilterBy.Location = new Point(283, 319);
             txtFilterBy.Margin = new Padding(4, 6, 4, 6);
             txtFilterBy.Name = "txtFilterBy";
             txtFilterBy.PasswordChar = '\0';
