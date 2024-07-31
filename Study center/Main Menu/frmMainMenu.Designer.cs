@@ -806,7 +806,7 @@
             guna2GradientPanel1.CustomizableEdges = customizableEdges35;
             guna2GradientPanel1.FillColor = Color.MediumAquamarine;
             guna2GradientPanel1.FillColor2 = SystemColors.ActiveCaption;
-            guna2GradientPanel1.Location = new Point(24, 201);
+            guna2GradientPanel1.Location = new Point(16, 212);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2GradientPanel1.Size = new Size(276, 51);
