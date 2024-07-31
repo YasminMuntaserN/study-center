@@ -123,10 +123,10 @@
             guna2CustomGradientPanel2.FillColor2 = SystemColors.Control;
             guna2CustomGradientPanel2.FillColor3 = SystemColors.Control;
             guna2CustomGradientPanel2.FillColor4 = SystemColors.Control;
-            guna2CustomGradientPanel2.Location = new Point(310, 10);
+            guna2CustomGradientPanel2.Location = new Point(331, 33);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2CustomGradientPanel2.Size = new Size(1481, 1031);
+            guna2CustomGradientPanel2.Size = new Size(1522, 1008);
             guna2CustomGradientPanel2.TabIndex = 1;
             // 
             // guna2CustomGradientPanel3
@@ -163,7 +163,7 @@
             guna2CustomGradientPanel3.FillColor2 = Color.FromArgb(207, 217, 237);
             guna2CustomGradientPanel3.FillColor3 = Color.CadetBlue;
             guna2CustomGradientPanel3.FillColor4 = Color.SteelBlue;
-            guna2CustomGradientPanel3.Location = new Point(1031, 45);
+            guna2CustomGradientPanel3.Location = new Point(1079, 46);
             guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2CustomGradientPanel3.Size = new Size(404, 909);
@@ -484,10 +484,10 @@
             guna2CustomGradientPanel1.BorderRadius = 50;
             guna2CustomGradientPanel1.CustomBorderColor = Color.Transparent;
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges11;
-            guna2CustomGradientPanel1.Location = new Point(23, 22);
+            guna2CustomGradientPanel1.Location = new Point(38, 238);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2CustomGradientPanel1.Size = new Size(929, 983);
+            guna2CustomGradientPanel1.Size = new Size(947, 371);
             guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // guna2Button1
@@ -513,12 +513,13 @@
             guna2Button1.Image = Properties.Resources.home__1_;
             guna2Button1.ImageAlign = HorizontalAlignment.Left;
             guna2Button1.ImageSize = new Size(25, 25);
-            guna2Button1.Location = new Point(-1, 302);
+            guna2Button1.Location = new Point(2, 302);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Button1.Size = new Size(312, 60);
+            guna2Button1.Size = new Size(330, 60);
             guna2Button1.TabIndex = 2;
             guna2Button1.Text = "  Dashborder";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // btnStudents
             // 
@@ -543,10 +544,10 @@
             btnStudents.Image = Properties.Resources.students;
             btnStudents.ImageAlign = HorizontalAlignment.Left;
             btnStudents.ImageSize = new Size(30, 30);
-            btnStudents.Location = new Point(-1, 384);
+            btnStudents.Location = new Point(2, 384);
             btnStudents.Name = "btnStudents";
             btnStudents.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnStudents.Size = new Size(312, 60);
+            btnStudents.Size = new Size(330, 60);
             btnStudents.TabIndex = 3;
             btnStudents.Text = "  Students";
             btnStudents.Click += btnStudents_Click;
@@ -574,10 +575,10 @@
             btnTeachers.Image = Properties.Resources.teacher;
             btnTeachers.ImageAlign = HorizontalAlignment.Left;
             btnTeachers.ImageSize = new Size(30, 30);
-            btnTeachers.Location = new Point(-1, 466);
+            btnTeachers.Location = new Point(2, 466);
             btnTeachers.Name = "btnTeachers";
             btnTeachers.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnTeachers.Size = new Size(312, 60);
+            btnTeachers.Size = new Size(330, 60);
             btnTeachers.TabIndex = 4;
             btnTeachers.Text = "  Teachers";
             btnTeachers.Click += btnTeachers_Click;
@@ -605,10 +606,10 @@
             guna2Button4.Image = Properties.Resources.meeting__1_;
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageSize = new Size(30, 30);
-            guna2Button4.Location = new Point(-1, 712);
+            guna2Button4.Location = new Point(2, 712);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Button4.Size = new Size(312, 60);
+            guna2Button4.Size = new Size(330, 60);
             guna2Button4.TabIndex = 7;
             guna2Button4.Text = "  Groups";
             guna2Button4.Click += guna2Button4_Click;
@@ -636,10 +637,10 @@
             btnClasses.Image = Properties.Resources.teacher__1_;
             btnClasses.ImageAlign = HorizontalAlignment.Left;
             btnClasses.ImageSize = new Size(30, 30);
-            btnClasses.Location = new Point(-1, 630);
+            btnClasses.Location = new Point(2, 630);
             btnClasses.Name = "btnClasses";
             btnClasses.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            btnClasses.Size = new Size(312, 60);
+            btnClasses.Size = new Size(330, 60);
             btnClasses.TabIndex = 6;
             btnClasses.Text = "  Classes";
             btnClasses.Click += btnClasses_Click;
@@ -667,10 +668,10 @@
             btnSubjects.Image = Properties.Resources.subjects;
             btnSubjects.ImageAlign = HorizontalAlignment.Left;
             btnSubjects.ImageSize = new Size(30, 30);
-            btnSubjects.Location = new Point(-1, 548);
+            btnSubjects.Location = new Point(2, 548);
             btnSubjects.Name = "btnSubjects";
             btnSubjects.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            btnSubjects.Size = new Size(312, 60);
+            btnSubjects.Size = new Size(330, 60);
             btnSubjects.TabIndex = 5;
             btnSubjects.Text = "  Subjects";
             btnSubjects.Click += btnSubjects_Click;
@@ -698,10 +699,10 @@
             guna2Button7.Image = Properties.Resources.setting;
             guna2Button7.ImageAlign = HorizontalAlignment.Left;
             guna2Button7.ImageSize = new Size(30, 30);
-            guna2Button7.Location = new Point(-1, 876);
+            guna2Button7.Location = new Point(2, 876);
             guna2Button7.Name = "guna2Button7";
             guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Button7.Size = new Size(312, 60);
+            guna2Button7.Size = new Size(330, 60);
             guna2Button7.TabIndex = 9;
             guna2Button7.Text = "  Settings";
             // 
@@ -728,10 +729,10 @@
             btnPayments.Image = Properties.Resources.fundraiser;
             btnPayments.ImageAlign = HorizontalAlignment.Left;
             btnPayments.ImageSize = new Size(30, 30);
-            btnPayments.Location = new Point(-1, 794);
+            btnPayments.Location = new Point(2, 794);
             btnPayments.Name = "btnPayments";
             btnPayments.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            btnPayments.Size = new Size(312, 60);
+            btnPayments.Size = new Size(330, 60);
             btnPayments.TabIndex = 8;
             btnPayments.Text = "  Payments";
             btnPayments.Click += btnPayments_Click;
@@ -759,10 +760,10 @@
             guna2Button9.Image = Properties.Resources.logout__2_;
             guna2Button9.ImageAlign = HorizontalAlignment.Left;
             guna2Button9.ImageSize = new Size(30, 30);
-            guna2Button9.Location = new Point(-1, 942);
+            guna2Button9.Location = new Point(2, 942);
             guna2Button9.Name = "guna2Button9";
             guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            guna2Button9.Size = new Size(312, 60);
+            guna2Button9.Size = new Size(330, 60);
             guna2Button9.TabIndex = 10;
             guna2Button9.Text = "  Log Out";
             // 
@@ -771,7 +772,7 @@
             guna2Separator1.BackColor = Color.Transparent;
             guna2Separator1.Location = new Point(-32, 101);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(343, 27);
+            guna2Separator1.Size = new Size(364, 27);
             guna2Separator1.TabIndex = 11;
             // 
             // lblUserName
@@ -805,10 +806,10 @@
             guna2GradientPanel1.CustomizableEdges = customizableEdges35;
             guna2GradientPanel1.FillColor = Color.MediumAquamarine;
             guna2GradientPanel1.FillColor2 = SystemColors.ActiveCaption;
-            guna2GradientPanel1.Location = new Point(25, 210);
+            guna2GradientPanel1.Location = new Point(24, 201);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            guna2GradientPanel1.Size = new Size(255, 46);
+            guna2GradientPanel1.Size = new Size(276, 51);
             guna2GradientPanel1.TabIndex = 15;
             // 
             // btnReserveSeat
@@ -823,10 +824,10 @@
             btnReserveSeat.FillColor = Color.White;
             btnReserveSeat.Font = new Font("Comic Sans MS", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReserveSeat.ForeColor = Color.DarkCyan;
-            btnReserveSeat.Location = new Point(8, 5);
+            btnReserveSeat.Location = new Point(10, 12);
             btnReserveSeat.Name = "btnReserveSeat";
             btnReserveSeat.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            btnReserveSeat.Size = new Size(240, 36);
+            btnReserveSeat.Size = new Size(258, 30);
             btnReserveSeat.TabIndex = 0;
             btnReserveSeat.Text = "Reserve a seat";
             // 
@@ -835,7 +836,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Gabriola", 23.2F);
             guna2HtmlLabel1.ForeColor = Color.LightSeaGreen;
-            guna2HtmlLabel1.Location = new Point(55, 18);
+            guna2HtmlLabel1.Location = new Point(70, 22);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(179, 73);
             guna2HtmlLabel1.TabIndex = 16;
@@ -846,7 +847,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(54, 69, 79);
-            ClientSize = new Size(1803, 1055);
+            ClientSize = new Size(1881, 1055);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(lblEmail);
