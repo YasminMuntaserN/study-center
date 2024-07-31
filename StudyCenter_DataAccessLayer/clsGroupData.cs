@@ -225,6 +225,8 @@ namespace StudyCenter_DataAccessLayer
 
         public static DataTable GetStudentsInGroup(int groupId) => clsDataAccessHelper.All("GetStudentsInGroup", "GroupID", groupId);
 
+        public static bool CheckGradeLevel(int GroupID, int StudentID)
+            => clsDataAccessHelper.Exists("SP_CheckGradeLevel", "GroupID", GroupID, "StudentID", StudentID);
     }
 }
 

@@ -134,6 +134,9 @@ namespace studyCenter_BusineesLayer
 
 
         public static DataTable GetStudentsInGroup(int? groupId) => clsGroupData.GetStudentsInGroup(groupId.Value);
+
+        public static bool CheckGradeLevel(int? GroupID, int? StudentID)
+            => clsGroupData.CheckGradeLevel(GroupID.Value, StudentID.Value);     
     }
 }
 

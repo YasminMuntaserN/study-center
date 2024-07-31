@@ -120,6 +120,15 @@ namespace Study_center.Group
                 return false;
             }
 
+            if (!clsGroup.CheckGradeLevel(selectedStudentID, selectedGroupID))
+            {
+                MessageBox.Show("The student''s grade level does not match the group''s grade level.",
+                    "Enrollment Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+
+
             return true;
         }
 
