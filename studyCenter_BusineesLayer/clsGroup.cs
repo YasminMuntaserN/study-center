@@ -1,4 +1,5 @@
-﻿using studyCenter_BL_;
+﻿using studyCenter_Bl_;
+using studyCenter_BL_;
 using StudyCenter_DataAccessLayer;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System;
@@ -28,6 +29,8 @@ namespace studyCenter_BusineesLayer
         public clsTeacherSubject TeacherSubjectInfo => clsTeacherSubject.Find(TeacherSubjectID);
         public clsClass ClassInfo => clsClass.Find(ClassID);
         public clsMeetingTimes MeetingTimeInfo => clsMeetingTimes.Find(MeetingTimeID);
+        public clsGradeLevelSubject GradeLevelSubjectInfo => clsGradeLevelSubject.Find(GradeLevelSubjectID);
+
 
         public clsGroup()
         {

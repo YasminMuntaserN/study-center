@@ -72,7 +72,7 @@ namespace Study_center.Group
                         gbSelectGroup.Visible = false;
                         ctrlGroupCard1.Visible = true;
                         ctrlGroupCard1.Location = new System.Drawing.Point(25, 22);
-                        ctrlGroupCard1.Size = new System.Drawing.Size(862, 316);
+                        ctrlGroupCard1.Size = new System.Drawing.Size(901, 408);
                         ctrlGroupCard1.LoadData(selectedGroupID);
                         break;
                     case enLoddingAccordingTo.StudentID:
@@ -92,6 +92,8 @@ namespace Study_center.Group
             _Enrollment.IsActive = true;
         }
 
+        private decimal _GetFees() => clsGroup.Find(selectedGroupID).GradeLevelSubjectInfo.Fees;
+      
         private bool _CheckCorrectData()
         {
             if (!selectedGroupID.HasValue)
@@ -128,6 +130,15 @@ namespace Study_center.Group
                 return false;
             }
 
+               string message = $"The student with ID {selectedStudentID} has to pay {_GetFees():C2}. Are you sure " +
+                  $"you want to assign them to the group with ID {selectedGroupID}?";
+
+            if (MessageBox.Show(message, "Confirm",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                return false;
+            }
 
             return true;
         }
