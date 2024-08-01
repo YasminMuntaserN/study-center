@@ -19,16 +19,16 @@ namespace Study_center.Group
         private frmMainMenu mainMenuForm;
 
         private int? _GroupID;
-       
-        public frmAllStudentsInGroup(int? GroupID,Form previousForm = null, frmMainMenu mainMenuForm = null)
+
+        public frmAllStudentsInGroup(int? GroupID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
-            _GroupID = GroupID; 
+            _GroupID = GroupID;
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             Close();
         }
@@ -53,5 +53,6 @@ namespace Study_center.Group
                 mainMenuForm.ShowFormInPanel(previousForm);
             }
         }
+
     }
 }

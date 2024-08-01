@@ -26,7 +26,7 @@ namespace Study_center.Grade_Level_Subject
             _GradeLevelSubjectID = gradeLevelSubjectID;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -45,5 +45,6 @@ namespace Study_center.Grade_Level_Subject
                 mainMenuForm.ShowFormInPanel(previousForm);
             }
         }
+
     }
 }

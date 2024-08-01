@@ -25,7 +25,7 @@ namespace Study_center.Meeting_Times
         private int? _meetingTimeID = null;
         private clsMeetingTimes _meetingTime = null;
 
-        public frmAddMeetingTime( frmMainMenu mainMenuForm = null, Form previousForm = null)
+        public frmAddMeetingTime(frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -136,7 +136,7 @@ namespace Study_center.Meeting_Times
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             _FillMeetingTimeObjectWithFieldsData();
 
@@ -145,7 +145,7 @@ namespace Study_center.Meeting_Times
             _Save();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -192,5 +192,6 @@ namespace Study_center.Meeting_Times
                 mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
+
     }
 }

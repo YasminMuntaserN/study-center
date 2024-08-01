@@ -64,7 +64,7 @@ namespace Study_center.Student
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -131,7 +131,7 @@ namespace Study_center.Student
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (!ValidateChildren())
             {
@@ -195,7 +195,7 @@ namespace Study_center.Student
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
 

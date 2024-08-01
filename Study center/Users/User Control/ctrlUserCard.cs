@@ -96,7 +96,7 @@ namespace Study_center.Users.User_Control
      
         private void llEditUserInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddUser frmAddUser = new frmAddUser(_userID, previousForm, mainMenuForm);
+            frmAddUser frmAddUser = new frmAddUser(_userID, mainMenuForm, previousForm);
             mainMenuForm.ShowFormInPanel(frmAddUser);
             LoadUserInfoByUserID(_userID);
         }

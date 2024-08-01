@@ -83,7 +83,7 @@ namespace Study_center.Teacher
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher(this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher( this._mainMenuForm, this));
             _RefreshList();
         }
 
@@ -130,7 +130,7 @@ namespace Study_center.Teacher
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher(selectedTeacherID, this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher(selectedTeacherID, this._mainMenuForm, this));
             _RefreshList();
         }
 

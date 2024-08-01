@@ -28,14 +28,14 @@ namespace Study_center.Grade_Level_Subject
         private int? _gradeLevelSubjectID = null;
         private clsGradeLevelSubject _gradeLevelSubject = null;
 
-        public frmAddGradeLevelSubject(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddGradeLevelSubject( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddGradeLevelSubject(int? gradeLevelSubjectID, Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddGradeLevelSubject(int? gradeLevelSubjectID, frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -142,7 +142,7 @@ namespace Study_center.Grade_Level_Subject
                 _LoadData();
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
 
             _FillGradeLevelSubjectObjectWithFieldsData();
@@ -172,7 +172,7 @@ namespace Study_center.Grade_Level_Subject
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -185,13 +185,14 @@ namespace Study_center.Grade_Level_Subject
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
 
         private void llAddNewSubject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.mainMenuForm.ShowFormInPanel(new frmAddSubject(this ,mainMenuForm));
+            this.mainMenuForm.ShowFormInPanel(new frmAddSubject( mainMenuForm, this));
         }
+
     }
 }

@@ -25,14 +25,14 @@ namespace Study_center.Subjects
         private int? _subjectID = null;
         private clsSubject _subject = null;
 
-        public frmAddSubject(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddSubject(frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddSubject(int? subjectID, Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddSubject(int? subjectID, frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -141,11 +141,11 @@ namespace Study_center.Subjects
                 _LoadData();
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-   
+
         private void frmAddSubject_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (previousForm != null)
@@ -154,8 +154,9 @@ namespace Study_center.Subjects
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
+
     }
 }

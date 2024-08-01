@@ -89,7 +89,7 @@ namespace Study_center.Class.User_Control
 
         private void llEditClassInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddClass frmAddClass = new frmAddClass(_ClassID, previousForm, mainMenuForm);
+            frmAddClass frmAddClass = new frmAddClass(_ClassID, mainMenuForm, previousForm);
             mainMenuForm.ShowFormInPanel(frmAddClass);
             LoadClassData(_ClassID);
 

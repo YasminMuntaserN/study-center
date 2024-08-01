@@ -96,7 +96,7 @@ namespace Study_center.Grade_Level_Subject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGradeLevelSubject(this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGradeLevelSubject( this._mainMenuForm, this));
             _RefreshList();
         }
 
@@ -138,7 +138,7 @@ namespace Study_center.Grade_Level_Subject
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGradeLevelSubject(selectedSubjectsGradeLevelID, this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGradeLevelSubject(selectedSubjectsGradeLevelID, this._mainMenuForm, this));
             _RefreshList();
         }
 

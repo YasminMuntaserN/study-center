@@ -45,7 +45,7 @@ namespace Study_center.Users
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser(this , _mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddUser( _mainMenuForm, this));
             _RefreshList();
         }
 
@@ -93,7 +93,7 @@ namespace Study_center.Users
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser(selectedUserID, this, _mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddUser(selectedUserID, _mainMenuForm, this));
             _RefreshList();
 
         }

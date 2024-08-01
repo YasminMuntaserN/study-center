@@ -30,14 +30,14 @@ namespace Study_center.Teacher
 
         private int? _selectedPersonID => ctrlPersonCardWithFilter1.PersonID;
 
-        public frmAddTeacher(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddTeacher( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddTeacher(int? TeacherId, Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddTeacher(int? TeacherId, frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -184,7 +184,7 @@ namespace Study_center.Teacher
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
 

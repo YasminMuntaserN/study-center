@@ -47,11 +47,6 @@ namespace Study_center.Teacher
             ctrlTeacherCard1.SetPreviousForm(previousForm);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmSubjectsTaughtByTeacher_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -63,6 +58,11 @@ namespace Study_center.Teacher
             {
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

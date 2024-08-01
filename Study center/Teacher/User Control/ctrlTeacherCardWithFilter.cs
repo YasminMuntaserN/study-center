@@ -92,7 +92,7 @@ namespace Study_center.Teacher
                 clsMessages.GeneralErrorMessage("Select Teacher First !");
                 return;
             }
-            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID, previousForm, mainMenuForm);
+            frmAddTeacher frmAddTeacher = new frmAddTeacher(_Teacher.TeacherID, mainMenuForm, previousForm);
             mainMenuForm.ShowFormInPanel(frmAddTeacher);
             LoadTeacherInfo(_Teacher.TeacherID);
         }

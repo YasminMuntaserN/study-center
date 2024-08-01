@@ -29,7 +29,7 @@ namespace Study_center.Users
         private int? _UserID ;
         private clsUser _User ;
 
-        public frmAddUser(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddUser( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -37,7 +37,7 @@ namespace Study_center.Users
             _Mode = enMode.Add;
         }
 
-        public frmAddUser(int? UserID, Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddUser(int? UserID, frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -248,7 +248,7 @@ namespace Study_center.Users
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder() );
             }
         }
 

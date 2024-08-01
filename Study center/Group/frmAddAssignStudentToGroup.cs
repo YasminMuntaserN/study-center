@@ -30,7 +30,7 @@ namespace Study_center.Group
         public enum enLoddingAccordingTo { StudentID, GroupID }
         private enLoddingAccordingTo? _AccordingTo;
 
-        public frmAddAssignStudentToGroup(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddAssignStudentToGroup( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -93,7 +93,7 @@ namespace Study_center.Group
         }
 
         private decimal _GetFees() => clsGroup.Find(selectedGroupID).GradeLevelSubjectInfo.Fees;
-      
+
         private bool _CheckCorrectData()
         {
             if (!selectedGroupID.HasValue)
@@ -130,8 +130,8 @@ namespace Study_center.Group
                 return false;
             }
 
-               string message = $"The student with ID {selectedStudentID} has to pay {_GetFees():C2}. Are you sure " +
-                  $"you want to assign them to the group with ID {selectedGroupID}?";
+            string message = $"The student with ID {selectedStudentID} has to pay {_GetFees():C2}. Are you sure " +
+               $"you want to assign them to the group with ID {selectedGroupID}?";
 
             if (MessageBox.Show(message, "Confirm",
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
@@ -211,15 +211,15 @@ namespace Study_center.Group
         }
         #endregion
 
-        private void btnSave_Click_1(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (_AccordingTo != enLoddingAccordingTo.GroupID)
                 selectedGroupID = (int)dgvList.CurrentRow.Cells[0].Value;
 
             if (_AccordingTo != enLoddingAccordingTo.StudentID)
             {
-                if(ctrlStudentCard1.StudentInfo != null)
-                selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
+                if (ctrlStudentCard1.StudentInfo != null)
+                    selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
 
             }
 
@@ -272,7 +272,7 @@ namespace Study_center.Group
 
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e) => this.Close();
+        private void btnClose_Click(object sender, EventArgs e) => this.Close();
 
         private void frmAddAssignStudentToGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -282,8 +282,10 @@ namespace Study_center.Group
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
+
+    
     }
 }

@@ -17,7 +17,7 @@ namespace Study_center.Class
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -26,5 +26,7 @@ namespace Study_center.Class
         {
             ctrlClassCardWithFilter1.Focus();
         }
+
+       
     }
 }

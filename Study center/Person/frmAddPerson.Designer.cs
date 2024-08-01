@@ -45,13 +45,12 @@ namespace Study_center
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -74,8 +73,6 @@ namespace Study_center
             pictureBox6 = new PictureBox();
             dtpDateOfBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
-            btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
-            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             pictureBox7 = new PictureBox();
             label12 = new Label();
@@ -84,7 +81,9 @@ namespace Study_center
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            guna2Panel1.SuspendLayout();
+            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
+            btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -93,24 +92,15 @@ namespace Study_center
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // guna2Panel1
-            // 
-            guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
-            guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(0, 0);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(893, 76);
-            guna2Panel1.TabIndex = 0;
             // 
             // lblTitle
             // 
+            lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(0, 0);
+            lblTitle.Location = new Point(68, 82);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(848, 76);
             lblTitle.TabIndex = 0;
@@ -171,7 +161,7 @@ namespace Study_center
             // 
             txtFirstName.BorderColor = Color.FromArgb(7, 43, 71);
             txtFirstName.BorderRadius = 17;
-            txtFirstName.CustomizableEdges = customizableEdges3;
+            txtFirstName.CustomizableEdges = customizableEdges1;
             txtFirstName.DefaultText = "";
             txtFirstName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtFirstName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -188,7 +178,7 @@ namespace Study_center
             txtFirstName.PlaceholderForeColor = Color.Black;
             txtFirstName.PlaceholderText = "";
             txtFirstName.SelectedText = "";
-            txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtFirstName.Size = new Size(215, 39);
             txtFirstName.TabIndex = 9;
             txtFirstName.Validating += ValidateEmptyTextBox;
@@ -197,7 +187,7 @@ namespace Study_center
             // 
             txtLastName.BorderColor = Color.FromArgb(7, 43, 71);
             txtLastName.BorderRadius = 17;
-            txtLastName.CustomizableEdges = customizableEdges5;
+            txtLastName.CustomizableEdges = customizableEdges3;
             txtLastName.DefaultText = "";
             txtLastName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtLastName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -214,7 +204,7 @@ namespace Study_center
             txtLastName.PlaceholderForeColor = Color.Black;
             txtLastName.PlaceholderText = "";
             txtLastName.SelectedText = "";
-            txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtLastName.Size = new Size(215, 39);
             txtLastName.TabIndex = 10;
             txtLastName.Validating += ValidateEmptyTextBox;
@@ -247,7 +237,7 @@ namespace Study_center
             rbMale.CheckedState.InnerColor = Color.White;
             rbMale.Location = new Point(193, 236);
             rbMale.Name = "rbMale";
-            rbMale.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            rbMale.ShadowDecoration.CustomizableEdges = customizableEdges5;
             rbMale.Size = new Size(25, 25);
             rbMale.TabIndex = 13;
             rbMale.Text = "guna2CustomRadioButton1";
@@ -284,7 +274,7 @@ namespace Study_center
             rbFemale.CheckedState.InnerColor = Color.White;
             rbFemale.Location = new Point(299, 236);
             rbFemale.Name = "rbFemale";
-            rbFemale.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            rbFemale.ShadowDecoration.CustomizableEdges = customizableEdges6;
             rbFemale.Size = new Size(25, 25);
             rbFemale.TabIndex = 15;
             rbFemale.Text = "guna2CustomRadioButton1";
@@ -297,7 +287,7 @@ namespace Study_center
             // 
             txtEmail.BorderColor = Color.FromArgb(7, 43, 71);
             txtEmail.BorderRadius = 17;
-            txtEmail.CustomizableEdges = customizableEdges9;
+            txtEmail.CustomizableEdges = customizableEdges7;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -313,7 +303,7 @@ namespace Study_center
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtEmail.Size = new Size(215, 39);
             txtEmail.TabIndex = 17;
             txtEmail.Validating += ValidateEmptyTextBox;
@@ -322,7 +312,7 @@ namespace Study_center
             // 
             txtAddress.BorderColor = Color.FromArgb(7, 43, 71);
             txtAddress.BorderRadius = 17;
-            txtAddress.CustomizableEdges = customizableEdges11;
+            txtAddress.CustomizableEdges = customizableEdges9;
             txtAddress.DefaultText = "";
             txtAddress.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtAddress.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -338,7 +328,7 @@ namespace Study_center
             txtAddress.PasswordChar = '\0';
             txtAddress.PlaceholderText = "";
             txtAddress.SelectedText = "";
-            txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtAddress.Size = new Size(215, 39);
             txtAddress.TabIndex = 18;
             txtAddress.Validating += ValidateEmptyTextBox;
@@ -388,7 +378,7 @@ namespace Study_center
             dtpDateOfBirth.BorderColor = Color.FromArgb(54, 69, 79);
             dtpDateOfBirth.BorderRadius = 15;
             dtpDateOfBirth.Checked = true;
-            dtpDateOfBirth.CustomizableEdges = customizableEdges13;
+            dtpDateOfBirth.CustomizableEdges = customizableEdges11;
             dtpDateOfBirth.FillColor = Color.FromArgb(7, 43, 71);
             dtpDateOfBirth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dtpDateOfBirth.ForeColor = SystemColors.Control;
@@ -397,7 +387,7 @@ namespace Study_center
             dtpDateOfBirth.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDateOfBirth.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
-            dtpDateOfBirth.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            dtpDateOfBirth.ShadowDecoration.CustomizableEdges = customizableEdges12;
             dtpDateOfBirth.Size = new Size(215, 39);
             dtpDateOfBirth.TabIndex = 23;
             dtpDateOfBirth.Value = new DateTime(2024, 7, 19, 11, 59, 1, 562);
@@ -406,7 +396,7 @@ namespace Study_center
             // 
             txtPhone.BorderColor = Color.FromArgb(7, 43, 71);
             txtPhone.BorderRadius = 17;
-            txtPhone.CustomizableEdges = customizableEdges15;
+            txtPhone.CustomizableEdges = customizableEdges13;
             txtPhone.DefaultText = "";
             txtPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -422,56 +412,10 @@ namespace Study_center
             txtPhone.PasswordChar = '\0';
             txtPhone.PlaceholderText = "";
             txtPhone.SelectedText = "";
-            txtPhone.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtPhone.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtPhone.Size = new Size(215, 39);
             txtPhone.TabIndex = 24;
             txtPhone.Validating += ValidateEmptyTextBox;
-            // 
-            // btnSave
-            // 
-            btnSave.BorderRadius = 15;
-            btnSave.CustomizableEdges = customizableEdges17;
-            btnSave.DisabledState.BorderColor = Color.DarkGray;
-            btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSave.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSave.FillColor = Color.FromArgb(54, 69, 79);
-            btnSave.FillColor2 = SystemColors.HotTrack;
-            btnSave.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
-            btnSave.ForeColor = Color.White;
-            btnSave.Image = Properties.Resources.bookmark;
-            btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(424, 429);
-            btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnSave.Size = new Size(215, 50);
-            btnSave.TabIndex = 25;
-            btnSave.Text = "Save";
-            btnSave.Click += btnSave_Click;
-            // 
-            // btnClose
-            // 
-            btnClose.BorderRadius = 15;
-            btnClose.CustomizableEdges = customizableEdges19;
-            btnClose.DisabledState.BorderColor = Color.DarkGray;
-            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnClose.FillColor = Color.FromArgb(54, 69, 79);
-            btnClose.FillColor2 = SystemColors.HotTrack;
-            btnClose.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
-            btnClose.ForeColor = Color.White;
-            btnClose.Image = Properties.Resources.close__3_;
-            btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(654, 429);
-            btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnClose.Size = new Size(215, 50);
-            btnClose.TabIndex = 26;
-            btnClose.Text = "Close";
-            btnClose.Click += btnClose_Click;
             // 
             // guna2Separator1
             // 
@@ -546,11 +490,73 @@ namespace Study_center
             pictureBox4.TabIndex = 33;
             pictureBox4.TabStop = false;
             // 
+            // guna2GradientPanel1
+            // 
+            guna2GradientPanel1.BorderRadius = 200;
+            guna2GradientPanel1.Controls.Add(lblTitle);
+            guna2GradientPanel1.CustomizableEdges = customizableEdges19;
+            guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
+            guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
+            guna2GradientPanel1.Location = new Point(-40, -80);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2GradientPanel1.Size = new Size(973, 158);
+            guna2GradientPanel1.TabIndex = 39;
+            // 
+            // btnClose
+            // 
+            btnClose.BorderRadius = 30;
+            btnClose.CustomizableEdges = customizableEdges15;
+            btnClose.DisabledState.BorderColor = Color.DarkGray;
+            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClose.FillColor = Color.FromArgb(54, 69, 79);
+            btnClose.FillColor2 = Color.MediumAquamarine;
+            btnClose.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
+            btnClose.ForeColor = Color.White;
+            btnClose.Image = Properties.Resources.close__3_;
+            btnClose.ImageAlign = HorizontalAlignment.Left;
+            btnClose.Location = new Point(687, 400);
+            btnClose.Name = "btnClose";
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnClose.Size = new Size(227, 50);
+            btnClose.TabIndex = 41;
+            btnClose.Text = "Close";
+            btnClose.Click += btnClose_Click_1;
+            // 
+            // btnSave
+            // 
+            btnSave.BorderRadius = 30;
+            btnSave.CustomizableEdges = customizableEdges17;
+            btnSave.DisabledState.BorderColor = Color.DarkGray;
+            btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSave.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSave.FillColor = Color.FromArgb(54, 69, 79);
+            btnSave.FillColor2 = Color.MediumAquamarine;
+            btnSave.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
+            btnSave.Image = Properties.Resources.bookmark;
+            btnSave.ImageAlign = HorizontalAlignment.Left;
+            btnSave.Location = new Point(687, 456);
+            btnSave.Name = "btnSave";
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnSave.Size = new Size(232, 50);
+            btnSave.TabIndex = 40;
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click_1;
+            // 
             // frmAddPerson
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(889, 505);
+            ClientSize = new Size(889, 508);
+            Controls.Add(btnClose);
+            Controls.Add(btnSave);
+            Controls.Add(guna2GradientPanel1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -558,8 +564,6 @@ namespace Study_center
             Controls.Add(pictureBox7);
             Controls.Add(label12);
             Controls.Add(guna2Separator1);
-            Controls.Add(btnClose);
-            Controls.Add(btnSave);
             Controls.Add(txtPhone);
             Controls.Add(dtpDateOfBirth);
             Controls.Add(pictureBox6);
@@ -581,7 +585,6 @@ namespace Study_center
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAddPerson";
             StartPosition = FormStartPosition.CenterScreen;
@@ -589,7 +592,6 @@ namespace Study_center
             Activated += frmAddPerson_Activated;
             FormClosed += frmAddPerson_FormClosed;
             Load += frmAddPerson_Load;
-            guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -598,16 +600,12 @@ namespace Study_center
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            guna2GradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
-
-
-
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblTitle;
         private Label label2;
         private Label label3;
@@ -630,8 +628,6 @@ namespace Study_center
         private PictureBox pictureBox6;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateOfBirth;
         private Guna.UI2.WinForms.Guna2TextBox txtPhone;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
-        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private PictureBox pictureBox7;
         private Label label12;
@@ -640,5 +636,8 @@ namespace Study_center
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
     }
 }

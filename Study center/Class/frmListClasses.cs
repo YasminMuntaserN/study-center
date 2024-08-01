@@ -93,7 +93,7 @@ namespace Study_center.Class
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddClass(this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddClass( this._mainMenuForm, this));
             _RefreshList();
         }
 
@@ -131,13 +131,13 @@ namespace Study_center.Class
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddClass(ClassID, this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddClass(ClassID, this._mainMenuForm, this));
             _RefreshList();
         }
 
         private void miAddGroup_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(ClassID, this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(ClassID, this._mainMenuForm, this));
             _RefreshList();
         }
 

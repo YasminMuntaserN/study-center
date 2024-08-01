@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,8 +47,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
-            btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tpTeacherInfo = new TabPage();
             ctrlStudentCard1 = new Student.User_Control.ctrlStudentCard();
@@ -64,61 +62,17 @@
             label12 = new Label();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             label1 = new Label();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblTitle = new Label();
+            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
+            btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2TabControl1.SuspendLayout();
             tpTeacherInfo.SuspendLayout();
             tpSubjectInfo.SuspendLayout();
             gbSelectGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
-            guna2Panel1.SuspendLayout();
+            guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnClose
-            // 
-            btnClose.BorderRadius = 15;
-            btnClose.CustomizableEdges = customizableEdges1;
-            btnClose.DisabledState.BorderColor = Color.DarkGray;
-            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnClose.FillColor = Color.FromArgb(54, 69, 79);
-            btnClose.FillColor2 = SystemColors.HotTrack;
-            btnClose.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
-            btnClose.ForeColor = Color.White;
-            btnClose.Image = Properties.Resources.close__3_;
-            btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(457, 909);
-            btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnClose.Size = new Size(215, 50);
-            btnClose.TabIndex = 57;
-            btnClose.Text = "Close";
-            btnClose.Click += btnClose_Click_1;
-            // 
-            // btnSave
-            // 
-            btnSave.BorderRadius = 15;
-            btnSave.CustomizableEdges = customizableEdges3;
-            btnSave.DisabledState.BorderColor = Color.DarkGray;
-            btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSave.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSave.FillColor = Color.FromArgb(54, 69, 79);
-            btnSave.FillColor2 = SystemColors.HotTrack;
-            btnSave.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
-            btnSave.ForeColor = Color.White;
-            btnSave.Image = Properties.Resources.bookmark;
-            btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(227, 909);
-            btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSave.Size = new Size(215, 50);
-            btnSave.TabIndex = 56;
-            btnSave.Text = "Save";
-            btnSave.Click += btnSave_Click_1;
             // 
             // guna2TabControl1
             // 
@@ -264,7 +218,7 @@
             cbTeachers.BorderColor = Color.FromArgb(7, 43, 71);
             cbTeachers.BorderRadius = 17;
             cbTeachers.BorderThickness = 2;
-            cbTeachers.CustomizableEdges = customizableEdges5;
+            cbTeachers.CustomizableEdges = customizableEdges1;
             cbTeachers.DrawMode = DrawMode.OwnerDrawFixed;
             cbTeachers.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTeachers.FocusedColor = Color.DarkCyan;
@@ -274,7 +228,7 @@
             cbTeachers.ItemHeight = 30;
             cbTeachers.Location = new Point(381, 125);
             cbTeachers.Name = "cbTeachers";
-            cbTeachers.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbTeachers.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cbTeachers.Size = new Size(223, 36);
             cbTeachers.TabIndex = 77;
             cbTeachers.Visible = false;
@@ -286,7 +240,7 @@
             cbClasses.BorderColor = Color.FromArgb(7, 43, 71);
             cbClasses.BorderRadius = 17;
             cbClasses.BorderThickness = 2;
-            cbClasses.CustomizableEdges = customizableEdges7;
+            cbClasses.CustomizableEdges = customizableEdges3;
             cbClasses.DrawMode = DrawMode.OwnerDrawFixed;
             cbClasses.DropDownStyle = ComboBoxStyle.DropDownList;
             cbClasses.FocusedColor = Color.DarkCyan;
@@ -296,7 +250,7 @@
             cbClasses.ItemHeight = 30;
             cbClasses.Location = new Point(381, 125);
             cbClasses.Name = "cbClasses";
-            cbClasses.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbClasses.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbClasses.Size = new Size(223, 36);
             cbClasses.TabIndex = 76;
             cbClasses.Visible = false;
@@ -308,7 +262,7 @@
             cbGroups.BorderColor = Color.FromArgb(7, 43, 71);
             cbGroups.BorderRadius = 17;
             cbGroups.BorderThickness = 2;
-            cbGroups.CustomizableEdges = customizableEdges9;
+            cbGroups.CustomizableEdges = customizableEdges5;
             cbGroups.DrawMode = DrawMode.OwnerDrawFixed;
             cbGroups.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGroups.FocusedColor = Color.DarkCyan;
@@ -318,7 +272,7 @@
             cbGroups.ItemHeight = 30;
             cbGroups.Location = new Point(381, 125);
             cbGroups.Name = "cbGroups";
-            cbGroups.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cbGroups.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbGroups.Size = new Size(223, 36);
             cbGroups.TabIndex = 75;
             cbGroups.Visible = false;
@@ -330,7 +284,7 @@
             cbSubjects.BorderColor = Color.FromArgb(7, 43, 71);
             cbSubjects.BorderRadius = 17;
             cbSubjects.BorderThickness = 2;
-            cbSubjects.CustomizableEdges = customizableEdges11;
+            cbSubjects.CustomizableEdges = customizableEdges7;
             cbSubjects.DrawMode = DrawMode.OwnerDrawFixed;
             cbSubjects.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSubjects.FocusedColor = Color.DarkCyan;
@@ -340,7 +294,7 @@
             cbSubjects.ItemHeight = 30;
             cbSubjects.Location = new Point(381, 127);
             cbSubjects.Name = "cbSubjects";
-            cbSubjects.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbSubjects.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cbSubjects.Size = new Size(223, 36);
             cbSubjects.TabIndex = 74;
             cbSubjects.Visible = false;
@@ -351,7 +305,7 @@
             cbFilter.BackColor = Color.Transparent;
             cbFilter.BorderColor = Color.FromArgb(7, 43, 71);
             cbFilter.BorderRadius = 17;
-            cbFilter.CustomizableEdges = customizableEdges13;
+            cbFilter.CustomizableEdges = customizableEdges9;
             cbFilter.DrawMode = DrawMode.OwnerDrawFixed;
             cbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFilter.FocusedColor = Color.CadetBlue;
@@ -362,7 +316,7 @@
             cbFilter.Items.AddRange(new object[] { "None", "Group Name", "Class Name", "Teacher Name", "Subject Name" });
             cbFilter.Location = new Point(133, 127);
             cbFilter.Name = "cbFilter";
-            cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cbFilter.Size = new Size(223, 36);
             cbFilter.TabIndex = 73;
             cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged_1;
@@ -398,37 +352,86 @@
             label1.TabIndex = 69;
             label1.Text = "Select the Group :";
             // 
-            // guna2Panel1
-            // 
-            guna2Panel1.BackColor = Color.FromArgb(54, 69, 79);
-            guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges15;
-            guna2Panel1.Location = new Point(0, -1);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel1.Size = new Size(933, 85);
-            guna2Panel1.TabIndex = 54;
-            // 
             // lblTitle
             // 
+            lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 23.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(3, 6);
+            lblTitle.Location = new Point(29, 68);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(918, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Assign Student to Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // guna2GradientPanel1
+            // 
+            guna2GradientPanel1.BorderRadius = 200;
+            guna2GradientPanel1.Controls.Add(lblTitle);
+            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
+            guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
+            guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
+            guna2GradientPanel1.Location = new Point(-40, -80);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2GradientPanel1.Size = new Size(1009, 158);
+            guna2GradientPanel1.TabIndex = 58;
+            // 
+            // btnClose
+            // 
+            btnClose.BorderRadius = 30;
+            btnClose.CustomizableEdges = customizableEdges13;
+            btnClose.DisabledState.BorderColor = Color.DarkGray;
+            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClose.FillColor = Color.FromArgb(54, 69, 79);
+            btnClose.FillColor2 = Color.MediumAquamarine;
+            btnClose.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
+            btnClose.ForeColor = Color.White;
+            btnClose.Image = Properties.Resources.close__3_;
+            btnClose.ImageAlign = HorizontalAlignment.Left;
+            btnClose.Location = new Point(742, 910);
+            btnClose.Name = "btnClose";
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnClose.Size = new Size(227, 50);
+            btnClose.TabIndex = 40;
+            btnClose.Text = "Close";
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BorderRadius = 30;
+            btnSave.CustomizableEdges = customizableEdges15;
+            btnSave.DisabledState.BorderColor = Color.DarkGray;
+            btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSave.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSave.FillColor = Color.FromArgb(54, 69, 79);
+            btnSave.FillColor2 = Color.MediumAquamarine;
+            btnSave.Font = new Font("Comic Sans MS", 16F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
+            btnSave.Image = Properties.Resources.bookmark;
+            btnSave.ImageAlign = HorizontalAlignment.Left;
+            btnSave.Location = new Point(742, 966);
+            btnSave.Name = "btnSave";
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnSave.Size = new Size(232, 50);
+            btnSave.TabIndex = 39;
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
+            // 
             // frmAddAssignStudentToGroup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 962);
+            ClientSize = new Size(929, 1016);
             Controls.Add(btnClose);
+            Controls.Add(guna2GradientPanel1);
             Controls.Add(btnSave);
             Controls.Add(guna2TabControl1);
-            Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAddAssignStudentToGroup";
             StartPosition = FormStartPosition.CenterScreen;
@@ -441,18 +444,14 @@
             gbSelectGroup.ResumeLayout(false);
             gbSelectGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
-            guna2Panel1.ResumeLayout(false);
+            guna2GradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tpTeacherInfo;
         private TabPage tpSubjectInfo;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblTitle;
         private Student.User_Control.ctrlStudentCard ctrlStudentCard1;
         private GroupBox gbSelectGroup;
@@ -466,5 +465,8 @@
         private Label label1;
         private User_Control.ctrlGroupCard ctrlGroupCard1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvList;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
     }
 }

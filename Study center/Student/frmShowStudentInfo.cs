@@ -27,7 +27,7 @@ namespace Study_center.Student
             _StudentID = StudentID;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             Close();
         }
@@ -46,5 +46,6 @@ namespace Study_center.Student
                 mainMenuForm.ShowFormInPanel(previousForm);
             }
         }
+
     }
 }

@@ -34,14 +34,6 @@ namespace Study_center.Teacher
             ctrlTeacherCard1.SetPreviousForm(previousForm);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            // Raise the event
-            if (ctrlTeacherCard1.TeacherInfo != null) TeacherSelected?.Invoke(ctrlTeacherCard1.TeacherInfo.TeacherID);
-            else { clsMessages.GeneralErrorMessage("select Teacher ID!"); return; }
-            this.Close();
-        }
-
         private void frmFindTeacher_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (previousForm != null)
@@ -52,6 +44,14 @@ namespace Study_center.Teacher
             {
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            // Raise the event
+            if (ctrlTeacherCard1.TeacherInfo != null) TeacherSelected?.Invoke(ctrlTeacherCard1.TeacherInfo.TeacherID);
+            else { clsMessages.GeneralErrorMessage("select Teacher ID!"); return; }
+            this.Close();
         }
     }
 }

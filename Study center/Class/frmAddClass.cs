@@ -28,14 +28,14 @@ namespace Study_center.Class
         private int? _classID = null;
         private clsClass _class = null;
 
-        public frmAddClass(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddClass( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
         }
 
-        public frmAddClass(int? classID, Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddClass(int? classID, frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -114,7 +114,7 @@ namespace Study_center.Class
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             _FillClassObjectWithFieldsData();
 
@@ -133,7 +133,7 @@ namespace Study_center.Class
                 _LoadData();
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -176,9 +176,10 @@ namespace Study_center.Class
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
+
     }
 
 }

@@ -161,7 +161,7 @@ namespace Study_center
                 _LoadData();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (!_CheckCorrectData()) return;
 
@@ -174,7 +174,7 @@ namespace Study_center
             _Save();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -192,5 +192,6 @@ namespace Study_center
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
+
     }
 }

@@ -34,11 +34,6 @@ namespace Study_center.Teacher
             ctrlListInfo1.FillClassesAreTaughtByTeacher(_TeacherID);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmClassesAreTaughtByTeacher_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (previousForm != null)
@@ -49,6 +44,11 @@ namespace Study_center.Teacher
             {
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

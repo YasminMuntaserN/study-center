@@ -140,7 +140,7 @@ namespace Study_center.Group
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(this,this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(this._mainMenuForm, this));
             _RefreshList();
         }
 
@@ -177,7 +177,7 @@ namespace Study_center.Group
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(selectedGroupID, this, this._mainMenuForm));
+            this._mainMenuForm.ShowFormInPanel(new frmAddGroup(selectedGroupID, this._mainMenuForm, this));
             _RefreshList();
         }
 
