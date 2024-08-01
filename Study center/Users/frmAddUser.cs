@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.ApplicationServices;
 using Study_center.Global_Classes;
 using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
@@ -57,6 +58,7 @@ namespace Study_center.Users
             {
                 this.Text = "Update User";
                 lblTitle.Text = "Update User";
+                gbPassword.Visible = false; 
             }
         }
 
@@ -65,7 +67,6 @@ namespace Study_center.Users
             ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _User.PersonID);
             lblUserID.Text = _User.UserID.ToString();
             txtUserName.Text = _User.UserName;
-            gbUserInfo.Text = _User.Password;
             txtConfirmPassword.Text = _User.Password;
             txtPassword.Text = _User.Password;
             cbIsActive.Checked = _User.IsActive;
@@ -91,7 +92,10 @@ namespace Study_center.Users
         {
             _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
             _User.UserName = txtUserName.Text;
-            _User.Password = txtPassword.Text;
+            if (_Mode == enMode.Add)
+            {
+                _User.Password = clsGlobal.ComputeHash(txtPassword.Text.Trim());
+            }
             _User.IsActive = cbIsActive.Checked;
         }
 
@@ -246,6 +250,11 @@ namespace Study_center.Users
             {
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
+        }
+
+        private void _TextBox_TextChanged(object sender, EventArgs e)
+        {
+            ((Guna2TextBox)sender).UseSystemPasswordChar = true;
         }
     }
 }

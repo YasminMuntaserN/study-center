@@ -244,7 +244,7 @@ namespace Study_center.Global_User_Controls
                     break;
 
                 case enItemTypes.MeetingTimes:
-                    frmAddMeetingTime time = new frmAddMeetingTime(previousForm, mainMenuForm);
+                    frmAddMeetingTime time = new frmAddMeetingTime( mainMenuForm, previousForm);
                     mainMenuForm.ShowFormInPanel(time);
                     _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;

@@ -105,7 +105,8 @@ namespace Study_center.Users
 
         private void miChangePassword_Click(object sender, EventArgs e)
         {
-
+            this._mainMenuForm.ShowFormInPanel(new frmChangePassword(selectedUserID, this, _mainMenuForm));
+            _RefreshList();
         }
 
         private void miShowUserDetails_Click(object sender, EventArgs e)

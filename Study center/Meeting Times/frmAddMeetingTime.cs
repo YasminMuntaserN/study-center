@@ -25,7 +25,7 @@ namespace Study_center.Meeting_Times
         private int? _meetingTimeID = null;
         private clsMeetingTimes _meetingTime = null;
 
-        public frmAddMeetingTime(Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAddMeetingTime( frmMainMenu mainMenuForm = null, Form previousForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -189,7 +189,7 @@ namespace Study_center.Meeting_Times
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
     }

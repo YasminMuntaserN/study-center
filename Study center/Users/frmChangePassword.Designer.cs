@@ -82,7 +82,7 @@
             guna2GradientPanel1.Location = new Point(-39, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(998, 158);
+            guna2GradientPanel1.Size = new Size(998, 148);
             guna2GradientPanel1.TabIndex = 38;
             // 
             // lblTitle
@@ -90,9 +90,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(53, 80);
+            lblTitle.Location = new Point(53, 71);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(890, 78);
+            lblTitle.Size = new Size(890, 66);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Change Password";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -142,8 +142,8 @@
             txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtPassword.Size = new Size(191, 32);
             txtPassword.TabIndex = 66;
+            txtPassword.TextChanged += _TextBox_TextChanged;
             txtPassword.Validating += txtPassword_Validating;
-            this.txtPassword.TextChanged += new System.EventHandler(this._TextBox_TextChanged);
             // 
             // label3
             // 
@@ -191,8 +191,8 @@
             txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtConfirmPassword.Size = new Size(191, 32);
             txtConfirmPassword.TabIndex = 63;
+            txtConfirmPassword.TextChanged += _TextBox_TextChanged;
             txtConfirmPassword.Validating += txtConfirmPassword_Validating;
-            this.txtConfirmPassword.TextChanged += new System.EventHandler(this._TextBox_TextChanged);
             // 
             // txtCurrentPassword
             // 
@@ -218,8 +218,8 @@
             txtCurrentPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtCurrentPassword.Size = new Size(191, 32);
             txtCurrentPassword.TabIndex = 62;
+            txtCurrentPassword.TextChanged += _TextBox_TextChanged;
             txtCurrentPassword.Validating += txtCurrentPassword_Validating;
-            this.txtCurrentPassword.TextChanged += new System.EventHandler(this._TextBox_TextChanged);
             // 
             // label2
             // 
@@ -309,6 +309,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(919, 866);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
@@ -318,8 +319,9 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmChangePassword";
             Text = "frmChangePassword";
-            Load += frmChangePassword_Load;
             Activated += frmChangePassword_Activated;
+            FormClosed += frmChangePassword_FormClosed;
+            Load += frmChangePassword_Load;
             guna2GradientPanel1.ResumeLayout(false);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();

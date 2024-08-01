@@ -1,5 +1,7 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.ApplicationServices;
 using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using studyCenter_BL_;
 using System;
 using System.Collections.Generic;
@@ -15,11 +17,16 @@ namespace Study_center.Users
 {
     public partial class frmChangePassword : Form
     {
+        private Form previousForm;
+        private frmMainMenu mainMenuForm;
+
         private int? _UserID = null;
         private clsUser _User;
 
-        public frmChangePassword(int? UserID)
+        public frmChangePassword(int? UserID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
+            this.previousForm = previousForm;
+            this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _UserID = UserID;
         }
@@ -35,7 +42,7 @@ namespace Study_center.Users
 
             if (_User == null)
             {
-                clsMessages.NotFound("Person", _UserID);
+                clsMessages.NotFound("User", _UserID);
                 this.Close();
                 return;
             }
@@ -44,7 +51,7 @@ namespace Study_center.Users
 
         private void _ChangePassword()
         {
-            _User.Password = txtCurrentPassword.Text;
+            _User.Password = clsGlobal.ComputeHash(txtPassword.Text.Trim());
             if (_User.Save())
             {
                 clsMessages.GeneralSuccessMessage("Password Changed Successfully.");
@@ -58,21 +65,28 @@ namespace Study_center.Users
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
             string currentPassword = txtCurrentPassword.Text.Trim();
-            if (string.IsNullOrEmpty(currentPassword))
+
+            // Check if the current password field is empty
+            if (string.IsNullOrWhiteSpace(currentPassword))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtCurrentPassword, "Password cannot be blank");
+                errorProvider1.SetError(txtCurrentPassword, "The current password cannot be blank. Please enter your current password.");
                 return;
             }
             else
             {
                 errorProvider1.SetError(txtCurrentPassword, null);
-            };
-            if (_User.Password != clsGlobal.ComputeHash(txtCurrentPassword.Text.Trim()))
+            }
+
+            //Validate the current password against the stored hash
+            if (_User.Password !=clsGlobal.ComputeHash(currentPassword).Trim())
             {
+                
+                MessageBox.Show($"{clsGlobal.ComputeHash(currentPassword)} ,{_User.Password} ");
+
+
                 e.Cancel = true;
-                errorProvider1.SetError(txtCurrentPassword, "Current password is wrong!");
-                return;
+                errorProvider1.SetError(txtCurrentPassword, "The entered password is incorrect. Please try again.");
             }
             else
             {
@@ -100,7 +114,7 @@ namespace Study_center.Users
                 errorProvider1.SetError(txtPassword, null);
             }
 
-            if (clsGlobal.Encrypt(newPassword) == _User.Password)
+            if (clsGlobal.ComputeHash(newPassword) == _User.Password)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPassword, "This password is the same as your current one. Please choose a different password.");
@@ -153,5 +167,16 @@ namespace Study_center.Users
             _ChangePassword();
         }
 
+        private void frmChangePassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (previousForm != null)
+            {
+                mainMenuForm.ShowFormInPanel(previousForm);
+            }
+            else
+            {
+                mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
+        }
     }
 }

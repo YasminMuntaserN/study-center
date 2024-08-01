@@ -35,16 +35,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -54,11 +54,8 @@
             label3 = new Label();
             cbIsActive = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
@@ -68,14 +65,19 @@
             ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             errorProvider1 = new ErrorProvider(components);
+            gbPassword = new GroupBox();
+            txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            label1 = new Label();
+            pictureBox4 = new PictureBox();
             gbUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            gbPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // btnClose
@@ -119,7 +121,7 @@
             btnSave.Location = new Point(720, 913);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSave.Size = new Size(259, 50);
+            btnSave.Size = new Size(227, 50);
             btnSave.TabIndex = 35;
             btnSave.Text = "Save";
             btnSave.Click += btnSave_Click;
@@ -146,15 +148,10 @@
             // 
             // gbUserInfo
             // 
+            gbUserInfo.Controls.Add(gbPassword);
             gbUserInfo.Controls.Add(pictureBox2);
             gbUserInfo.Controls.Add(label3);
             gbUserInfo.Controls.Add(cbIsActive);
-            gbUserInfo.Controls.Add(txtConfirmPassword);
-            gbUserInfo.Controls.Add(txtPassword);
-            gbUserInfo.Controls.Add(label2);
-            gbUserInfo.Controls.Add(pictureBox1);
-            gbUserInfo.Controls.Add(label1);
-            gbUserInfo.Controls.Add(pictureBox4);
             gbUserInfo.Controls.Add(pictureBox3);
             gbUserInfo.Controls.Add(txtUserName);
             gbUserInfo.Controls.Add(label4);
@@ -200,10 +197,10 @@
             cbIsActive.CheckedState.BorderRadius = 2;
             cbIsActive.CheckedState.BorderThickness = 0;
             cbIsActive.CheckedState.FillColor = Color.DarkCyan;
-            cbIsActive.CustomizableEdges = customizableEdges5;
+            cbIsActive.CustomizableEdges = customizableEdges9;
             cbIsActive.Location = new Point(113, 188);
             cbIsActive.Name = "cbIsActive";
-            cbIsActive.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbIsActive.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cbIsActive.Size = new Size(29, 25);
             cbIsActive.TabIndex = 58;
             cbIsActive.Text = "guna2CustomCheckBox1";
@@ -227,7 +224,7 @@
             txtConfirmPassword.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtConfirmPassword.ForeColor = Color.Black;
             txtConfirmPassword.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtConfirmPassword.Location = new Point(678, 119);
+            txtConfirmPassword.Location = new Point(277, 109);
             txtConfirmPassword.Margin = new Padding(4, 6, 4, 6);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '\0';
@@ -236,33 +233,8 @@
             txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtConfirmPassword.Size = new Size(191, 39);
             txtConfirmPassword.TabIndex = 57;
+            txtConfirmPassword.TextChanged += _TextBox_TextChanged;
             txtConfirmPassword.Validating += txtConfirmPassword_Validating;
-            // 
-            // txtPassword
-            // 
-            txtPassword.BackColor = Color.Transparent;
-            txtPassword.BorderColor = Color.FromArgb(7, 43, 71);
-            txtPassword.BorderRadius = 17;
-            txtPassword.CustomizableEdges = customizableEdges9;
-            txtPassword.DefaultText = "";
-            txtPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtPassword.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtPassword.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtPassword.FocusedState.BorderColor = Color.CadetBlue;
-            txtPassword.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txtPassword.ForeColor = Color.Black;
-            txtPassword.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtPassword.Location = new Point(678, 57);
-            txtPassword.Margin = new Padding(4, 6, 4, 6);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '\0';
-            txtPassword.PlaceholderText = "";
-            txtPassword.SelectedText = "";
-            txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtPassword.Size = new Size(191, 39);
-            txtPassword.TabIndex = 56;
-            txtPassword.Validating += txtPassword_Validating;
             // 
             // label2
             // 
@@ -270,7 +242,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(416, 119);
+            label2.Location = new Point(15, 109);
             label2.Name = "label2";
             label2.Size = new Size(214, 31);
             label2.TabIndex = 55;
@@ -279,34 +251,12 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.reset_password;
-            pictureBox1.Location = new Point(628, 118);
+            pictureBox1.Location = new Point(227, 108);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 54;
             pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(488, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 31);
-            label1.TabIndex = 52;
-            label1.Text = "Passsword :";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.setting;
-            pictureBox4.Location = new Point(628, 57);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(36, 32);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 51;
-            pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -417,10 +367,74 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // gbPassword
+            // 
+            gbPassword.BackColor = Color.Transparent;
+            gbPassword.Controls.Add(txtPassword);
+            gbPassword.Controls.Add(label1);
+            gbPassword.Controls.Add(pictureBox4);
+            gbPassword.Controls.Add(txtConfirmPassword);
+            gbPassword.Controls.Add(label2);
+            gbPassword.Controls.Add(pictureBox1);
+            gbPassword.Location = new Point(412, 20);
+            gbPassword.Name = "gbPassword";
+            gbPassword.Size = new Size(487, 208);
+            gbPassword.TabIndex = 61;
+            gbPassword.TabStop = false;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BackColor = Color.Transparent;
+            txtPassword.BorderColor = Color.FromArgb(7, 43, 71);
+            txtPassword.BorderRadius = 17;
+            txtPassword.CustomizableEdges = customizableEdges5;
+            txtPassword.DefaultText = "";
+            txtPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPassword.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPassword.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPassword.FocusedState.BorderColor = Color.CadetBlue;
+            txtPassword.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            txtPassword.ForeColor = Color.Black;
+            txtPassword.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
+            txtPassword.Location = new Point(277, 45);
+            txtPassword.Margin = new Padding(4, 6, 4, 6);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '\0';
+            txtPassword.PlaceholderText = "";
+            txtPassword.SelectedText = "";
+            txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtPassword.Size = new Size(191, 39);
+            txtPassword.TabIndex = 60;
+            txtPassword.TextChanged += _TextBox_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(87, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 31);
+            label1.TabIndex = 59;
+            label1.Text = "Passsword :";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.setting;
+            pictureBox4.Location = new Point(227, 45);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(36, 32);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 58;
+            pictureBox4.TabStop = false;
+            // 
             // frmAddUser
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(897, 964);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(btnClose);
@@ -437,11 +451,13 @@
             gbUserInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            gbPassword.ResumeLayout(false);
+            gbPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -458,11 +474,8 @@
         private Person.User_Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2TextBox txtConfirmPassword;
-        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Label label2;
         private PictureBox pictureBox1;
-        private Label label1;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private Label label4;
@@ -470,5 +483,9 @@
         private Label label3;
         private Guna.UI2.WinForms.Guna2CustomCheckBox cbIsActive;
         private ErrorProvider errorProvider1;
+        private GroupBox gbPassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        private Label label1;
+        private PictureBox pictureBox4;
     }
 }
