@@ -72,5 +72,7 @@ namespace Study_center.Class.User_Control
         {
             ClassSelected?.Invoke(this, e);
         }
+
+
     }
 }

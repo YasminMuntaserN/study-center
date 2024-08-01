@@ -1,4 +1,6 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using studyCenter_BL_;
+using StudyCenter_DAL_;
+using StudyCenter_DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace studyCenter_BusineesLayer
         public enum EnMode : byte { AddNew = 0, Update = 1 };
         public EnMode Mode;
         public enum EnGender : byte { Male = 0, Female = 1 };
-        public enum EnType : byte { student = 0, Teacher = 1 ,User=2};
+        public enum EnType : byte { student = 0, Teacher = 1, User = 2 };
         public int? PersonID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -59,13 +61,13 @@ namespace studyCenter_BusineesLayer
             {
                 EnType.student => clsStudent.IsPersonStudent(personID),
                 EnType.Teacher => clsTeacher.IsPersonTeacher(personID),
-            //    EnType.User => clsStudent.IsPersonUser(personID),
+                EnType.User => clsUser.IsPersonUser(personID),
 
                 _ => false
             };
         }
-    
-    public static clsPerson Find(int? personID)
+
+        public static clsPerson Find(int? personID)
         {
             string firstName = string.Empty;
             string lastName = string.Empty;

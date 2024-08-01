@@ -100,6 +100,8 @@ namespace Study_center.Person.User_Controls
 
         public int? GetSelectedID => _selectedID;
 
+        public clsPerson PersonInfo => ctrlPersonCard1.Person;
+
         public void LoadPersonInfo(EnSearchCriteria searchCriteria, int? searchValue)
         {
             _selectedID = searchValue;

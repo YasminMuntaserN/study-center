@@ -188,7 +188,51 @@ namespace StudyCenter_DAL_
 
         public static bool Exists(int userID) => clsDataAccessHelper.Exists("SP_DoesUserExistByID", "UserID", userID);
 
+        public static bool DoesUserExist(string UserName) => clsDataAccessHelper.Exists("SP_DoesUserExistByUserName", "UserName", UserName);
+       
+        public static bool DoesUserExist(string UserName, string Password)
+         => clsDataAccessHelper.Exists("SP_DoesUserExistByUserNameAndPassword", "Password", Password, "UserName", UserName);
+  
         public static DataTable All() => clsDataAccessHelper.All("SP_GetAllUsers");
-     
+
+        public static bool IsPersonUser(int? UserID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_IsPersonUser", connection))
+                    {
+                        // Set the command type to StoredProcedure
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Add the input parameter for PersonID
+                        command.Parameters.AddWithValue("@UserID", UserID);
+
+                        // Add the output parameter for IsStudent
+                        SqlParameter outputParam = new SqlParameter("@IsUser", SqlDbType.Bit)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        command.Parameters.Add(outputParam);
+
+                        command.ExecuteNonQuery();
+
+                        // Retrieve the output parameter value
+                        bool isTeacher = (bool)outputParam.Value;
+
+                        return isTeacher;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsErrorLogger.LogError(ex);
+                return false;
+            }
+        }
+
     }
 }
