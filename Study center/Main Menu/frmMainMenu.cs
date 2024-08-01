@@ -8,6 +8,7 @@ using Study_center.Student;
 using Study_center.Subjects;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
+using Study_center.Users;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
 using System;
@@ -43,7 +44,7 @@ namespace Study_center.Main_Menu
             if (form.Width > 1000 || form.Height > 700)
             {
                 // Set the panel location to (50, 70)
-                this.guna2CustomGradientPanel1.Location = new Point(50, 70);
+                this.guna2CustomGradientPanel1.Location = new Point(90, 46);
             }
             this.guna2CustomGradientPanel1.Size = form.Size;
             this.guna2CustomGradientPanel1.Controls.Clear();
@@ -68,6 +69,8 @@ namespace Study_center.Main_Menu
             lblPayments.Text = clsPayment.Count().ToString();
             lblMeetingCounts.Text = clsTeacher.Count().ToString();
             lblGroupsCount.Text = clsGroup.Count().ToString();
+            lblUsersCount.Text = clsUser.Count().ToString();
+
 
         }
 
@@ -89,7 +92,7 @@ namespace Study_center.Main_Menu
 
         private void btnGradeLevel_Click(object sender, EventArgs e)
         {
-            //  ShowFormInPanel(new frmAddGradeLevelSubject(this));
+            ShowFormInPanel(new frmAddGradeLevelSubject(this));
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
@@ -111,9 +114,11 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmAddAssignStudentToGroup(this));
         }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmAddUser(this));
+        }
         #endregion
-
-
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
@@ -148,6 +153,11 @@ namespace Study_center.Main_Menu
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new frmDashborder());
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new frmListUserscs(this));
         }
     }
 }

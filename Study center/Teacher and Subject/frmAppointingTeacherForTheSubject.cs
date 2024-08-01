@@ -42,7 +42,7 @@ namespace Study_center.Teacher_and_Subject
             _TeacherSubject = new clsTeacherSubject();
         }
 
-        public frmAppointingTeacherForTheSubject(int? TeacherID,Form previousForm = null, frmMainMenu mainMenuForm = null)
+        public frmAppointingTeacherForTheSubject(int? TeacherID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -76,43 +76,6 @@ namespace Study_center.Teacher_and_Subject
             return true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (ctrlTeacherCard1.TeacherInfo == null)
-            {
-                clsMessages.GeneralErrorMessage("Please select a teacher.");
-                return;
-            }
-            else
-            {
-                selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
-
-            }
-
-
-
-            if (!_CheckCorrectData()) return;
-
-            _FillGradeLevelSubjectInfo();
-
-            // Save the new assignment
-            if (_TeacherSubject.Save())
-            {
-                clsGradeLevelSubject levelSubject = clsGradeLevelSubject.Find(selectedGradeLevelSubjectID);
-                clsMessages.GeneralSuccessMessage($"Teacher with ID : {selectedTeacherID} has been appointed to teach : {levelSubject.Title} ," +
-                    $"with Teacher Subject ID : {_TeacherSubject.TeacherSubjectID}");
-            }
-            else
-            {
-                MessageBox.Show("Failed to assign teacher to subject.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmAppointingTeacherForTheSubject_Load(object sender, EventArgs e)
         {
             ctrlTeacherCard1.SetPreviousForm(this);
@@ -122,8 +85,8 @@ namespace Study_center.Teacher_and_Subject
 
             // Fill Subjects In ComboBox
             HelperClass.FillComboBox(cbSubjects, clsSubject.AllSubjectNames(), "SubjectName");
-          
-            if(_mode == _enMode.Update )
+
+            if (_mode == _enMode.Update)
                 ctrlTeacherCard1.LoadTeacherInfo(selectedTeacherID);
 
             _dtTeacherSubjects = clsGradeLevelSubject.GetAllGradeLevelSubjectsWithNames();
@@ -178,6 +141,41 @@ namespace Study_center.Teacher_and_Subject
             else
             {
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
+            }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            if (ctrlTeacherCard1.TeacherInfo == null)
+            {
+                clsMessages.GeneralErrorMessage("Please select a teacher.");
+                return;
+            }
+            else
+            {
+                selectedTeacherID = ctrlTeacherCard1.TeacherInfo.TeacherID;
+
+            }
+
+            if (!_CheckCorrectData()) return;
+
+            _FillGradeLevelSubjectInfo();
+
+            // Save the new assignment
+            if (_TeacherSubject.Save())
+            {
+                clsGradeLevelSubject levelSubject = clsGradeLevelSubject.Find(selectedGradeLevelSubjectID);
+                clsMessages.GeneralSuccessMessage($"Teacher with ID : {selectedTeacherID} has been appointed to teach : {levelSubject.Title} ," +
+                    $"with Teacher Subject ID : {_TeacherSubject.TeacherSubjectID}");
+            }
+            else
+            {
+                MessageBox.Show("Failed to assign teacher to subject.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

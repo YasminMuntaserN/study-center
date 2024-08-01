@@ -60,11 +60,6 @@ namespace Study_center.Teacher
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void _FillFieldsWithTeacherInfo()
         {
             ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _teacher.PersonID);
@@ -126,7 +121,7 @@ namespace Study_center.Teacher
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (!ValidateChildren())
             {
@@ -192,6 +187,13 @@ namespace Study_center.Teacher
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+ 
     }
 }
 

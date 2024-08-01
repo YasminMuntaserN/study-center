@@ -48,7 +48,7 @@ namespace studyCenter_BL_
 
         private bool _Add()
         {
-            UserID = clsUserData.Add(PersonID, UserName, Password, IsActive);
+            UserID = clsUserData.Add(PersonID.Value, UserName, Password, IsActive);
             return UserID.HasValue;
         }
 
@@ -150,6 +150,11 @@ namespace studyCenter_BL_
 
         public static DataTable All()
             => clsUserData.All();
+
+        public static int Count() =>clsUserData.Count();
+
+        public static DataTable GetUsersByPage(int pageNumber, int pageSize)
+           => clsUserData.GetUsersByPage(pageNumber, pageSize);
     }
 }
 

@@ -13,7 +13,7 @@ namespace StudyCenter_DAL_
     {
         public static int? Add(int? personID, string userName, string password, bool isActive)
         {
-            int? userID = null;
+            int? NewUserID = null;
 
             try
             {
@@ -21,10 +21,11 @@ namespace StudyCenter_DAL_
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand("SP_AddUser", connection))
+                    using (SqlCommand command = new SqlCommand("SP_AddNewUser", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@PersonID", (object)personID ?? DBNull.Value);
+
+                        command.Parameters.AddWithValue("@PersonID", personID.HasValue ? (object)personID.Value : DBNull.Value);
                         command.Parameters.AddWithValue("@UserName", userName);
                         command.Parameters.AddWithValue("@Password", password);
                         command.Parameters.AddWithValue("@IsActive", isActive);
@@ -37,7 +38,7 @@ namespace StudyCenter_DAL_
 
                         command.ExecuteNonQuery();
 
-                        userID = (int?)outputIdParam.Value;
+                        NewUserID = outputIdParam.Value != DBNull.Value ? (int?)outputIdParam.Value : null;
                     }
                 }
             }
@@ -47,8 +48,9 @@ namespace StudyCenter_DAL_
                 Console.WriteLine(ex.Message);
             }
 
-            return userID;
+            return NewUserID;
         }
+
 
         public static bool Update(int userID, int? personID, string userName, string password, bool isActive)
         {
@@ -195,7 +197,7 @@ namespace StudyCenter_DAL_
   
         public static DataTable All() => clsDataAccessHelper.All("SP_GetAllUsers");
 
-        public static bool IsPersonUser(int? UserID)
+        public static bool IsPersonUser(int? PersonID)
         {
             try
             {
@@ -209,7 +211,7 @@ namespace StudyCenter_DAL_
                         command.CommandType = CommandType.StoredProcedure;
 
                         // Add the input parameter for PersonID
-                        command.Parameters.AddWithValue("@UserID", UserID);
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
 
                         // Add the output parameter for IsStudent
                         SqlParameter outputParam = new SqlParameter("@IsUser", SqlDbType.Bit)
@@ -221,9 +223,9 @@ namespace StudyCenter_DAL_
                         command.ExecuteNonQuery();
 
                         // Retrieve the output parameter value
-                        bool isTeacher = (bool)outputParam.Value;
+                        bool isUser = (bool)outputParam.Value;
 
-                        return isTeacher;
+                        return isUser;
                     }
                 }
             }
@@ -233,6 +235,12 @@ namespace StudyCenter_DAL_
                 return false;
             }
         }
+
+        public static int Count() => clsDataAccessHelper.Count("SP_GetUsersCount");
+
+        public static DataTable GetUsersByPage(int pageNumber, int pageSize)
+          => clsDataAccessHelper.All("SP_UsersByPage", "PageNumber", pageNumber
+             , "PageSize", pageSize);
 
     }
 }

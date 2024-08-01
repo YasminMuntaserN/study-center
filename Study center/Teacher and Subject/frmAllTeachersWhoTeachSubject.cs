@@ -32,11 +32,6 @@ namespace Study_center.Teacher_and_Subject
             _GradeLevelSubjectID = gradeLevelSubjectID;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmAllTeachersWhoTeachSubject_Load(object sender, EventArgs e)
         {
             if (!_GradeLevelSubjectID.HasValue)
@@ -56,6 +51,11 @@ namespace Study_center.Teacher_and_Subject
             {
                 mainMenuForm.ShowFormInPanel(previousForm);
             }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

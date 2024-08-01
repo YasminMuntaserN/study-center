@@ -198,5 +198,6 @@ namespace Study_center.Student
                 mainMenuForm.ShowFormInPanel(mainMenuForm);
             }
         }
+
     }
 }

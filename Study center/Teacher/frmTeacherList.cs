@@ -42,7 +42,7 @@ namespace Study_center.Teacher
             _dtList = clsTeacher.GetTeachersByPage((int)NUMPageNumber.Value, 8);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (_dtList.Rows.Count - 1).ToString();
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -59,7 +59,7 @@ namespace Study_center.Teacher
             _dtList.DefaultView.RowFilter =
                 string.Format("[{0}] like '{1}%'", $"{searchBy}", comboBox.Text);
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (_dtList.Rows.Count - 1).ToString();
         }
 
         #region Fill comboBoxies
@@ -108,7 +108,7 @@ namespace Study_center.Teacher
                     string.Format("[{0}] like '{1}%'", "TeacherName", txtFilterBy.Text.Trim());
             }
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (_dtList.Rows.Count - 1).ToString();
         }
 
         private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
