@@ -110,7 +110,7 @@ namespace StudyCenter_DAL_
             return rowsAffected > 0;
         }
 
-        public static bool GetInfoByID(int userID, ref int? personID, ref string userName, ref string password, ref bool isActive)
+        public static bool GetInfoByID(int? userID, ref int? personID, ref string userName, ref string password, ref bool isActive)
         {
             bool isFound = false;
 
@@ -133,7 +133,45 @@ namespace StudyCenter_DAL_
                                 personID = reader["PersonID"] as int?;
                                 userName = reader["UserName"] as string;
                                 password = reader["Password"] as string;
-                                isActive = reader["IsActive"] as bool?;
+                                isActive = (bool)reader["IsActive"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log error (implement logging as per your requirements)
+                Console.WriteLine(ex.Message);
+            }
+
+            return isFound;
+        }
+
+        public static bool GetInfoByPersonID(int? personID, ref int? userID, ref string userName, ref string password, ref bool isActive)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetUserInfoByPersonID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@PersonID", personID);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                userID = reader["UserID"] as int?;
+                                userName = reader["UserName"] as string;
+                                password = reader["Password"] as string;
+                                isActive = (bool)reader["IsActive"]  ;
                             }
                         }
                     }
