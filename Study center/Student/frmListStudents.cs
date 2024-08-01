@@ -36,14 +36,14 @@ namespace Study_center.Student
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("Students", 8, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("Students", clsGlobal.Rows, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsStudent.GetStudentsByPage((int)NUMPageNumber.Value, 8);
+            _dtList = clsStudent.GetStudentsByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count-1).ToString();
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -60,7 +60,7 @@ namespace Study_center.Student
             _dtList.DefaultView.RowFilter =
                 string.Format("[{0}] like '{1}%'", $"{searchBy}", comboBox.Text);
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         #region Fill comboBoxies
@@ -112,7 +112,7 @@ namespace Study_center.Student
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-                lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+                lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
 
                 return;
             }
@@ -128,7 +128,7 @@ namespace Study_center.Student
                     string.Format("[{0}] like '{1}%'", "StudentName", txtFilterBy.Text.Trim());
             }
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)

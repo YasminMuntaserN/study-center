@@ -7,6 +7,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace Study_center.Global_Classes
 {
@@ -14,7 +16,22 @@ namespace Study_center.Global_Classes
     {
         public static clsUser CurrentUser;
 
-       public static bool RememberUsernameAndPassword(string Username, string Password)
+        public static int Rows => _rowsNumber();
+      
+        private static int _rowsNumber(){
+            var settings = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+            int _rowsPerPage =0;
+
+          if (short.TryParse(settings["RowsPerPage"], out short value))
+                _rowsPerPage = value;
+
+            return _rowsPerPage;
+        }
+     
+        public static bool RememberUsernameAndPassword(string Username, string Password)
         {
             string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\StudyCenter";
 

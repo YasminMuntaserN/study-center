@@ -49,7 +49,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(1018, 158);
+            guna2GradientPanel1.Size = new Size(1018, 150);
             guna2GradientPanel1.TabIndex = 38;
             // 
             // lblTitle
@@ -57,9 +57,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(46, 80);
+            lblTitle.Location = new Point(51, 72);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(935, 78);
+            lblTitle.Size = new Size(912, 78);
             lblTitle.TabIndex = 0;
             lblTitle.Text = " User Info";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;

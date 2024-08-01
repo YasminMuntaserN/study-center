@@ -33,14 +33,14 @@ namespace Study_center.Users
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("Users", 8, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("Users", clsGlobal.Rows, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsUser.GetUsersByPage((int)NUMPageNumber.Value, 8);
+            _dtList = clsUser.GetUsersByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace Study_center.Users
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-                lblRecordsNum.Text = (dgvList.Rows.Count-1).ToString();
+                lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
 
                 return;
             }
@@ -77,7 +77,7 @@ namespace Study_center.Users
                     string.Format("[{0}] like '{1}%'", "UserName", txtFilterBy.Text.Trim());
             }
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count ).ToString();
         }
 
         private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)

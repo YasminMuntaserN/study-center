@@ -34,17 +34,23 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             cbClasses = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
             NUMPageNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
+            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            miShowClassDetails = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            miEdit = new ToolStripMenuItem();
+            miAddGroup = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            miWhoTeachesIt = new ToolStripMenuItem();
             label2 = new Label();
             lblRecordsNum = new Label();
             cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,17 +59,11 @@
             pictureBox1 = new PictureBox();
             lblTitle = new Label();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            miShowClassDetails = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            miEdit = new ToolStripMenuItem();
-            miAddGroup = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            miWhoTeachesIt = new ToolStripMenuItem();
+            dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             cmsList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
             SuspendLayout();
             // 
             // txtFilterBy
@@ -146,59 +146,65 @@
             NUMPageNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.ValueChanged += NUMPageNumber_ValueChanged;
             // 
-            // dgvList
+            // cmsList
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvList.ColumnHeadersHeight = 4;
-            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ContextMenuStrip = cmsList;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvList.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvList.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.Location = new Point(14, 368);
-            dgvList.Name = "dgvList";
-            dgvList.RowHeadersVisible = false;
-            dgvList.RowHeadersWidth = 51;
-            dgvList.Size = new Size(892, 396);
-            dgvList.TabIndex = 125;
-            dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvList.ThemeStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            dgvList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ThemeStyle.HeaderStyle.Height = 4;
-            dgvList.ThemeStyle.ReadOnly = false;
-            dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dgvList.ThemeStyle.RowsStyle.Height = 29;
-            dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmsList.ImageScalingSize = new Size(25, 25);
+            cmsList.Items.AddRange(new ToolStripItem[] { miShowClassDetails, toolStripSeparator1, miEdit, miAddGroup, toolStripSeparator2, miWhoTeachesIt });
+            cmsList.Name = "cmsList";
+            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
+            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
+            cmsList.RenderStyle.ColorTable = null;
+            cmsList.RenderStyle.RoundedEdges = true;
+            cmsList.RenderStyle.SelectionArrowColor = Color.White;
+            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            cmsList.RenderStyle.SelectionForeColor = Color.White;
+            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
+            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            cmsList.Size = new Size(399, 144);
+            // 
+            // miShowClassDetails
+            // 
+            miShowClassDetails.Image = Properties.Resources.id_card;
+            miShowClassDetails.ImageAlign = ContentAlignment.MiddleLeft;
+            miShowClassDetails.Name = "miShowClassDetails";
+            miShowClassDetails.Size = new Size(398, 32);
+            miShowClassDetails.Text = "     Show Class Details";
+            miShowClassDetails.Click += miShowClassDetails_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(395, 6);
+            // 
+            // miEdit
+            // 
+            miEdit.Image = Properties.Resources.capacity;
+            miEdit.Name = "miEdit";
+            miEdit.Size = new Size(398, 32);
+            miEdit.Text = "     Edit";
+            miEdit.Click += miEdit_Click;
+            // 
+            // miAddGroup
+            // 
+            miAddGroup.Image = Properties.Resources.add_user;
+            miAddGroup.Name = "miAddGroup";
+            miAddGroup.Size = new Size(398, 32);
+            miAddGroup.Text = "     Add Group";
+            miAddGroup.Click += miAddGroup_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(395, 6);
+            // 
+            // miWhoTeachesIt
+            // 
+            miWhoTeachesIt.Image = Properties.Resources.classes_blue_64;
+            miWhoTeachesIt.Name = "miWhoTeachesIt";
+            miWhoTeachesIt.Size = new Size(398, 32);
+            miWhoTeachesIt.Text = "     show Groups and Who Teaches it?";
+            miWhoTeachesIt.Click += miWhoTeachesIt_Click;
             // 
             // label2
             // 
@@ -303,76 +309,73 @@
             guna2Separator1.Size = new Size(892, 18);
             guna2Separator1.TabIndex = 117;
             // 
-            // cmsList
+            // dgvList
             // 
-            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmsList.ImageScalingSize = new Size(25, 25);
-            cmsList.Items.AddRange(new ToolStripItem[] { miShowClassDetails, toolStripSeparator1, miEdit, miAddGroup, toolStripSeparator2, miWhoTeachesIt });
-            cmsList.Name = "cmsList";
-            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
-            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
-            cmsList.RenderStyle.ColorTable = null;
-            cmsList.RenderStyle.RoundedEdges = true;
-            cmsList.RenderStyle.SelectionArrowColor = Color.White;
-            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
-            cmsList.RenderStyle.SelectionForeColor = Color.White;
-            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
-            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(399, 144);
-            // 
-            // miShowClassDetails
-            // 
-            miShowClassDetails.Image = Properties.Resources.id_card;
-            miShowClassDetails.ImageAlign = ContentAlignment.MiddleLeft;
-            miShowClassDetails.Name = "miShowClassDetails";
-            miShowClassDetails.Size = new Size(398, 32);
-            miShowClassDetails.Text = "     Show Class Details";
-            miShowClassDetails.Click += miShowClassDetails_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(395, 6);
-            // 
-            // miEdit
-            // 
-            miEdit.Image = Properties.Resources.capacity;
-            miEdit.Name = "miEdit";
-            miEdit.Size = new Size(398, 32);
-            miEdit.Text = "     Edit";
-            miEdit.Click += miEdit_Click;
-            // 
-            // miAddGroup
-            // 
-            miAddGroup.Image = Properties.Resources.add_user;
-            miAddGroup.Name = "miAddGroup";
-            miAddGroup.Size = new Size(398, 32);
-            miAddGroup.Text = "     Add Group";
-            miAddGroup.Click += miAddGroup_Click;
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(395, 6);
-            // 
-            // miWhoTeachesIt
-            // 
-            miWhoTeachesIt.Image = Properties.Resources.classes_blue_64;
-            miWhoTeachesIt.Name = "miWhoTeachesIt";
-            miWhoTeachesIt.Size = new Size(398, 32);
-            miWhoTeachesIt.Text = "     show Groups and Who Teaches it?";
-            miWhoTeachesIt.Click += miWhoTeachesIt_Click;
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvList.ColumnHeadersHeight = 30;
+            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvList.ContextMenuStrip = cmsList;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvList.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.Location = new Point(18, 366);
+            dgvList.Name = "dgvList";
+            dgvList.RowHeadersVisible = false;
+            dgvList.RowHeadersWidth = 30;
+            dgvList.Size = new Size(884, 396);
+            dgvList.TabIndex = 130;
+            dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvList.ThemeStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvList.ThemeStyle.HeaderStyle.Height = 30;
+            dgvList.ThemeStyle.ReadOnly = false;
+            dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvList.ThemeStyle.RowsStyle.Height = 29;
+            dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // frmListClasses
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 826);
+            Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(cbClasses);
             Controls.Add(label1);
             Controls.Add(NUMPageNumber);
-            Controls.Add(dgvList);
             Controls.Add(label2);
             Controls.Add(lblRecordsNum);
             Controls.Add(cbFilter);
@@ -386,9 +389,9 @@
             Text = "frmListClasses";
             Load += frmListClasses_Load;
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             cmsList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -400,7 +403,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbClasses;
         private Label label1;
         private Guna.UI2.WinForms.Guna2NumericUpDown NUMPageNumber;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
         private Label label2;
         private Label lblRecordsNum;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
@@ -416,5 +418,6 @@
         private ToolStripMenuItem miAddGroup;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem miWhoTeachesIt;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
     }
 }

@@ -33,11 +33,11 @@ namespace Study_center.Group
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("Groups", 10, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("Groups", clsGlobal.Rows, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsGroup.GetGroupsByPage((int)NUMPageNumber.Value, totalRows);
+            _dtList = clsGroup.GetGroupsByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
             lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();

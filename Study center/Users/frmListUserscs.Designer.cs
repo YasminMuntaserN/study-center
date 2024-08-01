@@ -44,6 +44,13 @@
             cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
             dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
+            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            miShowUserDetails = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            miEdit = new ToolStripMenuItem();
+            miDelete = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            miChangePassword = new ToolStripMenuItem();
             label2 = new Label();
             lblRecordsNum = new Label();
             cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,17 +60,10 @@
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             NUMPageNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
-            cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            miShowUserDetails = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            miEdit = new ToolStripMenuItem();
-            miDelete = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            miChangePassword = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
+            cmsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).BeginInit();
-            cmsList.SuspendLayout();
             SuspendLayout();
             // 
             // txtFilterBy
@@ -130,6 +130,9 @@
             // 
             // dgvList
             // 
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
@@ -138,11 +141,11 @@
             dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvList.ColumnHeadersHeight = 4;
+            dgvList.ColumnHeadersHeight = 30;
             dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvList.ContextMenuStrip = cmsList;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -157,7 +160,7 @@
             dgvList.Location = new Point(10, 365);
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
-            dgvList.RowHeadersWidth = 51;
+            dgvList.RowHeadersWidth = 30;
             dgvList.Size = new Size(884, 396);
             dgvList.TabIndex = 110;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -172,7 +175,7 @@
             dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ThemeStyle.HeaderStyle.Height = 4;
+            dgvList.ThemeStyle.HeaderStyle.Height = 30;
             dgvList.ThemeStyle.ReadOnly = false;
             dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -181,6 +184,66 @@
             dgvList.ThemeStyle.RowsStyle.Height = 29;
             dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // cmsList
+            // 
+            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmsList.ImageScalingSize = new Size(25, 25);
+            cmsList.Items.AddRange(new ToolStripItem[] { miShowUserDetails, toolStripSeparator1, miEdit, miDelete, toolStripSeparator2, miChangePassword });
+            cmsList.Name = "cmsList";
+            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
+            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
+            cmsList.RenderStyle.ColorTable = null;
+            cmsList.RenderStyle.RoundedEdges = true;
+            cmsList.RenderStyle.SelectionArrowColor = Color.White;
+            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            cmsList.RenderStyle.SelectionForeColor = Color.White;
+            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
+            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            cmsList.Size = new Size(269, 144);
+            // 
+            // miShowUserDetails
+            // 
+            miShowUserDetails.Image = Properties.Resources.id_card;
+            miShowUserDetails.ImageAlign = ContentAlignment.MiddleLeft;
+            miShowUserDetails.Name = "miShowUserDetails";
+            miShowUserDetails.Size = new Size(268, 32);
+            miShowUserDetails.Text = "     Show User Details";
+            miShowUserDetails.Click += miShowUserDetails_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(265, 6);
+            // 
+            // miEdit
+            // 
+            miEdit.Image = Properties.Resources.capacity;
+            miEdit.Name = "miEdit";
+            miEdit.Size = new Size(268, 32);
+            miEdit.Text = "     Edit";
+            miEdit.Click += miEdit_Click;
+            // 
+            // miDelete
+            // 
+            miDelete.Image = Properties.Resources.bin;
+            miDelete.Name = "miDelete";
+            miDelete.Size = new Size(268, 32);
+            miDelete.Text = "     Delete";
+            miDelete.Click += miDelete_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(265, 6);
+            // 
+            // miChangePassword
+            // 
+            miChangePassword.Image = Properties.Resources.reset_password;
+            miChangePassword.Name = "miChangePassword";
+            miChangePassword.Size = new Size(268, 32);
+            miChangePassword.Text = "     Change Password";
+            miChangePassword.Click += miChangePassword_Click;
             // 
             // label2
             // 
@@ -301,66 +364,6 @@
             btnAdd.TabIndex = 114;
             btnAdd.Click += btnAdd_Click;
             // 
-            // cmsList
-            // 
-            cmsList.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmsList.ImageScalingSize = new Size(25, 25);
-            cmsList.Items.AddRange(new ToolStripItem[] { miShowUserDetails, toolStripSeparator1, miEdit, miDelete, toolStripSeparator2, miChangePassword });
-            cmsList.Name = "cmsList";
-            cmsList.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
-            cmsList.RenderStyle.BorderColor = Color.Gainsboro;
-            cmsList.RenderStyle.ColorTable = null;
-            cmsList.RenderStyle.RoundedEdges = true;
-            cmsList.RenderStyle.SelectionArrowColor = Color.White;
-            cmsList.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
-            cmsList.RenderStyle.SelectionForeColor = Color.White;
-            cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
-            cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(269, 144);
-            // 
-            // miShowUserDetails
-            // 
-            miShowUserDetails.Image = Properties.Resources.id_card;
-            miShowUserDetails.ImageAlign = ContentAlignment.MiddleLeft;
-            miShowUserDetails.Name = "miShowUserDetails";
-            miShowUserDetails.Size = new Size(268, 32);
-            miShowUserDetails.Text = "     Show User Details";
-            miShowUserDetails.Click += miShowUserDetails_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(265, 6);
-            // 
-            // miEdit
-            // 
-            miEdit.Image = Properties.Resources.capacity;
-            miEdit.Name = "miEdit";
-            miEdit.Size = new Size(268, 32);
-            miEdit.Text = "     Edit";
-            miEdit.Click += miEdit_Click;
-            // 
-            // miDelete
-            // 
-            miDelete.Image = Properties.Resources.bin;
-            miDelete.Name = "miDelete";
-            miDelete.Size = new Size(268, 32);
-            miDelete.Text = "     Delete";
-            miDelete.Click += miDelete_Click;
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(265, 6);
-            // 
-            // miChangePassword
-            // 
-            miChangePassword.Image = Properties.Resources.reset_password;
-            miChangePassword.Name = "miChangePassword";
-            miChangePassword.Size = new Size(268, 32);
-            miChangePassword.Text = "     Change Password";
-            miChangePassword.Click += miChangePassword_Click;
-            // 
             // frmListUserscs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -384,9 +387,9 @@
             Text = "frmListUserscs";
             Load += frmListUserscs_Load;
             ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
+            cmsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).EndInit();
-            cmsList.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

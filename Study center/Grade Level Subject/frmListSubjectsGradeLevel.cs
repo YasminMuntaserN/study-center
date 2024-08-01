@@ -35,14 +35,14 @@ namespace Study_center.Grade_Level_Subject
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("GradeLevelSubjects", 8, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("GradeLevelSubjects", clsGlobal.Rows, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsGradeLevelSubject.GetGradeLevelSubjectByPage((int)NUMPageNumber.Value, 8);
+            _dtList = clsGradeLevelSubject.GetGradeLevelSubjectByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -59,7 +59,7 @@ namespace Study_center.Grade_Level_Subject
             _dtList.DefaultView.RowFilter =
                 string.Format("[{0}] like '{1}%'", $"{searchBy}", comboBox.Text);
 
-            lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         #region Fill comboBoxies
@@ -117,7 +117,7 @@ namespace Study_center.Grade_Level_Subject
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-                lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+                lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
 
                 return;
             }

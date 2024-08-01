@@ -31,9 +31,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -48,6 +45,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             lblTitle = new Label();
             pictureBox1 = new PictureBox();
@@ -56,7 +56,6 @@
             label3 = new Label();
             label2 = new Label();
             lblRecordsNum = new Label();
-            dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
             cmsList = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             miShowGroupsDetails = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -73,10 +72,11 @@
             label1 = new Label();
             cbMeetingTimes = new Guna.UI2.WinForms.Guna2ComboBox();
             txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
+            dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
             cmsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
             SuspendLayout();
             // 
             // guna2Separator1
@@ -180,60 +180,6 @@
             lblRecordsNum.Size = new Size(89, 35);
             lblRecordsNum.TabIndex = 71;
             lblRecordsNum.Text = "[????]";
-            // 
-            // dgvList
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvList.ColumnHeadersHeight = 4;
-            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ContextMenuStrip = cmsList;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvList.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvList.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.Location = new Point(24, 381);
-            dgvList.Name = "dgvList";
-            dgvList.RowHeadersVisible = false;
-            dgvList.RowHeadersWidth = 51;
-            dgvList.Size = new Size(855, 396);
-            dgvList.TabIndex = 73;
-            dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvList.ThemeStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            dgvList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ThemeStyle.HeaderStyle.Height = 4;
-            dgvList.ThemeStyle.ReadOnly = false;
-            dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dgvList.ThemeStyle.RowsStyle.Height = 29;
-            dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // cmsList
             // 
@@ -469,11 +415,69 @@
             txtFilterBy.TextChanged += txtFilterBy_TextChanged;
             txtFilterBy.KeyPress += txtFilterBy_KeyPress;
             // 
+            // dgvList
+            // 
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvList.ColumnHeadersHeight = 30;
+            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvList.ContextMenuStrip = cmsList;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvList.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.Location = new Point(12, 381);
+            dgvList.Name = "dgvList";
+            dgvList.RowHeadersVisible = false;
+            dgvList.RowHeadersWidth = 30;
+            dgvList.Size = new Size(884, 396);
+            dgvList.TabIndex = 111;
+            dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvList.ThemeStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvList.ThemeStyle.HeaderStyle.Height = 30;
+            dgvList.ThemeStyle.ReadOnly = false;
+            dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvList.ThemeStyle.RowsStyle.Height = 29;
+            dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
             // frmListGroups
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(911, 840);
+            Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(cbMeetingTimes);
             Controls.Add(label1);
@@ -482,7 +486,6 @@
             Controls.Add(cbClasses);
             Controls.Add(cbGroups);
             Controls.Add(cbSubjects);
-            Controls.Add(dgvList);
             Controls.Add(label2);
             Controls.Add(lblRecordsNum);
             Controls.Add(cbFilter);
@@ -496,9 +499,9 @@
             Text = "frmListGroups";
             Load += frmListGroups_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
             cmsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)NUMPageNumber).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -513,7 +516,6 @@
         private Label label3;
         private Label label2;
         private Label lblRecordsNum;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
         private Guna.UI2.WinForms.Guna2ComboBox cbTeachers;
         private Guna.UI2.WinForms.Guna2ComboBox cbClasses;
         private Guna.UI2.WinForms.Guna2ComboBox cbGroups;
@@ -530,5 +532,6 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem miShowStudents;
         private ToolStripMenuItem miAddStudent;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
     }
 }
