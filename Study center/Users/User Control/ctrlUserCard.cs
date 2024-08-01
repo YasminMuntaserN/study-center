@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Properties;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -16,6 +17,20 @@ namespace Study_center.Users.User_Control
 {
     public partial class ctrlUserCard : UserControl
     {
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+        #endregion
+
         private int? _userID = null;
         private clsUser _user = null;
 
@@ -23,7 +38,6 @@ namespace Study_center.Users.User_Control
         public clsUser UserInfo => _user;
 
         public int? PersonID => ctrlPersonCard1.PersonID;
-       // public clsPerson PersonInfo => ctrlPersonCard1.PersonInfo;
         public ctrlUserCard()
         {
             InitializeComponent();
@@ -82,7 +96,9 @@ namespace Study_center.Users.User_Control
      
         private void llEditUserInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmAddUser frmAddUser = new frmAddUser(_userID, previousForm, mainMenuForm);
+            mainMenuForm.ShowFormInPanel(frmAddUser);
+            LoadUserInfoByUserID(_userID);
         }
     }
 }

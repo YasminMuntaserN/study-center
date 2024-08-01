@@ -40,12 +40,12 @@ namespace Study_center.Users
             _dtList = clsUser.GetUsersByPage((int)NUMPageNumber.Value, 8);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = (_dtList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser(this._mainMenuForm, this));
+            this._mainMenuForm.ShowFormInPanel(new frmAddUser(this , _mainMenuForm));
             _RefreshList();
         }
 
@@ -61,7 +61,7 @@ namespace Study_center.Users
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-                lblRecordsNum.Text = _dtList.Rows.Count.ToString();
+                lblRecordsNum.Text = (dgvList.Rows.Count-1).ToString();
 
                 return;
             }
@@ -77,7 +77,7 @@ namespace Study_center.Users
                     string.Format("[{0}] like '{1}%'", "UserName", txtFilterBy.Text.Trim());
             }
 
-            lblRecordsNum.Text = (_dtList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
         }
 
         private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
@@ -93,8 +93,9 @@ namespace Study_center.Users
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser(selectedUserID, this._mainMenuForm, this));
+            this._mainMenuForm.ShowFormInPanel(new frmAddUser(selectedUserID, this, _mainMenuForm));
             _RefreshList();
+
         }
 
         private void miDelete_Click(object sender, EventArgs e)
@@ -105,6 +106,12 @@ namespace Study_center.Users
         private void miChangePassword_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void miShowUserDetails_Click(object sender, EventArgs e)
+        {
+            this._mainMenuForm.ShowFormInPanel(new frmUserInfo(selectedUserID, this,_mainMenuForm));
+            _RefreshList();
         }
     }
 }

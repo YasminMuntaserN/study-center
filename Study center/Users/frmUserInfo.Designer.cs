@@ -1,6 +1,6 @@
-﻿namespace Study_center.Teacher
+﻿namespace Study_center.Users
 {
-    partial class frmTeacherInfo
+    partial class frmUserInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,62 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            lblTitle = new Label();
-            ctrlTeacherCardWithFilter1 = new ctrlTeacherCardWithFilter();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            lblTitle = new Label();
+            ctrlUserCard1 = new User_Control.ctrlUserCard();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // guna2Separator1
+            // guna2GradientPanel1
             // 
-            guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(-2, 98);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(882, 20);
-            guna2Separator1.TabIndex = 30;
+            guna2GradientPanel1.BorderRadius = 200;
+            guna2GradientPanel1.Controls.Add(lblTitle);
+            guna2GradientPanel1.CustomizableEdges = customizableEdges1;
+            guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
+            guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
+            guna2GradientPanel1.Location = new Point(-40, -80);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GradientPanel1.Size = new Size(1018, 158);
+            guna2GradientPanel1.TabIndex = 38;
             // 
             // lblTitle
             // 
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(38, 70);
+            lblTitle.Location = new Point(46, 80);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(882, 76);
+            lblTitle.Size = new Size(935, 78);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Teacher Info";
+            lblTitle.Text = " User Info";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ctrlTeacherCardWithFilter1
+            // ctrlUserCard1
             // 
-            ctrlTeacherCardWithFilter1.Location = new Point(-2, 133);
-            ctrlTeacherCardWithFilter1.Name = "ctrlTeacherCardWithFilter1";
-            ctrlTeacherCardWithFilter1.Size = new Size(893, 735);
-            ctrlTeacherCardWithFilter1.TabIndex = 31;
-            // 
-            // guna2GradientPanel1
-            // 
-            guna2GradientPanel1.BorderRadius = 200;
-            guna2GradientPanel1.Controls.Add(lblTitle);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges3;
-            guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
-            guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
-            guna2GradientPanel1.Location = new Point(-40, -80);
-            guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GradientPanel1.Size = new Size(977, 158);
-            guna2GradientPanel1.TabIndex = 66;
+            ctrlUserCard1.Location = new Point(29, 105);
+            ctrlUserCard1.Name = "ctrlUserCard1";
+            ctrlUserCard1.Size = new Size(881, 502);
+            ctrlUserCard1.TabIndex = 39;
             // 
             // btnClose
             // 
             btnClose.BorderRadius = 30;
-            btnClose.CustomizableEdges = customizableEdges5;
+            btnClose.CustomizableEdges = customizableEdges3;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -95,39 +86,36 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(708, 874);
+            btnClose.Location = new Point(751, 613);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnClose.Size = new Size(229, 50);
-            btnClose.TabIndex = 67;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnClose.Size = new Size(227, 50);
+            btnClose.TabIndex = 41;
             btnClose.Text = "Close";
-            btnClose.Click += btnClose_Click_1;
+            btnClose.Click += btnClose_Click;
             // 
-            // frmTeacherInfo
+            // frmUserInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(888, 932);
+            ClientSize = new Size(935, 677);
             Controls.Add(btnClose);
+            Controls.Add(ctrlUserCard1);
             Controls.Add(guna2GradientPanel1);
-            Controls.Add(ctrlTeacherCardWithFilter1);
-            Controls.Add(guna2Separator1);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(67, 22);
-            Name = "frmTeacherInfo";
-            Text = "frmTeacherInfo";
-            FormClosed += frmTeacherInfo_FormClosed;
-            Load += frmTeacherInfo_Load;
+            Name = "frmUserInfo";
+            Text = "frmUserInfo";
+            FormClosed += frmUserInfo_FormClosed;
+            Load += frmUserInfo_Load;
             guna2GradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Label lblTitle;
-        private ctrlTeacherCardWithFilter ctrlTeacherCardWithFilter1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Label lblTitle;
+        private User_Control.ctrlUserCard ctrlUserCard1;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
     }
 }

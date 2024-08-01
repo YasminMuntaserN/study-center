@@ -25,10 +25,10 @@ namespace Study_center.Users
         private enum enMode { Add, Update };
         private enMode _Mode = enMode.Add;
 
-        private int? _UserID = null;
-        private clsUser _User = null;
+        private int? _UserID ;
+        private clsUser _User ;
 
-        public frmAddUser(frmMainMenu mainMenu = null, Form previousForm = null)
+        public frmAddUser(Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -36,7 +36,7 @@ namespace Study_center.Users
             _Mode = enMode.Add;
         }
 
-        public frmAddUser(int? UserID, frmMainMenu mainMenu = null, Form previousForm = null)
+        public frmAddUser(int? UserID, Form previousForm = null, frmMainMenu mainMenuForm = null)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
@@ -62,17 +62,19 @@ namespace Study_center.Users
 
         private void _FillUserInfoInField()
         {
-            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _UserID);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _User.PersonID);
             lblUserID.Text = _User.UserID.ToString();
             txtUserName.Text = _User.UserName;
             gbUserInfo.Text = _User.Password;
             txtConfirmPassword.Text = _User.Password;
+            txtPassword.Text = _User.Password;
             cbIsActive.Checked = _User.IsActive;
         }
 
         private void _LoadData()
         {
             _User = clsUser.Find(_UserID, clsUser.EnFindUserBy.UserID);
+            ctrlPersonCardWithFilter1.FilterEnabled = false;
 
             if (_User == null)
             {
