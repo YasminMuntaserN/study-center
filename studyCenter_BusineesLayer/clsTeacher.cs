@@ -1,4 +1,5 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using studyCenter_BL_;
+using StudyCenter_DataAccessLayer;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static studyCenter_BL_.clsUser;
 
 namespace studyCenter_BusineesLayer
 {
@@ -21,6 +23,8 @@ namespace studyCenter_BusineesLayer
         public string Qualification { get; set; }
         public decimal Salary { get; set; }
         public int? UserID { get; set; }
+
+        public string GetUserName =>clsUser.Find(UserID, EnFindUserBy.UserID).UserName;
 
         public clsTeacher() : base()
         {
@@ -158,8 +162,8 @@ namespace studyCenter_BusineesLayer
         public static DataTable GetTeachersByPage(int pageNumber, int pageSize)
            => clsTeacherData.GetTeachersByPage(pageNumber, pageSize);
 
-        public static DataTable GetAllTeachersClasses(int? TeacherID)
-          => clsTeacherData.GetAllTeachersClasses(TeacherID.Value);
+        public static DataTable GetAllTeachersClasses(int? ClassID)
+          => clsTeacherData.GetAllTeachersClasses(ClassID.Value);
     }
 
 }

@@ -528,10 +528,10 @@
             guna2CustomGradientPanel1.BorderRadius = 50;
             guna2CustomGradientPanel1.CustomBorderColor = Color.Transparent;
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges12;
-            guna2CustomGradientPanel1.Location = new Point(90, 46);
+            guna2CustomGradientPanel1.Location = new Point(75, 42);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2CustomGradientPanel1.Size = new Size(947, 371);
+            guna2CustomGradientPanel1.Size = new Size(906, 963);
             guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // guna2Button1

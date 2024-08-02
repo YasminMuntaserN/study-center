@@ -52,7 +52,7 @@ namespace Study_center.Teacher
             {
                 lblTitle.Text = "Add New Teacher";
                 _teacher = new clsTeacher();
-                lblCreatedBy.Text = "Admin";
+                lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
             }
             else
             {
@@ -65,7 +65,7 @@ namespace Study_center.Teacher
             ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _teacher.PersonID);
 
             lblTeacherID.Text = _teacher.TeacherID.ToString();
-            lblCreatedBy.Text = "Admin";
+            lblCreatedBy.Text = _teacher.GetUserName; ;
             dtpHireData.Value = _teacher.HireDate;
             txtQualification.Text = _teacher.Qualification;
             txtSalary.Text = _teacher.Salary.ToString("c");
@@ -93,7 +93,7 @@ namespace Study_center.Teacher
             _teacher.HireDate = dtpHireData.Value;
             _teacher.Qualification = txtQualification.Text;
             _teacher.Salary = decimal.Parse(txtSalary.Text, NumberStyles.Currency);
-            _teacher.UserID = 1; // Assuming the logged-in user ID is 1
+            _teacher.UserID =clsGlobal.CurrentUser.UserID ; 
         }
 
         private void _Save()
@@ -154,6 +154,9 @@ namespace Study_center.Teacher
 
         private void frmAddTeacher_Load(object sender, EventArgs e)
         {
+
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCardWithFilter1.SetPreviousForm(this); // Set the current form as the previous form
             _ResetTitles();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID);
             if (_Mode == enMode.Update)

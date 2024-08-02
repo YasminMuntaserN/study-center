@@ -30,6 +30,7 @@ namespace Study_center.Person.User_Controls
             this.previousForm = form;
         }
         #endregion
+      
         public int? PersonID { get; private set; } = null;
         public clsPerson Person { get; private set; } = null;
 
@@ -80,9 +81,13 @@ namespace Study_center.Person.User_Controls
      
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAddPerson frmAddPerson = new frmAddPerson(PersonID);
-            //  mainMenuForm.ShowFormInPanel(frmAddPerson);
-            frmAddPerson.ShowDialog();
+            if (!PersonID.HasValue)
+            {
+                MessageBox.Show("Select person First !");
+                return ;
+            }
+            frmAddPerson frmAddPerson = new frmAddPerson(PersonID,previousForm ,mainMenuForm);
+                mainMenuForm.ShowFormInPanel(frmAddPerson);
             LoadPersonData(PersonID);
         }
     }

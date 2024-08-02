@@ -79,6 +79,7 @@ namespace Study_center.Global_User_Controls
             dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedTeacherID = TeacherID;
+            btnaAdd.Enabled = true;
         }
 
         public void FillStudentsInGroup(int? GroupID)
@@ -95,28 +96,30 @@ namespace Study_center.Global_User_Controls
             dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedGroupID = GroupID;
+            btnaAdd.Enabled = true;
         }
 
-        public void FillClassesAreTaughtByTeacher(int? TeacherID)
+        public void FillClassesAreTaughtByTeacher(int? classID)
         {
             _Type = enItemTypes.Classes;
             btnaAdd.Visible = false;
 
-            if (!TeacherID.HasValue)
+            if (!classID.HasValue)
             {
-                clsMessages.GeneralErrorMessage("Teacher ID is required.");
+                clsMessages.GeneralErrorMessage("class ID is required.");
                 return;
             }
-            clsTeacher teacherInfo = clsTeacher.Find(TeacherID, clsTeacher.EnFindTeacherBy.TeacherID);
 
-            if (teacherInfo != null)
+            clsClass classInfo = clsClass.Find(classID.Value);
+         
+            if (classInfo != null)
             {
-                string prefix = teacherInfo.Gender == clsPerson.EnGender.Male ? "Mr." : "Ms.";
-                lblListName.Text = string.Concat("Classes Are Taught By Teacher", ' ', prefix, ' ', teacherInfo.FullName);
+                lblListName.Text = string.Concat("  Teachers are teaching in the class ", ' ', classInfo.ClassName);
             }
-            _List = clsTeacher.GetAllTeachersClasses(TeacherID);
+            _List = clsTeacher.GetAllTeachersClasses(classID);
             dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
+            btnaAdd.Enabled = true;
         }
 
         public void FillTeachersWhoTeachSubject(int? GradeLevelSubjectID)
@@ -143,6 +146,7 @@ namespace Study_center.Global_User_Controls
             dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedGradeLevelSubjectID = GradeLevelSubjectID;
+            btnaAdd.Enabled = true;
         }
 
         public DataTable FillMeetingTimes(int? classID, int? TeacherID)
@@ -165,6 +169,7 @@ namespace Study_center.Global_User_Controls
             dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedTeacherID = TeacherID; _storedClassID = classID;
+            btnaAdd.Enabled = true;
             return _List;
         }
 

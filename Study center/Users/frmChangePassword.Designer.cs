@@ -310,7 +310,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(919, 866);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GroupBox1);

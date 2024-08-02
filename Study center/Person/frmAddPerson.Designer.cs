@@ -553,7 +553,7 @@ namespace Study_center
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(889, 508);
+            ClientSize = new Size(889, 971);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

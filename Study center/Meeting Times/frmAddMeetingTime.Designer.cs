@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblTitle = new Label();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             lblMeetingTimeID = new Label();
@@ -77,7 +77,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(63, 82);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(885, 76);
+            lblTitle.Size = new Size(891, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Meeting Time";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -138,12 +138,12 @@
             guna2GroupBox1.Controls.Add(label3);
             guna2GroupBox1.Controls.Add(label2);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges17;
+            guna2GroupBox1.CustomizableEdges = customizableEdges7;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
             guna2GroupBox1.Location = new Point(13, 177);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2GroupBox1.Size = new Size(871, 308);
             guna2GroupBox1.TabIndex = 60;
             guna2GroupBox1.Text = "Meeting Time Info";
@@ -177,7 +177,7 @@
             dtpEndDate.BorderColor = Color.FromArgb(54, 69, 79);
             dtpEndDate.BorderRadius = 15;
             dtpEndDate.Checked = true;
-            dtpEndDate.CustomizableEdges = customizableEdges11;
+            dtpEndDate.CustomizableEdges = customizableEdges1;
             dtpEndDate.Enabled = false;
             dtpEndDate.FillColor = Color.FromArgb(7, 43, 71);
             dtpEndDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -187,7 +187,7 @@
             dtpEndDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpEndDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            dtpEndDate.ShadowDecoration.CustomizableEdges = customizableEdges2;
             dtpEndDate.ShowUpDown = true;
             dtpEndDate.Size = new Size(223, 39);
             dtpEndDate.TabIndex = 68;
@@ -199,7 +199,7 @@
             dtpStartDate.BorderColor = Color.FromArgb(54, 69, 79);
             dtpStartDate.BorderRadius = 15;
             dtpStartDate.Checked = true;
-            dtpStartDate.CustomizableEdges = customizableEdges13;
+            dtpStartDate.CustomizableEdges = customizableEdges3;
             dtpStartDate.FillColor = Color.FromArgb(7, 43, 71);
             dtpStartDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dtpStartDate.ForeColor = SystemColors.Control;
@@ -208,7 +208,7 @@
             dtpStartDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpStartDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpStartDate.Name = "dtpStartDate";
-            dtpStartDate.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            dtpStartDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpStartDate.ShowUpDown = true;
             dtpStartDate.Size = new Size(223, 39);
             dtpStartDate.TabIndex = 67;
@@ -220,7 +220,7 @@
             cbMeetingDays.BorderColor = Color.FromArgb(7, 43, 71);
             cbMeetingDays.BorderRadius = 17;
             cbMeetingDays.BorderThickness = 2;
-            cbMeetingDays.CustomizableEdges = customizableEdges15;
+            cbMeetingDays.CustomizableEdges = customizableEdges5;
             cbMeetingDays.DrawMode = DrawMode.OwnerDrawFixed;
             cbMeetingDays.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMeetingDays.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -231,7 +231,7 @@
             cbMeetingDays.Items.AddRange(new object[] { "Daily", "STT", "MW" });
             cbMeetingDays.Location = new Point(238, 76);
             cbMeetingDays.Name = "cbMeetingDays";
-            cbMeetingDays.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cbMeetingDays.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbMeetingDays.Size = new Size(223, 36);
             cbMeetingDays.TabIndex = 66;
             cbMeetingDays.SelectedIndexChanged += cbMeetingDays_SelectedIndexChanged;
@@ -297,19 +297,19 @@
             // 
             guna2GradientPanel1.BorderRadius = 200;
             guna2GradientPanel1.Controls.Add(lblTitle);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges19;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
             guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
             guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2GradientPanel1.Size = new Size(995, 158);
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GradientPanel1.Size = new Size(1008, 158);
             guna2GradientPanel1.TabIndex = 67;
             // 
             // btnClose
             // 
             btnClose.BorderRadius = 30;
-            btnClose.CustomizableEdges = customizableEdges21;
+            btnClose.CustomizableEdges = customizableEdges11;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -323,7 +323,7 @@
             btnClose.ImageAlign = HorizontalAlignment.Left;
             btnClose.Location = new Point(704, 496);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnClose.Size = new Size(227, 50);
             btnClose.TabIndex = 69;
             btnClose.Text = "Close";
@@ -332,7 +332,7 @@
             // btnSave
             // 
             btnSave.BorderRadius = 30;
-            btnSave.CustomizableEdges = customizableEdges23;
+            btnSave.CustomizableEdges = customizableEdges13;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -346,7 +346,7 @@
             btnSave.ImageAlign = HorizontalAlignment.Left;
             btnSave.Location = new Point(704, 552);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnSave.Size = new Size(232, 50);
             btnSave.TabIndex = 68;
             btnSave.Text = "Save";
@@ -356,7 +356,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(906, 604);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

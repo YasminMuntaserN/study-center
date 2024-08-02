@@ -136,7 +136,17 @@ namespace Study_center.Teacher
 
         private void miDelete_Click(object sender, EventArgs e)
         {
+            if (!clsMessages.conformDeleted("teacher",selectedTeacherID))
+                return;
 
+            if (clsTeacher.Delete(selectedTeacherID))
+            {
+                clsMessages.GeneralSuccessMessage("teacher");
+
+                _RefreshList();
+            }
+            else
+                clsMessages.OperationFelid("Please check your permissions and try again.");
         }
 
         private void miAssignToSubject_Click(object sender, EventArgs e)

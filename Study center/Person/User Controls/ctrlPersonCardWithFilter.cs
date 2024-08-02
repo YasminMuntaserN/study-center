@@ -102,6 +102,13 @@ namespace Study_center.Person.User_Controls
 
         public clsPerson PersonInfo => ctrlPersonCard1.Person;
 
+        private void _setMainAndPrevious()
+        {
+            ctrlPersonCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCard1.SetPreviousForm(previousForm); // Set the current form as the previous form
+
+        }
+     
         public void LoadPersonInfo(EnSearchCriteria searchCriteria, int? searchValue)
         {
             _selectedID = searchValue;
@@ -136,6 +143,7 @@ namespace Study_center.Person.User_Controls
 
         public void SetSearchCriteria(EnSearchCriteria searchCriteria)
         {
+            _setMainAndPrevious();
             _SearchCriteria = searchCriteria;
 
             cbFilter.Items.Clear();
@@ -193,9 +201,9 @@ namespace Study_center.Person.User_Controls
                     mainMenuForm.ShowFormInPanel(frmAddPerson);
                     break;
                 case EnSearchCriteria.StudentID:
-                    //frmAddStudent frmAddStudent = new frmAddStudent(previousForm, mainMenuForm);
-                    //frmAddStudent.PersonIDBack += DataBackEvent;
-                    //mainMenuForm.ShowFormInPanel(frmAddStudent);
+                    frmAddStudent frmAddStudent = new frmAddStudent( mainMenuForm, previousForm);
+                    frmAddStudent.StudentIDBack += DataBackEvent;
+                    mainMenuForm.ShowFormInPanel(frmAddStudent);
                     break;
                 case EnSearchCriteria.TeacherID:
                     frmAddTeacher frmAddTeacher = new frmAddTeacher();
@@ -221,6 +229,7 @@ namespace Study_center.Person.User_Controls
 
         public void setFilterEnabledAndLoadData(int? personID)
         {
+            _setMainAndPrevious();
             txtFilterValue.Text = personID.ToString();
             //   FilterEnabled = false;
             ctrlPersonCard1.LoadPersonData(personID);

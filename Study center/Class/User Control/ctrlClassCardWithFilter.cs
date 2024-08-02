@@ -1,4 +1,5 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -19,11 +20,32 @@ namespace Study_center.Class.User_Control
     {
         public event EventHandler ClassSelected;
 
+        #region Shown In Main Menu
+        private frmMainMenu mainMenuForm;
+        private Form previousForm;
+        public void SetMainMenuForm(frmMainMenu form)
+        {
+            this.mainMenuForm = form;
+        }
+
+        public void SetPreviousForm(Form form)
+        {
+            this.previousForm = form;
+        }
+
+        private void _setMainAndPrevious()
+        {
+            ctrlClassGard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlClassGard1.SetPreviousForm(previousForm); // Set the current form as the previous form
+
+        }
+        #endregion
+
         public ctrlClassCardWithFilter()
         {
             InitializeComponent();
             ctrlFilter1.SetFilterOptions(new List<string> { "ClassID", "ClassName" });
-            
+
         }
 
         private clsClass _Class;
@@ -34,10 +56,10 @@ namespace Study_center.Class.User_Control
 
         private void ctrlFilter1_AddClicked(object sender, EventArgs e)
         {
-            frmAddClass frmAddClass = new frmAddClass();
+            frmAddClass frmAddClass = new frmAddClass(mainMenuForm, previousForm);
             frmAddClass.ClassIDBack += ctrlClassGard1.LoadClassData;
+            mainMenuForm.ShowFormInPanel(frmAddClass);
             ctrlFilter1.FilterEnabled = false;
-            frmAddClass.ShowDialog();
         }
 
         private void ctrlFilter1_SearchClicked(object sender, EventArgs e)
@@ -73,8 +95,10 @@ namespace Study_center.Class.User_Control
 
         protected virtual void OnClassSelected(EventArgs e)
         {
+            _setMainAndPrevious();
             ClassSelected?.Invoke(this, e);
         }
+
 
     }
 }

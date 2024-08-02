@@ -78,7 +78,7 @@ namespace Study_center.Group
                     case enLoddingAccordingTo.StudentID:
                         ctrlStudentCard1.LoadStudentInfo(selectedStudentID);
                         ctrlGroupCard1.Visible = false;
-                        _FillComboBoxies();
+                        _RefreshList();
                         break;
                 }
             }
@@ -145,10 +145,13 @@ namespace Study_center.Group
 
         private void _RefreshList()
         {
+            _FillComboBoxies(); 
+            
             if (_AccordingTo != enLoddingAccordingTo.StudentID)
+            {
                 selectedStudentID = ctrlStudentCard1.StudentInfo.StudentID;
+            }
 
-            // Fill Groups In DataGridView
             _dtGroups = clsEnrollment.GetAvailableGroupsByStudentID(selectedStudentID);
             dgvList.DataSource = _dtGroups;
         }
@@ -267,7 +270,8 @@ namespace Study_center.Group
         {
             ctrlGroupCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
             ctrlGroupCard1.SetPreviousForm(this); // Set the current form as the previous form
-
+            ctrlStudentCard1.SetMainMenuForm(mainMenuForm); 
+            ctrlStudentCard1.SetPreviousForm(this); 
             _LoadData();
 
         }

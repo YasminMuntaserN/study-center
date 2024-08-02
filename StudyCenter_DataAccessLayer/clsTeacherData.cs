@@ -236,8 +236,8 @@ namespace StudyCenter_DataAccessLayer
           => clsDataAccessHelper.All("SP_TeachersByPage", "PageNumber", pageNumber
              , "PageSize", pageSize);
 
-        public static DataTable GetAllTeachersClasses(int TeacherID)
-          => clsDataAccessHelper.All("SP_GetTeachersInClasses", "TeacherID", TeacherID);
+        public static DataTable GetAllTeachersClasses(int ClassID)
+          => clsDataAccessHelper.All("SP_GetTeachersInClasses", "ClassID", ClassID);
 
 
     }

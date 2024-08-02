@@ -79,7 +79,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(2, 79);
+            guna2Separator1.Location = new Point(39, 79);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(849, 19);
             guna2Separator1.TabIndex = 33;
@@ -105,7 +105,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges7;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(8, 610);
+            guna2GroupBox1.Location = new Point(39, 610);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2GroupBox1.Size = new Size(831, 226);
@@ -325,7 +325,7 @@
             // ctrlPersonCardWithFilter1
             // 
             ctrlPersonCardWithFilter1.FilterEnabled = true;
-            ctrlPersonCardWithFilter1.Location = new Point(8, 104);
+            ctrlPersonCardWithFilter1.Location = new Point(39, 104);
             ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             ctrlPersonCardWithFilter1.Size = new Size(831, 487);
             ctrlPersonCardWithFilter1.TabIndex = 31;
@@ -357,7 +357,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(936, 158);
+            guna2GradientPanel1.Size = new Size(993, 158);
             guna2GradientPanel1.TabIndex = 38;
             // 
             // btnSave
@@ -375,7 +375,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(669, 898);
+            btnSave.Location = new Point(709, 898);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnSave.Size = new Size(232, 50);
@@ -398,7 +398,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(669, 842);
+            btnClose.Location = new Point(709, 842);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnClose.Size = new Size(227, 50);
@@ -410,7 +410,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(850, 956);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2Separator1);

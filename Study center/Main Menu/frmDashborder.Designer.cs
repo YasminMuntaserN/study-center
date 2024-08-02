@@ -48,7 +48,7 @@
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Century", 35.8F, FontStyle.Bold);
             lblDate.ForeColor = Color.DarkCyan;
-            lblDate.Location = new Point(278, 732);
+            lblDate.Location = new Point(274, 692);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(270, 71);
             lblDate.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Century", 35.8F, FontStyle.Bold);
-            lblTime.Location = new Point(349, 816);
+            lblTime.Location = new Point(345, 776);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(270, 71);
             lblTime.TabIndex = 1;

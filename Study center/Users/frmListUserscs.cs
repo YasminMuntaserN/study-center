@@ -100,7 +100,17 @@ namespace Study_center.Users
 
         private void miDelete_Click(object sender, EventArgs e)
         {
+            if (!clsMessages.conformDeleted("User", selectedUserID))
+                return;
 
+            if (clsUser.Delete(selectedUserID))
+            {
+                clsMessages.GeneralSuccessMessage("User");
+
+                _RefreshList();
+            }
+            else
+                clsMessages.OperationFelid("Please check your permissions and try again.");
         }
 
         private void miChangePassword_Click(object sender, EventArgs e)

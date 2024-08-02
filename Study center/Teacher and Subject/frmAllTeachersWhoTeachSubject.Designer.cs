@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblTitle = new Label();
             ctrlListInfo1 = new Global_User_Controls.ctrlListInfo();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -62,19 +62,19 @@
             // 
             guna2GradientPanel1.BorderRadius = 200;
             guna2GradientPanel1.Controls.Add(lblTitle);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges3;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges1;
             guna2GradientPanel1.FillColor = Color.FromArgb(54, 69, 79);
             guna2GradientPanel1.FillColor2 = Color.MediumAquamarine;
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GradientPanel1.Size = new Size(1017, 158);
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GradientPanel1.Size = new Size(1002, 158);
             guna2GradientPanel1.TabIndex = 55;
             // 
             // btnClose
             // 
             btnClose.BorderRadius = 30;
-            btnClose.CustomizableEdges = customizableEdges5;
+            btnClose.CustomizableEdges = customizableEdges3;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -88,7 +88,7 @@
             btnClose.ImageAlign = HorizontalAlignment.Left;
             btnClose.Location = new Point(762, 531);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(227, 50);
             btnClose.TabIndex = 56;
             btnClose.Text = "Close";
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 593);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(ctrlListInfo1);

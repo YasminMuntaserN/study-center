@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(935, 677);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(ctrlUserCard1);
             Controls.Add(guna2GradientPanel1);

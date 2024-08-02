@@ -1,6 +1,9 @@
 ﻿using Study_center.Global_Classes;
+using Study_center.Group.User_Control;
 using Study_center.Main_Menu;
 using Study_center.Person.User_Controls;
+using Study_center.Student.User_Control;
+using studyCenter_BL_;
 using studyCenter_BusineesLayer;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System;
@@ -56,7 +59,7 @@ namespace Study_center.Student
             {
                 lblTitle.Text = "Add New Student";
                 _student = new clsStudent();
-                lblCreatedBy.Text = "Admin";
+                lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
             }
             else
             {
@@ -72,10 +75,8 @@ namespace Study_center.Student
         private void _FillFieldsWithStudentInfo()
         {
             ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID, _student.PersonID);
-
             lblStudentID.Text = _student.StudentID.ToString();
-            //  lblCreatedBy.Text = _student.CreatedByUserInfo?.Username;
-            lblCreatedBy.Text = "Admin";
+            lblCreatedBy.Text = _student.GetUserName;
             txtEmergencyContactPhone.Text = _student.EmergencyContactPhone.ToString();
             cbGradeLevels.SelectedIndex = cbGradeLevels.FindString(clsGradeLevel.GetGradeLevelName(_student.GradeLevelID));
 
@@ -101,7 +102,7 @@ namespace Study_center.Student
         {
             _student.PersonID = _selectedPersonID;
             _student.GradeLevelID = clsGradeLevel.GetGradeLevelID(cbGradeLevels.Text);
-            _student.CreatedByUserID = 1;
+            _student.CreatedByUserID = clsGlobal.CurrentUser.UserID;
             _student.EmergencyContactPhone = txtEmergencyContactPhone.Text;
         }
 
@@ -164,8 +165,10 @@ namespace Study_center.Student
 
         private void frmAddStudent_Load(object sender, EventArgs e)
         {
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCardWithFilter1.SetPreviousForm(this); // Set the current form as the previous form
             _ResetTitles();
-            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.StudentID);
+            ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID);
 
             if (_Mode == enMode.Update)
                 _LoadData();

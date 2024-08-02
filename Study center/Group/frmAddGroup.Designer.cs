@@ -201,7 +201,7 @@
             tpTeacherInfo.Location = new Point(4, 44);
             tpTeacherInfo.Name = "tpTeacherInfo";
             tpTeacherInfo.Padding = new Padding(3);
-            tpTeacherInfo.Size = new Size(939, 728);
+            tpTeacherInfo.Size = new Size(939, 732);
             tpTeacherInfo.TabIndex = 0;
             tpTeacherInfo.Text = "Teacher Info";
             // 
@@ -223,7 +223,7 @@
             tpSubjectInfo.Location = new Point(4, 44);
             tpSubjectInfo.Name = "tpSubjectInfo";
             tpSubjectInfo.Padding = new Padding(3);
-            tpSubjectInfo.Size = new Size(939, 728);
+            tpSubjectInfo.Size = new Size(939, 732);
             tpSubjectInfo.TabIndex = 1;
             tpSubjectInfo.Text = "Subject Info";
             // 
@@ -274,7 +274,7 @@
             tpMeetinTimeInfo.Location = new Point(4, 44);
             tpMeetinTimeInfo.Name = "tpMeetinTimeInfo";
             tpMeetinTimeInfo.Padding = new Padding(3);
-            tpMeetinTimeInfo.Size = new Size(939, 728);
+            tpMeetinTimeInfo.Size = new Size(939, 732);
             tpMeetinTimeInfo.TabIndex = 3;
             tpMeetinTimeInfo.Text = "MeetingTime Info";
             // 
@@ -323,7 +323,7 @@
             tpGroupInfo.Location = new Point(4, 44);
             tpGroupInfo.Name = "tpGroupInfo";
             tpGroupInfo.Padding = new Padding(3);
-            tpGroupInfo.Size = new Size(939, 728);
+            tpGroupInfo.Size = new Size(939, 732);
             tpGroupInfo.TabIndex = 4;
             tpGroupInfo.Text = "Group Info";
             // 
@@ -694,7 +694,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(764, 855);
+            btnClose.Location = new Point(748, 855);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnClose.Size = new Size(227, 50);
@@ -717,7 +717,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(764, 911);
+            btnSave.Location = new Point(743, 911);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSave.Size = new Size(232, 50);
@@ -729,7 +729,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(945, 963);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(TabControl1);

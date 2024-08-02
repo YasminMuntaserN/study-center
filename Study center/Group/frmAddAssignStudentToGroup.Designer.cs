@@ -79,10 +79,10 @@
             guna2TabControl1.Controls.Add(tpTeacherInfo);
             guna2TabControl1.Controls.Add(tpSubjectInfo);
             guna2TabControl1.ItemSize = new Size(180, 40);
-            guna2TabControl1.Location = new Point(0, 84);
+            guna2TabControl1.Location = new Point(0, 66);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
-            guna2TabControl1.Size = new Size(933, 824);
+            guna2TabControl1.Size = new Size(917, 798);
             guna2TabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             guna2TabControl1.TabButtonHoverState.FillColor = Color.FromArgb(40, 52, 70);
             guna2TabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -109,7 +109,7 @@
             tpTeacherInfo.Location = new Point(4, 44);
             tpTeacherInfo.Name = "tpTeacherInfo";
             tpTeacherInfo.Padding = new Padding(3);
-            tpTeacherInfo.Size = new Size(925, 776);
+            tpTeacherInfo.Size = new Size(909, 750);
             tpTeacherInfo.TabIndex = 0;
             tpTeacherInfo.Text = "Student Info";
             tpTeacherInfo.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             // 
             ctrlStudentCard1.Location = new Point(10, 6);
             ctrlStudentCard1.Name = "ctrlStudentCard1";
-            ctrlStudentCard1.Size = new Size(893, 764);
+            ctrlStudentCard1.Size = new Size(893, 739);
             ctrlStudentCard1.TabIndex = 0;
             ctrlStudentCard1.StudentSelected += CtrlStudentCard1_StudentSelected;
             // 
@@ -129,7 +129,7 @@
             tpSubjectInfo.Location = new Point(4, 44);
             tpSubjectInfo.Name = "tpSubjectInfo";
             tpSubjectInfo.Padding = new Padding(3);
-            tpSubjectInfo.Size = new Size(925, 776);
+            tpSubjectInfo.Size = new Size(909, 750);
             tpSubjectInfo.TabIndex = 1;
             tpSubjectInfo.Text = "Group Info";
             tpSubjectInfo.UseVisualStyleBackColor = true;
@@ -161,6 +161,9 @@
             // 
             // dgvList
             // 
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
@@ -169,11 +172,11 @@
             dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvList.ColumnHeadersHeight = 4;
+            dgvList.ColumnHeadersHeight = 30;
             dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -184,12 +187,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvList.DefaultCellStyle = dataGridViewCellStyle3;
             dgvList.GridColor = Color.FromArgb(231, 229, 255);
-            dgvList.Location = new Point(31, 197);
+            dgvList.Location = new Point(17, 216);
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
-            dgvList.RowHeadersWidth = 51;
-            dgvList.Size = new Size(855, 396);
-            dgvList.TabIndex = 78;
+            dgvList.RowHeadersWidth = 30;
+            dgvList.Size = new Size(884, 396);
+            dgvList.TabIndex = 112;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -202,7 +205,7 @@
             dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvList.ThemeStyle.HeaderStyle.Height = 4;
+            dgvList.ThemeStyle.HeaderStyle.Height = 30;
             dgvList.ThemeStyle.ReadOnly = false;
             dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -359,7 +362,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(29, 68);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(918, 76);
+            lblTitle.Size = new Size(918, 59);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Assign Student to Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -374,7 +377,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(1009, 158);
+            guna2GradientPanel1.Size = new Size(1009, 140);
             guna2GradientPanel1.TabIndex = 58;
             // 
             // btnClose
@@ -392,7 +395,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(742, 910);
+            btnClose.Location = new Point(742, 866);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnClose.Size = new Size(227, 50);
@@ -415,7 +418,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(742, 966);
+            btnSave.Location = new Point(737, 922);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnSave.Size = new Size(232, 50);
@@ -427,11 +430,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 1016);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
+            Controls.Add(guna2TabControl1);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(btnSave);
-            Controls.Add(guna2TabControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAddAssignStudentToGroup";
             StartPosition = FormStartPosition.CenterScreen;
@@ -464,9 +467,9 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Label label1;
         private User_Control.ctrlGroupCard ctrlGroupCard1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
     }
 }

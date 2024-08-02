@@ -366,7 +366,7 @@
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 30;
-            dgvList.Size = new Size(884, 396);
+            dgvList.Size = new Size(907, 396);
             dgvList.TabIndex = 111;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -394,7 +394,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(951, 842);
+            ClientSize = new Size(957, 842);
             Controls.Add(dgvList);
             Controls.Add(label3);
             Controls.Add(txtFilterBy);

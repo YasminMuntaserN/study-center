@@ -29,6 +29,13 @@ namespace Study_center.Teacher
         {
             this.previousForm = form;
         }
+
+        private void _setMainAndPrevious()
+        {
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCardWithFilter1.SetPreviousForm(previousForm); // Set the current form as the previous form
+
+        }
         #endregion
 
         public event EventHandler TeacherSelected;
@@ -41,10 +48,12 @@ namespace Study_center.Teacher
         {
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
+            if(_Teacher == null) llEditTeacherInfo.Enabled = false;
         }
 
         private void FillTeacherInfoInFields()
         {
+            llEditTeacherInfo.Enabled = true;
             ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Teacher.PersonID);
             lblTeacherID.Text = _Teacher.TeacherID.ToString();
             lblHireDate.Text = _Teacher.HireDate.ToString("yyyy-MM-dd");
@@ -55,6 +64,7 @@ namespace Study_center.Teacher
 
         public void LoadTeacherInfo(int? teacherID)
         {
+            _setMainAndPrevious();
             _Teacher = clsTeacher.Find(teacherID, clsTeacher.EnFindTeacherBy.TeacherID);
 
             if (_Teacher == null)
@@ -68,6 +78,7 @@ namespace Study_center.Teacher
 
         public void LoadTeacherInfoByPerson(int? personID)
         {
+            _setMainAndPrevious();
             _Teacher = clsTeacher.Find(personID, clsTeacher.EnFindTeacherBy.PersonID);
 
             if (_Teacher == null)

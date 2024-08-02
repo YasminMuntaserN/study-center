@@ -43,7 +43,7 @@ namespace Study_center.Student
             _dtList = clsStudent.GetStudentsByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = (dgvList.Rows.Count-1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -66,7 +66,7 @@ namespace Study_center.Student
         #region Fill comboBoxies
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtFilterBy.Visible = (cbFilter.Text == "Student ID" || cbFilter.Text == "StudentName" || cbFilter.Text == "Age");
+            txtFilterBy.Visible = (cbFilter.Text == "StudentID" || cbFilter.Text == "StudentName" || cbFilter.Text == "Age");
             cbGender.Visible = (cbFilter.Text == "Gender");
             cbGrades.Visible = (cbFilter.Text == "Grade");
 
@@ -159,7 +159,17 @@ namespace Study_center.Student
 
         private void miDelete_Click(object sender, EventArgs e)
         {
+            if (!clsMessages.conformDeleted("Student", selectedStudentID))
+                return;
 
+            if (clsStudent.Delete(selectedStudentID))
+            {
+                clsMessages.GeneralSuccessMessage("Student");
+
+                _RefreshList();
+            }
+            else
+                clsMessages.OperationFelid("Please check your permissions and try again.");
         }
 
         private void miAssignToGroup_Click(object sender, EventArgs e)

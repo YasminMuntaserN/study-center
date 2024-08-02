@@ -29,8 +29,16 @@ namespace Study_center.Student.User_Control
         {
             this.previousForm = form;
         }
+
+        private void _setMainAndPrevious()
+        {
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCardWithFilter1.SetPreviousForm(previousForm); // Set the current form as the previous form
+
+        }
         #endregion
 
+        // Define an Action delegate to hold the callback function
         public event EventHandler StudentSelected;
 
         private clsStudent _Student;
@@ -41,11 +49,12 @@ namespace Study_center.Student.User_Control
         {
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.StudentID);
-
+            llEditStudentInfo.Enabled = false;
         }
 
         private void FillStudentInfoInFelids()
         {
+            llEditStudentInfo.Enabled = true;
             ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Student.PersonID);
             lblStudentID.Text = _Student.StudentID.ToString();
             lblGradeLevel.Text = clsGradeLevel.GetGradeLevelName(_Student.GradeLevelID);
@@ -88,6 +97,8 @@ namespace Study_center.Student.User_Control
 
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, Study_center.Person.User_Controls.ctrlPersonCardWithFilter.SelectPersonEventArgs e)
         {
+            _setMainAndPrevious();
+
             if (e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.PersonID)
             {
                 LoadStudentInfoByPerson(ctrlPersonCardWithFilter1.GetSelectedID);

@@ -183,7 +183,17 @@ namespace Study_center.Group
 
         private void miDelete_Click(object sender, EventArgs e)
         {
+            if (!clsMessages.conformDeleted("Group", selectedGroupID))
+                return;
 
+            if (clsGroup.Delete(selectedGroupID))
+            {
+                clsMessages.GeneralSuccessMessage("Group");
+
+                _RefreshList();
+            }
+            else
+                clsMessages.OperationFelid("Please check your permissions and try again.");
         }
 
         private void miAddStudent_Click(object sender, EventArgs e)

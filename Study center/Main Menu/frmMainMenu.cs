@@ -45,13 +45,6 @@ namespace Study_center.Main_Menu
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
-            // Check if the form size is greater than 895x594
-            if (form.Width > 1000 || form.Height > 700)
-            {
-                // Set the panel location to (50, 70)
-                this.guna2CustomGradientPanel1.Location = new Point(90, 46);
-            }
-            this.guna2CustomGradientPanel1.Size = form.Size;
             this.guna2CustomGradientPanel1.Controls.Clear();
             this.guna2CustomGradientPanel1.Controls.Add(form);
             form.Show();

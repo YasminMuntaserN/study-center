@@ -189,7 +189,7 @@ namespace Study_center
             }
             else
             {
-                mainMenuForm.ShowFormInPanel(mainMenuForm);
+                mainMenuForm.ShowFormInPanel(new frmDashborder());
             }
         }
 

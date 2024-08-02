@@ -1,6 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Study_center.Global_Classes;
 using Study_center.Main_Menu;
+using Study_center.Person.User_Controls;
 using studyCenter_BL_;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Study_center.Class.User_Control
         public ctrlClassGard()
         {
             InitializeComponent();
+            if (!_ClassID.HasValue) llEditClassInfo.Enabled = false;
         }
 
         #region Shown In Main Menu
@@ -37,10 +39,12 @@ namespace Study_center.Class.User_Control
         {
             this.previousForm = form;
         }
+
         #endregion
 
         private void _FillClassDetails()
         {
+            llEditClassInfo.Enabled = true;
             lblClassID.Text = _ClassID.ToString();
             lblClassName.Text = _Class.ClassName;
             lblCapacity.Text =_Class.Capacity.ToString();
@@ -76,13 +80,13 @@ namespace Study_center.Class.User_Control
 
            
             _Class = clsClass.Find(className);
-            _ClassID = _Class.ClassID;
 
             if (_Class == null)
             {
                 clsMessages.GeneralErrorMessage($"Cannot find class with ID {_ClassID}");
                 return;
             }
+            _ClassID = _Class.ClassID;
 
             _FillClassDetails();
         }

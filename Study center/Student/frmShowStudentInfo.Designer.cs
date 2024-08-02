@@ -43,7 +43,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(-2, 86);
+            guna2Separator1.Location = new Point(21, 84);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(882, 17);
             guna2Separator1.TabIndex = 32;
@@ -62,7 +62,7 @@
             // 
             // ctrlStudentCard1
             // 
-            ctrlStudentCard1.Location = new Point(-2, 109);
+            ctrlStudentCard1.Location = new Point(21, 109);
             ctrlStudentCard1.Name = "ctrlStudentCard1";
             ctrlStudentCard1.Size = new Size(882, 768);
             ctrlStudentCard1.TabIndex = 33;
@@ -77,8 +77,9 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(952, 158);
+            guna2GradientPanel1.Size = new Size(1007, 158);
             guna2GradientPanel1.TabIndex = 67;
+            guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
             // 
             // btnClose
             // 
@@ -95,7 +96,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(685, 874);
+            btnClose.Location = new Point(722, 883);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(227, 50);
@@ -107,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(883, 925);
+            ClientSize = new Size(923, 976);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(ctrlStudentCard1);

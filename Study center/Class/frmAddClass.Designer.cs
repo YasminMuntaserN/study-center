@@ -258,7 +258,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(988, 158);
+            guna2GradientPanel1.Size = new Size(1020, 158);
             guna2GradientPanel1.TabIndex = 60;
             // 
             // btnClose
@@ -276,7 +276,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(698, 425);
+            btnClose.Location = new Point(738, 425);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnClose.Size = new Size(227, 50);
@@ -299,7 +299,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(698, 481);
+            btnSave.Location = new Point(738, 481);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSave.Size = new Size(232, 50);
@@ -312,7 +312,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(899, 538);
+            ClientSize = new Size(933, 963);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

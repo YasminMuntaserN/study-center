@@ -53,7 +53,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(52, 73);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(934, 85);
+            lblTitle.Size = new Size(945, 85);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "All Students in Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -86,7 +86,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(739, 529);
+            btnClose.Location = new Point(730, 529);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(227, 50);
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 594);
+            ClientSize = new Size(915, 976);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(ctrlListInfo1);

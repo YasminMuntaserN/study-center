@@ -1,5 +1,7 @@
-﻿using StudyCenter_DataAccessLayer;
+﻿using studyCenter_BL_;
+using StudyCenter_DataAccessLayer;
 using System.Data;
+using static studyCenter_BL_.clsUser;
 
 namespace studyCenter_BusineesLayer
 {
@@ -14,6 +16,8 @@ namespace studyCenter_BusineesLayer
         public string EmergencyContactPhone { get; set; }
         public int? CreatedByUserID { get; set; }
         public DateTime EnrollmentDate { get; set; }
+
+        public string GetUserName => clsUser.Find(CreatedByUserID, EnFindUserBy.UserID).UserName;
 
         public clsStudent() : base()
         {

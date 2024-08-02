@@ -149,6 +149,7 @@
             // btnaAdd
             // 
             btnaAdd.CheckedState.ImageSize = new Size(64, 64);
+            btnaAdd.Enabled = false;
             btnaAdd.HoverState.ImageSize = new Size(64, 64);
             btnaAdd.Image = Properties.Resources.add;
             btnaAdd.ImageOffset = new Point(0, 0);
