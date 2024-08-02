@@ -104,7 +104,7 @@
             btnSubjects = new Guna.UI2.WinForms.Guna2Button();
             btnSettings = new Guna.UI2.WinForms.Guna2Button();
             btnPayments = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             lblUserName = new Label();
             lblEmail = new Label();
@@ -782,35 +782,36 @@
             btnPayments.Text = "  Payments";
             btnPayments.Click += btnPayments_Click;
             // 
-            // guna2Button9
+            // btnLogOut
             // 
-            guna2Button9.BorderColor = Color.MediumAquamarine;
-            guna2Button9.CheckedState.BorderColor = Color.SteelBlue;
-            guna2Button9.CheckedState.CustomBorderColor = Color.SteelBlue;
-            guna2Button9.CheckedState.ForeColor = Color.Black;
-            guna2Button9.CustomBorderColor = Color.Transparent;
-            guna2Button9.CustomBorderThickness = new Padding(0, 0, 0, 5);
-            guna2Button9.CustomizableEdges = customizableEdges32;
-            guna2Button9.DisabledState.BorderColor = Color.SteelBlue;
-            guna2Button9.DisabledState.CustomBorderColor = Color.SteelBlue;
-            guna2Button9.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button9.DisabledState.ForeColor = Color.Black;
-            guna2Button9.FillColor = Color.Transparent;
-            guna2Button9.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button9.ForeColor = Color.White;
-            guna2Button9.HoverState.BorderColor = Color.SteelBlue;
-            guna2Button9.HoverState.CustomBorderColor = Color.MediumAquamarine;
-            guna2Button9.HoverState.FillColor = SystemColors.Control;
-            guna2Button9.HoverState.ForeColor = Color.Black;
-            guna2Button9.Image = Properties.Resources.logout__2_;
-            guna2Button9.ImageAlign = HorizontalAlignment.Left;
-            guna2Button9.ImageSize = new Size(30, 30);
-            guna2Button9.Location = new Point(2, 942);
-            guna2Button9.Name = "guna2Button9";
-            guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges33;
-            guna2Button9.Size = new Size(330, 60);
-            guna2Button9.TabIndex = 10;
-            guna2Button9.Text = "  Log Out";
+            btnLogOut.BorderColor = Color.MediumAquamarine;
+            btnLogOut.CheckedState.BorderColor = Color.SteelBlue;
+            btnLogOut.CheckedState.CustomBorderColor = Color.SteelBlue;
+            btnLogOut.CheckedState.ForeColor = Color.Black;
+            btnLogOut.CustomBorderColor = Color.Transparent;
+            btnLogOut.CustomBorderThickness = new Padding(0, 0, 0, 5);
+            btnLogOut.CustomizableEdges = customizableEdges32;
+            btnLogOut.DisabledState.BorderColor = Color.SteelBlue;
+            btnLogOut.DisabledState.CustomBorderColor = Color.SteelBlue;
+            btnLogOut.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogOut.DisabledState.ForeColor = Color.Black;
+            btnLogOut.FillColor = Color.Transparent;
+            btnLogOut.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.ForeColor = Color.White;
+            btnLogOut.HoverState.BorderColor = Color.SteelBlue;
+            btnLogOut.HoverState.CustomBorderColor = Color.MediumAquamarine;
+            btnLogOut.HoverState.FillColor = SystemColors.Control;
+            btnLogOut.HoverState.ForeColor = Color.Black;
+            btnLogOut.Image = Properties.Resources.logout__2_;
+            btnLogOut.ImageAlign = HorizontalAlignment.Left;
+            btnLogOut.ImageSize = new Size(30, 30);
+            btnLogOut.Location = new Point(2, 942);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            btnLogOut.Size = new Size(330, 60);
+            btnLogOut.TabIndex = 10;
+            btnLogOut.Text = "  Log Out";
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // guna2Separator1
             // 
@@ -875,6 +876,7 @@
             btnReserveSeat.Size = new Size(258, 30);
             btnReserveSeat.TabIndex = 0;
             btnReserveSeat.Text = "Reserve a seat";
+            btnReserveSeat.Click += btnReserveSeat_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -898,7 +900,7 @@
             Controls.Add(lblEmail);
             Controls.Add(lblUserName);
             Controls.Add(guna2Separator1);
-            Controls.Add(guna2Button9);
+            Controls.Add(btnLogOut);
             Controls.Add(btnSettings);
             Controls.Add(btnPayments);
             Controls.Add(guna2Button4);
@@ -934,7 +936,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSubjects;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button btnPayments;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Label lblStudentCount;
         private Label label1;
         private Guna.UI2.WinForms.Guna2ImageButton btnAddPayment;

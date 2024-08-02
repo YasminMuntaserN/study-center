@@ -40,7 +40,7 @@ namespace Study_center.Group
             _dtList = clsGroup.GetGroupsByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void _Search(string searchBy, Guna2ComboBox comboBox)
@@ -155,7 +155,7 @@ namespace Study_center.Group
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-                lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+                lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
 
                 return;
             }
@@ -166,7 +166,7 @@ namespace Study_center.Group
                 _dtList.DefaultView.RowFilter = string.Format("[{0}] = {1}", "GroupID", txtFilterBy.Text.Trim());
             }
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void miShowGroupsDetails_Click(object sender, EventArgs e)

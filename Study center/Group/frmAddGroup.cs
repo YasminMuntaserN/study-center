@@ -40,12 +40,15 @@ namespace Study_center.Group
 
         private clsGroup _Group;
 
-        public frmAddGroup( frmMainMenu mainMenuForm = null, Form previousForm = null)
+        private int _classFlag;
+
+        public frmAddGroup( frmMainMenu mainMenuForm = null, Form previousForm = null, int classID = -1)
         {
             this.previousForm = previousForm;
             this.mainMenuForm = mainMenuForm;
             InitializeComponent();
             _Mode = enMode.Add;
+            _classFlag = classID;
         }
 
         public frmAddGroup(int? GroupID, frmMainMenu mainMenuForm = null, Form previousForm = null)
@@ -115,6 +118,16 @@ namespace Study_center.Group
             _Group.ClassID = _selectedClassID;
             _Group.MeetingTimeID = _selectedMeetingTimeID;
             _Group.IsActive = true;
+        }
+
+        private void _checkFlag()
+        {
+            if(_classFlag != -1)
+            {
+                ctrlClassCardWithFilter1.LoadData(_classFlag);
+                _selectedClassID = _classFlag;
+                ctrlClassCardWithFilter1.FilterEnabled();
+            }
         }
 
         #region  Event handler
@@ -193,6 +206,8 @@ namespace Study_center.Group
             ctrlListInfo2.SetPreviousForm(this);
             ctrlTeacherCard1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
             ctrlTeacherCard1.SetPreviousForm(this);
+
+            _checkFlag();
 
             // Fill the data after the form is loaded
             _FillListData();

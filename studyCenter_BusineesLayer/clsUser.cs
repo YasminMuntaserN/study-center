@@ -16,7 +16,7 @@ namespace studyCenter_BL_
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode { get; set; } = enMode.AddNew;
-        public enum EnFindUserBy { PersonID = 0, UserID = 1 }
+        public enum EnFindUserBy { PersonID = 0, UserID = 1 , UserNameAndPassword=2}
         public int? UserID { get; set; }
         public int? PersonID { get; set; }
         public string UserName { get; set; }
@@ -121,7 +121,27 @@ namespace studyCenter_BL_
             return null;
         }
 
-        public static clsUser Find<T>(T searchValue, EnFindUserBy findUserBy)
+        private static clsUser _FindByUserNameAndPassword(string userName , string password)
+        {
+            int? personID = null;
+            int? userID = null;
+            bool isActive = false;
+
+            bool isFound = clsUserData.GetInfoByUserNameAndPassword(userName,password, ref userID, ref personID,ref isActive);
+            if (isFound)
+            {
+                clsPerson person = clsPerson.Find(personID);
+
+                if (person == null)
+                    return null;
+
+                return new clsUser(userID, personID, userName, password, isActive, person.FirstName, person.LastName, person.Gender,
+                                    person.BirthDate, person.Phone, person.Email, person.Address);
+            }
+            return null;
+        }
+
+        public static clsUser Find<T>(T searchValue, EnFindUserBy findUserBy, T SecoundsearchValue = default(T))
         {
             switch (findUserBy)
             {
@@ -131,6 +151,8 @@ namespace studyCenter_BL_
                 case EnFindUserBy.UserID:
                     return _FindByUserID(Convert.ToInt32(searchValue));
 
+                case EnFindUserBy.UserNameAndPassword:
+                    return _FindByUserNameAndPassword(Convert.ToString(searchValue), Convert.ToString(SecoundsearchValue));
                 default:
                     return null;
             }

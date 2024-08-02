@@ -58,7 +58,7 @@
             Controls.Add(ctrlClassGard1);
             Name = "ctrlClassCardWithFilter";
             Size = new Size(891, 355);
-                     ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

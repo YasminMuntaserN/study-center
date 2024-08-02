@@ -188,6 +188,45 @@ namespace StudyCenter_DAL_
             return isFound;
         }
 
+        public static bool GetInfoByUserNameAndPassword( string UserName,  string password, ref int? userID, ref int? personID,  ref bool isActive)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SP_GetUserInfoByIserNameAndPassword", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@UserName", UserName);
+                        command.Parameters.AddWithValue("@Password", password);
+
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                userID = reader["UserID"] as int?;
+                                personID = reader["PersonID"] as int?;
+                                isActive = (bool)reader["IsActive"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log error (implement logging as per your requirements)
+                Console.WriteLine(ex.Message);
+            }
+
+            return isFound;
+        }
+
         public static bool Exists(int userID) => clsDataAccessHelper.Exists("SP_DoesUserExistByID", "UserID", userID);
 
         public static bool DoesUserExist(string UserName) => clsDataAccessHelper.Exists("SP_DoesUserExistByUserName", "UserName", UserName);

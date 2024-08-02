@@ -1,12 +1,14 @@
 using Study_center.Class;
 using Study_center.Grade_Level_Subject;
 using Study_center.Group;
+using Study_center.Log_in;
 using Study_center.Main_Menu;
 using Study_center.Meeting_Times;
 using Study_center.Student;
 using Study_center.Subjects;
 using Study_center.Teacher;
 using Study_center.Teacher_and_Subject;
+using Study_center.Users;
 using studyCenter_BusineesLayer;
 using System.Security.Cryptography;
 namespace Study_center
@@ -23,7 +25,7 @@ namespace Study_center
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //  Application.Run(new frmAddAssignStudentToGroup(2 ,frmAddAssignStudentToGroup.enLoddingAccordingTo.StudentID));
-            Application.Run(new frmMainMenu());
+            Application.Run(new frmLogIn());
             
         }
     }

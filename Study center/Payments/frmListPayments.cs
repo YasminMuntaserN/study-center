@@ -43,7 +43,7 @@ namespace Study_center.Payments
             _dtList = clsPayment.GetPaymentsByPage((int)NUMPageNumber.Value, totalRows);
             dgvList.DataSource = _dtList;
 
-            lblRecordsNum.Text = (dgvList.Rows.Count-1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void NUMPageNumber_ValueChanged(object sender, EventArgs e) => _RefreshList();
@@ -61,7 +61,7 @@ namespace Study_center.Payments
             if (string.IsNullOrWhiteSpace(txtFilterBy.Text.Trim()) || cbFilter.Text == "None")
             {
                 _dtList.DefaultView.RowFilter = "";
-               lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+               lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
 
                 return;
             }
@@ -69,7 +69,7 @@ namespace Study_center.Payments
             // search with numbers
             _dtList.DefaultView.RowFilter = string.Format("[{0}] = {1}", $"{cbFilter.Text.Trim()}", txtFilterBy.Text.Trim());
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         private void miShowGroupsDetails_Click(object sender, EventArgs e)

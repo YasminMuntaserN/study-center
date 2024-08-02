@@ -49,7 +49,7 @@ namespace Study_center.Global_User_Controls
         private int? _storedGroupID;
 
 
-        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2 ,students = 3, Classes = 4 }
+        private enum enItemTypes { Subjects = 0, Teachers = 1, MeetingTimes = 2, students = 3, Classes = 4 }
         private enItemTypes _Type;
 
         public ctrlListInfo()
@@ -59,8 +59,8 @@ namespace Study_center.Global_User_Controls
 
         public void RefreshDataGridView()
         {
-            dgvGradeLevelSubjects.DataSource = null;
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = null;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
@@ -76,7 +76,7 @@ namespace Study_center.Global_User_Controls
                 lblListName.Text = string.Concat("Subjects Taught By Teacher", ' ', prefix, ' ', teacherInfo.FullName);
             }
             _List = clsTeacherSubject.GetSubjectsByTeacherID(TeacherID);
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedTeacherID = TeacherID;
         }
@@ -92,7 +92,7 @@ namespace Study_center.Global_User_Controls
             }
             lblListName.Text = string.Concat("All Students In Group => ", clsGroup.GetGroupName(GroupID));
             _List = clsGroup.GetStudentsInGroup(GroupID);
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedGroupID = GroupID;
         }
@@ -115,7 +115,7 @@ namespace Study_center.Global_User_Controls
                 lblListName.Text = string.Concat("Classes Are Taught By Teacher", ' ', prefix, ' ', teacherInfo.FullName);
             }
             _List = clsTeacher.GetAllTeachersClasses(TeacherID);
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
         }
 
@@ -140,7 +140,7 @@ namespace Study_center.Global_User_Controls
             lblListName.Text = $"Teachers Who Teach Subject {gradeLevelSubjectInfo.Title}";
 
             _List = clsTeacherSubject.GetTeachersBySubject(gradeLevelSubjectInfo.SubjectID);
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedGradeLevelSubjectID = GradeLevelSubjectID;
         }
@@ -162,29 +162,29 @@ namespace Study_center.Global_User_Controls
             lblListName.Text = $"Available Meeting Times";
 
             _List = clsGroup.GetAvailableMeetingTimes(classID, TeacherID);
-            dgvGradeLevelSubjects.DataSource = _List;
+            dgvList.DataSource = _List;
             lblRecordsNum.Text = _List.Rows.Count.ToString();
             _storedTeacherID = TeacherID; _storedClassID = classID;
             return _List;
         }
 
-        private void dgvGradeLevelSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 switch (_Type)
                 {
                     case enItemTypes.Subjects:
-                        _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["GradeLevelSubjectID"].Value;
+                        _ID = (int)dgvList.Rows[e.RowIndex].Cells["GradeLevelSubjectID"].Value;
                         break;
                     case enItemTypes.Teachers:
-                        _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["TeacherID"].Value;
+                        _ID = (int)dgvList.Rows[e.RowIndex].Cells["TeacherID"].Value;
                         break;
                     case enItemTypes.MeetingTimes:
-                        _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["MeetingTimeID"].Value;
+                        _ID = (int)dgvList.Rows[e.RowIndex].Cells["MeetingTimeID"].Value;
                         break;
                     case enItemTypes.students:
-                        _ID = (int)dgvGradeLevelSubjects.Rows[e.RowIndex].Cells["StudentID"].Value;
+                        _ID = (int)dgvList.Rows[e.RowIndex].Cells["StudentID"].Value;
                         break;
                 }
                 SelectedItem?.Invoke(this, EventArgs.Empty);
@@ -210,7 +210,7 @@ namespace Study_center.Global_User_Controls
 
         private void _GetTeacherIDFromFindTeacherForm(int? teacherID)
         {
-            _storedTeacherID = teacherID;   
+            _storedTeacherID = teacherID;
 
             if (clsTeacherSubject.IsTeachingSubject(teacherID, _storedGradeLevelSubjectID))
             {
@@ -224,7 +224,7 @@ namespace Study_center.Global_User_Controls
                 _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
             }
         }
-      
+
         #endregion
 
         private void btnaAdd_Click(object sender, EventArgs e)
@@ -244,13 +244,13 @@ namespace Study_center.Global_User_Controls
                     break;
 
                 case enItemTypes.MeetingTimes:
-                    frmAddMeetingTime time = new frmAddMeetingTime( mainMenuForm, previousForm);
+                    frmAddMeetingTime time = new frmAddMeetingTime(mainMenuForm, previousForm);
                     mainMenuForm.ShowFormInPanel(time);
                     _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;
                 case enItemTypes.students:
                     frmAddAssignStudentToGroup assign = new frmAddAssignStudentToGroup(_storedGroupID
-                        ,frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID,previousForm ,mainMenuForm);
+                        , frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID, previousForm, mainMenuForm);
                     mainMenuForm.ShowFormInPanel(assign);
                     _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;

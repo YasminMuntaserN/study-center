@@ -35,19 +35,19 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            dgvList = new Guna.UI2.WinForms.Guna2DataGridView();
             lblListName = new Label();
-            dgvGradeLevelSubjects = new Guna.UI2.WinForms.Guna2DataGridView();
             label2 = new Label();
             lblRecordsNum = new Label();
             btnaAdd = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).BeginInit();
             SuspendLayout();
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.Controls.Add(dgvList);
             guna2GroupBox1.Controls.Add(lblListName);
-            guna2GroupBox1.Controls.Add(dgvGradeLevelSubjects);
             guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GroupBox1.ForeColor = Color.Black;
@@ -56,6 +56,63 @@
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GroupBox1.Size = new Size(924, 337);
             guna2GroupBox1.TabIndex = 54;
+            // 
+            // dgvList
+            // 
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvList.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvList.ColumnHeadersHeight = 30;
+            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvList.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvList.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.Location = new Point(3, 43);
+            dgvList.Name = "dgvList";
+            dgvList.RowHeadersVisible = false;
+            dgvList.RowHeadersWidth = 30;
+            dgvList.Size = new Size(918, 291);
+            dgvList.TabIndex = 111;
+            dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvList.ThemeStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvList.ThemeStyle.HeaderStyle.Height = 30;
+            dgvList.ThemeStyle.ReadOnly = false;
+            dgvList.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvList.ThemeStyle.RowsStyle.Height = 29;
+            dgvList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvList.CellContentClick += dgvList_CellContentClick_1;
             // 
             // lblListName
             // 
@@ -66,58 +123,6 @@
             lblListName.Size = new Size(650, 40);
             lblListName.TabIndex = 52;
             lblListName.Text = "List Name";
-            // 
-            // dgvGradeLevelSubjects
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvGradeLevelSubjects.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.MediumAquamarine;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvGradeLevelSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvGradeLevelSubjects.ColumnHeadersHeight = 4;
-            dgvGradeLevelSubjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvGradeLevelSubjects.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvGradeLevelSubjects.GridColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.Location = new Point(3, 43);
-            dgvGradeLevelSubjects.Name = "dgvGradeLevelSubjects";
-            dgvGradeLevelSubjects.RowHeadersVisible = false;
-            dgvGradeLevelSubjects.RowHeadersWidth = 51;
-            dgvGradeLevelSubjects.Size = new Size(916, 291);
-            dgvGradeLevelSubjects.TabIndex = 51;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgvGradeLevelSubjects.ThemeStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.BackColor = Color.DarkCyan;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvGradeLevelSubjects.ThemeStyle.HeaderStyle.Height = 4;
-            dgvGradeLevelSubjects.ThemeStyle.ReadOnly = false;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.Height = 29;
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvGradeLevelSubjects.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvGradeLevelSubjects.CellContentClick += dgvGradeLevelSubjects_CellContentClick;
             // 
             // label2
             // 
@@ -167,7 +172,7 @@
             Name = "ctrlListInfo";
             Size = new Size(924, 469);
             guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvGradeLevelSubjects).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvList).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -176,9 +181,9 @@
 
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Label lblListName;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvGradeLevelSubjects;
         private Label label2;
         private Label lblRecordsNum;
         private Guna.UI2.WinForms.Guna2ImageButton btnaAdd;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvList;
     }
 }

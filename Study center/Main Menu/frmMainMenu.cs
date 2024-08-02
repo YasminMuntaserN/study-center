@@ -1,7 +1,9 @@
 ﻿using Guna.UI2.WinForms;
 using Study_center.Class;
+using Study_center.Global_Classes;
 using Study_center.Grade_Level_Subject;
 using Study_center.Group;
+using Study_center.Log_in;
 using Study_center.Meeting_Times;
 using Study_center.Payments;
 using Study_center.Student;
@@ -29,8 +31,11 @@ namespace Study_center.Main_Menu
 
         private Button btnShowPeopleList;
 
-        public frmMainMenu()
+        private frmLogIn _loginScreen;
+
+        public frmMainMenu(frmLogIn login)
         {
+            _loginScreen = login;
             mainPanel = this.guna2CustomGradientPanel1;
             InitializeComponent();
         }
@@ -159,5 +164,14 @@ namespace Study_center.Main_Menu
         {
             ShowFormInPanel(new frmListUserscs(this));
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            clsGlobal.CurrentUser = null;
+            _loginScreen.Show();
+            this.Close();
+        }
+
+        private void btnReserveSeat_Click(object sender, EventArgs e) => btnAddStudent.PerformClick();
     }
 }

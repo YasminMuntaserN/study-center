@@ -23,11 +23,14 @@ namespace Study_center.Class.User_Control
         {
             InitializeComponent();
             ctrlFilter1.SetFilterOptions(new List<string> { "ClassID", "ClassName" });
+            
         }
 
         private clsClass _Class;
 
         public clsClass ClassInfo => _Class;
+
+        public void FilterEnabled() => ctrlFilter1.FilterEnabled = false;
 
         private void ctrlFilter1_AddClicked(object sender, EventArgs e)
         {
@@ -72,7 +75,6 @@ namespace Study_center.Class.User_Control
         {
             ClassSelected?.Invoke(this, e);
         }
-
 
     }
 }
