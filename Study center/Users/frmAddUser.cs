@@ -214,6 +214,9 @@ namespace Study_center.Users
 
         private void frmAddUser_Load(object sender, EventArgs e)
         {
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm);
+            ctrlPersonCardWithFilter1.SetPreviousForm(this);
+
             _ResetTitles();
 
             if (_Mode == enMode.Update)

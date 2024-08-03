@@ -159,6 +159,7 @@ namespace Study_center.Group
         // Event handler when a class is selected in the user control
         private void CtrlClassCardWithFilter1_ClassSelected(object sender, EventArgs e)
         {
+            if (ctrlClassCardWithFilter1.ClassInfo == null) return;
             _selectedClassID = ctrlClassCardWithFilter1.ClassInfo.ClassID;
             lblClasssID.Text = _selectedClassID.ToString();
             // Refresh the meeting times based on the selected class and teacher

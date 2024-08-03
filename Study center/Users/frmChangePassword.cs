@@ -38,6 +38,10 @@ namespace Study_center.Users
 
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
+            ctrlUserCard1.SetPreviousForm(this);
+            ctrlUserCard1.SetMainMenuForm(mainMenuForm);
+
+
             _User = clsUser.Find(_UserID, clsUser.EnFindUserBy.UserID);
 
             if (_User == null)
@@ -52,6 +56,7 @@ namespace Study_center.Users
         private void _ChangePassword()
         {
             _User.Password = clsGlobal.ComputeHash(txtPassword.Text.Trim());
+
             if (_User.Save())
             {
                 clsMessages.GeneralSuccessMessage("Password Changed Successfully.");
@@ -159,12 +164,15 @@ namespace Study_center.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (!this.ValidateChildren())
             {
                 clsMessages.ValidationErrorMessage();
                 return;
             }
             _ChangePassword();
+
+
         }
 
         private void frmChangePassword_FormClosed(object sender, FormClosedEventArgs e)

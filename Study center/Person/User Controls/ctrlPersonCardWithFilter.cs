@@ -201,14 +201,14 @@ namespace Study_center.Person.User_Controls
                     mainMenuForm.ShowFormInPanel(frmAddPerson);
                     break;
                 case EnSearchCriteria.StudentID:
-                    frmAddStudent frmAddStudent = new frmAddStudent( mainMenuForm, previousForm);
+                    frmAddStudent frmAddStudent = new frmAddStudent(mainMenuForm, previousForm);
                     frmAddStudent.StudentIDBack += DataBackEvent;
                     mainMenuForm.ShowFormInPanel(frmAddStudent);
                     break;
                 case EnSearchCriteria.TeacherID:
-                    frmAddTeacher frmAddTeacher = new frmAddTeacher();
+                    frmAddTeacher frmAddTeacher = new frmAddTeacher(mainMenuForm, previousForm);
                     frmAddTeacher.TeacherIDBack += DataBackEventTeacher;
-                    frmAddTeacher.ShowDialog();
+                    mainMenuForm.ShowFormInPanel(frmAddTeacher);
                     break;
             }
         }

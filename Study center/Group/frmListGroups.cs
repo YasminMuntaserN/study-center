@@ -57,7 +57,7 @@ namespace Study_center.Group
             _dtList.DefaultView.RowFilter =
                 string.Format("[{0}] like '{1}%'", $"{searchBy}", comboBox.Text);
 
-            lblRecordsNum.Text = (dgvList.Rows.Count - 1).ToString();
+            lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
         #region Fill comboBoxies
@@ -206,8 +206,11 @@ namespace Study_center.Group
         private void miShowStudents_Click(object sender, EventArgs e)
         {
             this._mainMenuForm.ShowFormInPanel(new frmAllStudentsInGroup(selectedGroupID
-             ,this ,this._mainMenuForm));
+             , this, this._mainMenuForm));
             _RefreshList();
         }
+
+        private void NUMPageNumber_ValueChanged(object sender, EventArgs e) => _RefreshList();
+
     }
 }

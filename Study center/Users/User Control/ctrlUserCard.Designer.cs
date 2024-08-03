@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            ctrlPersonCard1 = new Person.User_Controls.ctrlPersonCard();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             llEditUserInfo = new LinkLabel();
             lblIsActive = new Label();
@@ -42,18 +41,12 @@
             label12 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            ctrlPersonCardWithFilter1 = new Person.User_Controls.ctrlPersonCardWithFilter();
             guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // ctrlPersonCard1
-            // 
-            ctrlPersonCard1.Location = new Point(0, 0);
-            ctrlPersonCard1.Name = "ctrlPersonCard1";
-            ctrlPersonCard1.Size = new Size(889, 331);
-            ctrlPersonCard1.TabIndex = 0;
             // 
             // guna2GroupBox1
             // 
@@ -68,12 +61,12 @@
             guna2GroupBox1.Controls.Add(pictureBox1);
             guna2GroupBox1.Controls.Add(label2);
             guna2GroupBox1.CustomBorderColor = Color.FromArgb(54, 69, 79);
-            guna2GroupBox1.CustomizableEdges = customizableEdges3;
+            guna2GroupBox1.CustomizableEdges = customizableEdges1;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(0, 348);
+            guna2GroupBox1.Location = new Point(3, 506);
             guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GroupBox1.Size = new Size(889, 154);
             guna2GroupBox1.TabIndex = 3;
             guna2GroupBox1.Text = "User Info";
@@ -196,14 +189,22 @@
             label2.TabIndex = 34;
             label2.Text = "User Name :";
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            ctrlPersonCardWithFilter1.FilterEnabled = true;
+            ctrlPersonCardWithFilter1.Location = new Point(0, 0);
+            ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            ctrlPersonCardWithFilter1.Size = new Size(886, 510);
+            ctrlPersonCardWithFilter1.TabIndex = 4;
+            // 
             // ctrlUserCard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ctrlPersonCardWithFilter1);
             Controls.Add(guna2GroupBox1);
-            Controls.Add(ctrlPersonCard1);
             Name = "ctrlUserCard";
-            Size = new Size(886, 503);
+            Size = new Size(886, 665);
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -213,8 +214,6 @@
         }
 
         #endregion
-
-        private Person.User_Controls.ctrlPersonCard ctrlPersonCard1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Label lblIsActive;
         private PictureBox pictureBox2;
@@ -226,5 +225,6 @@
         private PictureBox pictureBox1;
         private Label label2;
         private LinkLabel llEditUserInfo;
+        private Person.User_Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
     }
 }

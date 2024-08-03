@@ -1,5 +1,6 @@
 ﻿using Study_center.Global_Classes;
 using Study_center.Main_Menu;
+using Study_center.Person.User_Controls;
 using Study_center.Properties;
 using studyCenter_BL_;
 using studyCenter_BusineesLayer;
@@ -28,6 +29,14 @@ namespace Study_center.Users.User_Control
         public void SetPreviousForm(Form form)
         {
             this.previousForm = form;
+            _setMainAndPrevious();
+        }
+
+        private void _setMainAndPrevious()
+        {
+            ctrlPersonCardWithFilter1.SetMainMenuForm(mainMenuForm); // Set the main menu form reference
+            ctrlPersonCardWithFilter1.SetPreviousForm(previousForm); // Set the current form as the previous form
+
         }
         #endregion
 
@@ -37,14 +46,15 @@ namespace Study_center.Users.User_Control
         public int? UserID => _userID;
         public clsUser UserInfo => _user;
 
-        public int? PersonID => ctrlPersonCard1.PersonID;
+        public int? PersonID => ctrlPersonCardWithFilter1.PersonID;
         public ctrlUserCard()
         {
             InitializeComponent();
         }
         private void _FillUserData()
         {
-            ctrlPersonCard1.LoadPersonData(_user.PersonID);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(ctrlPersonCardWithFilter.EnSearchCriteria.PersonID,_user.PersonID);
+            ctrlPersonCardWithFilter1.FilterEnabled = false;
 
             lblUserID.Text = _user.UserID.ToString();
             lblUsername.Text = _user.UserName;

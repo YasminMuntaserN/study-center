@@ -36,11 +36,11 @@ namespace Study_center.Payments
         {
             int totalRows;
             int totalPages;
-            HelperClass.GetTotalPagesAndRows("Payments", 10, out totalRows, out totalPages);
+            HelperClass.GetTotalPagesAndRows("Payments", clsGlobal.Rows, out totalRows, out totalPages);
 
             //DataTable groupsTable = bl.GetGroupsByPage(pageNumber, pageSize);
             NUMPageNumber.Maximum = totalPages;
-            _dtList = clsPayment.GetPaymentsByPage((int)NUMPageNumber.Value, totalRows);
+            _dtList = clsPayment.GetPaymentsByPage((int)NUMPageNumber.Value, clsGlobal.Rows);
             dgvList.DataSource = _dtList;
 
             lblRecordsNum.Text = (dgvList.Rows.Count).ToString();

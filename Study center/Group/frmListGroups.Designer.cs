@@ -352,6 +352,7 @@
             NUMPageNumber.TabIndex = 82;
             NUMPageNumber.UpDownButtonFillColor = Color.SteelBlue;
             NUMPageNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            NUMPageNumber.ValueChanged += NUMPageNumber_ValueChanged;
             // 
             // label1
             // 

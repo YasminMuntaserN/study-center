@@ -48,13 +48,14 @@ namespace Study_center.Main_Menu
             this.guna2CustomGradientPanel1.Controls.Clear();
             this.guna2CustomGradientPanel1.Controls.Add(form);
             form.Show();
+            _FillCounts();
         }
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            lblUserName.Text = clsGlobal.CurrentUser.FullName;
+            lblEmail.Text = clsGlobal.CurrentUser.Address;
             ShowFormInPanel(new frmDashborder());
-
-            _FillCounts();
         }
 
         private void _FillCounts()

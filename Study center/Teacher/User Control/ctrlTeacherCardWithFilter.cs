@@ -28,6 +28,7 @@ namespace Study_center.Teacher
         public void SetPreviousForm(Form form)
         {
             this.previousForm = form;
+            _setMainAndPrevious();
         }
 
         private void _setMainAndPrevious()
@@ -49,6 +50,7 @@ namespace Study_center.Teacher
             InitializeComponent();
             ctrlPersonCardWithFilter1.SetSearchCriteria(ctrlPersonCardWithFilter.EnSearchCriteria.TeacherID);
             if(_Teacher == null) llEditTeacherInfo.Enabled = false;
+
         }
 
         private void FillTeacherInfoInFields()
@@ -64,7 +66,6 @@ namespace Study_center.Teacher
 
         public void LoadTeacherInfo(int? teacherID)
         {
-            _setMainAndPrevious();
             _Teacher = clsTeacher.Find(teacherID, clsTeacher.EnFindTeacherBy.TeacherID);
 
             if (_Teacher == null)
@@ -78,7 +79,6 @@ namespace Study_center.Teacher
 
         public void LoadTeacherInfoByPerson(int? personID)
         {
-            _setMainAndPrevious();
             _Teacher = clsTeacher.Find(personID, clsTeacher.EnFindTeacherBy.PersonID);
 
             if (_Teacher == null)
@@ -110,6 +110,8 @@ namespace Study_center.Teacher
 
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, ctrlPersonCardWithFilter.SelectPersonEventArgs e)
         {
+            
+
             //  ctrlPersonCardWithFilter1.setFilterEnabledAndLoadData(_Teacher.PersonID);
             if (e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.PersonID)
             {

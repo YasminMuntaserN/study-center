@@ -28,6 +28,7 @@ namespace Study_center.Student.User_Control
         public void SetPreviousForm(Form form)
         {
             this.previousForm = form;
+            _setMainAndPrevious();
         }
 
         private void _setMainAndPrevious()
@@ -97,7 +98,6 @@ namespace Study_center.Student.User_Control
 
         private void ctrlPersonCardWithFilter1_OnPersonSelectedEvent(object sender, Study_center.Person.User_Controls.ctrlPersonCardWithFilter.SelectPersonEventArgs e)
         {
-            _setMainAndPrevious();
 
             if (e.SearchCriteria == ctrlPersonCardWithFilter.EnSearchCriteria.PersonID)
             {

@@ -826,7 +826,7 @@
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Footlight MT Light", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUserName.ForeColor = SystemColors.ButtonHighlight;
-            lblUserName.Location = new Point(65, 133);
+            lblUserName.Location = new Point(82, 131);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(184, 39);
             lblUserName.TabIndex = 13;
