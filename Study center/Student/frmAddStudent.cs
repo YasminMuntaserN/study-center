@@ -152,7 +152,7 @@ namespace Study_center.Student
                 return;
             }
 
-            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsPerson.EnType.student))
+            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsStudent.IsPersonStudent))
             {
                 MessageBox.Show("This person is already registered as a student. Please select another person.",
                                 "Already Registered", MessageBoxButtons.OK, MessageBoxIcon.Error);

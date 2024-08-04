@@ -190,7 +190,7 @@ namespace StudyCenter_DataAccessLayer
         public static DataTable All()
             => clsDataAccessHelper.All("SP_GetAllTeachers");
 
-        public static bool IsPersonTeacher(int? TeacherID)
+        public static bool IsPersonTeacher(int? PersonID)
         {
             try
             {
@@ -204,7 +204,7 @@ namespace StudyCenter_DataAccessLayer
                         command.CommandType = CommandType.StoredProcedure;
 
                         // Add the input parameter for PersonID
-                        command.Parameters.AddWithValue("@TeacherID", TeacherID);
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
 
                         // Add the output parameter for IsStudent
                         SqlParameter outputParam = new SqlParameter("@IsTeacher", SqlDbType.Bit)

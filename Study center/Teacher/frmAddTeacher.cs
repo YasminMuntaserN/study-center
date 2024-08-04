@@ -140,7 +140,7 @@ namespace Study_center.Teacher
                 return;
             }
 
-            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsPerson.EnType.Teacher))
+            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value,clsTeacher.IsPersonTeacher))
             {
                 MessageBox.Show("This person is already registered as a teacher. Please select another person.",
                                 "Already Registered", MessageBoxButtons.OK, MessageBoxIcon.Error);
