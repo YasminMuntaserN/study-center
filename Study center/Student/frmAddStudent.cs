@@ -69,6 +69,7 @@ namespace Study_center.Student
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
+            StudentIDBack?.Invoke(_student.StudentID);
             this.Close();
         }
 

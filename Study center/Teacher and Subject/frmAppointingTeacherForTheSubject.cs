@@ -24,6 +24,7 @@ namespace Study_center.Teacher_and_Subject
 
         private int? selectedTeacherID;
 
+        public Action<int?> selectedTeacherIDBack;
         private enum _enMode { AddNew, Update };
         private _enMode _mode = _enMode.AddNew;
 
@@ -146,6 +147,7 @@ namespace Study_center.Teacher_and_Subject
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
+            selectedTeacherIDBack?.Invoke(_TeacherSubject.TeacherID);
             this.Close();
         }
 

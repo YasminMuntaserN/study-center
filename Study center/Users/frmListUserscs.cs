@@ -43,9 +43,13 @@ namespace Study_center.Users
             lblRecordsNum.Text = (dgvList.Rows.Count).ToString();
         }
 
+        private void _UpdateBeforeOpenAnotherForm(int? ID) => _RefreshList();
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser( _mainMenuForm, this));
+            var form = new frmAddUser(_mainMenuForm, this);
+            form.UserIDBack += _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(form);
             _RefreshList();
         }
 
@@ -93,7 +97,9 @@ namespace Study_center.Users
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddUser(selectedUserID, _mainMenuForm, this));
+            var form = new frmAddUser(selectedUserID,_mainMenuForm, this);
+            form.UserIDBack += _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(form);
             _RefreshList();
 
         }

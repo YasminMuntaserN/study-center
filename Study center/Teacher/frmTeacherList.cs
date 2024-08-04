@@ -79,11 +79,15 @@ namespace Study_center.Teacher
         }
         #endregion
 
+        private void _UpdateBeforeOpenAnotherForm(int? ID) => _RefreshList();
+
         private void frmTeacherList_Load(object sender, EventArgs e) => _RefreshList();
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher( this._mainMenuForm, this));
+            var form = new frmAddTeacher(this._mainMenuForm, this);
+            form.TeacherIDBack = _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(form);
             _RefreshList();
         }
 
@@ -130,7 +134,9 @@ namespace Study_center.Teacher
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddTeacher(selectedTeacherID, this._mainMenuForm, this));
+            var form = new frmAddTeacher(selectedTeacherID,this._mainMenuForm, this);
+            form.TeacherIDBack = _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(form);
             _RefreshList();
         }
 

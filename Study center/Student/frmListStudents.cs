@@ -32,6 +32,8 @@ namespace Study_center.Student
 
         private int? selectedStudentID => (int)dgvList.CurrentRow.Cells[0].Value;
 
+        private void _UpdateBeforeOpenAnotherForm (int? ID) => _RefreshList();
+   
         private void _RefreshList()
         {
             int totalRows;
@@ -97,7 +99,10 @@ namespace Study_center.Student
 
         private void btnGroups_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddStudent( this._mainMenuForm , this));
+            var addForm = new frmAddStudent(this._mainMenuForm, this);
+            addForm.StudentIDBack += _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(addForm);
+          
             _RefreshList();
         }
 
@@ -153,7 +158,9 @@ namespace Study_center.Student
 
         private void miEdit_Click(object sender, EventArgs e)
         {
-            this._mainMenuForm.ShowFormInPanel(new frmAddStudent(selectedStudentID,this, this._mainMenuForm));
+            var form = new frmAddStudent(selectedStudentID, this, this._mainMenuForm);
+            form.StudentIDBack += _UpdateBeforeOpenAnotherForm;
+            this._mainMenuForm.ShowFormInPanel(form);
             _RefreshList();
         }
 

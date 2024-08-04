@@ -111,7 +111,7 @@ namespace Study_center.Global_User_Controls
             }
 
             clsClass classInfo = clsClass.Find(classID.Value);
-         
+
             if (classInfo != null)
             {
                 lblListName.Text = string.Concat("  Teachers are teaching in the class ", ' ', classInfo.ClassName);
@@ -231,6 +231,22 @@ namespace Study_center.Global_User_Controls
         }
 
         #endregion
+        private void _RefreshList(int? ID)
+        {
+            switch (_Type)
+            {
+                case enItemTypes.Subjects:
+                    FillSubjectsTaughtByTeacher(_storedTeacherID);
+                    break;
+
+                case enItemTypes.MeetingTimes:
+                    FillMeetingTimes(_storedClassID, _storedTeacherID);
+                    break;
+                case enItemTypes.students:
+                    FillStudentsInGroup(_storedGroupID);
+                    break;
+            }
+        }
 
         private void btnaAdd_Click(object sender, EventArgs e)
         {
@@ -238,8 +254,8 @@ namespace Study_center.Global_User_Controls
             {
                 case enItemTypes.Subjects:
                     frmAppointingTeacherForTheSubject frmAdd = new frmAppointingTeacherForTheSubject(previousForm, mainMenuForm);
+                    frmAdd.selectedTeacherIDBack += _RefreshList;
                     mainMenuForm.ShowFormInPanel(frmAdd);
-                    _List = clsTeacherSubject.GetSubjectsByTeacherID(_storedTeacherID);
                     break;
 
                 case enItemTypes.Teachers:
@@ -250,14 +266,16 @@ namespace Study_center.Global_User_Controls
 
                 case enItemTypes.MeetingTimes:
                     frmAddMeetingTime time = new frmAddMeetingTime(mainMenuForm, previousForm);
+                    time.selectedTimeIDBack += _RefreshList;
                     mainMenuForm.ShowFormInPanel(time);
-                    _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
                     break;
+
                 case enItemTypes.students:
                     frmAddAssignStudentToGroup assign = new frmAddAssignStudentToGroup(_storedGroupID
                         , frmAddAssignStudentToGroup.enLoddingAccordingTo.GroupID, previousForm, mainMenuForm);
+                    assign.selectedGroupIDBack += _RefreshList;
                     mainMenuForm.ShowFormInPanel(assign);
-                    _List = clsGroup.GetAvailableMeetingTimes(_storedClassID, _storedTeacherID);
+                   
                     break;
             }
 

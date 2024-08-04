@@ -27,6 +27,7 @@ namespace Study_center.Group
         private clsEnrollment _Enrollment;
         private DataTable _dtGroups;
 
+        public Action<int?> selectedGroupIDBack;
         public enum enLoddingAccordingTo { StudentID, GroupID }
         private enLoddingAccordingTo? _AccordingTo;
 
@@ -276,7 +277,11 @@ namespace Study_center.Group
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e) => this.Close();
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            selectedGroupIDBack?.Invoke(_Enrollment.GroupID);
+            this.Close();
+        }
 
         private void frmAddAssignStudentToGroup_FormClosed(object sender, FormClosedEventArgs e)
         {

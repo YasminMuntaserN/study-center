@@ -198,6 +198,7 @@ namespace Study_center.Users
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            UserIDBack?.Invoke(_User.UserID);
             this.Close();
         }
 

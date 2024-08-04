@@ -64,7 +64,7 @@ namespace Study_center.Person.User_Controls
             llEditPersonInfo.Enabled = true;
         }
 
-        public bool LoadPersonData(int? personID)
+        public void LoadPersonData(int? personID)
         {
             Person = clsPerson.Find(personID);
 
@@ -72,11 +72,11 @@ namespace Study_center.Person.User_Controls
             {
                 Reset();
                 clsMessages.NotFound("person", personID);
-                return false;
+                return;
             }
             PersonID = personID;    
             _FillPersonData();
-            return true;
+            return;
         }
      
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -87,8 +87,8 @@ namespace Study_center.Person.User_Controls
                 return ;
             }
             frmAddPerson frmAddPerson = new frmAddPerson(PersonID,previousForm ,mainMenuForm);
-                mainMenuForm.ShowFormInPanel(frmAddPerson);
-            LoadPersonData(PersonID);
+            frmAddPerson.PersonIDBack += LoadPersonData;
+            mainMenuForm.ShowFormInPanel(frmAddPerson);
         }
     }
 }

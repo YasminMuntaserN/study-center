@@ -1,4 +1,5 @@
-﻿using StudyCenter_DAL_;
+﻿using studyCenter_BusineesLayer;
+using StudyCenter_DAL_;
 using StudyCenter_DataAccessLayer.Global_classes;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace studyCenter_BL_
         public int? StudentID { get; set; }
         public int? GroupID { get; set; }
 
+        public clsGroup GroupInfo =>clsGroup.Find(GroupID); 
+      
         public clsEnrollment()
         {
             EnrollmentID = null;

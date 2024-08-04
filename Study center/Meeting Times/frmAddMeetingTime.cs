@@ -19,6 +19,8 @@ namespace Study_center.Meeting_Times
         private Form previousForm;
         private frmMainMenu mainMenuForm;
 
+        public Action<int?> selectedTimeIDBack;
+
         private enum enMode { Add, Update }
         private enMode _Mode = enMode.Add;
 
@@ -147,6 +149,7 @@ namespace Study_center.Meeting_Times
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
+            selectedTimeIDBack?.Invoke(_meetingTimeID);
             this.Close();
         }
 
