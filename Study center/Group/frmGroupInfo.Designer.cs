@@ -107,7 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(953, 623);
+            ClientSize = new Size(949, 637);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(ctrlGroupCard1);
@@ -115,7 +115,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmGroupInfo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmGroupInfo";
+            Text = "S";
             FormClosed += frmGroupInfo_FormClosed;
             Load += frmGroupInfo_Load;
             guna2GradientPanel1.ResumeLayout(false);

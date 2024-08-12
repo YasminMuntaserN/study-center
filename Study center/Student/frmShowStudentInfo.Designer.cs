@@ -45,7 +45,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(21, 84);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(882, 17);
+            guna2Separator1.Size = new Size(916, 17);
             guna2Separator1.TabIndex = 32;
             // 
             // lblTitle
@@ -53,9 +53,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(38, 76);
+            lblTitle.Location = new Point(36, 71);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(882, 87);
+            lblTitle.Size = new Size(953, 87);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Student Info";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -77,7 +77,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(1007, 158);
+            guna2GradientPanel1.Size = new Size(1039, 158);
             guna2GradientPanel1.TabIndex = 67;
             guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
             // 
@@ -96,10 +96,10 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(722, 883);
+            btnClose.Location = new Point(732, 883);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnClose.Size = new Size(227, 50);
+            btnClose.Size = new Size(244, 50);
             btnClose.TabIndex = 39;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click_1;
@@ -108,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(923, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(ctrlStudentCard1);

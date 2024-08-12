@@ -49,7 +49,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(1018, 150);
+            guna2GradientPanel1.Size = new Size(1036, 150);
             guna2GradientPanel1.TabIndex = 38;
             // 
             // lblTitle
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(ctrlUserCard1);
             Controls.Add(guna2GradientPanel1);

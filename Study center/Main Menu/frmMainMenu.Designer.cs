@@ -531,7 +531,7 @@
             guna2CustomGradientPanel1.Location = new Point(75, 42);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2CustomGradientPanel1.Size = new Size(906, 963);
+            guna2CustomGradientPanel1.Size = new Size(949, 963);
             guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // guna2Button1

@@ -82,7 +82,7 @@
             guna2TabControl1.Controls.Add(tpTeacherInfo);
             guna2TabControl1.Controls.Add(tpSubjectInfo);
             guna2TabControl1.ItemSize = new Size(180, 40);
-            guna2TabControl1.Location = new Point(-1, 85);
+            guna2TabControl1.Location = new Point(12, 68);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
             guna2TabControl1.Size = new Size(933, 783);
@@ -298,7 +298,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2GradientPanel1.Size = new Size(1017, 158);
+            guna2GradientPanel1.Size = new Size(1053, 140);
             guna2GradientPanel1.TabIndex = 56;
             // 
             // btnClose
@@ -316,7 +316,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(750, 874);
+            btnClose.Location = new Point(750, 853);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnClose.Size = new Size(227, 50);
@@ -339,7 +339,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(750, 930);
+            btnSave.Location = new Point(750, 909);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSave.Size = new Size(239, 50);
@@ -351,7 +351,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

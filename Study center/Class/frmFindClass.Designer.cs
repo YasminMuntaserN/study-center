@@ -45,16 +45,16 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(40, 82);
+            lblTitle.Location = new Point(67, 82);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(910, 76);
+            lblTitle.Size = new Size(933, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Find Class";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ctrlClassCardWithFilter1
             // 
-            ctrlClassCardWithFilter1.Location = new Point(12, 111);
+            ctrlClassCardWithFilter1.Location = new Point(27, 111);
             ctrlClassCardWithFilter1.Name = "ctrlClassCardWithFilter1";
             ctrlClassCardWithFilter1.Size = new Size(884, 354);
             ctrlClassCardWithFilter1.TabIndex = 39;
@@ -62,7 +62,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(0, 91);
+            guna2Separator1.Location = new Point(7, 91);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(930, 14);
             guna2Separator1.TabIndex = 42;
@@ -77,7 +77,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(1012, 158);
+            guna2GradientPanel1.Size = new Size(1035, 158);
             guna2GradientPanel1.TabIndex = 43;
             // 
             // btnClose
@@ -95,10 +95,10 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(725, 471);
+            btnClose.Location = new Point(746, 471);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnClose.Size = new Size(227, 50);
+            btnClose.Size = new Size(234, 50);
             btnClose.TabIndex = 69;
             btnClose.Text = "Close";
             btnClose.Click += btnClose_Click_1;
@@ -107,7 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 529);
+            ClientSize = new Size(949, 539);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2Separator1);

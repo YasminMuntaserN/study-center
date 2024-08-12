@@ -79,7 +79,7 @@
             guna2TabControl1.Controls.Add(tpTeacherInfo);
             guna2TabControl1.Controls.Add(tpSubjectInfo);
             guna2TabControl1.ItemSize = new Size(180, 40);
-            guna2TabControl1.Location = new Point(0, 66);
+            guna2TabControl1.Location = new Point(12, 66);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
             guna2TabControl1.Size = new Size(917, 798);
@@ -362,7 +362,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(29, 68);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(918, 59);
+            lblTitle.Size = new Size(980, 59);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Assign Student to Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -377,7 +377,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(1009, 140);
+            guna2GradientPanel1.Size = new Size(1050, 140);
             guna2GradientPanel1.TabIndex = 58;
             // 
             // btnClose
@@ -395,7 +395,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(742, 866);
+            btnClose.Location = new Point(742, 861);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnClose.Size = new Size(227, 50);
@@ -418,7 +418,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(737, 922);
+            btnSave.Location = new Point(737, 913);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnSave.Size = new Size(232, 50);
@@ -430,7 +430,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(guna2TabControl1);
             Controls.Add(guna2GradientPanel1);

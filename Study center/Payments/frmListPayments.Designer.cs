@@ -94,7 +94,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(647, 315);
+            label1.Location = new Point(716, 315);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
             label1.TabIndex = 100;
@@ -106,7 +106,7 @@
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges3;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(735, 315);
+            NUMPageNumber.Location = new Point(804, 315);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
@@ -132,7 +132,7 @@
             cmsList.RenderStyle.SelectionForeColor = Color.White;
             cmsList.RenderStyle.SeparatorColor = Color.Gainsboro;
             cmsList.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            cmsList.Size = new Size(396, 112);
+            cmsList.Size = new Size(396, 140);
             // 
             // miShowGroupsDetails
             // 
@@ -252,7 +252,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(12, 260);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(855, 19);
+            guna2Separator1.Size = new Size(925, 19);
             guna2Separator1.TabIndex = 86;
             // 
             // dgvList
@@ -288,7 +288,7 @@
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 30;
-            dgvList.Size = new Size(855, 396);
+            dgvList.Size = new Size(893, 396);
             dgvList.TabIndex = 111;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -316,7 +316,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 850);
+            ClientSize = new Size(949, 963);
             Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(label1);

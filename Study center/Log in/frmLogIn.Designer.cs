@@ -94,8 +94,8 @@
             // 
             // guna2ImageButton1
             // 
-            guna2ImageButton1.CheckedState.ImageSize = new Size(44, 44);
-            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.CheckedState.ImageSize = new Size(24, 24);
+            guna2ImageButton1.HoverState.ImageSize = new Size(24, 24);
             guna2ImageButton1.Image = Properties.Resources.close__3_1;
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
@@ -140,10 +140,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Log_in__2_;
-            pictureBox1.Location = new Point(412, 180);
+            pictureBox1.Image = Properties.Resources._444160500;
+            pictureBox1.Location = new Point(388, 162);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(376, 426);
+            pictureBox1.Size = new Size(501, 458);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 140;
             pictureBox1.TabStop = false;

@@ -232,7 +232,7 @@ namespace Study_center.Users
                 return;
             }
 
-            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsPerson.EnType.User))
+            if (_Mode == enMode.Add && clsPerson.IsPerson(e.PersonID.Value, clsUser.IsPersonUser))
             {
                 MessageBox.Show("This person is already registered as a User. Please select another person.",
                                 "Already Registered", MessageBoxButtons.OK, MessageBoxIcon.Error);

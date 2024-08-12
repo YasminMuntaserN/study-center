@@ -123,7 +123,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(630, 306);
+            label1.Location = new Point(660, 304);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
             label1.TabIndex = 127;
@@ -135,7 +135,7 @@
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges5;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(718, 306);
+            NUMPageNumber.Location = new Point(748, 304);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
@@ -270,7 +270,7 @@
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(54, 54);
-            btnAdd.Location = new Point(825, 273);
+            btnAdd.Location = new Point(855, 271);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges9;
@@ -281,7 +281,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.teacher__1_;
-            pictureBox1.Location = new Point(295, 1);
+            pictureBox1.Location = new Point(320, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(322, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -292,9 +292,9 @@
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(54, 69, 79);
-            lblTitle.Location = new Point(14, 170);
+            lblTitle.Location = new Point(7, 170);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(884, 76);
+            lblTitle.Size = new Size(930, 76);
             lblTitle.TabIndex = 118;
             lblTitle.Text = "Manage Classes";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -306,7 +306,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(14, 249);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(892, 18);
+            guna2Separator1.Size = new Size(923, 18);
             guna2Separator1.TabIndex = 117;
             // 
             // dgvList
@@ -342,7 +342,7 @@
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 30;
-            dgvList.Size = new Size(884, 396);
+            dgvList.Size = new Size(914, 396);
             dgvList.TabIndex = 130;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -370,7 +370,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(920, 826);
+            ClientSize = new Size(949, 963);
             Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(cbClasses);

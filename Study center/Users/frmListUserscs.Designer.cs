@@ -122,7 +122,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(620, 308);
+            label1.Location = new Point(639, 308);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
             label1.TabIndex = 111;
@@ -161,7 +161,7 @@
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 30;
-            dgvList.Size = new Size(884, 396);
+            dgvList.Size = new Size(907, 396);
             dgvList.TabIndex = 110;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -328,7 +328,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(10, 246);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(892, 18);
+            guna2Separator1.Size = new Size(927, 18);
             guna2Separator1.TabIndex = 103;
             // 
             // NUMPageNumber
@@ -337,7 +337,7 @@
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges7;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(708, 308);
+            NUMPageNumber.Location = new Point(727, 308);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
@@ -356,7 +356,7 @@
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(44, 44);
-            btnAdd.Location = new Point(821, 291);
+            btnAdd.Location = new Point(840, 291);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges9;
@@ -368,7 +368,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 819);
+            ClientSize = new Size(949, 963);
             Controls.Add(NUMPageNumber);
             Controls.Add(btnAdd);
             Controls.Add(txtFilterBy);

@@ -661,7 +661,7 @@
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(43, 77);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(950, 59);
+            lblTitle.Size = new Size(943, 59);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Group";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -676,7 +676,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2GradientPanel1.Size = new Size(1031, 147);
+            guna2GradientPanel1.Size = new Size(1044, 147);
             guna2GradientPanel1.TabIndex = 58;
             // 
             // btnClose
@@ -729,7 +729,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(TabControl1);

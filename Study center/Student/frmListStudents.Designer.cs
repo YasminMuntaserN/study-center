@@ -318,7 +318,7 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(12, 261);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(927, 19);
+            guna2Separator1.Size = new Size(971, 19);
             guna2Separator1.TabIndex = 86;
             // 
             // label3
@@ -394,7 +394,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(957, 842);
+            ClientSize = new Size(1009, 842);
             Controls.Add(dgvList);
             Controls.Add(label3);
             Controls.Add(txtFilterBy);

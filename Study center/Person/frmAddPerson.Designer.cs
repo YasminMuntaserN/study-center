@@ -100,9 +100,9 @@ namespace Study_center
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(68, 82);
+            lblTitle.Location = new Point(68, 73);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(848, 76);
+            lblTitle.Size = new Size(928, 76);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Person";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -337,7 +337,7 @@ namespace Study_center
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
-            label10.Location = new Point(438, 289);
+            label10.Location = new Point(459, 289);
             label10.Name = "label10";
             label10.Size = new Size(177, 31);
             label10.TabIndex = 19;
@@ -347,7 +347,7 @@ namespace Study_center
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
-            label11.Location = new Point(520, 343);
+            label11.Location = new Point(541, 343);
             label11.Name = "label11";
             label11.Size = new Size(85, 31);
             label11.TabIndex = 20;
@@ -356,7 +356,7 @@ namespace Study_center
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.calendar;
-            pictureBox5.Location = new Point(612, 289);
+            pictureBox5.Location = new Point(633, 289);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(36, 32);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -366,7 +366,7 @@ namespace Study_center
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.phone_call;
-            pictureBox6.Location = new Point(612, 343);
+            pictureBox6.Location = new Point(633, 343);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(36, 32);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -383,7 +383,7 @@ namespace Study_center
             dtpDateOfBirth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             dtpDateOfBirth.ForeColor = SystemColors.Control;
             dtpDateOfBirth.Format = DateTimePickerFormat.Long;
-            dtpDateOfBirth.Location = new Point(654, 281);
+            dtpDateOfBirth.Location = new Point(675, 281);
             dtpDateOfBirth.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDateOfBirth.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
@@ -406,7 +406,7 @@ namespace Study_center
             txtPhone.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             txtPhone.ForeColor = Color.Black;
             txtPhone.HoverState.BorderColor = Color.FromArgb(53, 41, 123);
-            txtPhone.Location = new Point(654, 343);
+            txtPhone.Location = new Point(675, 343);
             txtPhone.Margin = new Padding(4, 6, 4, 6);
             txtPhone.Name = "txtPhone";
             txtPhone.PasswordChar = '\0';
@@ -420,9 +420,9 @@ namespace Study_center
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(20, 124);
+            guna2Separator1.Location = new Point(20, 128);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(849, 19);
+            guna2Separator1.Size = new Size(917, 15);
             guna2Separator1.TabIndex = 27;
             // 
             // pictureBox7
@@ -500,7 +500,7 @@ namespace Study_center
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2GradientPanel1.Size = new Size(973, 158);
+            guna2GradientPanel1.Size = new Size(1046, 149);
             guna2GradientPanel1.TabIndex = 39;
             // 
             // btnClose
@@ -518,7 +518,7 @@ namespace Study_center
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(687, 400);
+            btnClose.Location = new Point(748, 400);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnClose.Size = new Size(227, 50);
@@ -541,7 +541,7 @@ namespace Study_center
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(687, 456);
+            btnSave.Location = new Point(748, 456);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSave.Size = new Size(232, 50);
@@ -553,7 +553,7 @@ namespace Study_center
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(889, 971);
+            ClientSize = new Size(942, 548);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

@@ -86,10 +86,6 @@ namespace Study_center.Users
             //Validate the current password against the stored hash
             if (_User.Password !=clsGlobal.ComputeHash(currentPassword).Trim())
             {
-                
-                MessageBox.Show($"{clsGlobal.ComputeHash(currentPassword)} ,{_User.Password} ");
-
-
                 e.Cancel = true;
                 errorProvider1.SetError(txtCurrentPassword, "The entered password is incorrect. Please try again.");
             }

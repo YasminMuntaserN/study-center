@@ -85,14 +85,14 @@
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(24, 262);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(855, 19);
+            guna2Separator1.Size = new Size(895, 19);
             guna2Separator1.TabIndex = 63;
             // 
             // lblTitle
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(54, 69, 79);
-            lblTitle.Location = new Point(12, 185);
+            lblTitle.Location = new Point(30, 187);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(907, 76);
             lblTitle.TabIndex = 64;
@@ -102,7 +102,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.meeting__1_;
-            pictureBox1.Location = new Point(295, -1);
+            pictureBox1.Location = new Point(313, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(322, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -117,7 +117,7 @@
             btnGroups.ImageOffset = new Point(0, 0);
             btnGroups.ImageRotate = 0F;
             btnGroups.ImageSize = new Size(44, 44);
-            btnGroups.Location = new Point(783, 309);
+            btnGroups.Location = new Point(838, 307);
             btnGroups.Name = "btnGroups";
             btnGroups.PressedState.ImageSize = new Size(64, 64);
             btnGroups.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -343,7 +343,7 @@
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges12;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(616, 319);
+            NUMPageNumber.Location = new Point(671, 317);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
@@ -360,7 +360,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(528, 319);
+            label1.Location = new Point(583, 317);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
             label1.TabIndex = 83;
@@ -477,7 +477,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(911, 840);
+            ClientSize = new Size(949, 963);
             Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(cbMeetingTimes);

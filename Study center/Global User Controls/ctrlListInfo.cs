@@ -226,7 +226,7 @@ namespace Study_center.Global_User_Controls
             else
             {
                 _SaveSubjectTeacher();
-                _List = clsTeacherSubject.GetTeachersBySubject(_storedGradeLevelSubjectID);
+                FillSubjectsTaughtByTeacher(_storedGradeLevelSubjectID);
             }
         }
 

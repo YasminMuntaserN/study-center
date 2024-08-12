@@ -63,6 +63,16 @@ namespace Study_center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _444160500 {
+            get {
+                object obj = ResourceManager.GetObject("444160500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap active_user {
             get {
                 object obj = ResourceManager.GetObject("active-user", resourceCulture);
@@ -406,26 +416,6 @@ namespace Study_center.Properties {
         internal static System.Drawing.Bitmap location {
             get {
                 object obj = ResourceManager.GetObject("location", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Log_in_ {
-            get {
-                object obj = ResourceManager.GetObject("Log_in-", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Log_in__2_ {
-            get {
-                object obj = ResourceManager.GetObject("Log in (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

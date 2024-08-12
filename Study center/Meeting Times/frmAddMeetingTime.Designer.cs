@@ -75,9 +75,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.ButtonFace;
-            lblTitle.Location = new Point(63, 82);
+            lblTitle.Location = new Point(80, 68);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(891, 76);
+            lblTitle.Size = new Size(891, 70);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Add Meeting Time";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,7 +85,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(11, 143);
+            guna2Separator1.Location = new Point(45, 127);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(873, 19);
             guna2Separator1.TabIndex = 64;
@@ -96,7 +96,7 @@
             lblMeetingTimeID.BackColor = Color.Transparent;
             lblMeetingTimeID.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblMeetingTimeID.ForeColor = Color.Maroon;
-            lblMeetingTimeID.Location = new Point(274, 109);
+            lblMeetingTimeID.Location = new Point(308, 93);
             lblMeetingTimeID.Name = "lblMeetingTimeID";
             lblMeetingTimeID.Size = new Size(60, 32);
             lblMeetingTimeID.TabIndex = 63;
@@ -106,7 +106,7 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = Properties.Resources.id;
-            pictureBox5.Location = new Point(232, 109);
+            pictureBox5.Location = new Point(266, 93);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(36, 32);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(34, 109);
+            label12.Location = new Point(68, 93);
             label12.Name = "label12";
             label12.Size = new Size(205, 31);
             label12.TabIndex = 61;
@@ -141,7 +141,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges7;
             guna2GroupBox1.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(13, 177);
+            guna2GroupBox1.Location = new Point(47, 161);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2GroupBox1.Size = new Size(871, 308);
@@ -303,7 +303,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2GradientPanel1.Size = new Size(1008, 158);
+            guna2GradientPanel1.Size = new Size(1043, 138);
             guna2GradientPanel1.TabIndex = 67;
             // 
             // btnClose
@@ -321,7 +321,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(704, 496);
+            btnClose.Location = new Point(748, 496);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnClose.Size = new Size(227, 50);
@@ -344,7 +344,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(704, 552);
+            btnSave.Location = new Point(743, 552);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnSave.Size = new Size(232, 50);
@@ -356,7 +356,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 629);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GradientPanel1);

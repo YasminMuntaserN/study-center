@@ -95,7 +95,7 @@
             btnClose.ForeColor = Color.White;
             btnClose.Image = Properties.Resources.close__3_;
             btnClose.ImageAlign = HorizontalAlignment.Left;
-            btnClose.Location = new Point(720, 857);
+            btnClose.Location = new Point(756, 843);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnClose.Size = new Size(227, 50);
@@ -118,7 +118,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Image = Properties.Resources.bookmark;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.Location = new Point(720, 913);
+            btnSave.Location = new Point(756, 899);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSave.Size = new Size(227, 50);
@@ -129,7 +129,7 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 5;
-            guna2Separator1.Location = new Point(3, 84);
+            guna2Separator1.Location = new Point(33, 86);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(891, 22);
             guna2Separator1.TabIndex = 34;
@@ -162,7 +162,7 @@
             gbUserInfo.CustomizableEdges = customizableEdges13;
             gbUserInfo.Font = new Font("Segoe UI Emoji", 16.2F, FontStyle.Bold);
             gbUserInfo.ForeColor = Color.FromArgb(125, 137, 149);
-            gbUserInfo.Location = new Point(3, 623);
+            gbUserInfo.Location = new Point(33, 623);
             gbUserInfo.Name = "gbUserInfo";
             gbUserInfo.ShadowDecoration.CustomizableEdges = customizableEdges14;
             gbUserInfo.Size = new Size(891, 228);
@@ -407,7 +407,7 @@
             // ctrlPersonCardWithFilter1
             // 
             ctrlPersonCardWithFilter1.FilterEnabled = true;
-            ctrlPersonCardWithFilter1.Location = new Point(3, 112);
+            ctrlPersonCardWithFilter1.Location = new Point(33, 114);
             ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             ctrlPersonCardWithFilter1.Size = new Size(891, 490);
             ctrlPersonCardWithFilter1.TabIndex = 31;
@@ -423,7 +423,7 @@
             guna2GradientPanel1.Location = new Point(-40, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2GradientPanel1.Size = new Size(1006, 158);
+            guna2GradientPanel1.Size = new Size(1044, 158);
             guna2GradientPanel1.TabIndex = 37;
             // 
             // errorProvider1
@@ -435,7 +435,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(btnClose);
             Controls.Add(btnSave);

@@ -55,16 +55,9 @@ namespace studyCenter_BusineesLayer
             Email = email;
         }
 
-        public static bool IsPerson(int personID, EnType personType)
+        public static bool IsPerson(int personID, Predicate<int?> isPerson)
         {
-            return personType switch
-            {
-                EnType.student => clsStudent.IsPersonStudent(personID),
-                EnType.Teacher => clsTeacher.IsPersonTeacher(personID),
-                EnType.User => clsUser.IsPersonUser(personID),
-
-                _ => false
-            };
+            return isPerson?.Invoke(personID)?? false;  
         }
 
         public static clsPerson Find(int? personID)

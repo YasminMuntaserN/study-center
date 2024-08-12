@@ -127,7 +127,7 @@ namespace Study_center.Teacher
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Comic Sans MS", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(622, 322);
+            label1.Location = new Point(649, 322);
             label1.Name = "label1";
             label1.Size = new Size(82, 31);
             label1.TabIndex = 100;
@@ -139,7 +139,7 @@ namespace Study_center.Teacher
             NUMPageNumber.BorderRadius = 15;
             NUMPageNumber.CustomizableEdges = customizableEdges5;
             NUMPageNumber.Font = new Font("Segoe UI", 9F);
-            NUMPageNumber.Location = new Point(710, 322);
+            NUMPageNumber.Location = new Point(737, 322);
             NUMPageNumber.Margin = new Padding(3, 4, 3, 4);
             NUMPageNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUMPageNumber.Name = "NUMPageNumber";
@@ -290,7 +290,7 @@ namespace Study_center.Teacher
             btnAdd.ImageOffset = new Point(0, 0);
             btnAdd.ImageRotate = 0F;
             btnAdd.ImageSize = new Size(44, 44);
-            btnAdd.Location = new Point(823, 305);
+            btnAdd.Location = new Point(850, 305);
             btnAdd.Name = "btnAdd";
             btnAdd.PressedState.ImageSize = new Size(64, 64);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges9;
@@ -301,7 +301,7 @@ namespace Study_center.Teacher
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.teacher;
-            pictureBox1.Location = new Point(293, 12);
+            pictureBox1.Location = new Point(340, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(322, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -312,7 +312,7 @@ namespace Study_center.Teacher
             // 
             lblTitle.Font = new Font("Segoe UI", 30.25F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(54, 69, 79);
-            lblTitle.Location = new Point(12, 181);
+            lblTitle.Location = new Point(43, 181);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(884, 76);
             lblTitle.TabIndex = 87;
@@ -325,7 +325,7 @@ namespace Study_center.Teacher
             guna2Separator1.FillThickness = 5;
             guna2Separator1.Location = new Point(12, 260);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(892, 18);
+            guna2Separator1.Size = new Size(925, 18);
             guna2Separator1.TabIndex = 86;
             // 
             // dgvList
@@ -361,7 +361,7 @@ namespace Study_center.Teacher
             dgvList.Name = "dgvList";
             dgvList.RowHeadersVisible = false;
             dgvList.RowHeadersWidth = 30;
-            dgvList.Size = new Size(884, 396);
+            dgvList.Size = new Size(910, 396);
             dgvList.TabIndex = 111;
             dgvList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -389,7 +389,7 @@ namespace Study_center.Teacher
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 851);
+            ClientSize = new Size(949, 963);
             Controls.Add(dgvList);
             Controls.Add(txtFilterBy);
             Controls.Add(cbGender);

@@ -67,7 +67,7 @@
             // 
             // ctrlUserCard1
             // 
-            ctrlUserCard1.Location = new Point(14, 84);
+            ctrlUserCard1.Location = new Point(28, 74);
             ctrlUserCard1.Name = "ctrlUserCard1";
             ctrlUserCard1.Size = new Size(897, 517);
             ctrlUserCard1.TabIndex = 0;
@@ -82,7 +82,7 @@
             guna2GradientPanel1.Location = new Point(-39, -80);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GradientPanel1.Size = new Size(998, 148);
+            guna2GradientPanel1.Size = new Size(1038, 142);
             guna2GradientPanel1.TabIndex = 38;
             // 
             // lblTitle
@@ -111,7 +111,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges9;
             guna2GroupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(14, 597);
+            guna2GroupBox1.Location = new Point(28, 580);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2GroupBox1.Size = new Size(890, 156);
@@ -310,7 +310,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            ClientSize = new Size(915, 976);
+            ClientSize = new Size(949, 963);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(guna2GroupBox1);
